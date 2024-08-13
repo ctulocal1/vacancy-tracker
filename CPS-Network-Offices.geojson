@@ -1,0 +1,209 @@
+{
+  "type": "FeatureCollection",
+    "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "NetworkNum":1,
+        "Network":"Network 1 Office",
+        "Address":"6323 N. Avondale, Chicago, IL, 60631"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates":  [ -87.751923,41.965124 ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NetworkNum":2,
+        "Network":"Network 2 Office",
+        "Address":"6323 N. Avondale, Chicago, IL, 60631"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates":  [ -87.679138,41.984206 ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NetworkNum":3,
+        "Network":"Network 3 Office",
+        "Address":"5101 W. Harrison St, Chicago, IL, 60644"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates":  [ -87.763939,41.918242 ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NetworkNum":4,
+        "Network":"Network 4 Office",
+        "Address":"6323 N. Avondale, Chicago, IL, 60631"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates":  [ -87.658912,41.936101 ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NetworkNum":5,
+        "Network":"Network 5 Office",
+        "Address":"2935 W. Polk Street, Chicago, IL, 60612"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates":  [ -87.715934,41.881532 ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NetworkNum":6,
+        "Network":"Network 6 Office",
+        "Address":"2245 W. Jackson Blvd, Chicago, IL, 60612"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates":  [ -87.650986,41.881532 ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NetworkNum":7,
+        "Network":"Network 7 Office",
+        "Address":"4655 S. Dearborn St, Chicago, IL, 60609"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates":  [ -87.698708,41.843176 ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NetworkNum":8,
+        "Network":"Network 8 Office",
+        "Address":"4655 S. Dearborn St, Chicago, IL, 60609"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates":  [ -87.698558,41.809058 ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NetworkNum":9,
+        "Network":"Network 9 Office",
+        "Address":"4655 S. Dearborn, Chicago, IL, 60609"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates":  [ -87.607384,41.799427 ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NetworkNum":10,
+        "Network":"Network 10 Office",
+        "Address":"11424 S. Western, Chicago, IL, 60643"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates":  [ -87.710724,41.765646 ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NetworkNum":11,
+        "Network":"Network 11 Office",
+        "Address":"4655 S. Dearborn, Chicago, IL, 60609"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates":  [ -87.652702,41.765232 ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NetworkNum":12,
+        "Network":"Network 12 Office",
+        "Address":"4655 S. Dearborn, Chicago, IL, 60609"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates":  [ -87.576985,41.750499 ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NetworkNum":13,
+        "Network":"Network 13 Office",
+        "Address":"11424 S. Western, Chicago, IL, 60643"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates":  [ -87.579955,41.681253 ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NetworkNum":14,
+        "Network":"Network 14 Office",
+        "Address":"110 N. Paulina St, Chicago, IL 60612"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates":  [ -87.729203,41.964286 ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NetworkNum":15,
+        "Network":"Network 15 Office",
+        "Address":"110 N. Paulina St, Chicago, IL 60612"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates":  [ -87.708805,41.87821 ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NetworkNum":16,
+        "Network":"Network 16 Office",
+        "Address":"110 N. Paulina St, Chicago, IL 60612"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates":  [ -87.686669,41.77288 ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NetworkNum":17,
+        "Network":"Network 17 Office",
+        "Address":"110 N. Paulina St, Chicago, IL 60612"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates":  [ -87.58937,41.723143 ]
+      }
+    }
+  ]
+}

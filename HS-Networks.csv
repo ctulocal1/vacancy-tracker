@@ -1,0 +1,5 @@
+NetworkNum,Network,Admin,Phone,Address,Lat,Long_,MarkerName,Shape_STAr,Shape_STLe
+17,Network 17,Myron Hester,(773) 535-8520,"110 N. Paulina St, Chicago, IL 60612",41.723143,-87.58937,17_circle_red.png,1689616397.97,259467.782891
+16,Network 16,Devon LaRosa,(773) 535-8240,"110 N. Paulina St, Chicago, IL 60612",41.77288,-87.686669,16_circle_red.png,1582853365.84,313662.202255
+15,Network 15,Michael Boraz,(773) 535-8193,"110 N. Paulina St, Chicago, IL 60612",41.87821,-87.708805,15_circle_red.png,1317821770.55,323524.004263
+14,Network 14,Laura Lemone,(773) 535-8193,"110 N. Paulina St, Chicago, IL 60612",41.964286,-87.729203,14_circle_red.png,1570193238.06,365045.941924
