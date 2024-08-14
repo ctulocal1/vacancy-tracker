@@ -50,7 +50,7 @@
     </style>
     <script>
     async function getData() {
-      const url = "./schools-repped.json";
+      const url = "./schools.json";
       try {
         const response = await fetch(url);
         if (!response.ok) {
@@ -70,6 +70,7 @@
           throw new Error(`Response status: ${response.status}`);
         }
         const data = await response.json();
+        console.log(data);
         return data;
       } catch (error) {
         console.error(error.message);
@@ -107,13 +108,17 @@
               } else {
                 const schoolData = schoolMatch[0];
                 const schoolVacancyData = vacanciesData.find(school => school.school_id === schoolData.school_id);
-                const schoolMembers = parseInt( schoolVacancyData.ActiveMemb );
-                const schoolVacancies = parseInt( schoolVacancyData.TotVacancy ); 
-                const schoolVacancyPercent = Math.round(schoolVacancies*1000/schoolMembers) / 10.0;
-                let dataTable = `
+                if (!schoolVacancyData) {
+                  group.style.display = "none";
+                  console.error("Vacancy Data Not Found for",schoolData.name_short)
+                } else {
+                  const schoolMembers = parseInt( schoolVacancyData.ActiveMemb );
+                  const schoolVacancies = parseInt( schoolVacancyData.TotVacancy ); 
+                  const schoolVacancyPercent = Math.round(schoolVacancies*1000/schoolMembers) / 10.0;
+                  let dataTable = `
 <table id="${schoolData.school_id}">
 <thead>
-<caption>${schoolData.short_name}</caption>
+<caption>${schoolData.name_short}</caption>
 </thead>
 <tbody>
 <tr><td colspan="2">Address: ${schoolData.address}</td></tr>
@@ -123,20 +128,21 @@
 </tbody>
 </table>
 `;
-                group.addEventListener("click", (e) => {
-                  let dataOutput = document.querySelector("#dataOutput");
-                  dataOutput.innerHTML = dataTable;
-                });
-                let circle = group.querySelector("circle");
-                circle.setAttributeNS(null,"r",Math.sqrt(schoolMembers/5));
-                if (schoolVacancies < 1) { 
-                  circle.style.fill = "#009966";
-                } else if (schoolVacancyPercent < 5) {
-                  circle.style.fill="#99ccaa";
-                } else if (schoolVacancyPercent < 10) {
-                  circle.style.fill="#ffffaa";
-                } else if (schoolVacancyPercent < 20) {
-                  circle.style.fill="#ffaaaa";
+                  group.addEventListener("click", (e) => {
+                    let dataOutput = document.querySelector("#dataOutput");
+                    dataOutput.innerHTML = dataTable;
+                  });
+                  let circle = group.querySelector("circle");
+                  circle.setAttributeNS(null,"r",Math.sqrt(schoolMembers/5));
+                  if (schoolVacancies < 1) { 
+                    circle.style.fill = "#009966";
+                  } else if (schoolVacancyPercent < 5) {
+                    circle.style.fill="#99ccaa";
+                  } else if (schoolVacancyPercent < 10) {
+                    circle.style.fill="#ffffaa";
+                  } else if (schoolVacancyPercent < 20) {
+                    circle.style.fill="#ffaaaa";
+                  }
                 }
               }
             });
@@ -156,6 +162,41 @@
 </table>
 `;
             dataOutput.innerHTML = dataTable;
+            let nets = document.querySelectorAll(#cpsmap #networks path);
+            nets.forEach( (net) => {
+              const intRegex = /0-9\+/g;
+              const netNumber = parseInt( net.id.match(intRegex) );
+              const schoolMatches = schoolsData.filter((school) => school.network_es === netNumber);
+              if (schoolMatch.length < 1) {
+                net.style.display = "none";
+              } else {
+                const networkData = schoolMatches.reduce( (netData,schoolData) => {
+                  const schoolVacancyData = vacanciesData.find(school => school.school_id === schoolData.school_id);
+                  netData.members += parseInt( schoolVacancyData.ActiveMemb );
+                  netData.vacancies += parseInt( schoolVacancyData.TotVacancy );
+                })
+                if (!schoolVacancyData) {
+                  net.style.display = "none";
+                  console.error("Vacancy Data Not Found for",schoolData.name_short)
+                } else {
+                  const schoolMembers = parseInt( schoolVacancyData.ActiveMemb );
+                  const schoolVacancies = parseInt( schoolVacancyData.TotVacancy ); 
+                  const schoolVacancyPercent = Math.round(schoolVacancies*1000/schoolMembers) / 10.0;
+                  let dataTable = `
+<table id="${schoolData.school_id}">
+<thead>
+<caption>${schoolData.name_short}</caption>
+</thead>
+<tbody>
+<tr><td colspan="2">Address: ${schoolData.address}</td></tr>
+<tr><td>Members Positions at School:</td><td>${schoolMembers}&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td>Vacancies at School</td><td>${schoolVacancies}&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td>Percentage Vacant:</td><td>${schoolVacancyPercent}%</td></tr>
+</tbody>
+</table>
+`;
+            })
+
           });
       });
     });
