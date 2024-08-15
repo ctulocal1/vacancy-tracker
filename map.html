@@ -1,29 +1,29 @@
 <!DOCTYPE HTML>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Map Experiment</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8">
+    <title>Map Experiment</title>
+  </head>
+  <body>
     <div id="dataOutput">
-<table id="0">
-<thead>
-<caption>Chicago Citywide Data</caption>
-</thead>
-<tbody>
-</tbody>
-</table>
+      <table id="0">
+        <thead>
+          <caption>Chicago Citywide Data</caption>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
     </div>
     <figure id="cpsmap"></figure>
     <style>
     #cpsmap {
       height: 96vh;
     }
-    #cpsmap #networks path:hover {
-      fill: red;
-    }
     #cpsmap #offices g {
       display: none;
+    }
+    #cpsmap #networks path {
+      fill-opacity: 0.09;
     }
     #dataOutput {
       width: 100vw;
@@ -50,7 +50,7 @@
     </style>
     <script>
     async function getData() {
-      const url = "./schools.json";
+    const url = "./schools.json";
       try {
         const response = await fetch(url);
         if (!response.ok) {
@@ -99,6 +99,22 @@
             cpsmap.innerHTML=svg;
           })
           .then(() => {
+            const cityMembers = vacanciesData.reduce( (a,c) => a + parseInt( c.ActiveMemb ),0);
+            const cityVacancies = vacanciesData.reduce ( (a,c) => a + parseFloat( c.TotVacancy ),0.0);
+            const cityVacancyPercent = Math.round( cityVacancies * 1000 / cityMembers ) / 10;
+            let dataTable = `
+<table id="citywide">
+<thead>
+<caption>Citywide Vacancy Data</caption>
+</thead>
+<tbody>
+<tr><td>Member Positions Citywide:</td><td>${cityMembers.toLocaleString()}&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td>Vacancies Citywide:</td><td>${cityVacancies.toLocaleString()}&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td>Percent Vacant:</td><td>${cityVacancyPercent}%</td></tr>
+</tbody>
+</table>
+`;
+            dataOutput.innerHTML = dataTable;
             let schoolGroups = document.querySelectorAll("#cpsmap #schools g");
             schoolGroups.forEach((group) => {
               const schoolNumber = parseInt( group.id );
@@ -146,60 +162,68 @@
                 }
               }
             });
-            const cityMembers = vacanciesData.reduce( (a,c) => a + parseInt( c.ActiveMemb ),0);
-            const cityVacancies = vacanciesData.reduce ( (a,c) => a + parseFloat( c.TotVacancy ),0.0);
-            const cityVacancyPercent = Math.round( cityVacancies * 1000 / cityMembers ) / 10;
-            let dataTable = `
-<table id="citywide">
-<thead>
-<caption>Citywide Vacancy Data</caption>
-</thead>
-<tbody>
-<tr><td>Member Positions Citywide:</td><td>${cityMembers.toLocaleString()}&nbsp;&nbsp;&nbsp;</td></tr>
-<tr><td>Vacancies Citywide:</td><td>${cityVacancies.toLocaleString()}&nbsp;&nbsp;&nbsp;</td></tr>
-<tr><td>Percent Vacant:</td><td>${cityVacancyPercent}%</td></tr>
-</tbody>
-</table>
-`;
-            dataOutput.innerHTML = dataTable;
-            let nets = document.querySelectorAll(#cpsmap #networks path);
+            let nets = document.querySelectorAll("#cpsmap #networks path");
             nets.forEach( (net) => {
-              const intRegex = /0-9\+/g;
+              const intRegex = /[0-9]+/g;
               const netNumber = parseInt( net.id.match(intRegex) );
-              const schoolMatches = schoolsData.filter((school) => school.network_es === netNumber);
-              if (schoolMatch.length < 1) {
-                net.style.display = "none";
+              const schoolMatches = schoolsData.filter((school) => parseInt( school.network_es ) === netNumber);
+              console.log("Network:",netNumber,"Schools:",schoolMatches);
+              let netData = {members:0,vacancies:0};
+              if (schoolMatches.length < 1) {
+                net.style.fill="#bbaaff";
+                console.error("No schools found in Network",netNumber);
               } else {
-                const networkData = schoolMatches.reduce( (netData,schoolData) => {
-                  const schoolVacancyData = vacanciesData.find(school => school.school_id === schoolData.school_id);
-                  netData.members += parseInt( schoolVacancyData.ActiveMemb );
-                  netData.vacancies += parseInt( schoolVacancyData.TotVacancy );
-                })
-                if (!schoolVacancyData) {
-                  net.style.display = "none";
-                  console.error("Vacancy Data Not Found for",schoolData.name_short)
-                } else {
-                  const schoolMembers = parseInt( schoolVacancyData.ActiveMemb );
-                  const schoolVacancies = parseInt( schoolVacancyData.TotVacancy ); 
-                  const schoolVacancyPercent = Math.round(schoolVacancies*1000/schoolMembers) / 10.0;
-                  let dataTable = `
-<table id="${schoolData.school_id}">
+                netData.members = schoolMatches.reduce( (members,schoolData) => {
+                    let schoolVacancyDatum = vacanciesData.find(school => {
+                    return parseInt( school.school_id ) === parseInt( schoolData.school_id ) });
+                  let activeMembers = 0;
+                  if (schoolVacancyDatum) {
+                    activeMembers = parseInt( schoolVacancyDatum.ActiveMemb);
+                  }
+                    return members + activeMembers;
+                }, 0);
+                console.log("Network",netNumber,"Member Total:",netData.members);
+                netData.vacancies = schoolMatches.reduce( (vacancies,schoolData) => {
+                    const schoolVacancyDatum = vacanciesData.find(school => parseInt( school.school_id ) === parseInt( schoolData.school_id ));
+                  let schoolVacancies = 0;
+                  if (schoolVacancyDatum) {
+                    schoolVacancies = parseInt( schoolVacancyDatum.TotVacancy);
+                  }
+                    return vacancies + schoolVacancies;
+                }, 0);
+                console.log(netData);
+                const netVacancyPercent = Math.round(netData.vacancies * 1000 / netData.members) / 10.0;
+                let dataTable = `
+<table id="network${netNumber}">
 <thead>
-<caption>${schoolData.name_short}</caption>
+<caption>Network ${netNumber}</caption>
 </thead>
 <tbody>
-<tr><td colspan="2">Address: ${schoolData.address}</td></tr>
-<tr><td>Members Positions at School:</td><td>${schoolMembers}&nbsp;&nbsp;&nbsp;</td></tr>
-<tr><td>Vacancies at School</td><td>${schoolVacancies}&nbsp;&nbsp;&nbsp;</td></tr>
-<tr><td>Percentage Vacant:</td><td>${schoolVacancyPercent}%</td></tr>
+<tr><td>Members Positions in Network:</td><td>${netData.members}&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td>Vacancies in Network</td><td>${netData.vacancies}&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td>Percent Vacant:</td><td>${netVacancyPercent}%</td></tr>
 </tbody>
 </table>
 `;
-            })
-
+                  net.addEventListener("click", (e) => {
+                    let dataOutput = document.querySelector("#dataOutput");
+                    dataOutput.innerHTML = dataTable;
+                  });
+                console.log(netVacancyPercent);
+                  if (netVacancyPercent === 0) { 
+                    net.style.fill = "#009966";
+                  } else if (netVacancyPercent < 5) {
+                    net.style.fill="#99ccaa";
+                  } else if (netVacancyPercent < 10) {
+                    net.style.fill="#ffffaa";
+                  } else if (netVacancyPercent < 20) {
+                    net.style.fill="#ffaaaa";
+                  } else net.style.fill = "dd6666";
+              }
+            });
           });
       });
     });
     </script>
-</body>
+  </body>
 </html>
