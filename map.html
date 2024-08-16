@@ -5,78 +5,227 @@
     <title>Map Experiment</title>
   </head>
   <body>
-      <fieldset id="searchType">
-          <legend>What do you want to learn about?</legend>
+    <div class="grid-container">
+    <header>
+      <h1>CPS Vacancy Tracker</h1>
+      <p><strong>Chicago Public Schools staffing isn&rsquo;t what it&rsquo;s cracked up to be.</strong> See the difference between the staffing CPS <em>says</em> it is providing and the number of clinicians, teachers, teacher assistants and all school staff <em>actually working</em> at any given school, network office, citywide job category or throughout an elementary network region. This data was provided by CPS itself, so if you know whether the information provided is correct or incorrect, please confirm or correct it with the form provided.</p>
+    </header>
+      <div id="text" class="text">
+        <fieldset id="searchType" class="searchType">
+          <legend>Choose your data by category:</legend>
           <div><input type="radio" name="searchtype" id="schoolSearch" value="school"><label for="schoolSearch">School</label></div>
           <div><input type="radio" name="searchtype" id="officeSearch" value="office"><label for="officeSearch">Network Office</label></div>
-          <div><input type="radio" name="searchtype" id="cwSearch" value="citywide"><label for="cwSearch">Citywide Job Group</label></div>
-          <div><input type="radio" name="searchtype" id="netSearch" value="network"><label for="netSearch">Aggregate Network Data</label></div>
-      </fieldset>
-      <input list="choiceList" id="deptChoice" name="deptChoice">
-      <datalist id="choiceList"><option value="only" id="only">Only option</option></datalist>
-    <div id="dataOutput">
-      <table id="0">
-        <thead>
-          <caption>Chicago Citywide Data</caption>
-        </thead>
-        <tbody>
-        </tbody>
-      </table>
+          <div><input type="radio" name="searchtype" id="cwSearch" value="citywide"><label for="cwSearch">Citywide Position</label></div>
+          <div><input type="radio" name="searchtype" id="netSearch" value="network"><label for="netSearch">Entire Network</label></div>
+        </fieldset>
+        <input list="choiceList" id="deptChoice" class="deptChoice" name="deptChoice">
+        <datalist id="choiceList" class="choiceList"><option id="only">Only option<data>312</data></option></datalist>
+        <output id="dataOutput" class="dataOutput">
+          <table id="0">
+            <thead>
+              <caption>Chicago Citywide Data</caption>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </output>
+      </div>
+      <figure id="cpsmap" class="cpsmap"></figure>
     </div>
-    <figure id="cpsmap"></figure>
     <style>
     body {
-        font-family: sans-serif;
+      font-family: sans-serif;
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
     }
-    #searchType {
-        border: none;
-        outline: none;
+    body * {
+      box-sizing: border-box;
     }
-    #searchType div {
-        display: inline;
+    h1 {
+      margin-top: 0;
+      padding-top: 0;
+      line-height: 1.3;
     }
-    #searchType input {
-        transform: translateX(-1000px);
+    .cpsmap {
+      width: 100%;
+      margin:0;
+      padding:0;
+      position: relative;
     }
-    #searchType label {
-        border: 1px solid #888888;
-        border-radius: 6px;
-        padding: 4px 8px;
+    .cpsmap svg {
+      margin: 0;
+      height: auto;
+      max-height: 100%;
+      max-width: 100%;
+      position: absolute;
     }
-    #cpsmap {
-      height: 96vh;
+    .searchType {
+      border: none;
+      outline: none;
+      display: flex;
     }
-    #cpsmap #offices g {
+    .searchType div {
+      padding: 0;
+      margin: 0;
+    }
+    .searchType input {
+      position: absolute;
+      transform: translateX(-10000px);
+    }
+    .searchType label {
+      display: inline-block;
+      padding: 4px 8px;
+      border: 1px solid #888888;
+      border-radius: 6px;
+      margin: 5px;
+    }
+    .searchType input:checked+label {
+      background: #cccccc;
+    }
+    input.deptChoice {
+      width: 100%;
+      height: 10vw;
+      font-size: 8vw;
+      line-height: 1.0;
+    }
+    .deptChoice data,
+    .choiceList data {
+      visibility: hidden;
+      opacity: 0.01;
+    }
+    .cpsmap #offices g {
       display: none;
     }
-    #cpsmap #networks path {
+    .cpsmap #networks path {
       fill-opacity: 0.09;
     }
-    #dataOutput {
-      width: 100vw;
-      min-width: 600px;
+    .searchType legend {
+      padding: 0;
+      margin: 6px 0;
+      font-weight: bold;
     }
-    #dataOutput table {
-      min-width: 300px;
+    .dataOutput {
+      width: 100%;
+      max-width: 460px;
+      margin: 20px 0;
+    }
+    .dataOutput table {
+      width: 100%;
+      max-width: 460px;
       font-size: 18px;
+      border-collapse: collapse;
     }
-    #dataOutput table tr {
+    .dataOutput table tr.remove {
       border-bottom: 1px solid #dddddd;
     }
-    #dataOutput table caption {
+    .dataOutput table caption {
       text-align: left;
+      text-wrap-mode: wrap;
+      text-wrap-style: pretty;
       font-size: 32px;
       border-bottom: 3px solid #333333;
-      white-space: nowrap;
     }
-    #dataOutput table td:nth-child(2) {
-      padding-left: 10px;
+    .dataOutput table th,
+    .dataOutput table td {
+      margin:0;
+      padding-right: 10px;
       text-align: right;
+      border: none;
+    }
+    .dataOutput table th[scope="col"] {
+      border-bottom: 1px solid #333333;
+    }
+    .dataOutput table th[scope="row"] {
+      text-align: left;
+    }
+    .grid-container {
+      width: 100vw;
+      padding: 0 20px;
+      border: none;
+      margin: 0;
+      display: grid;
+      grid-template-areas: 
+        "header"
+        "legend"
+        "map";
+        grid-template-columns: 1;
+      gap: 20px;
+      background: white;
+    }
+    .grid-container header {
+      padding: 0;
+      grid-area: "header";
+      grid-column: 1;
+      grid-row: 1;
+    }
+    .grid-container .text {
+      grid-area: "legend";
+      grid-column: 1;
+      grid-row: 2;
+    }
+    .grid-container .cpsmap {
+      grid-area: "map";
+      grid-column: 1;
+      grid-row: 3;
+      width: 100vw;
+      height: fit-content;
+    }
+    @media screen and (min-width : 580px) {
+      .grid-container {
+        max-width: 1080px;
+        margin: 40px auto 0 auto;
+        grid-template-columns: 3fr 1fr;
+        grid-template-areas:
+          "header header"
+          "map legend";
+        background: #ffdddd;
+        }
+    .grid-container header {
+      grid-column: 1/3;
+      grid-row: 1;
+    }
+      .grid-container .text {
+        grid-column: 2;
+        grid-row: 2;
+      }
+      .grid-container .cpsmap {
+        margin:0;
+        padding:0;
+        width: 100%;
+        min-height: 600px;
+        position: relative;
+          grid-column: 1;
+          grid-row:2;
+      }
+      .cpsmap svg {
+        margin: 0;
+        max-height: 100%;
+        max-width: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        min-height: 600px;
+        height: auto;
+      }
+      .dataOutput {
+        display: block;
+      }
+      input.deptChoice {
+        width: 100%;
+        height: auto;
+        font-size: 18px;
+        line-height: 1.0;
+      }
+      .choiceList,
+      .choiceList option {
+        font-size: 6vw;
+      }
     }
     </style>
     <script>
     async function getData() {
-    const url = "./schools.json";
+      const url = "./schools.json";
       try {
         const response = await fetch(url);
         if (!response.ok) {
@@ -161,12 +310,19 @@
 <table id="${schoolData.school_id}">
 <thead>
 <caption>${schoolData.name_short}</caption>
+<tr>
+<th></th>
+<th scope="col">Pos.</th>
+<th scope="col">Vac.</th>
+<th scope="col">Rate</th></tr>
 </thead>
 <tbody>
-<tr><td colspan="2">Address: ${schoolData.address}</td></tr>
-<tr><td>Members Positions at School:</td><td>${schoolMembers}&nbsp;&nbsp;&nbsp;</td></tr>
-<tr><td>Vacancies at School</td><td>${schoolVacancies}&nbsp;&nbsp;&nbsp;</td></tr>
-<tr><td>Percentage Vacant:</td><td>${schoolVacancyPercent}%</td></tr>
+<tr>
+  <th scope="row">All Positions:</th>
+  <td>${schoolMembers}</td>
+  <td>${schoolVacancies}</td>
+  <td>${schoolVacancyPercent}%</td>
+</tr>
 </tbody>
 </table>
 `;
@@ -200,22 +356,22 @@
                 console.error("No schools found in Network",netNumber);
               } else {
                 netData.members = schoolMatches.reduce( (members,schoolData) => {
-                    let schoolVacancyDatum = vacanciesData.find(school => {
+                  let schoolVacancyDatum = vacanciesData.find(school => {
                     return parseInt( school.school_id ) === parseInt( schoolData.school_id ) });
                   let activeMembers = 0;
                   if (schoolVacancyDatum) {
                     activeMembers = parseInt( schoolVacancyDatum.ActiveMemb);
                   }
-                    return members + activeMembers;
+                  return members + activeMembers;
                 }, 0);
                 console.log("Network",netNumber,"Member Total:",netData.members);
                 netData.vacancies = schoolMatches.reduce( (vacancies,schoolData) => {
-                    const schoolVacancyDatum = vacanciesData.find(school => parseInt( school.school_id ) === parseInt( schoolData.school_id ));
+                  const schoolVacancyDatum = vacanciesData.find(school => parseInt( school.school_id ) === parseInt( schoolData.school_id ));
                   let schoolVacancies = 0;
                   if (schoolVacancyDatum) {
                     schoolVacancies = parseInt( schoolVacancyDatum.TotVacancy);
                   }
-                    return vacancies + schoolVacancies;
+                  return vacancies + schoolVacancies;
                 }, 0);
                 console.log(netData);
                 const netVacancyPercent = Math.round(netData.vacancies * 1000 / netData.members) / 10.0;
@@ -223,30 +379,34 @@
 <table id="network${netNumber}">
 <thead>
 <caption>Network ${netNumber}</caption>
+<tr><th></th><th scope="col">Pos.</th><th scope="col">Vac.</th><th scope="col">Rate</th></tr>
 </thead>
 <tbody>
-<tr><td>Members Positions in Network:</td><td>${netData.members}&nbsp;&nbsp;&nbsp;</td></tr>
-<tr><td>Vacancies in Network</td><td>${netData.vacancies}&nbsp;&nbsp;&nbsp;</td></tr>
-<tr><td>Percent Vacant:</td><td>${netVacancyPercent}%</td></tr>
+<tr>
+  <th scope="row">All Positions:</th>
+  <td>${netData.members.toLocaleString()}</td>
+  <td>${netData.vacancies.toLocaleString()}</td>
+  <td>${netVacancyPercent}%</td>
+</tr>
 </tbody>
 </table>
 `;
-                  net.addEventListener("click", (e) => {
-                    let dataOutput = document.querySelector("#dataOutput");
-                    dataOutput.innerHTML = dataTable;
-                  });
+                net.addEventListener("click", (e) => {
+                  let dataOutput = document.querySelector("#dataOutput");
+                  dataOutput.innerHTML = dataTable;
+                });
                 console.log(netVacancyPercent);
-                  if (netVacancyPercent === 0) { 
-                    net.style.fill = "#009966";
-                  } else if (netVacancyPercent < 10) {
-                    net.style.fill="#009966";
-                  } else if (netVacancyPercent < 12) {
-                    net.style.fill="#99ffaa";
-                  } else if (netVacancyPercent < 15) {
-                    net.style.fill="gold";
-                  } else if (netVacancyPercent < 20) {
-                    net.style.fill="#ffaaaa";
-                  } else net.style.fill = "dd6666";
+                if (netVacancyPercent === 0) { 
+                  net.style.fill = "#009966";
+                } else if (netVacancyPercent < 10) {
+                  net.style.fill="#009966";
+                } else if (netVacancyPercent < 12) {
+                  net.style.fill="#99ffaa";
+                } else if (netVacancyPercent < 15) {
+                  net.style.fill="gold";
+                } else if (netVacancyPercent < 20) {
+                  net.style.fill="#ffaaaa";
+                } else net.style.fill = "dd6666";
               }
             });
           });
