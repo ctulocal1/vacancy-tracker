@@ -22,7 +22,7 @@
                 </fieldset>
                 <input list="choiceList" id="deptChoice" class="deptChoice" name="deptChoice">
                 <div id="choiceList" class="choiceList"></div>
-                <div id="dataOutput">
+                <div id="dataOutput" class="dataOutput">
                     <table id="0">
                         <thead>
                             <caption>Chicago Citywide Data</caption>
@@ -283,7 +283,7 @@ body {
                                 })
                                 .then(() => {
                                     let schoolsVacancies = joinVacancies(schoolsData,vacanciesData);
-                                    console.log(schoolsVacancies);
+                                    console.log("schoolsVacancies:",schoolsVacancies);
                                     initCombobox (schoolsVacancies);
                                     const cityMembers = vacanciesData.reduce( (a,c) => a + parseInt( c.ActiveMemb ),0);
                                     const cityVacancies = vacanciesData.reduce ( (a,c) => a + parseFloat( c.TotVacancy ),0.0);
@@ -436,16 +436,16 @@ body {
             }
 
             function outputSchoolData (event) {
+                console.log("Event:",event,"Event Target:",event.target);
                 const school_id = event.target.id;
                 console.log(school_id);
-                const schoolVacancyData = schoolsVacancies(school_id);
-                const schoolMembers = parseInt( schoolVacancyData.ActiveMemb );
-                const schoolVacancies = parseInt( schoolVacancyData.TotVacancy ); 
+                const schoolMembers = event.target.dataset.vacancy;
+                const schoolVacancies =  event.target.dataset.members;
                 const schoolVacancyPercent = Math.round(schoolVacancies*1000/schoolMembers) / 10.0;
                 let dataTable = `
-                    <table id="${schoolData.school_id}">
+                    <table id="${school_id}">
                     <thead>
-                    <caption><span>${schoolData.name_short}</span></caption>
+                    <caption><span>${event.target.innerText}</span></caption>
                     <tr>
                     <th></th>
                     <th scope="col">Pos.</th>
@@ -463,6 +463,7 @@ body {
                     </tbody>
                     </table>
                 `;
+                dataOutput.innerHTML = dataTable;
             }
 
             function stringPropertySort(a,b,property) {
@@ -488,7 +489,7 @@ body {
                 // console.log("nameSortedVacancies:",nameSortedVacancies);
                 nameSortedVacancies.forEach(school => {
                     const option = document.createElement("li");
-                    option.value = `${school.school_id}`;
+                    option.id = `${school.school_id}`;
                     option.innerText = school.name_short;
                     option.dataset.members = `${school.ActiveMemb}`;
                     option.dataset.vacancy = `${school.TotVacancy}`;
