@@ -5,15 +5,6 @@
     <title>Map Experiment</title>
   </head>
   <body>
-      <fieldset id="searchType">
-          <legend>What do you want to learn about?</legend>
-          <div><input type="radio" name="searchtype" id="schoolSearch" value="school"><label for="schoolSearch">School</label></div>
-          <div><input type="radio" name="searchtype" id="officeSearch" value="office"><label for="officeSearch">Network Office</label></div>
-          <div><input type="radio" name="searchtype" id="cwSearch" value="citywide"><label for="cwSearch">Citywide Job Group</label></div>
-          <div><input type="radio" name="searchtype" id="netSearch" value="network"><label for="netSearch">Aggregate Network Data</label></div>
-      </fieldset>
-      <input list="choiceList" id="deptChoice" name="deptChoice">
-      <datalist id="choiceList"><option value="only" id="only">Only option</option></datalist>
     <div id="dataOutput">
       <table id="0">
         <thead>
@@ -25,24 +16,6 @@
     </div>
     <figure id="cpsmap"></figure>
     <style>
-    body {
-        font-family: sans-serif;
-    }
-    #searchType {
-        border: none;
-        outline: none;
-    }
-    #searchType div {
-        display: inline;
-    }
-    #searchType input {
-        transform: translateX(-1000px);
-    }
-    #searchType label {
-        border: 1px solid #888888;
-        border-radius: 6px;
-        padding: 4px 8px;
-    }
     #cpsmap {
       height: 96vh;
     }
@@ -55,6 +28,7 @@
     #dataOutput {
       width: 100vw;
       min-width: 600px;
+      font-family: sans-serif;
     }
     #dataOutput table {
       min-width: 300px;
@@ -238,12 +212,10 @@
                 console.log(netVacancyPercent);
                   if (netVacancyPercent === 0) { 
                     net.style.fill = "#009966";
+                  } else if (netVacancyPercent < 5) {
+                    net.style.fill="#99ccaa";
                   } else if (netVacancyPercent < 10) {
-                    net.style.fill="#009966";
-                  } else if (netVacancyPercent < 12) {
-                    net.style.fill="#99ffaa";
-                  } else if (netVacancyPercent < 15) {
-                    net.style.fill="gold";
+                    net.style.fill="#ffffaa";
                   } else if (netVacancyPercent < 20) {
                     net.style.fill="#ffaaaa";
                   } else net.style.fill = "dd6666";
