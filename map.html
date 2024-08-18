@@ -1,512 +1,1241 @@
 <!DOCTYPE HTML>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Map Experiment</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    </head>
-    <body>
-        <div class="grid-container">
-            <header>
-                <h1>CPS Vacancy Tracker</h1>
-                <p><strong>Chicago Public Schools staffing isn&rsquo;t what it&rsquo;s cracked up to be.</strong> See the difference between the staffing CPS <em>says</em> it is providing and the number of clinicians, teachers, teacher assistants and all school staff <em>actually working</em> at any given school, network office, citywide job category or throughout an elementary network region. This data was provided by CPS itself, so if you know whether the information provided is correct or incorrect, please confirm or correct it by clicking the button below the data table.</p>
-            </header>
-            <div id="text" class="text">
-                <fieldset id="searchType" class="searchType">
-                    <legend>Choose your data category:</legend>
-                    <input type="radio" name="searchtype" id="schoolSearch" value="school"><label for="schoolSearch"><span>School</span></label>
-                    <input type="radio" name="searchtype" id="officeSearch" value="office"><label for="officeSearch"><span>Network Office</span></label>
-                    <input type="radio" name="searchtype" id="cwSearch" value="citywide"><label for="cwSearch"><span>Citywide Position</span></label>
-                    <input type="radio" name="searchtype" id="netSearch" value="network"><label for="netSearch"><span>Entire Network</span></label>
-                </fieldset>
-                <input list="choiceList" id="deptChoice" class="deptChoice" name="deptChoice">
-                <div id="choiceList" class="choiceList"></div>
-                <div id="dataOutput" class="dataOutput">
-                    <table id="0">
-                        <thead>
-                            <caption>Chicago Citywide Data</caption>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <figure id="cpsmap" class="cpsmap"></figure>
+  <head>
+    <meta charset="UTF-8">
+    <title>Map Experiment</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  </head>
+  <body>
+    <div class="grid-container">
+      <header>
+        <h1>CPS Vacancy Tracker</h1>
+        <p><strong>Chicago Public Schools staffing isn&rsquo;t what it&rsquo;s cracked up to be.</strong> See the difference between the staffing CPS <em>says</em> it is providing and the number of clinicians, teachers, teacher assistants and all school staff <em>actually working</em> at any given school, network office, citywide job category or throughout an elementary network region. This data was provided by CPS itself, so if you know whether the information provided is correct or incorrect, please confirm or correct it by clicking the button below the data table.</p>
+      </header>
+      <div id="text" class="text">
+        <fieldset id="searchType" class="searchType" style="display: none;">
+          <legend>Choose your data category:</legend>
+          <input type="radio" name="searchtype" id="schoolSearch" value="school"><label for="schoolSearch"><span>School</span></label>
+          <input type="radio" name="searchtype" id="officeSearch" value="office"><label for="officeSearch"><span>Network Office</span></label>
+          <input type="radio" name="searchtype" id="cwSearch" value="citywide"><label for="cwSearch"><span>Citywide Position</span></label>
+          <input type="radio" name="searchtype" id="netSearch" value="network"><label for="netSearch"><span>Entire Network</span></label>
+        </fieldset>
+        <label for="cb1-input">Display data for:</label>
+        <div class="combobox combobox-list">
+          <div class="group">
+            <input id="cb1-input" class="cb_edit" type="text" role="combobox" aria-autocomplete="both" aria-expanded="false" aria-controls="cb1-listbox">
+            <button type="button" id="cb1-button" aria-label="Schools" aria-expanded="false" aria-controls="cb1-listbox" tabindex="-1">
+              <svg width="18" height="16" aria-hidden="true" focusable="false" style="forced-color-adjust: auto">
+                <polygon class="arrow" stroke-width="0" fill-opacity="0.75" fill="currentcolor" points="3,6 15,6 9,14"></polygon>
+              </svg>
+            </button>
+          </div>
+          <ul id="choiceList" role="listbox" aria-label="Schools">
+          </ul>
         </div>
-        <style>
+        <div id="dataOutput" class="dataOutput">
+          <table id="0">
+            <thead>
+              <caption><div>Chicago Citywide Data</div></caption>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <figure id="cpsmap" class="cpsmap"></figure>
+    </div>
+    <style>
 body {
-    font-family: sans-serif;
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-    body * {
-        box-sizing: border-box;
-    }
-    h1 {
-        margin-top: 0;
-        padding-top: 0;
-        line-height: 1.3;
-    }
-    .cpsmap {
-        width: 100%;
-        margin:0;
-        padding:0;
-        position: relative;
-    }
-    .cpsmap svg {
-        margin: 0;
-        height: auto;
-        max-height: 100%;
-        max-width: 100%;
-        position: absolute;
-    }
-    .searchType {
-        border: none;
-        outline: none;
-        display: flex;
-        align-items: stretch;
-        align-content: stretch;
-        justify-content: space-between;
-        gap: 5px;
-        padding: 5px 0;
-    }
-    .searchType legend {
-        padding: 0;
-        margin: 3px 0;
-        font-weight: bold;
-    }
-    .searchType input {
-        position: absolute;
-        transform: translateX(-10000px);
-    }
-    .searchType label {
-        display: flex;
-        padding: 4px 8px;
-        border: 1px solid #888888;
-        border-radius: 6px;
-        align-items: center;
-        text-align: center;
-    }
-    .searchType label span {
+body * {
+  box-sizing: border-box;
+}
+h1 {
+  margin-top: 0;
+  padding-top: 0;
+  line-height: 1.3;
+}
+.cpsmap {
+  width: 100%;
+  margin:0;
+  padding:0;
+  position: relative;
+}
+.cpsmap svg {
+  margin: 0;
+  height: auto;
+  max-height: 100%;
+  max-width: 100%;
+  position: absolute;
+}
+.searchType {
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: stretch;
+  align-content: stretch;
+  justify-content: space-between;
+  gap: 5px;
+  padding: 5px 0;
+}
+.searchType legend {
+  padding: 0;
+  margin: 3px 0;
+  font-weight: bold;
+}
+.searchType input {
+  position: absolute;
+  transform: translateX(-10000px);
+}
+.searchType label {
+  display: flex;
+  padding: 4px 8px;
+  border: 1px solid #888888;
+  border-radius: 6px;
+  align-items: center;
+  text-align: center;
+}
+.searchType label span {
 
-    }
-    .searchType input:checked+label {
-        background: #cccccc;
-    }
-    input.deptChoice {
-        width: 100%;
-        height: 10vw;
-        font-size: 8vw;
-        line-height: 1.0;
-        margin: 10px 0;
-    }
-    .cpsmap #offices g {
-        display: none;
-    }
-    .cpsmap #networks path {
-        fill-opacity: 0.09;
-    }
-    .dataOutput {
-        width: 100%;
-        max-width: 460px;
-        margin: 20px 0;
-    }
-    .dataOutput table {
-        width: 100%;
-        max-width: 460px;
-        font-size: 18px;
-        border-collapse: collapse;
-    }
-    .dataOutput table tr.remove {
-        border-bottom: 1px solid #dddddd;
-    }
-    .dataOutput table caption {
-        display: flex;
-        align-items: flex-end;
-        width: 100%;
-        text-align: left;
-        text-wrap: balance;
-        font-size: 32px;
-        height: 2.6em;
-        line-height: 1.3;
-        border-bottom: 3px solid #333333;
-    }
-    .dataOutput table caption span {
-        width: 100%;
-    }
-    .dataOutput table th,
-    .dataOutput table td {
-        margin:0;
-        padding-right: 10px;
-        text-align: right;
-        border: none;
-    }
-    .dataOutput table th[scope="col"] {
-        border-bottom: 1px solid #333333;
-    }
-    .dataOutput table th[scope="row"] {
-        text-align: left;
-    }
-    .grid-container {
-        width: 100vw;
-        padding: 0 20px;
-        border: none;
-        margin: 0;
-        display: grid;
-        grid-template-areas: "header" "legend" "map";
-        grid-template-columns: 1;
-        gap: 20px;
-        background: white;
-    }
-    .grid-container header {
-        padding: 0;
-        grid-area: "header";
-        grid-column: 1;
-        grid-row: 1;
-    }
-    .grid-container .text {
-        grid-area: "legend";
-        grid-column: 1;
-        grid-row: 2;
-    }
-    .grid-container .cpsmap {
-        grid-area: "map";
-        grid-column: 1;
-        grid-row: 3;
-        width: calc(100vw - 20px);
-        height: fit-content;
-        min-height: 110vw;
-    }
-    @media screen and (min-width : 580px) {
-        .grid-container {
-            max-width: 1080px;
-            margin: 40px auto 0 auto;
-            grid-template-columns: 3fr 1fr;
-            grid-template-areas:
-                "header header"
-            "map legend";
+}
+.searchType input:checked+label {
+  background: #cccccc;
+}
+input.deptChoice {
+  width: 100%;
+  height: 10vw;
+  font-size: 8vw;
+  line-height: 1.0;
+  margin: 10px 0;
+}
+.cpsmap #offices g {
+  display: none;
+}
+.cpsmap #networks path {
+  fill-opacity: 0.09;
+}
+.dataOutput {
+  width: 100%;
+  max-width: 460px;
+  margin: 20px 0;
+}
+.dataOutput table {
+  width: 100%;
+  max-width: 460px;
+  font-size: 18px;
+  border-collapse: collapse;
+}
+.dataOutput table tr.remove {
+  border-bottom: 1px solid #dddddd;
+}
+.dataOutput table caption {
+  width: 100%;
+  height: 2.6em;
+  border-bottom: 3px solid #333333;
+  position: relative;
+}
+.dataOutput table caption div {
+  width: 100%;
+  text-align: left;
+  text-wrap: balance;
+  font-size: 24px;
+  line-height: 1.3;
+  position: absolute;
+  bottom: 0;
+}
+.dataOutput table th,
+.dataOutput table td {
+  margin:0;
+  padding-right: 10px;
+  text-align: right;
+  border: none;
+}
+.dataOutput table th {
+  font-weight: 700;
+}
+.dataOutput table th[scope="col"] {
+  border-bottom: 1px solid #333333;
+}
+.dataOutput table th[scope="row"] {
+  text-align: left;
+}
+.grid-container {
+  width: 100vw;
+  padding: 0 20px;
+  border: none;
+  margin: 0;
+  display: grid;
+  grid-template-areas: "header" "legend" "map";
+  grid-template-columns: 1fr;
+  gap: 20px;
+  background: white;
+}
+.grid-container header {
+  padding: 0;
+  grid-area: header;
+}
+.grid-container .text {
+  grid-area: legend;
+}
+.grid-container .cpsmap {
+  grid-area: map;
+  width: calc(100vw - 40px);
+  height: fit-content;
+  min-height: 110vw;
+}
+
+.combobox-list {
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.combobox .group {
+  display: inline-flex;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.combobox input,
+.combobox button {
+  background-color: white;
+  color: black;
+  box-sizing: border-box;
+  height: 30px;
+  padding: 0;
+  margin: 0;
+  vertical-align: bottom;
+  border: 1px solid gray;
+  position: relative;
+  cursor: pointer;
+}
+
+.combobox input {
+  width: 150px;
+  border-right: none;
+  outline: none;
+  font-size: 87.5%;
+  padding: 1px 3px;
+}
+
+.combobox button {
+  width: 19px;
+  border-left: none;
+  outline: none;
+  color: rgb(0 90 156);
+}
+
+.combobox button[aria-expanded="true"] svg {
+  transform: rotate(180deg) translate(0, -3px);
+}
+
+ul[role="listbox"] {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 4px;
+  top: 34px;
+  list-style: none;
+  background-color: white;
+  display: none;
+  box-sizing: border-box;
+  border: 2px currentcolor solid;
+  max-height: 250px;
+  width: 168px;
+  overflow: scroll;
+  overflow-x: hidden;
+  font-size: 87.5%;
+  cursor: pointer;
+}
+
+ul[role="listbox"] li[role="option"] {
+  margin: 0;
+  display: block;
+  padding-left: 3px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+/* focus and hover styling */
+
+.combobox .group.focus,
+.combobox .group:hover {
+  padding: 2px;
+  border: 2px solid currentcolor;
+  border-radius: 4px;
+}
+
+.combobox .group.focus polygon,
+.combobox .group:hover polygon {
+  fill-opacity: 1;
+}
+
+.combobox .group.focus input,
+.combobox .group.focus button,
+.combobox .group input:hover,
+.combobox .group button:hover {
+  background-color: #def;
+}
+
+[role="listbox"].focus [role="option"][aria-selected="true"],
+[role="listbox"] [role="option"]:hover {
+  background-color: #def;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-top: 2px solid currentcolor;
+  border-bottom: 2px solid currentcolor;
+}
+@media screen and (min-width : 480px) {
+  .grid-container {
+    max-width: 1080px;
+    margin: 40px auto 0 auto;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas:
+      "header header"
+      "map legend";
+  }
+  .grid-container header {
+    // grid-column: 1/3;
+    // grid-row: 1;
+  }
+  .grid-container .text {
+    // grid-column: 2;
+    // grid-row: 2;
+  }
+  .grid-container .cpsmap {
+    margin:0;
+    padding:0;
+    width: 100%;
+    max-height: 700px;
+    position: relative;
+    // grid-column: 1;
+    // grid-row:2;
+  }
+  .cpsmap svg {
+    margin: 0;
+    max-height: 100%;
+    max-width: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    max-height: 700px;
+    height: auto;
+  }
+  .dataOutput {
+    display: block;
+  }
+  input.deptChoice {
+    width: 100%;
+    height: auto;
+    font-size: 18px;
+    line-height: 1.0;
+  }
+  .choiceList,
+  .choiceList li[role="option"] {
+    font-size: 14px;
+    height: 20px;
+  }
+}
+</style>
+    <script>
+main ();
+    async function getData() {
+      const url = "./schools.json";
+      try {
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error(`Response status: ${response.status}`);
         }
-        .grid-container header {
-            grid-column: 1/3;
-            grid-row: 1;
-        }
-        .grid-container .text {
-            grid-column: 2;
-            grid-row: 2;
-        }
-        .grid-container .cpsmap {
-            margin:0;
-            padding:0;
-            width: 100%;
-            max-height: 700px;
-            position: relative;
-            grid-column: 1;
-            grid-row:2;
-        }
-        .cpsmap svg {
-            margin: 0;
-            max-height: 100%;
-            max-width: 100%;
-            position: absolute;
-            right: 0;
-            top: 0;
-            max-height: 700px;
-            height: auto;
-        }
-        .dataOutput {
-            display: block;
-        }
-        input.deptChoice {
-            width: 100%;
-            height: auto;
-            font-size: 18px;
-            line-height: 1.0;
-        }
-        .choiceList,
-        .choiceList option {
-            font-size: 14px;
-        }
+        const data = await response.json();
+        return data;
+      } catch (error) {
+        console.error(error.message);
+      }
     }
-        </style>
-        <script>
-            async function getData() {
-                const url = "./schools.json";
-                try {
-                    const response = await fetch(url);
-                    if (!response.ok) {
-                        throw new Error(`Response status: ${response.status}`);
+    async function getVacancies() {
+      const url = "./schools-vacancies.json";
+      try {
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error(`Response status: ${response.status}`);
+        }
+        const data = await response.json();
+        console.log("Getting Vacancies:",data);
+        return data;
+      } catch (error) {
+        console.error(error.message);
+      }
+    }
+    async function getMap() {
+      const url = "./cps-map.svg";
+      try {
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error(`Response status: ${response.status}`);
+        }
+        const map = await response.text();
+        return map;
+      } catch (error) {
+        console.error(error.message);
+      }
+    }
+    async function main () {
+      let cpsmap = document.getElementById("cpsmap");
+      let dataOutput = document.querySelector("#dataOutput");
+      let schoolsData = getData()
+      .then(schoolsData => {
+        let vacanciesData = getVacancies()
+        .then ( vacanciesData => {
+          getMap()
+            .then(svg => {
+              cpsmap.innerHTML=svg;
+            })
+            .then(() => {
+              let schoolsVacancies = joinVacancies(schoolsData,vacanciesData);
+              console.log("schoolsVacancies:",schoolsVacancies);
+              initCombobox (schoolsVacancies);
+              const cityMembers = vacanciesData.reduce( (a,c) => a + parseInt( c.ActiveMemb ),0);
+              const cityVacancies = vacanciesData.reduce ( (a,c) => a + parseFloat( c.TotVacancy ),0.0);
+              const cityVacancyPercent = Math.round( cityVacancies * 1000 / cityMembers ) / 10;
+              let dataTable = `
+<table id="citywide">
+<thead>
+<caption><div>Citywide Vacancy Data</div></caption>
+</thead>
+<tbody>
+<tr><td>Member Positions Citywide:</td><td>${cityMembers.toLocaleString()}&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td>Vacancies Citywide:</td><td>${cityVacancies.toLocaleString()}&nbsp;&nbsp;&nbsp;</td></tr>
+<tr><td>Percent Vacant:</td><td>${cityVacancyPercent}%</td></tr>
+</tbody>
+</table>
+`;
+              dataOutput.innerHTML = dataTable;
+              let schoolGroups = document.querySelectorAll("#cpsmap #schools g");
+              schoolGroups.forEach((group) => {
+                const schoolNumber = parseInt( group.id );
+                const schoolMatch = schoolsData.filter((school) => school.school_id === group.id);
+                if (schoolMatch.length < 1) {
+                  group.style.display = "none";
+                } else {
+                  const schoolData = schoolMatch[0];
+                  const schoolVacancyData = vacanciesData.find(school => school.school_id === schoolData.school_id);
+                  if (!schoolVacancyData) {
+                    group.style.display = "none";
+                    // console.log("Vacancy Data Not Found for",schoolData.name_short)
+                  } else {
+                    const schoolMembers = parseInt( schoolVacancyData.ActiveMemb );
+                    const schoolVacancies = parseInt( schoolVacancyData.TotVacancy ); 
+                    const schoolVacancyPercent = Math.round(schoolVacancies*1000/schoolMembers) / 10.0;
+                    let dataTable = `
+<table id="${schoolData.school_id}">
+<thead>
+<caption><div>${schoolData.name_short}</div></caption>
+<tr>
+<th></th>
+<th scope="col">Pos.</th>
+<th scope="col">Vac.</th>
+<th scope="col">Rate</th></tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">All Positions:</th>
+<td>${schoolMembers}</td>
+<td>${schoolVacancies}</td>
+<td>${schoolVacancyPercent}%</td>
+</tr>
+</tbody>
+</table>
+`;
+                    group.addEventListener("click", (e) => {
+                      let dataOutput = document.querySelector("#dataOutput");
+                      dataOutput.innerHTML = dataTable;
+                    });
+                    let circle = group.querySelector("circle");
+                    circle.setAttributeNS(null,"r",Math.sqrt(schoolMembers/5));
+                    if (schoolVacancies < 1) { 
+                      circle.style.fill = "#009966";
+                    } else if (schoolVacancyPercent < 5) {
+                      circle.style.fill="#99ccaa";
+                    } else if (schoolVacancyPercent < 10) {
+                      circle.style.fill="#ffffaa";
+                    } else if (schoolVacancyPercent < 20) {
+                      circle.style.fill="#ffaaaa";
                     }
-                    const data = await response.json();
-                    return data;
-                } catch (error) {
-                    console.error(error.message);
+                  }
                 }
-            }
-            async function getVacancies() {
-                const url = "./schools-vacancies.json";
-                try {
-                    const response = await fetch(url);
-                    if (!response.ok) {
-                        throw new Error(`Response status: ${response.status}`);
+              });
+              let nets = document.querySelectorAll("#cpsmap #networks path");
+              nets.forEach( (net) => {
+                const intRegex = /[0-9]+/g;
+                const netNumber = parseInt( net.id.match(intRegex) );
+                const schoolMatches = schoolsData.filter((school) => parseInt( school.network_es ) === netNumber);
+                // console.log("Network:",netNumber,"Schools:",schoolMatches);
+                let netData = {members:0,vacancies:0};
+                if (schoolMatches.length < 1) {
+                  net.style.fill="#bbaaff";
+                  // console.error("No schools found in Network",netNumber);
+                } else {
+                  netData.members = schoolMatches.reduce( (members,schoolData) => {
+                    let schoolVacancyDatum = vacanciesData.find(school => {
+                      return parseInt( school.school_id ) === parseInt( schoolData.school_id ) });
+                    let activeMembers = 0;
+                    if (schoolVacancyDatum) {
+                      activeMembers = parseInt( schoolVacancyDatum.ActiveMemb);
                     }
-                    const data = await response.json();
-                    console.log("Getting Vacancies:",data);
-                    return data;
-                } catch (error) {
-                    console.error(error.message);
-                }
-            }
-            async function getMap() {
-                const url = "./cps-map.svg";
-                try {
-                    const response = await fetch(url);
-                    if (!response.ok) {
-                        throw new Error(`Response status: ${response.status}`);
+                    return members + activeMembers;
+                  }, 0);
+                  // console.log("Network",netNumber,"Member Total:",netData.members);
+                  netData.vacancies = schoolMatches.reduce( (vacancies,schoolData) => {
+                    const schoolVacancyDatum = vacanciesData.find(school => parseInt( school.school_id ) === parseInt( schoolData.school_id ));
+                    let schoolVacancies = 0;
+                    if (schoolVacancyDatum) {
+                      schoolVacancies = parseInt( schoolVacancyDatum.TotVacancy);
                     }
-                    const map = await response.text();
-                    return map;
-                } catch (error) {
-                    console.error(error.message);
+                    return vacancies + schoolVacancies;
+                  }, 0);
+                  // console.log(netData);
+                  const netVacancyPercent = Math.round(netData.vacancies * 1000 / netData.members) / 10.0;
+                  let dataTable = `
+<table id="network${netNumber}">
+<thead>
+<caption><div>Network ${netNumber}</div></caption>
+<tr><th></th><th scope="col">Pos.</th><th scope="col">Vac.</th><th scope="col">Rate</th></tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">All Positions:</th>
+<td>${netData.members.toLocaleString()}</td>
+<td>${netData.vacancies.toLocaleString()}</td>
+<td>${netVacancyPercent}%</td>
+</tr>
+</tbody>
+</table>
+`;
+                  net.addEventListener("click", (e) => {
+                    let dataOutput = document.querySelector("#dataOutput");
+                    dataOutput.innerHTML = dataTable;
+                  });
+                  // console.log(netVacancyPercent);
+                  if (netVacancyPercent === 0) { 
+                    net.style.fill = "#009966";
+                  } else if (netVacancyPercent < 5) {
+                    net.style.fill="#009966";
+                  } else if (netVacancyPercent < 10) {
+                    net.style.fill="#99ffaa";
+                  } else if (netVacancyPercent < 15) {
+                    net.style.fill="gold";
+                  } else if (netVacancyPercent < 20) {
+                    net.style.fill="#ffaaaa";
+                  } else net.style.fill = "dd6666";
                 }
+              });
+              console.log("The work of main is finished.")
+          const data = new CustomEvent("data");
+              window.dispatchEvent(data);
+              return "Main finishes inside adding eventlisteners.";
+            });
+        });
+      });
+    }
+    function joinVacancies (schools,vacancies) {
+      console.log("joinVacancies | vacancies:",vacancies,"schools:",schools);
+      const vacancyJoin = vacancies.map(vacancy => {
+        // console.log(vacancy);
+        const vacant = vacancy;
+        const school = schools.find(school => parseInt(school.school_id) === parseInt(vacant.school_id));
+        return {...vacant,...school}
+      })
+      return vacancyJoin;
+    }
+
+    function outputSchoolData (event) {
+  let target;
+  if (event instanceof Event) {target = event.target} else {
+    console.log("From combobox:",event);
+    target = event.lastOption;
+  }
+      console.log("Event:",event,"Event Target:",target);
+      const school_id = target.id;
+      console.log(school_id,target.textContent);
+      const schoolMembers = target.dataset.members;
+      const schoolVacancies =  target.dataset.vacancy;
+      const schoolVacancyPercent = Math.round(schoolVacancies*1000/schoolMembers) / 10.0;
+      let dataTable = `
+<table id="${school_id}">
+<thead>
+<caption><div>${target.innerText}</div></caption>
+<tr>
+<th></th>
+<th scope="col">Pos.</th>
+<th scope="col">Vac.</th>
+<th scope="col">Rate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">All Positions:</th>
+<td>${schoolMembers}</td>
+<td>${schoolVacancies}</td>
+<td>${schoolVacancyPercent}%</td>
+</tr>
+</tbody>
+</table>
+`;
+      dataOutput.innerHTML = dataTable;
+    }
+
+    function stringPropertySort(a,b,property) {
+      // Use this function inside Array.sort() 
+      const nameA = a[property].toUpperCase(); // ignore upper and lowercase
+      const nameB = b[property].toUpperCase(); // ignore upper and lowercase
+      if (nameA < nameB) {
+        return -1;
+      }
+      if (nameA > nameB) {
+        return 1;
+      }
+
+      // names must be equal
+      return 0;
+    }
+
+    function initCombobox (schoolVacancies) {
+      const datalist = document.querySelector("#choiceList");
+      const vacancies = {};
+      vacancies.schools = schoolVacancies;
+      console.log("initCombobox schoolVacancies:",schoolVacancies);
+      const nameSortedVacancies = vacancies.schools.sort ( (a, b) => stringPropertySort(a,b,"name_short"))
+      // console.log("nameSortedVacancies:",nameSortedVacancies);
+      nameSortedVacancies.forEach(school => {
+        const option = document.createElement("li");
+        option.id = `${school.school_id}`;
+        option.innerText = school.name_short;
+        option.role = "option";
+        option.dataset.members = `${school.ActiveMemb}`;
+        option.dataset.vacancy = `${school.TotVacancy}`;
+        datalist.appendChild(option);
+        option.addEventListener("click", outputSchoolData);
+      })
+      console.log("First Kid:",datalist.children[0])
+
+
+
+    }
+
+
+/*
+ *   This content is licensed according to the W3C Software License at
+ *   https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
+ */
+
+class ComboboxAutocomplete {
+  constructor(comboboxNode, buttonNode, listboxNode) {
+    this.comboboxNode = comboboxNode;
+    this.buttonNode = buttonNode;
+    this.listboxNode = listboxNode;
+
+    this.comboboxHasVisualFocus = false;
+    this.listboxHasVisualFocus = false;
+
+    this.hasHover = false;
+
+    this.isNone = false;
+    this.isList = false;
+    this.isBoth = false;
+
+    this.allOptions = [];
+
+    this.option = null;
+    this.firstOption = null;
+    this.lastOption = null;
+
+    this.filteredOptions = [];
+    this.filter = '';
+
+    var autocomplete = this.comboboxNode.getAttribute('aria-autocomplete');
+
+    if (typeof autocomplete === 'string') {
+      autocomplete = autocomplete.toLowerCase();
+      this.isNone = autocomplete === 'none';
+      this.isList = autocomplete === 'list';
+      this.isBoth = autocomplete === 'both';
+    } else {
+      // default value of autocomplete
+      this.isNone = true;
+    }
+
+    this.comboboxNode.addEventListener(
+      'keydown',
+      this.onComboboxKeyDown.bind(this)
+    );
+    this.comboboxNode.addEventListener(
+      'keyup',
+      this.onComboboxKeyUp.bind(this)
+    );
+    this.comboboxNode.addEventListener(
+      'click',
+      this.onComboboxClick.bind(this)
+    );
+    this.comboboxNode.addEventListener(
+      'focus',
+      this.onComboboxFocus.bind(this)
+    );
+    this.comboboxNode.addEventListener('blur', this.onComboboxBlur.bind(this));
+
+    document.body.addEventListener(
+      'pointerup',
+      this.onBackgroundPointerUp.bind(this),
+      true
+    );
+
+    // initialize pop up menu
+
+    this.listboxNode.addEventListener(
+      'pointerover',
+      this.onListboxPointerover.bind(this)
+    );
+    this.listboxNode.addEventListener(
+      'pointerout',
+      this.onListboxPointerout.bind(this)
+    );
+
+    // Traverse the element children of domNode: configure each with
+    // option role behavior and store reference in.options array.
+    var nodes = this.listboxNode.getElementsByTagName('LI');
+
+    for (var i = 0; i < nodes.length; i++) {
+      var node = nodes[i];
+      this.allOptions.push(node);
+
+      node.addEventListener('click', this.onOptionClick.bind(this));
+      node.addEventListener('pointerover', this.onOptionPointerover.bind(this));
+      node.addEventListener('pointerout', this.onOptionPointerout.bind(this));
+    }
+        console.log("Combobox Code All Options:",this.allOptions);
+
+    this.filterOptions();
+
+    // Open Button
+
+    var button = this.comboboxNode.nextElementSibling;
+
+    if (button && button.tagName === 'BUTTON') {
+      button.addEventListener('click', this.onButtonClick.bind(this));
+    }
+  }
+
+  getLowercaseContent(node) {
+    return node.textContent.toLowerCase();
+  }
+
+  isOptionInView(option) {
+    var bounding = option.getBoundingClientRect();
+    return (
+      bounding.top >= 0 &&
+      bounding.left >= 0 &&
+      bounding.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
+      bounding.right <=
+        (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  setActiveDescendant(option) {
+    if (option && this.listboxHasVisualFocus) {
+      this.comboboxNode.setAttribute('aria-activedescendant', option.id);
+      if (!this.isOptionInView(option)) {
+        option.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    } else {
+      this.comboboxNode.setAttribute('aria-activedescendant', '');
+    }
+  }
+
+  setValue(value) {
+    this.filter = value.textContent;
+    this.dataset = value.dataset;
+    console.log(this.dataset);
+    this.comboboxNode.value = this.filter;
+    this.comboboxNode.setSelectionRange(this.filter.length, this.filter.length);
+    this.filterOptions();
+
+    console.log("setting value");
+        outputSchoolData(this);
+  }
+
+  setOption(option, flag) {
+    if (typeof flag !== 'boolean') {
+      flag = false;
+    }
+
+    if (option) {
+      this.option = option;
+      this.setCurrentOptionStyle(this.option);
+      this.setActiveDescendant(this.option);
+
+      if (this.isBoth) {
+        this.comboboxNode.value = this.option.textContent;
+        if (flag) {
+          this.comboboxNode.setSelectionRange(
+            this.option.textContent.length,
+            this.option.textContent.length
+          );
+        } else {
+          this.comboboxNode.setSelectionRange(
+            this.filter.length,
+            this.option.textContent.length
+          );
+        }
+      }
+    }
+  }
+
+  setVisualFocusCombobox() {
+    this.listboxNode.classList.remove('focus');
+    this.comboboxNode.parentNode.classList.add('focus'); // set the focus class to the parent for easier styling
+    this.comboboxHasVisualFocus = true;
+    this.listboxHasVisualFocus = false;
+    this.setActiveDescendant(false);
+  }
+
+  setVisualFocusListbox() {
+    this.comboboxNode.parentNode.classList.remove('focus');
+    this.comboboxHasVisualFocus = false;
+    this.listboxHasVisualFocus = true;
+    this.listboxNode.classList.add('focus');
+    this.setActiveDescendant(this.option);
+  }
+
+  removeVisualFocusAll() {
+    this.comboboxNode.parentNode.classList.remove('focus');
+    this.comboboxHasVisualFocus = false;
+    this.listboxHasVisualFocus = false;
+    this.listboxNode.classList.remove('focus');
+    this.option = null;
+    this.setActiveDescendant(false);
+  }
+
+  // ComboboxAutocomplete Events
+
+  filterOptions() {
+    // do not filter any options if autocomplete is none
+    if (this.isNone) {
+      this.filter = '';
+    }
+
+    var option = null;
+    var currentOption = this.option;
+    var filter = this.filter.toLowerCase();
+
+    this.filteredOptions = [];
+    this.listboxNode.innerHTML = '';
+
+    for (var i = 0; i < this.allOptions.length; i++) {
+      option = this.allOptions[i];
+      if (
+        filter.length === 0 ||
+        this.getLowercaseContent(option).indexOf(filter) === 0
+      ) {
+        this.filteredOptions.push(option);
+        this.listboxNode.appendChild(option);
+      }
+    }
+
+    // Use populated options array to initialize firstOption and lastOption.
+    var numItems = this.filteredOptions.length;
+    if (numItems > 0) {
+      this.firstOption = this.filteredOptions[0];
+      this.lastOption = this.filteredOptions[numItems - 1];
+
+      if (currentOption && this.filteredOptions.indexOf(currentOption) >= 0) {
+        option = currentOption;
+      } else {
+        option = this.firstOption;
+      }
+    } else {
+      this.firstOption = null;
+      option = null;
+      this.lastOption = null;
+    }
+
+    return option;
+  }
+
+  setCurrentOptionStyle(option) {
+    for (var i = 0; i < this.filteredOptions.length; i++) {
+      var opt = this.filteredOptions[i];
+      if (opt === option) {
+        opt.setAttribute('aria-selected', 'true');
+        if (
+          this.listboxNode.scrollTop + this.listboxNode.offsetHeight <
+          opt.offsetTop + opt.offsetHeight
+        ) {
+          this.listboxNode.scrollTop =
+            opt.offsetTop + opt.offsetHeight - this.listboxNode.offsetHeight;
+        } else if (this.listboxNode.scrollTop > opt.offsetTop + 2) {
+          this.listboxNode.scrollTop = opt.offsetTop;
+        }
+      } else {
+        opt.removeAttribute('aria-selected');
+      }
+    }
+  }
+
+  getPreviousOption(currentOption) {
+    if (currentOption !== this.firstOption) {
+      var index = this.filteredOptions.indexOf(currentOption);
+      return this.filteredOptions[index - 1];
+    }
+    return this.lastOption;
+  }
+
+  getNextOption(currentOption) {
+    if (currentOption !== this.lastOption) {
+      var index = this.filteredOptions.indexOf(currentOption);
+      return this.filteredOptions[index + 1];
+    }
+    return this.firstOption;
+  }
+
+  /* MENU DISPLAY METHODS */
+
+  doesOptionHaveFocus() {
+    return this.comboboxNode.getAttribute('aria-activedescendant') !== '';
+  }
+
+  isOpen() {
+    return this.listboxNode.style.display === 'block';
+  }
+
+  isClosed() {
+    return this.listboxNode.style.display !== 'block';
+  }
+
+  hasOptions() {
+    return this.filteredOptions.length;
+  }
+
+  open() {
+    this.listboxNode.style.display = 'block';
+    this.comboboxNode.setAttribute('aria-expanded', 'true');
+    this.buttonNode.setAttribute('aria-expanded', 'true');
+  }
+
+  close(force) {
+    if (typeof force !== 'boolean') {
+      force = false;
+    }
+
+    if (
+      force ||
+      (!this.comboboxHasVisualFocus &&
+        !this.listboxHasVisualFocus &&
+        !this.hasHover)
+    ) {
+      this.setCurrentOptionStyle(false);
+      this.listboxNode.style.display = 'none';
+      this.comboboxNode.setAttribute('aria-expanded', 'false');
+      this.buttonNode.setAttribute('aria-expanded', 'false');
+      this.setActiveDescendant(false);
+      this.comboboxNode.parentNode.classList.add('focus');
+    }
+  }
+
+  /* combobox Events */
+
+  onComboboxKeyDown(event) {
+    var flag = false,
+      altKey = event.altKey;
+
+    if (event.ctrlKey || event.shiftKey) {
+      return;
+    }
+
+    switch (event.key) {
+      case 'Enter':
+        if (this.listboxHasVisualFocus) {
+          this.setValue(this.option);
+        } else {
+          console.log("Entered on text",this);
+          outputSchoolData(this);
+        }
+        this.close(true);
+        this.setVisualFocusCombobox();
+        flag = true;
+        break;
+
+      case 'Down':
+      case 'ArrowDown':
+        if (this.filteredOptions.length > 0) {
+          if (altKey) {
+            this.open();
+          } else {
+            this.open();
+            if (
+              this.listboxHasVisualFocus ||
+              (this.isBoth && this.filteredOptions.length > 1)
+            ) {
+              this.setOption(this.getNextOption(this.option), true);
+              this.setVisualFocusListbox();
+            } else {
+              this.setOption(this.firstOption, true);
+              this.setVisualFocusListbox();
             }
-            let cpsmap = document.getElementById("cpsmap");
-            let dataOutput = document.querySelector("#dataOutput");
-            let schoolsData = getData()
-                .then(schoolsData => {
-                    let vacanciesData = getVacancies()
-                        .then ( vacanciesData => {
-                            getMap()
-                                .then(svg => {
-                                    cpsmap.innerHTML=svg;
-                                })
-                                .then(() => {
-                                    let schoolsVacancies = joinVacancies(schoolsData,vacanciesData);
-                                    console.log("schoolsVacancies:",schoolsVacancies);
-                                    initCombobox (schoolsVacancies);
-                                    const cityMembers = vacanciesData.reduce( (a,c) => a + parseInt( c.ActiveMemb ),0);
-                                    const cityVacancies = vacanciesData.reduce ( (a,c) => a + parseFloat( c.TotVacancy ),0.0);
-                                    const cityVacancyPercent = Math.round( cityVacancies * 1000 / cityMembers ) / 10;
-                                    let dataTable = `
-                                        <table id="citywide">
-                                        <thead>
-                                        <caption><span>Citywide Vacancy Data</span></caption>
-                                        </thead>
-                                        <tbody>
-                                        <tr><td>Member Positions Citywide:</td><td>${cityMembers.toLocaleString()}&nbsp;&nbsp;&nbsp;</td></tr>
-                                        <tr><td>Vacancies Citywide:</td><td>${cityVacancies.toLocaleString()}&nbsp;&nbsp;&nbsp;</td></tr>
-                                        <tr><td>Percent Vacant:</td><td>${cityVacancyPercent}%</td></tr>
-                                        </tbody>
-                                        </table>
-                                        `;
-                                    dataOutput.innerHTML = dataTable;
-                                    let schoolGroups = document.querySelectorAll("#cpsmap #schools g");
-                                    schoolGroups.forEach((group) => {
-                                        const schoolNumber = parseInt( group.id );
-                                        const schoolMatch = schoolsData.filter((school) => school.school_id === group.id);
-                                        if (schoolMatch.length < 1) {
-                                            group.style.display = "none";
-                                        } else {
-                                            const schoolData = schoolMatch[0];
-                                            const schoolVacancyData = vacanciesData.find(school => school.school_id === schoolData.school_id);
-                                            if (!schoolVacancyData) {
-                                                group.style.display = "none";
-                                                // console.log("Vacancy Data Not Found for",schoolData.name_short)
-                                            } else {
-                                                const schoolMembers = parseInt( schoolVacancyData.ActiveMemb );
-                                                const schoolVacancies = parseInt( schoolVacancyData.TotVacancy ); 
-                                                const schoolVacancyPercent = Math.round(schoolVacancies*1000/schoolMembers) / 10.0;
-                                                let dataTable = `
-                                                    <table id="${schoolData.school_id}">
-                                                    <thead>
-                                                    <caption><span>${schoolData.name_short}</span></caption>
-                                                    <tr>
-                                                    <th></th>
-                                                    <th scope="col">Pos.</th>
-                                                    <th scope="col">Vac.</th>
-                                                    <th scope="col">Rate</th></tr>
-                                                    </thead>
-                                                    <tbody>
-                                                    <tr>
-                                                    <th scope="row">All Positions:</th>
-                                                    <td>${schoolMembers}</td>
-                                                    <td>${schoolVacancies}</td>
-                                                    <td>${schoolVacancyPercent}%</td>
-                                                    </tr>
-                                                    </tbody>
-                                                    </table>
-                                                    `;
-                                                group.addEventListener("click", (e) => {
-                                                    let dataOutput = document.querySelector("#dataOutput");
-                                                    dataOutput.innerHTML = dataTable;
-                                                });
-                                                let circle = group.querySelector("circle");
-                                                circle.setAttributeNS(null,"r",Math.sqrt(schoolMembers/5));
-                                                if (schoolVacancies < 1) { 
-                                                    circle.style.fill = "#009966";
-                                                } else if (schoolVacancyPercent < 5) {
-                                                    circle.style.fill="#99ccaa";
-                                                } else if (schoolVacancyPercent < 10) {
-                                                    circle.style.fill="#ffffaa";
-                                                } else if (schoolVacancyPercent < 20) {
-                                                    circle.style.fill="#ffaaaa";
-                                                }
-                                            }
-                                        }
-                                    });
-                                    let nets = document.querySelectorAll("#cpsmap #networks path");
-                                    nets.forEach( (net) => {
-                                        const intRegex = /[0-9]+/g;
-                                        const netNumber = parseInt( net.id.match(intRegex) );
-                                        const schoolMatches = schoolsData.filter((school) => parseInt( school.network_es ) === netNumber);
-                                        // console.log("Network:",netNumber,"Schools:",schoolMatches);
-                                        let netData = {members:0,vacancies:0};
-                                        if (schoolMatches.length < 1) {
-                                            net.style.fill="#bbaaff";
-                                            // console.error("No schools found in Network",netNumber);
-                                        } else {
-                                            netData.members = schoolMatches.reduce( (members,schoolData) => {
-                                                let schoolVacancyDatum = vacanciesData.find(school => {
-                                                    return parseInt( school.school_id ) === parseInt( schoolData.school_id ) });
-                                                let activeMembers = 0;
-                                                if (schoolVacancyDatum) {
-                                                    activeMembers = parseInt( schoolVacancyDatum.ActiveMemb);
-                                                }
-                                                return members + activeMembers;
-                                            }, 0);
-                                            // console.log("Network",netNumber,"Member Total:",netData.members);
-                                            netData.vacancies = schoolMatches.reduce( (vacancies,schoolData) => {
-                                                const schoolVacancyDatum = vacanciesData.find(school => parseInt( school.school_id ) === parseInt( schoolData.school_id ));
-                                                let schoolVacancies = 0;
-                                                if (schoolVacancyDatum) {
-                                                    schoolVacancies = parseInt( schoolVacancyDatum.TotVacancy);
-                                                }
-                                                return vacancies + schoolVacancies;
-                                            }, 0);
-                                            // console.log(netData);
-                                            const netVacancyPercent = Math.round(netData.vacancies * 1000 / netData.members) / 10.0;
-                                            let dataTable = `
-                                                <table id="network${netNumber}">
-                                                <thead>
-                                                <caption><span>Network ${netNumber}</span></caption>
-                                                <tr><th></th><th scope="col">Pos.</th><th scope="col">Vac.</th><th scope="col">Rate</th></tr>
-                                                </thead>
-                                                <tbody>
-                                                <tr>
-                                                <th scope="row">All Positions:</th>
-                                                <td>${netData.members.toLocaleString()}</td>
-                                                <td>${netData.vacancies.toLocaleString()}</td>
-                                                <td>${netVacancyPercent}%</td>
-                                                </tr>
-                                                </tbody>
-                                                </table>
-                                                `;
-                                            net.addEventListener("click", (e) => {
-                                                let dataOutput = document.querySelector("#dataOutput");
-                                                dataOutput.innerHTML = dataTable;
-                                            });
-                                            // console.log(netVacancyPercent);
-                                            if (netVacancyPercent === 0) { 
-                                                net.style.fill = "#009966";
-                                            } else if (netVacancyPercent < 5) {
-                                                net.style.fill="#009966";
-                                            } else if (netVacancyPercent < 10) {
-                                                net.style.fill="#99ffaa";
-                                            } else if (netVacancyPercent < 15) {
-                                                net.style.fill="gold";
-                                            } else if (netVacancyPercent < 20) {
-                                                net.style.fill="#ffaaaa";
-                                            } else net.style.fill = "dd6666";
-                                        }
-                                    });
-                                });
-                        });
-                });
+          }
+        }
+        flag = true;
+        break;
 
-            function joinVacancies (schools,vacancies) {
-                                                    console.log("joinVacancies | vacancies:",vacancies,"schools:",schools);
-                const vacancyJoin = vacancies.map(vacancy => {
-                    // console.log(vacancy);
-                    const vacant = vacancy;
-                    const school = schools.find(school => parseInt(school.school_id) === parseInt(vacant.school_id));
-                    return {...vacant,...school}
-                })
-                return vacancyJoin;
+      case 'Up':
+      case 'ArrowUp':
+        if (this.hasOptions()) {
+          if (this.listboxHasVisualFocus) {
+            this.setOption(this.getPreviousOption(this.option), true);
+          } else {
+            this.open();
+            if (!altKey) {
+              this.setOption(this.lastOption, true);
+              this.setVisualFocusListbox();
             }
+          }
+        }
+        flag = true;
+        break;
 
-            function outputSchoolData (event) {
-                console.log("Event:",event,"Event Target:",event.target);
-                const school_id = event.target.id;
-                console.log(school_id);
-                const schoolMembers = event.target.dataset.vacancy;
-                const schoolVacancies =  event.target.dataset.members;
-                const schoolVacancyPercent = Math.round(schoolVacancies*1000/schoolMembers) / 10.0;
-                let dataTable = `
-                    <table id="${school_id}">
-                    <thead>
-                    <caption><span>${event.target.innerText}</span></caption>
-                    <tr>
-                    <th></th>
-                    <th scope="col">Pos.</th>
-                    <th scope="col">Vac.</th>
-                    <th scope="col">Rate</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                    <th scope="row">All Positions:</th>
-                    <td>${schoolMembers}</td>
-                    <td>${schoolVacancies}</td>
-                    <td>${schoolVacancyPercent}%</td>
-                    </tr>
-                    </tbody>
-                    </table>
-                `;
-                dataOutput.innerHTML = dataTable;
+      case 'Esc':
+      case 'Escape':
+        if (this.isOpen()) {
+          this.close(true);
+          this.filter = this.comboboxNode.value;
+          this.filterOptions();
+          this.setVisualFocusCombobox();
+        } else {
+          this.setValue('');
+          this.comboboxNode.value = '';
+        }
+        this.option = null;
+        flag = true;
+        break;
+
+      case 'Tab':
+        this.close(true);
+        if (this.listboxHasVisualFocus) {
+          if (this.option) {
+            this.setValue(this.option.textContent);
+          }
+        }
+        break;
+
+      case 'Home':
+        this.comboboxNode.setSelectionRange(0, 0);
+        flag = true;
+        break;
+
+      case 'End':
+        var length = this.comboboxNode.value.length;
+        this.comboboxNode.setSelectionRange(length, length);
+        flag = true;
+        break;
+
+      default:
+        break;
+    }
+
+    if (flag) {
+      event.stopPropagation();
+      event.preventDefault();
+    }
+  }
+
+  isPrintableCharacter(str) {
+    return str.length === 1 && str.match(/\S| /);
+  }
+
+  onComboboxKeyUp(event) {
+    var flag = false,
+      option = null,
+      char = event.key;
+
+    if (this.isPrintableCharacter(char)) {
+      this.filter += char;
+    }
+
+    // this is for the case when a selection in the textbox has been deleted
+    if (this.comboboxNode.value.length < this.filter.length) {
+      this.filter = this.comboboxNode.value;
+      this.option = null;
+      this.filterOptions();
+    }
+
+    if (event.key === 'Escape' || event.key === 'Esc') {
+      return;
+    }
+
+    switch (event.key) {
+      case 'Backspace':
+        this.setVisualFocusCombobox();
+        this.setCurrentOptionStyle(false);
+        this.filter = this.comboboxNode.value;
+        this.option = null;
+        this.filterOptions();
+        flag = true;
+        break;
+
+      case 'Left':
+      case 'ArrowLeft':
+      case 'Right':
+      case 'ArrowRight':
+      case 'Home':
+      case 'End':
+        if (this.isBoth) {
+          this.filter = this.comboboxNode.value;
+        } else {
+          this.option = null;
+          this.setCurrentOptionStyle(false);
+        }
+        this.setVisualFocusCombobox();
+        flag = true;
+        break;
+
+      default:
+        if (this.isPrintableCharacter(char)) {
+          this.setVisualFocusCombobox();
+          this.setCurrentOptionStyle(false);
+          flag = true;
+
+          if (this.isList || this.isBoth) {
+            option = this.filterOptions();
+            if (option) {
+              if (this.isClosed() && this.comboboxNode.value.length) {
+                this.open();
+              }
+
+              if (
+                this.getLowercaseContent(option).indexOf(
+                  this.comboboxNode.value.toLowerCase()
+                ) === 0
+              ) {
+                this.option = option;
+                if (this.isBoth || this.listboxHasVisualFocus) {
+                  this.setCurrentOptionStyle(option);
+                  if (this.isBoth) {
+                    this.setOption(option);
+                  }
+                }
+              } else {
+                this.option = null;
+                this.setCurrentOptionStyle(false);
+              }
+            } else {
+              this.close();
+              this.option = null;
+              this.setActiveDescendant(false);
             }
+          } else if (this.comboboxNode.value.length) {
+            this.open();
+          }
+        }
 
-            function stringPropertySort(a,b,property) {
-                // Use this function inside Array.sort() 
-                const nameA = a[property].toUpperCase(); // ignore upper and lowercase
-                const nameB = b[property].toUpperCase(); // ignore upper and lowercase
-                if (nameA < nameB) {
-                        return -1;
-                        }
-                        if (nameA > nameB) {
-                            return 1;
-                        }
+        break;
+    }
 
-                // names must be equal
-                return 0;
-            }
+    if (flag) {
+      event.stopPropagation();
+      event.preventDefault();
+    }
+  }
 
-            function initCombobox (schoolVacancies) {
-                const datalist = document.querySelector(".choiceList");
-                const vacancies = {};
-                vacancies.schools = schoolVacancies;
-                const nameSortedVacancies = vacancies.schools.sort ( (a, b) => stringPropertySort(a,b,"name_short"))
-                // console.log("nameSortedVacancies:",nameSortedVacancies);
-                nameSortedVacancies.forEach(school => {
-                    const option = document.createElement("li");
-                    option.id = `${school.school_id}`;
-                    option.innerText = school.name_short;
-                    option.dataset.members = `${school.ActiveMemb}`;
-                    option.dataset.vacancy = `${school.TotVacancy}`;
-                    // console.log(option);
-                    datalist.appendChild(option);
-                    datalist.style.height = "64px";
-                    datalist.style.overflowY = "scroll";
-                    option.addEventListener("click", outputSchoolData);
-                })
-                
+  onComboboxClick() {
+    if (this.isOpen()) {
+      this.close(true);
+    } else {
+      this.open();
+    }
+  }
 
-                
-            }
+  onComboboxFocus() {
+    this.filter = this.comboboxNode.value;
+    this.filterOptions();
+    this.setVisualFocusCombobox();
+    this.option = null;
+    this.setCurrentOptionStyle(null);
+  }
 
+  onComboboxBlur() {
+    this.removeVisualFocusAll();
+  }
 
+  onBackgroundPointerUp(event) {
+    if (
+      !this.comboboxNode.contains(event.target) &&
+      !this.listboxNode.contains(event.target) &&
+      !this.buttonNode.contains(event.target)
+    ) {
+      this.comboboxHasVisualFocus = false;
+      this.setCurrentOptionStyle(null);
+      this.removeVisualFocusAll();
+      setTimeout(this.close.bind(this, true), 300);
+    }
+  }
 
-        </script>
+  onButtonClick() {
+    if (this.isOpen()) {
+      this.close(true);
+    } else {
+      this.open();
+    }
+    this.comboboxNode.focus();
+    this.setVisualFocusCombobox();
+  }
 
-    </body>
+  /* Listbox Events */
+
+  onListboxPointerover() {
+    this.hasHover = true;
+  }
+
+  onListboxPointerout() {
+    this.hasHover = false;
+    setTimeout(this.close.bind(this, false), 300);
+  }
+
+  // Listbox Option Events
+
+  onOptionClick(event) {
+    this.comboboxNode.value = event.target.textContent;
+    this.close(true);
+  }
+
+  onOptionPointerover() {
+    this.hasHover = true;
+    this.open();
+  }
+
+  onOptionPointerout() {
+    this.hasHover = false;
+    setTimeout(this.close.bind(this, false), 300);
+  }
+}
+
+// Initialize comboboxes
+
+    window.addEventListener('data', function () {
+      var comboboxes = document.querySelectorAll('.combobox-list');
+        for (var i = 0; i < comboboxes.length; i++) {
+          var combobox = comboboxes[i];
+          var comboboxNode = combobox.querySelector('input');
+          var buttonNode = combobox.querySelector('button');
+          var listboxNode = combobox.querySelector('[role="listbox"]');
+          new ComboboxAutocomplete(comboboxNode, buttonNode, listboxNode);
+        }
+    });
+
+    </script>
+
+  </body>
 </html>
