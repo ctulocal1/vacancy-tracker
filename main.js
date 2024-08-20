@@ -1,4 +1,4 @@
-import {page,map,schools,vacancies} from "./map.mjs"
+import {page,map,schools,vacancies,dialog} from "./map.mjs"
 
 Deno.serve(async (req) => {
   console.log("Method:", req.method);
@@ -26,12 +26,7 @@ Deno.serve(async (req) => {
     let resp = vacancies();
     return resp;
   } else if (url.pathname === "/dialog.html") {
-    let fileContent = Deno.readTextFileSync(`./dialog.html`);
-    let resp = new Response (fileContent, {
-      status: 200,
-      headers: {
-        "content-type": "text/html; charset=utf-8",
-      })
+    let resp = dialog;
     return resp;
   }
   return new Response("Route not found", {
