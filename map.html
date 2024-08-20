@@ -614,7 +614,6 @@ main ();
     console.log("From combobox:",event);
     target = event.lastOption;
   }
-      console.log("Event:",event,"Event Target:",target,"Event Current Target",event.currentTarget);
       const school_id = target.id;
       console.log(school_id,target.textContent);
       const schoolName = target.textContent;
@@ -1335,7 +1334,6 @@ function reportMessage(e) {
 </p>
 <p><button type="submit">Confirm</button> <button type="submit">Cancel</button>
 </form>
-<div class="messageBox"></div>
 `
   contentBox.innerHTML = message;
   } else {
