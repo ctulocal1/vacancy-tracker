@@ -25,12 +25,20 @@ Deno.serve(async (req) => {
   } else if (url.pathname === "/schools-vacancies.json") {
     let resp = vacancies();
     return resp;
+  } else if (url.pathname === "/dialog.html") {
+    let fileContent = Deno.readTextFileSync(`./dialog.html`);
+    let resp = new Response (fileContent, {
+      status: 200,
+      headers: {
+        "content-type": "text/html; charset=utf-8",
+      })
+    return resp;
   }
-
-  return new Response("Hello, world", {
-    status: 200,
+  return new Response("Route not found", {
+    status: 404,
     headers: {
       "content-type": "text/plain; charset=utf-8",
     },
   });
+  */
 });
