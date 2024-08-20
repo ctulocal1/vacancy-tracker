@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   </head>
   <body>
-    <dialog id="dialog">
+    <dialog id="dialog" class="dialog">
       <form>
         <button type="button" aria-label="close" formmethod="dialog" class="dialog-close" formnovalidate>&times;</button>
         <div id="dialog-content">
@@ -20,13 +20,6 @@
         <p><strong>Chicago Public Schools staffing isn’t what it’s cracked up to be.</strong> See the difference between the staffing CPS <em>says</em> it is providing and the number of clinicians, teachers, teacher assistants and all school staff <em>actually working</em> at any given school, network office, citywide job category or throughout an elementary network region. These vacant position numbers were provided by CPS itself, so if you can either confirm or correct it, please click the appropriate button below the data table.</p>
       </header>
       <div id="text" class="text">
-        <fieldset id="searchType" class="searchType" style="display: none;">
-          <legend>Choose your data category:</legend>
-          <input type="radio" name="searchtype" id="schoolSearch" value="school"><label for="schoolSearch"><span>School</span></label>
-          <input type="radio" name="searchtype" id="officeSearch" value="office"><label for="officeSearch"><span>Network Office</span></label>
-          <input type="radio" name="searchtype" id="cwSearch" value="citywide"><label for="cwSearch"><span>Citywide Position</span></label>
-          <input type="radio" name="searchtype" id="netSearch" value="network"><label for="netSearch"><span>Entire Network</span></label>
-        </fieldset>
         <label for="cb1-input">Display data for:</label>
         <div class="combobox combobox-list">
           <div class="group">
