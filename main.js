@@ -35,5 +35,4 @@ Deno.serve(async (req) => {
       "content-type": "text/plain; charset=utf-8",
     },
   });
-  */
 });
