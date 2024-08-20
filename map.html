@@ -7,10 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   </head>
   <body>
+    <dialog id="dialog">
+      <form>
+        <button type="button" aria-label="close" formmethod="dialog" class="dialog-close" formnovalidate>&times;</button>
+        <div id="dialog-content">
+        </div>
+      </form>
+    </dialog>
     <div class="grid-container">
       <header>
         <h1>CPS Vacancy Tracker</h1>
-        <p><strong>Chicago Public Schools staffing isn&rsquo;t what it&rsquo;s cracked up to be.</strong> See the difference between the staffing CPS <em>says</em> it is providing and the number of clinicians, teachers, teacher assistants and all school staff <em>actually working</em> at any given school, network office, citywide job category or throughout an elementary network region. This data was provided by CPS itself, so if you know whether the information provided is correct or incorrect, please confirm or correct it by clicking the button below the data table.</p>
+        <p><strong>Chicago Public Schools staffing isn’t what it’s cracked up to be.</strong> See the difference between the staffing CPS <em>says</em> it is providing and the number of clinicians, teachers, teacher assistants and all school staff <em>actually working</em> at any given school, network office, citywide job category or throughout an elementary network region. These vacant position numbers were provided by CPS itself, so if you can either confirm or correct it, please click the appropriate button below the data table.</p>
       </header>
       <div id="text" class="text">
         <fieldset id="searchType" class="searchType" style="display: none;">
@@ -33,7 +40,7 @@
           <ul id="choiceList" role="listbox" aria-label="Schools">
           </ul>
         </div>
-        <div id="dataOutput" class="dataOutput">
+        <output for="cb1-input" id="dataOutput" class="dataOutput">
           <table id="0">
             <thead>
               <caption><div>Chicago Citywide Data</div></caption>
@@ -41,7 +48,7 @@
             <tbody>
             </tbody>
           </table>
-        </div>
+        </output>
       </div>
       <figure id="cpsmap" class="cpsmap"></figure>
     </div>
@@ -125,7 +132,7 @@ input.deptChoice {
   margin: 20px 0;
 }
 .dataOutput table {
-  width: 100%;
+  width: calc(100vw - 80px);
   max-width: 460px;
   font-size: 18px;
   border-collapse: collapse;
@@ -148,6 +155,9 @@ input.deptChoice {
   position: absolute;
   bottom: 0;
 }
+.dataOutput table tbody {
+  width: 100%;
+}
 .dataOutput table th,
 .dataOutput table td {
   margin:0;
@@ -156,7 +166,7 @@ input.deptChoice {
   border: none;
 }
 .dataOutput table th {
-  font-weight: 700;
+  font-weight: 500;
 }
 .dataOutput table th[scope="col"] {
   border-bottom: 1px solid #333333;
@@ -165,7 +175,7 @@ input.deptChoice {
   text-align: left;
 }
 .grid-container {
-  width: 100vw;
+  width: calc(100vw - 40px);
   padding: 0 20px;
   border: none;
   margin: 0;
@@ -176,11 +186,15 @@ input.deptChoice {
   background: white;
 }
 .grid-container header {
-  padding: 0;
+  padding: 0 10px 0 0;
   grid-area: header;
+}
+.grid-container header p {
+  line-height: 1.4;
 }
 .grid-container .text {
   grid-area: legend;
+  padding-top: 0;
 }
 .grid-container .cpsmap {
   grid-area: map;
@@ -216,7 +230,7 @@ input.deptChoice {
 }
 
 .combobox input {
-  width: 150px;
+  width: calc(100vw - 80px);
   border-right: none;
   outline: none;
   font-size: 87.5%;
@@ -251,6 +265,7 @@ ul[role="listbox"] {
   overflow-x: hidden;
   font-size: 87.5%;
   cursor: pointer;
+  width: calc(100% - 8px);
 }
 
 ul[role="listbox"] li[role="option"] {
@@ -290,22 +305,40 @@ ul[role="listbox"] li[role="option"] {
   border-top: 2px solid currentcolor;
   border-bottom: 2px solid currentcolor;
 }
-@media screen and (min-width : 480px) {
+dialog {
+  width: calc(100vw - 40px);
+  max-width: 500px;
+  position: relative;
+}
+dialog input[type="email"] {
+  width: 100%;
+}
+.dialog-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: 1px solid #777777;
+  border-radius: 50%;
+  line-height: 0.8;
+  font-size: 14px;
+  padding: 3px 4px;
+}
+@media screen and (min-width : 840px) {
   .grid-container {
-    max-width: 1080px;
+    max-width: 1100px;
+    gap: 40px;
     margin: 40px auto 0 auto;
     grid-template-columns: 3fr 1fr;
     grid-template-areas:
-      "header header"
+      "header legend"
       "map legend";
   }
   .grid-container header {
-    // grid-column: 1/3;
+    // grid-column: 1/2;
     // grid-row: 1;
   }
   .grid-container .text {
-    // grid-column: 2;
-    // grid-row: 2;
+    padding-top: 60px;
   }
   .grid-container .cpsmap {
     margin:0;
@@ -329,16 +362,24 @@ ul[role="listbox"] li[role="option"] {
   .dataOutput {
     display: block;
   }
+  .dataOutput table {
+    max-width: 300px;
+    font-variant-numeric: lining-nums tabular-nums;
+  }
   input.deptChoice {
-    width: 100%;
+    width: 300px;
     height: auto;
     font-size: 18px;
     line-height: 1.0;
+  }
+  .combobox input {
+    width: 300px;
   }
   .choiceList,
   .choiceList li[role="option"] {
     font-size: 14px;
     height: 20px;
+    width: 300px;
   }
 }
 </style>
@@ -396,6 +437,14 @@ main ();
               cpsmap.innerHTML=svg;
             })
             .then(() => {
+          let dialog = document.querySelector("dialog");
+          let dialogClosers = document.querySelectorAll(".dialog-close");
+          dialogClosers.forEach( (closeButton) => {
+            closeButton.addEventListener( "click", (e) => {
+              dialog.close();
+            })
+
+          })
               let schoolsVacancies = joinVacancies(schoolsData,vacanciesData);
               console.log("schoolsVacancies:",schoolsVacancies);
               initCombobox (schoolsVacancies);
@@ -437,9 +486,9 @@ main ();
 <caption><div>${schoolData.name_short}</div></caption>
 <tr>
 <th></th>
-<th scope="col">Pos.</th>
-<th scope="col">Vac.</th>
-<th scope="col">Rate</th></tr>
+<th scope="col" aria-label="Positions">Pos.</th>
+<th scope="col" aria-label="Vacancies">Vac.</th>
+<th scope="col" aria-label="Vacancy Rate">Rate</th></tr>
 </thead>
 <tbody>
 <tr>
@@ -450,11 +499,17 @@ main ();
 </tr>
 </tbody>
 </table>
+<form id="report" name="report">
+<p>Report Is:
+<button class="positive" type="button">&#9989;Accurate</button>
+<button class="negative" type="button">&#10060;Inaccurate</button>
+<button class="unsure" type="button">&#129335;&#10067;</button>
+</p>
+</form>
 `;
-                    group.addEventListener("click", (e) => {
-                      let dataOutput = document.querySelector("#dataOutput");
-                      dataOutput.innerHTML = dataTable;
-                    });
+                group.addEventListener("click", outputSchoolData, {capture: true});
+                    group.dataset.members = `${schoolMembers}`;
+                    group.dataset.vacancy = `${schoolVacancies}`;
                     let circle = group.querySelector("circle");
                     circle.setAttributeNS(null,"r",Math.sqrt(schoolMembers/5));
                     if (schoolVacancies < 1) { 
@@ -516,6 +571,7 @@ main ();
 </tbody>
 </table>
 `;
+      dataOutput.innerHTML = dataTable;
                   net.addEventListener("click", (e) => {
                     let dataOutput = document.querySelector("#dataOutput");
                     dataOutput.innerHTML = dataTable;
@@ -534,7 +590,6 @@ main ();
                   } else net.style.fill = "dd6666";
                 }
               });
-              console.log("The work of main is finished.")
           const data = new CustomEvent("data");
               window.dispatchEvent(data);
               return "Main finishes inside adding eventlisteners.";
@@ -555,20 +610,23 @@ main ();
 
     function outputSchoolData (event) {
   let target;
-  if (event instanceof Event) {target = event.target} else {
+  if (event instanceof Event) {target = event.currentTarget} else {
     console.log("From combobox:",event);
     target = event.lastOption;
   }
-      console.log("Event:",event,"Event Target:",target);
+      console.log("Event:",event,"Event Target:",target,"Event Current Target",event.currentTarget);
       const school_id = target.id;
       console.log(school_id,target.textContent);
+      const schoolName = target.textContent;
       const schoolMembers = target.dataset.members;
       const schoolVacancies =  target.dataset.vacancy;
       const schoolVacancyPercent = Math.round(schoolVacancies*1000/schoolMembers) / 10.0;
+  let combobox = document.getElementById("cb1-input");
+  combobox.value = "";
       let dataTable = `
 <table id="${school_id}">
 <thead>
-<caption><div>${target.innerText}</div></caption>
+<caption><div>${schoolName}</div></caption>
 <tr>
 <th></th>
 <th scope="col">Pos.</th>
@@ -585,8 +643,23 @@ main ();
 </tr>
 </tbody>
 </table>
+<form id="report" name="report">
+<p>Report is:
+<button class="positive" type="button">&#9989;Accurate</button>
+<button class="negative" type="button">&#10060;Inaccurate</button>
+<button class="unsure" type="button">&#129335;&#10067;</button>
+</p>
+</form>
 `;
       dataOutput.innerHTML = dataTable;
+  let reportButtons = document.querySelectorAll("#report button" )
+  reportButtons.forEach( (button) => {
+    button.dataset.schoolName = schoolName;
+    button.dataset.members = schoolMembers;
+    button.dataset.vacancies = schoolVacancies;
+    button.dataset.rate = schoolVacancyPercent;
+    button.addEventListener ("click", runReport);
+    })
     }
 
     function stringPropertySort(a,b,property) {
@@ -764,7 +837,6 @@ class ComboboxAutocomplete {
     this.comboboxNode.setSelectionRange(this.filter.length, this.filter.length);
     this.filterOptions();
 
-    console.log("setting value");
         outputSchoolData(this);
   }
 
@@ -1234,7 +1306,63 @@ class ComboboxAutocomplete {
           new ComboboxAutocomplete(comboboxNode, buttonNode, listboxNode);
         }
     });
+function runReport(e) {
+  const dialog=document.querySelector("dialog");
+  const message = reportMessage(e);
+  dialog.showModal();
+}
 
+function reportMessage(e) {
+  const contentBox = document.querySelector("#dialog-content");
+  const accurate = e.target.textContent.match("Acc");
+  let message = "";
+  const schoolName = e.target.dataset.schoolName;
+  const schoolMembers = e.target.dataset.members;
+  const schoolVacancies = e.target.dataset.vacancies;
+  if (accurate) {
+    message = `
+<h2>Confirm this Data</h2>
+<p>School: ${schoolName}
+<br>Members: ${schoolMembers}
+<br>Vacancies: ${schoolVacancies}
+</p>
+<p>It helps us to know that a CTU member can confirm this data. Please confirm that you are a member by entering below the email that the CTU keeps on record for you. This should be your personal email address, at which you receive our weekly bulletin and other email messages.
+</p>
+<form id="send-email" method="dialog">
+<p<label for="report-email">Your Personal Email</label>
+</p>
+<p><input type="email" class="email" id="report-email">
+</p>
+<p><button type="submit">Confirm</button> <button type="submit">Cancel</button>
+</form>
+<div class="messageBox"></div>
+`
+  contentBox.innerHTML = message;
+  } else {
+    const inaccurate = e.target.textContent.match("Inacc");
+    if (inaccurate) {
+      message = `
+<h2>Correct this Data</h2>
+<p>School: ${schoolName}
+<br>Members: ${schoolMembers}
+<br>Vacancies: ${schoolVacancies}
+</p>
+<p>CTU Members know when something doesn't look right. Send a correction with the form below.
+</p>
+<form id="send-email" method="dialog">
+<p<label for="report-email">Your Personal Email</label>
+</p>
+<p><input type="email" class="email" id="report-email">
+</p>
+<p><button type="submit">Confirm</button> <button type="submit">Cancel</button>
+</form>
+`
+  contentBox.innerHTML = message;
+    } else {
+      
+    }
+  }
+}
     </script>
 
   </body>
