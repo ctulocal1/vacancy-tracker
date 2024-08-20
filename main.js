@@ -26,7 +26,7 @@ Deno.serve(async (req) => {
     let resp = vacancies();
     return resp;
   } else if (url.pathname === "/dialog.html") {
-    let resp = dialog;
+    let resp = dialog();
     return resp;
   }
   return new Response("Route not found", {
