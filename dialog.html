@@ -11,34 +11,9 @@
     <button id="launch" type="button">Launch</button>
     <dialog id="modal" class="modal">
       <div class="modal-inner">
-        <form>
-          <button type="button" aria-label="close" formmethod="dialog" class="dialog-close" formnovalidate="">×</button>
-          <div id="dialog-content">
-            <div id="stepper"><span class="identify current">Identify</span><span></span><span class="verify">Verify</span><span></span><span class="elaborate">Elaborate</span><span></span><span class="done">Done!</span></div>
-            <p>CTU put this page together using data sent to us by CPS Central Office. But, no one knows each school like the educators that work there.</p>
-            <h3>Share your knowledge</h3>
-            <p>Do you know for a fact how many educators work in your school or department and how many positions aren’t filled?
-            </p>
-            <div class="knowledge">
-              <input type="radio" name="knowledge" value="yes" class="yes" id="knowledgeYes"></input><label for="knowledgeYes">Yes</label>
-              <input type="radio" name="knowledge" value="no" class="no" id="knowledgeNo"></input><label for="knowledgeNo">No</label>
-              <div class="if yes">
-                <p>Great! Please take a minute to either confirm or correct the CPS information for us.</p>
-                <p>We’ll only accept information from verified members of the CTU. Provide the email where you get CTU messages, like our weekly bulletin. We will check it against our encrypted roster of CTU member emails.</p>
-                <p style="margin: 24px 0 6px 0; padding: 0;"><label for="personalEmail" style="font-weight: bold; color: #444444;">Your personal email</label></p>
-                <p>
-                  <input type="email" id="personalEmail" style="width: calc(100% - 120px);">
-                  <button type="button" id="emailMatch" style="width: 100px;">Check Email</button>
-                </p>
-              </div>
-              <div class="if no">
-                <p>We can help you find out!</p>
-                <p>You’ll need a few things… {very cursory explanation}</p>
-                <p>Go to our <a href="https://example.com">vacancy investigation page</a> to learn more.</p>
-              </div>
-            </div>
-            <style>.if {display: none} .knowledge input.no:checked ~ .if.no {display: block;} .knowledge input.yes:checked ~ .if.yes {display: block;}</style>
-          </div>
+        <form id="modal-form">
+          <button type="button" aria-label="close" formmethod="dialog" class="modal-close" formnovalidate="">×</button>
+          <div id="modal-content"></div>
         </form>
       </div>
     </dialog>
@@ -63,7 +38,7 @@ main {
   position: relative;
   padding: 40px;
 }
-#modal .dialog-close {
+#modal .modal-close {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -121,10 +96,53 @@ function initModal () {
   modal.addEventListener("click", clickOutsideToClose);
   const modalLauncher = document.getElementById("launch");
   modalLauncher.addEventListener("click", openModal)
-  const modalCloser = document.querySelector(".dialog-close");
+  const modalCloser = document.querySelector(".modal-close");
   modalCloser.addEventListener("click", closeModal)
+  let modalContent = document.querySelector("#modal-content");
+  resetModalContent(modalContent);
   openModal();
 }
 initModal();
+function resetModalContent (modalContent) {
+let initModalHTML = `
+<div id="stepper"><span class="identify current">Identify</span><span></span><span class="verify">Verify</span><span></span><span class="elaborate">Elaborate</span><span></span><span class="done">Done!</span></div>
+<p>CTU put this page together using data sent to us by CPS Central Office. But, no one knows each school like the educators that work there.</p>
+<h3>Share your knowledge</h3>
+<p>Do you know for a fact how many educators work in your school or department and how many positions aren’t filled?
+</p>
+<div class="knowledge">
+<input type="radio" name="knowledge" value="yes" class="yes" id="knowledgeYes"></input><label for="knowledgeYes">Yes</label>
+<input type="radio" name="knowledge" value="no" class="no" id="knowledgeNo"></input><label for="knowledgeNo">No</label>
+<div class="if yes">
+<p>Great! Please take a minute to either confirm or correct the CPS information for us.</p>
+<p>We’ll only accept information from verified members of the CTU. Provide the email where you get CTU messages, like our weekly bulletin. We will check it against our encrypted roster of CTU member emails.</p>
+<p style="margin: 24px 0 6px 0; padding: 0;"><label for="personalEmail" style="font-weight: bold; color: #444444;">Your personal email</label></p>
+<p>
+<input type="email" name="personalEmail" id="personalEmail" style="width: calc(100% - 120px);">
+<button type="submit" id="emailMatch" style="width: 100px;">Check Email</button>
+</p>
+</div>
+<div class="if no">
+<p>We can help you find out!</p>
+<p>You’ll need a few things… {very cursory explanation}</p>
+<p>Go to our <a href="https://example.com">vacancy investigation page</a> to learn more.</p>
+</div>
+</div>
+<style>.knowledge {min-height: 280px} .if {display: none;} .knowledge input.no:checked ~ .if.no {display: block;} .knowledge input.yes:checked ~ .if.yes {display: block;}</style>
+
+`
+  modalContent.innerHTML = initModalHTML;
+  const modalForm = document.querySelector("#modal-form");
+  modalForm.addEventListener("submit", ajaxSubmit);
+}
+async function ajaxSubmit (e) {
+  e.preventDefault();
+  console.log("Form Submission",e);
+  const formData = new FormData(e.target);
+  const sentData = Object.fromEntries(formData);
+  console.log(sentData);
+  const email = sentData.getAll("personalEmail");
+  console.log("Personal Email?",personalEmail);
+}
   </script>
 </body></html>
