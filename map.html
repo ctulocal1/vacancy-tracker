@@ -1341,20 +1341,11 @@ function reportMessage(e) {
 <script>
 function completeModalContent (emailAddress,schoolData) {
   let modalContentHTML = `
-<div id="stepper"><span class="identify current">Identify</span><span></span><span class="testify">Testify</span><span></span><span class="verify">Verify</span><span></span><span class="review">Review</span><span></span><span class="done">Done!</span></div>
-<p>CTU put this page together using data sent to us by CPS Central Office. But, no one knows each school like the educators that work there.</p>
-<h3>Share your knowledge</h3>
-<p>Do you know for a fact how many educators work in ${schoolData.name} and how many positions aren’t filled?
+<div id="stepper"><span class="identify">Identify</span><span></span><span class="testify">Testify</span><span></span><span class="verify">Verify</span><span></span><span class="review">Review</span><span></span><span class="done" style="font-weight: bold;">Done!</span></div>
+<p>Thank you for contributing to our tracker</p>
+<h3>One more thing!</h3>
+<p>In order to ensure no one pretends to be you, we will send you a confirmation email with this information. In order for us to use the entry that you submitted, you <strong>must</strong> click the confirmation button in the email we&rsquo;ll send you. Keep an eye out in your inbox and spam folder, just in case.
 </p>
-<div class="knowledge">
-<input type="radio" name="knowledge" value="yes" class="yes" id="knowledgeYes"></input><label for="knowledgeYes">Yes</label>
-<input type="radio" name="knowledge" value="no" class="no" id="knowledgeNo"></input><label for="knowledgeNo">No</label>
-<div class="if yes">
-<p>Great! Please take a minute to either confirm or correct the CPS information for us.</p>
-<p>We’ll only accept information from verified members of the CTU. Provide the email where you get CTU messages, like our weekly bulletin. We will check it against our encrypted roster of CTU member emails.</p>
-<p style="margin: 24px 0 6px 0; padding: 0;"><label for="personalEmail" style="font-weight: bold; color: #444444;">Your personal email</label></p>
-<p>
-<input type="email" name="personalEmail" id="personalEmail" style="width: calc(100% - 120px);">
 <button type="submit" id="emailMatch" style="width: 100px;">Check Email</button>
 </p>
 </div>
@@ -1362,7 +1353,6 @@ function completeModalContent (emailAddress,schoolData) {
 <p>We can help you find out!</p>
 <p>You’ll need a few things… {very cursory explanation}</p>
 <p>Go to our <a href="https://example.com">vacancy investigation page</a> to learn more.</p>
-</div>
 </div>
 <style>.knowledge {min-height: 280px} .if {display: none;} .knowledge input.no:checked ~ .if.no {display: block;} .knowledge input.yes:checked ~ .if.yes {display: block;}</style>
 
@@ -1375,35 +1365,15 @@ function completeModalContent (emailAddress,schoolData) {
 function reviewModalContent (emailAddress,schoolData) {
   let modalContentHTML = `
 <div id="stepper"><span class="identify current">Identify</span><span></span><span class="testify">Testify</span><span></span><span class="verify">Verify</span><span></span><span class="review">Review</span><span></span><span class="done">Done!</span></div>
-<p>CTU put this page together using data sent to us by CPS Central Office. But, no one knows each school like the educators that work there.</p>
-<h3>Share your knowledge</h3>
-<p>Do you know for a fact how many educators work in ${schoolData.name} and how many positions aren’t filled?
-</p>
-<div class="knowledge">
-<input type="radio" name="knowledge" value="yes" class="yes" id="knowledgeYes"></input><label for="knowledgeYes">Yes</label>
-<input type="radio" name="knowledge" value="no" class="no" id="knowledgeNo"></input><label for="knowledgeNo">No</label>
-<div class="if yes">
-<p>Great! Please take a minute to either confirm or correct the CPS information for us.</p>
-<p>We’ll only accept information from verified members of the CTU. Provide the email where you get CTU messages, like our weekly bulletin. We will check it against our encrypted roster of CTU member emails.</p>
-<p style="margin: 24px 0 6px 0; padding: 0;"><label for="personalEmail" style="font-weight: bold; color: #444444;">Your personal email</label></p>
-<p>
-<input type="email" name="personalEmail" id="personalEmail" style="width: calc(100% - 120px);">
-<button type="submit" id="emailMatch" style="width: 100px;">Check Email</button>
-</p>
-</div>
-<div class="if no">
-<p>We can help you find out!</p>
-<p>You’ll need a few things… {very cursory explanation}</p>
-<p>Go to our <a href="https://example.com">vacancy investigation page</a> to learn more.</p>
-</div>
-</div>
+<p>Info will go here.</p>
+    <button type="submit" id="nextToDone" style="width: 100px;">Review Your Response</button>
 <style>.knowledge {min-height: 280px} .if {display: none;} .knowledge input.no:checked ~ .if.no {display: block;} .knowledge input.yes:checked ~ .if.yes {display: block;}</style>
 
 `
   modalContentBox.innerHTML = modalContentHTML;
   const modalForm = document.querySelector("#modal-form");
   modalForm.removeEventListener("submit", ajaxSubmitEmail);
-  modalForm.addEventListener("submit", ajaxSubmitEmail);
+  modalForm.addEventListener("submit", () => comleteModalContent(emailAddress,schoolData,userData));
 }
 function verifyModalContent (emailAddress,schoolData,userData) {
   let modalContentHTML = `
