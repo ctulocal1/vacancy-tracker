@@ -7,6 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   </head>
   <body>
+    <dialog id="modal" class="modal">
+      <div class="modal-inner">
+        <form id="modal-form">
+          <button type="button" aria-label="close" formmethod="dialog" class="modal-close" formnovalidate="">×</button>
+          <div id="modal-content"></div>
+        </form>
+      </div>
+    </dialog>
     <div class="grid-container">
       <header>
         <h1>CPS Vacancy Tracker</h1>
@@ -40,7 +48,7 @@
     </div>
     <style>
 body {
-  font-family: sans-serif;
+  font-family: 'Open Sans',sans-serif;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -65,39 +73,6 @@ h1 {
   max-height: 100%;
   max-width: 100%;
   position: absolute;
-}
-.searchType {
-  border: none;
-  outline: none;
-  display: flex;
-  align-items: stretch;
-  align-content: stretch;
-  justify-content: space-between;
-  gap: 5px;
-  padding: 5px 0;
-}
-.searchType legend {
-  padding: 0;
-  margin: 3px 0;
-  font-weight: bold;
-}
-.searchType input {
-  position: absolute;
-  transform: translateX(-10000px);
-}
-.searchType label {
-  display: flex;
-  padding: 4px 8px;
-  border: 1px solid #888888;
-  border-radius: 6px;
-  align-items: center;
-  text-align: center;
-}
-.searchType label span {
-
-}
-.searchType input:checked+label {
-  background: #cccccc;
 }
 input.deptChoice {
   width: 100%;
@@ -349,7 +324,7 @@ dialog input[type="email"] {
     display: block;
   }
   .dataOutput table {
-    max-width: 300px;
+    max-width: 340px;
     font-variant-numeric: lining-nums tabular-nums;
   }
   input.deptChoice {
@@ -368,76 +343,81 @@ dialog input[type="email"] {
     width: 300px;
   }
 }
-</style>
+    </style>
     <script>
+  const modal = document.getElementById("modal");
+  function openModal() { modal.showModal() }
+  function closeModal() { console.log("Closing modal."); modal.close() }
+  function clickOutsideToClose(e) {console.log(e); if (e.target.id === 'modal') closeModal() }
+  modal.addEventListener("click", clickOutsideToClose);
+  const modalCloser = document.querySelector(".modal-close");
+  modalCloser.addEventListener("click", closeModal)
+  let modalContentBox = document.querySelector("#modal-content");
 main ();
-    async function getData() {
-      const url = "./schools.json";
-      try {
-        const response = await fetch(url);
-        if (!response.ok) {
-          throw new Error(`Response status: ${response.status}`);
-        }
-        const data = await response.json();
-        return data;
-      } catch (error) {
-        console.error(error.message);
-      }
+async function getData() {
+  const url = "./schools.json";
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
     }
-    async function getVacancies() {
-      const url = "./schools-vacancies.json";
-      try {
-        const response = await fetch(url);
-        if (!response.ok) {
-          throw new Error(`Response status: ${response.status}`);
-        }
-        const data = await response.json();
-        console.log("Getting Vacancies:",data);
-        return data;
-      } catch (error) {
-        console.error(error.message);
-      }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error.message);
+  }
+}
+async function getVacancies() {
+  const url = "./schools-vacancies.json";
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
     }
-    async function getMap() {
-      const url = "./cps-map.svg";
-      try {
-        const response = await fetch(url);
-        if (!response.ok) {
-          throw new Error(`Response status: ${response.status}`);
-        }
-        const map = await response.text();
-        return map;
-      } catch (error) {
-        console.error(error.message);
-      }
+    const data = await response.json();
+    console.log("Getting Vacancies:",data);
+    return data;
+  } catch (error) {
+    console.error(error.message);
+  }
+}
+async function getMap() {
+  const url = "./cps-map.svg";
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
     }
-    async function main () {
-      let cpsmap = document.getElementById("cpsmap");
-      let dataOutput = document.querySelector("#dataOutput");
-      let schoolsData = getData()
-      .then(schoolsData => {
-        let vacanciesData = getVacancies()
-        .then ( vacanciesData => {
-          getMap()
-            .then(svg => {
-              cpsmap.innerHTML=svg;
-            })
-            .then(() => {
-          let dialog = document.querySelector("dialog");
-          let dialogClosers = document.querySelectorAll(".dialog-close");
-          dialogClosers.forEach( (closeButton) => {
-            closeButton.addEventListener( "click", (e) => {
-              dialog.close();
-            })
+    const map = await response.text();
+    return map;
+  } catch (error) {
+    console.error(error.message);
+  }
+}
+async function main () {
+  let cpsmap = document.getElementById("cpsmap");
+  let dataOutput = document.querySelector("#dataOutput");
+  let schoolsData = getData()
+  .then(schoolsData => {
+    let vacanciesData = getVacancies()
+    .then ( vacanciesData => {
+      getMap()
+        .then(svg => {
+          cpsmap.innerHTML=svg;
+        })
+        .then(() => {
+          // Initializing modal stuff -- see bottom for other scripts and styling
 
-          })
-              let schoolsVacancies = joinVacancies(schoolsData,vacanciesData);
-              console.log("schoolsVacancies:",schoolsVacancies);
-              initCombobox (schoolsVacancies);
-              const cityMembers = vacanciesData.reduce( (a,c) => a + parseInt( c.ActiveMemb ),0);
-              const cityVacancies = vacanciesData.reduce ( (a,c) => a + parseFloat( c.TotVacancy ),0.0);
-              const cityVacancyPercent = Math.round( cityVacancies * 1000 / cityMembers ) / 10;
-              let dataTable = `
+          // Joining school data with vacancy data
+          let schoolsVacancies = joinVacancies(schoolsData,vacanciesData);
+          console.log("schoolsVacancies:",schoolsVacancies);
+          initCombobox (schoolsVacancies);
+
+          // Compute citywide data and add it to initial page load
+          const cityMembers = vacanciesData.reduce( (a,c) => a + parseInt( c.ActiveMemb ),0);
+          const cityVacancies = vacanciesData.reduce ( (a,c) => a + parseFloat( c.TotVacancy ),0.0);
+          const cityVacancyPercent = Math.round( cityVacancies * 1000 / cityMembers ) / 10;
+          let dataTable = `
 <table id="citywide">
 <thead>
 <caption><div>Citywide Vacancy Data</div></caption>
@@ -449,24 +429,27 @@ main ();
 </tbody>
 </table>
 `;
-              dataOutput.innerHTML = dataTable;
-              let schoolGroups = document.querySelectorAll("#cpsmap #schools g");
-              schoolGroups.forEach((group) => {
-                const schoolNumber = parseInt( group.id );
-                const schoolMatch = schoolsData.filter((school) => school.school_id === group.id);
-                if (schoolMatch.length < 1) {
-                  group.style.display = "none";
-                } else {
-                  const schoolData = schoolMatch[0];
-                  const schoolVacancyData = vacanciesData.find(school => school.school_id === schoolData.school_id);
-                  if (!schoolVacancyData) {
-                    group.style.display = "none";
-                    // console.log("Vacancy Data Not Found for",schoolData.name_short)
-                  } else {
-                    const schoolMembers = parseInt( schoolVacancyData.ActiveMemb );
-                    const schoolVacancies = parseInt( schoolVacancyData.TotVacancy ); 
-                    const schoolVacancyPercent = Math.round(schoolVacancies*1000/schoolMembers) / 10.0;
-                    let dataTable = `
+          dataOutput.innerHTML = dataTable;
+
+          // Uses groups in the map to query for schools data and attach to map svg group datasets.
+          // This is backwards and I will fix it later in the refactor.
+          let schoolGroups = document.querySelectorAll("#cpsmap #schools g");
+          schoolGroups.forEach((group) => {
+            const schoolNumber = parseInt( group.id );
+            const schoolMatch = schoolsData.filter((school) => school.school_id === group.id);
+            if (schoolMatch.length < 1) {
+              group.style.display = "none";
+            } else {
+              const schoolData = schoolMatch[0];
+              const schoolVacancyData = vacanciesData.find(school => school.school_id === schoolData.school_id);
+              if (!schoolVacancyData) {
+                group.style.display = "none";
+                // console.log("Vacancy Data Not Found for",schoolData.name_short)
+              } else {
+                const schoolMembers = parseInt( schoolVacancyData.ActiveMemb );
+                const schoolVacancies = parseInt( schoolVacancyData.TotVacancy ); 
+                const schoolVacancyPercent = Math.round(schoolVacancies*1000/schoolMembers) / 10.0;
+                let dataTable = `
 <table id="${schoolData.school_id}">
 <thead>
 <caption><div>${schoolData.name_short}</div></caption>
@@ -491,54 +474,54 @@ main ();
 </form>
 `;
                 group.addEventListener("click", outputSchoolData, {capture: true});
-                    group.dataset.members = `${schoolMembers}`;
-                    group.dataset.vacancy = `${schoolVacancies}`;
-                    let circle = group.querySelector("circle");
-                    circle.setAttributeNS(null,"r",Math.sqrt(schoolMembers/5));
-                    if (schoolVacancies < 1) { 
-                      circle.style.fill = "#009966";
-                    } else if (schoolVacancyPercent < 5) {
-                      circle.style.fill="#99ccaa";
-                    } else if (schoolVacancyPercent < 10) {
-                      circle.style.fill="#ffffaa";
-                    } else if (schoolVacancyPercent < 20) {
-                      circle.style.fill="#ffaaaa";
-                    }
-                  }
+                group.dataset.members = `${schoolMembers}`;
+                group.dataset.vacancy = `${schoolVacancies}`;
+                let circle = group.querySelector("circle");
+                circle.setAttributeNS(null,"r",Math.sqrt(schoolMembers/5));
+                if (schoolVacancies < 1) { 
+                  circle.style.fill = "#009966";
+                } else if (schoolVacancyPercent < 5) {
+                  circle.style.fill="#99ccaa";
+                } else if (schoolVacancyPercent < 10) {
+                  circle.style.fill="#ffffaa";
+                } else if (schoolVacancyPercent < 20) {
+                  circle.style.fill="#ffaaaa";
                 }
-              });
-              let nets = document.querySelectorAll("#cpsmap #networks path");
-              nets.forEach( (net) => {
-                const intRegex = /[0-9]+/g;
-                const netNumber = parseInt( net.id.match(intRegex) );
-                const schoolMatches = schoolsData.filter((school) => parseInt( school.network_es ) === netNumber);
-                // console.log("Network:",netNumber,"Schools:",schoolMatches);
-                let netData = {members:0,vacancies:0};
-                if (schoolMatches.length < 1) {
-                  net.style.fill="#bbaaff";
-                  // console.error("No schools found in Network",netNumber);
-                } else {
-                  netData.members = schoolMatches.reduce( (members,schoolData) => {
-                    let schoolVacancyDatum = vacanciesData.find(school => {
-                      return parseInt( school.school_id ) === parseInt( schoolData.school_id ) });
-                    let activeMembers = 0;
-                    if (schoolVacancyDatum) {
-                      activeMembers = parseInt( schoolVacancyDatum.ActiveMemb);
-                    }
-                    return members + activeMembers;
-                  }, 0);
-                  // console.log("Network",netNumber,"Member Total:",netData.members);
-                  netData.vacancies = schoolMatches.reduce( (vacancies,schoolData) => {
-                    const schoolVacancyDatum = vacanciesData.find(school => parseInt( school.school_id ) === parseInt( schoolData.school_id ));
-                    let schoolVacancies = 0;
-                    if (schoolVacancyDatum) {
-                      schoolVacancies = parseInt( schoolVacancyDatum.TotVacancy);
-                    }
-                    return vacancies + schoolVacancies;
-                  }, 0);
-                  // console.log(netData);
-                  const netVacancyPercent = Math.round(netData.vacancies * 1000 / netData.members) / 10.0;
-                  let dataTable = `
+              }
+            }
+          });
+          let nets = document.querySelectorAll("#cpsmap #networks path");
+          nets.forEach( (net) => {
+            const intRegex = /[0-9]+/g;
+            const netNumber = parseInt( net.id.match(intRegex) );
+            const schoolMatches = schoolsData.filter((school) => parseInt( school.network_es ) === netNumber);
+            // console.log("Network:",netNumber,"Schools:",schoolMatches);
+            let netData = {members:0,vacancies:0};
+            if (schoolMatches.length < 1) {
+              net.style.fill="#bbaaff";
+              // console.error("No schools found in Network",netNumber);
+            } else {
+              netData.members = schoolMatches.reduce( (members,schoolData) => {
+                let schoolVacancyDatum = vacanciesData.find(school => {
+                  return parseInt( school.school_id ) === parseInt( schoolData.school_id ) });
+                let activeMembers = 0;
+                if (schoolVacancyDatum) {
+                  activeMembers = parseInt( schoolVacancyDatum.ActiveMemb);
+                }
+                return members + activeMembers;
+              }, 0);
+              // console.log("Network",netNumber,"Member Total:",netData.members);
+              netData.vacancies = schoolMatches.reduce( (vacancies,schoolData) => {
+                const schoolVacancyDatum = vacanciesData.find(school => parseInt( school.school_id ) === parseInt( schoolData.school_id ));
+                let schoolVacancies = 0;
+                if (schoolVacancyDatum) {
+                  schoolVacancies = parseInt( schoolVacancyDatum.TotVacancy);
+                }
+                return vacancies + schoolVacancies;
+              }, 0);
+              // console.log(netData);
+              const netVacancyPercent = Math.round(netData.vacancies * 1000 / netData.members) / 10.0;
+              let dataTable = `
 <table id="network${netNumber}">
 <thead>
 <caption><div>Network ${netNumber}</div></caption>
@@ -554,58 +537,56 @@ main ();
 </tbody>
 </table>
 `;
-      dataOutput.innerHTML = dataTable;
-                  net.addEventListener("click", (e) => {
-                    let dataOutput = document.querySelector("#dataOutput");
-                    dataOutput.innerHTML = dataTable;
-                  });
-                  // console.log(netVacancyPercent);
-                  if (netVacancyPercent === 0) { 
-                    net.style.fill = "#009966";
-                  } else if (netVacancyPercent < 5) {
-                    net.style.fill="#009966";
-                  } else if (netVacancyPercent < 10) {
-                    net.style.fill="#99ffaa";
-                  } else if (netVacancyPercent < 15) {
-                    net.style.fill="gold";
-                  } else if (netVacancyPercent < 20) {
-                    net.style.fill="#ffaaaa";
-                  } else net.style.fill = "dd6666";
-                }
+              net.addEventListener("click", (e) => {
+                let dataOutput = document.querySelector("#dataOutput");
+                dataOutput.innerHTML = dataTable;
               });
+              // console.log(netVacancyPercent);
+              if (netVacancyPercent === 0) { 
+                net.style.fill = "#009966";
+              } else if (netVacancyPercent < 5) {
+                net.style.fill="#009966";
+              } else if (netVacancyPercent < 10) {
+                net.style.fill="#99ffaa";
+              } else if (netVacancyPercent < 15) {
+                net.style.fill="gold";
+              } else if (netVacancyPercent < 20) {
+                net.style.fill="#ffaaaa";
+              } else net.style.fill = "dd6666";
+            }
+          });
           const data = new CustomEvent("data");
-              window.dispatchEvent(data);
-              return "Main finishes inside adding eventlisteners.";
-            });
-        });
-      });
-    }
+          window.dispatchEvent(data);
+          return "Main finishes inside adding eventlisteners.";
+        })
+    })
+  })
+}
     function joinVacancies (schools,vacancies) {
-      console.log("joinVacancies | vacancies:",vacancies,"schools:",schools);
-      const vacancyJoin = vacancies.map(vacancy => {
-        // console.log(vacancy);
-        const vacant = vacancy;
-        const school = schools.find(school => parseInt(school.school_id) === parseInt(vacant.school_id));
-        return {...vacant,...school}
-      })
-      return vacancyJoin;
-    }
+  console.log("joinVacancies | vacancies:",vacancies,"schools:",schools);
+  const vacancyJoin = vacancies.map(vacancy => {
+    // console.log(vacancy);
+    const vacant = vacancy;
+    const school = schools.find(school => parseInt(school.school_id) === parseInt(vacant.school_id));
+    return {...vacant,...school}
+  })
+  return vacancyJoin;
+}
 
-    function outputSchoolData (event) {
+function outputSchoolData (event) {
   let target;
   if (event instanceof Event) {target = event.currentTarget} else {
-    console.log("From combobox:",event);
     target = event.lastOption;
   }
-      const school_id = target.id;
-      console.log(school_id,target.textContent);
-      const schoolName = target.textContent;
-      const schoolMembers = target.dataset.members;
-      const schoolVacancies =  target.dataset.vacancy;
-      const schoolVacancyPercent = Math.round(schoolVacancies*1000/schoolMembers) / 10.0;
+  const school_id = target.id;
+  console.log("Output School Data:",school_id,target.textContent);
+  const schoolName = target.textContent;
+  const schoolMembers = target.dataset.members;
+  const schoolVacancies =  target.dataset.vacancy;
+  const schoolVacancyPercent = Math.round(schoolVacancies*1000/schoolMembers) / 10.0;
   let combobox = document.getElementById("cb1-input");
   combobox.value = "";
-      let dataTable = `
+  let dataTable = `
 <table id="${school_id}">
 <thead>
 <caption><div>${schoolName}</div></caption>
@@ -626,58 +607,58 @@ main ();
 </tbody>
 </table>
 <form id="report" name="report">
-<p>Is this your school? <button class="positive" type="button">&#9989;Yes!</button>
+<p>Is this your school? <button class="positive" type="button" style="font-weight: bold;">&#9989; Yes!</button>
 </p>
 </form>
 `;
-      dataOutput.innerHTML = dataTable;
+  dataOutput.innerHTML = dataTable;
   let reportButtons = document.querySelectorAll("#report button" )
   reportButtons.forEach( (button) => {
     button.dataset.schoolName = schoolName;
     button.dataset.members = schoolMembers;
     button.dataset.vacancies = schoolVacancies;
     button.dataset.rate = schoolVacancyPercent;
-    button.addEventListener ("click", runReport);
-    })
-    }
+    button.addEventListener ("click", reportMessage);
+  })
+}
 
-    function stringPropertySort(a,b,property) {
-      // Use this function inside Array.sort() 
-      const nameA = a[property].toUpperCase(); // ignore upper and lowercase
-      const nameB = b[property].toUpperCase(); // ignore upper and lowercase
-      if (nameA < nameB) {
-        return -1;
-      }
-      if (nameA > nameB) {
-        return 1;
-      }
+function stringPropertySort(a,b,property) {
+  // Use this function inside Array.sort() 
+  const nameA = a[property].toUpperCase(); // ignore upper and lowercase
+  const nameB = b[property].toUpperCase(); // ignore upper and lowercase
+  if (nameA < nameB) {
+    return -1;
+  }
+  if (nameA > nameB) {
+    return 1;
+  }
 
-      // names must be equal
-      return 0;
-    }
+  // names must be equal
+  return 0;
+}
 
-    function initCombobox (schoolVacancies) {
-      const datalist = document.querySelector("#choiceList");
-      const vacancies = {};
-      vacancies.schools = schoolVacancies;
-      console.log("initCombobox schoolVacancies:",schoolVacancies);
-      const nameSortedVacancies = vacancies.schools.sort ( (a, b) => stringPropertySort(a,b,"name_short"))
-      // console.log("nameSortedVacancies:",nameSortedVacancies);
-      nameSortedVacancies.forEach(school => {
-        const option = document.createElement("li");
-        option.id = `${school.school_id}`;
-        option.innerText = school.name_short;
-        option.role = "option";
-        option.dataset.members = `${school.ActiveMemb}`;
-        option.dataset.vacancy = `${school.TotVacancy}`;
-        datalist.appendChild(option);
-        option.addEventListener("click", outputSchoolData);
-      })
-      console.log("First Kid:",datalist.children[0])
+function initCombobox (schoolVacancies) {
+  const datalist = document.querySelector("#choiceList");
+  const vacancies = {};
+  vacancies.schools = schoolVacancies;
+  console.log("initCombobox schoolVacancies:",schoolVacancies);
+  const nameSortedVacancies = vacancies.schools.sort ( (a, b) => stringPropertySort(a,b,"name_short"))
+  // console.log("nameSortedVacancies:",nameSortedVacancies);
+  nameSortedVacancies.forEach(school => {
+    const option = document.createElement("li");
+    option.id = `${school.school_id}`;
+    option.innerText = school.name_short;
+    option.role = "option";
+    option.dataset.members = `${school.ActiveMemb}`;
+    option.dataset.vacancy = `${school.TotVacancy}`;
+    datalist.appendChild(option);
+    option.addEventListener("click", outputSchoolData);
+  })
+  console.log("First Kid:",datalist.children[0])
 
 
 
-    }
+}
 
 
 /*
@@ -768,7 +749,7 @@ class ComboboxAutocomplete {
       node.addEventListener('pointerover', this.onOptionPointerover.bind(this));
       node.addEventListener('pointerout', this.onOptionPointerout.bind(this));
     }
-        console.log("Combobox Code All Options:",this.allOptions);
+    console.log("Combobox Code All Options:",this.allOptions);
 
     this.filterOptions();
 
@@ -789,11 +770,11 @@ class ComboboxAutocomplete {
     var bounding = option.getBoundingClientRect();
     return (
       bounding.top >= 0 &&
-      bounding.left >= 0 &&
-      bounding.bottom <=
-        (window.innerHeight || document.documentElement.clientHeight) &&
-      bounding.right <=
-        (window.innerWidth || document.documentElement.clientWidth)
+        bounding.left >= 0 &&
+        bounding.bottom <=
+          (window.innerHeight || document.documentElement.clientHeight) &&
+        bounding.right <=
+          (window.innerWidth || document.documentElement.clientWidth)
     );
   }
 
@@ -816,7 +797,7 @@ class ComboboxAutocomplete {
     this.comboboxNode.setSelectionRange(this.filter.length, this.filter.length);
     this.filterOptions();
 
-        outputSchoolData(this);
+    outputSchoolData(this);
   }
 
   setOption(option, flag) {
@@ -890,7 +871,7 @@ class ComboboxAutocomplete {
       option = this.allOptions[i];
       if (
         filter.length === 0 ||
-        this.getLowercaseContent(option).indexOf(filter) === 0
+          this.getLowercaseContent(option).indexOf(filter) === 0
       ) {
         this.filteredOptions.push(option);
         this.listboxNode.appendChild(option);
@@ -924,7 +905,7 @@ class ComboboxAutocomplete {
         opt.setAttribute('aria-selected', 'true');
         if (
           this.listboxNode.scrollTop + this.listboxNode.offsetHeight <
-          opt.offsetTop + opt.offsetHeight
+            opt.offsetTop + opt.offsetHeight
         ) {
           this.listboxNode.scrollTop =
             opt.offsetTop + opt.offsetHeight - this.listboxNode.offsetHeight;
@@ -984,9 +965,9 @@ class ComboboxAutocomplete {
 
     if (
       force ||
-      (!this.comboboxHasVisualFocus &&
-        !this.listboxHasVisualFocus &&
-        !this.hasHover)
+        (!this.comboboxHasVisualFocus &&
+          !this.listboxHasVisualFocus &&
+          !this.hasHover)
     ) {
       this.setCurrentOptionStyle(false);
       this.listboxNode.style.display = 'none';
@@ -1001,7 +982,7 @@ class ComboboxAutocomplete {
 
   onComboboxKeyDown(event) {
     var flag = false,
-      altKey = event.altKey;
+    altKey = event.altKey;
 
     if (event.ctrlKey || event.shiftKey) {
       return;
@@ -1029,7 +1010,7 @@ class ComboboxAutocomplete {
             this.open();
             if (
               this.listboxHasVisualFocus ||
-              (this.isBoth && this.filteredOptions.length > 1)
+                (this.isBoth && this.filteredOptions.length > 1)
             ) {
               this.setOption(this.getNextOption(this.option), true);
               this.setVisualFocusListbox();
@@ -1109,8 +1090,8 @@ class ComboboxAutocomplete {
 
   onComboboxKeyUp(event) {
     var flag = false,
-      option = null,
-      char = event.key;
+    option = null,
+    char = event.key;
 
     if (this.isPrintableCharacter(char)) {
       this.filter += char;
@@ -1224,8 +1205,8 @@ class ComboboxAutocomplete {
   onBackgroundPointerUp(event) {
     if (
       !this.comboboxNode.contains(event.target) &&
-      !this.listboxNode.contains(event.target) &&
-      !this.buttonNode.contains(event.target)
+        !this.listboxNode.contains(event.target) &&
+        !this.buttonNode.contains(event.target)
     ) {
       this.comboboxHasVisualFocus = false;
       this.setCurrentOptionStyle(null);
@@ -1275,54 +1256,30 @@ class ComboboxAutocomplete {
 
 // Initialize comboboxes
 
-    window.addEventListener('data', function () {
-      var comboboxes = document.querySelectorAll('.combobox-list');
-        for (var i = 0; i < comboboxes.length; i++) {
-          var combobox = comboboxes[i];
-          var comboboxNode = combobox.querySelector('input');
-          var buttonNode = combobox.querySelector('button');
-          var listboxNode = combobox.querySelector('[role="listbox"]');
-          new ComboboxAutocomplete(comboboxNode, buttonNode, listboxNode);
-        }
-    });
-function runReport(e) {
-  const dialog=document.querySelector("dialog");
-  const message = reportMessage(e);
-}
+window.addEventListener('data', function () {
+  var comboboxes = document.querySelectorAll('.combobox-list');
+  for (var i = 0; i < comboboxes.length; i++) {
+    var combobox = comboboxes[i];
+    var comboboxNode = combobox.querySelector('input');
+    var buttonNode = combobox.querySelector('button');
+    var listboxNode = combobox.querySelector('[role="listbox"]');
+    new ComboboxAutocomplete(comboboxNode, buttonNode, listboxNode);
+  }
+});
 
 function reportMessage(e) {
-  const contentBox = document.querySelector("#dialog-content");
-  const schoolName = e.target.dataset.schoolName;
-  const schoolMembers = e.target.dataset.members;
-  const schoolVacancies = e.target.dataset.vacancies;
-  resetModalContent(schoolName);
+    const schoolData = {
+      name: e.target.dataset.schoolName.trim(),
+      members: e.target.dataset.members,
+      vacancies: e.target.dataset.vacancies
+    }
+  identifyModalContent(schoolData);
   openModal();
 }
-    </script>
+</script>
 
 
-  <main>
-    <button id="launch" type="button">Launch</button>
-    <dialog id="modal" class="modal">
-      <div class="modal-inner">
-        <form id="modal-form">
-          <button type="button" aria-label="close" formmethod="dialog" class="modal-close" formnovalidate="">×</button>
-          <div id="modal-content"></div>
-        </form>
-      </div>
-    </dialog>
-  </main>
-  <style>
-body * {
-  box-sizing: border-box;
-  font-family: 'Open sans',sans-serif;
-}
-main {
-  padding: 0;
-  margin: 20px auto;
-  width: calc(100vw - 40px);
-  max-width: 800px;
-}
+    <style>
 #modal {
   width: calc(100vw - 40px);
   max-width: 500px;
@@ -1380,24 +1337,14 @@ main {
     padding: 40px 20px;
   }
 }
-  </style>
+</style>
 <script>
-const modal = document.getElementById("modal");
-function openModal() { modal.showModal() }
-function closeModal() { modal.close() }
-function clickOutsideToClose(e) {console.log(e); if (e.target.id === 'modal') closeModal() }
-modal.addEventListener("click", clickOutsideToClose);
-const modalLauncher = document.getElementById("launch");
-modalLauncher.addEventListener("click", openModal)
-const modalCloser = document.querySelector(".modal-close");
-modalCloser.addEventListener("click", closeModal)
-let modalContent = document.querySelector("#modal-content");
-function resetModalContent (schoolName) {
-  let initModalHTML = `
-<div id="stepper"><span class="identify current">Identify</span><span></span><span class="verify">Verify</span><span></span><span class="elaborate">Elaborate</span><span></span><span class="done">Done!</span></div>
+function completeModalContent (emailAddress,schoolData) {
+  let modalContentHTML = `
+<div id="stepper"><span class="identify current">Identify</span><span></span><span class="testify">Testify</span><span></span><span class="verify">Verify</span><span></span><span class="review">Review</span><span></span><span class="done">Done!</span></div>
 <p>CTU put this page together using data sent to us by CPS Central Office. But, no one knows each school like the educators that work there.</p>
 <h3>Share your knowledge</h3>
-<p>Do you know for a fact how many educators work in ${schoolName} and how many positions aren’t filled?
+<p>Do you know for a fact how many educators work in ${schoolData.name} and how many positions aren’t filled?
 </p>
 <div class="knowledge">
 <input type="radio" name="knowledge" value="yes" class="yes" id="knowledgeYes"></input><label for="knowledgeYes">Yes</label>
@@ -1420,17 +1367,249 @@ function resetModalContent (schoolName) {
 <style>.knowledge {min-height: 280px} .if {display: none;} .knowledge input.no:checked ~ .if.no {display: block;} .knowledge input.yes:checked ~ .if.yes {display: block;}</style>
 
 `
-  modalContent.innerHTML = initModalHTML;
+  modalContentBox.innerHTML = modalContentHTML;
   const modalForm = document.querySelector("#modal-form");
-  modalForm.addEventListener("submit", ajaxSubmit);
+  modalForm.removeEventListener("submit", ajaxSubmitEmail);
+  modalForm.addEventListener("submit", ajaxSubmitEmail);
 }
-async function ajaxSubmit (e) {
+function reviewModalContent (emailAddress,schoolData) {
+  let modalContentHTML = `
+<div id="stepper"><span class="identify current">Identify</span><span></span><span class="testify">Testify</span><span></span><span class="verify">Verify</span><span></span><span class="review">Review</span><span></span><span class="done">Done!</span></div>
+<p>CTU put this page together using data sent to us by CPS Central Office. But, no one knows each school like the educators that work there.</p>
+<h3>Share your knowledge</h3>
+<p>Do you know for a fact how many educators work in ${schoolData.name} and how many positions aren’t filled?
+</p>
+<div class="knowledge">
+<input type="radio" name="knowledge" value="yes" class="yes" id="knowledgeYes"></input><label for="knowledgeYes">Yes</label>
+<input type="radio" name="knowledge" value="no" class="no" id="knowledgeNo"></input><label for="knowledgeNo">No</label>
+<div class="if yes">
+<p>Great! Please take a minute to either confirm or correct the CPS information for us.</p>
+<p>We’ll only accept information from verified members of the CTU. Provide the email where you get CTU messages, like our weekly bulletin. We will check it against our encrypted roster of CTU member emails.</p>
+<p style="margin: 24px 0 6px 0; padding: 0;"><label for="personalEmail" style="font-weight: bold; color: #444444;">Your personal email</label></p>
+<p>
+<input type="email" name="personalEmail" id="personalEmail" style="width: calc(100% - 120px);">
+<button type="submit" id="emailMatch" style="width: 100px;">Check Email</button>
+</p>
+</div>
+<div class="if no">
+<p>We can help you find out!</p>
+<p>You’ll need a few things… {very cursory explanation}</p>
+<p>Go to our <a href="https://example.com">vacancy investigation page</a> to learn more.</p>
+</div>
+</div>
+<style>.knowledge {min-height: 280px} .if {display: none;} .knowledge input.no:checked ~ .if.no {display: block;} .knowledge input.yes:checked ~ .if.yes {display: block;}</style>
+
+`
+  modalContentBox.innerHTML = modalContentHTML;
+  const modalForm = document.querySelector("#modal-form");
+  modalForm.removeEventListener("submit", ajaxSubmitEmail);
+  modalForm.addEventListener("submit", ajaxSubmitEmail);
+}
+function verifyModalContent (emailAddress,schoolData,userData) {
+  let modalContentHTML = `
+<div id="stepper"><span class="identify">Identify</span><span></span><span class="testify">Testify</span><span></span><span class="verify current">Verify</span><span></span><span class="review">Review</span><span></span><span class="done">Done!</span></div>
+<p>CTU put this page together using data sent to us by CPS Central Office. But, no one knows each school like the educators that work there.</p>
+<h3>Share your knowledge</h3>
+<p>Do you know for a fact how many educators work in ${schoolData.name} and how many positions aren’t filled?
+</p>
+<div class="knowledge">
+<input type="radio" name="knowledge" value="yes" class="yes" id="knowledgeYes"></input><label for="knowledgeYes">Yes</label>
+<input type="radio" name="knowledge" value="no" class="no" id="knowledgeNo"></input><label for="knowledgeNo">No</label>
+<div class="if yes">
+<p>Great! Please take a minute to either confirm or correct the CPS information on ${schoolData.name} for us.</p>
+<style>
+ .borderless tr:has(input.change.button) + tr {display:none}
+ .borderless tr:has(input.change.button:checked) + tr {display:table-row}
+ .change.button {visibility: hidden}
+ .change.button + label {font-size:.6em; border: none; background: transparent; text-decoration: underline; color: #db1f2a}
+ .borderless tr, .borderless td {border:none; padding: 0;}
+ .borderless td:first-child {white-space: nowrap; padding-right: 1em;}
+.borderless td:nth-child(2), .borderless td:nth-child(2) input {width: 4em; text-align: right;}
+</style>
+<table class="borderless"><tbody>
+<tr><td>Total CTU members:</td><td>${schoolData.members}</td><td><input type="checkbox" id="showFirstNameChange" class="change button"><label for="showFirstNameChange">change</label></td></tr>
+  <tr><td>&nbsp;Change to:</td><td><input type="text" id="changeFirstName" name="changeFirstName"></input></td><td></td></tr>
+<tr><td>Total Vacancies:</td><td>${schoolData.vacancies}</td><td><input type="checkbox" id="showLastNameChange" class="change button"><label for="showLastNameChange">change</label></td></tr>
+<tr><td>&nbsp;Change to:</td><td><input type="text" id="changeLastName" name="changeLastName"></input></td><td></td></tr>
+</tbody></table>
+    <button type="submit" id="nextToReview" style="width: 100px;">Review Your Response</button>
+</div>
+<div class="if no">
+<p>We can help you find out!</p>
+<p>You’ll need a few things… {very cursory explanation}</p>
+<p>Go to our <a href="https://example.com">vacancy investigation page</a> to learn more.</p>
+</div>
+</div>
+<style>.knowledge {min-height: 280px} .if {display: none;} .knowledge input.no:checked ~ .if.no {display: block;} .knowledge input.yes:checked ~ .if.yes {display: block;}</style>
+
+`
+  modalContentBox.innerHTML = modalContentHTML;
+  const modalForm = document.querySelector("#modal-form");
+  modalForm.removeEventListener("submit", ajaxSubmitEmail);
+  modalForm.addEventListener("submit", () => reviewModalContent(emailAddress,schoolData,userData));
+}
+function testifyModalContent (emailAddress,schoolData,userData) {
+  console.log("School Data in Testify:",schoolData);
+  let modalContentHTML = `
+<div id="stepper"><span class="identify">Identify</span><span></span><span class="testify current">Testify</span><span></span><span class="verify">Verify</span><span></span><span class="review">Review</span><span></span><span class="done">Done!</span></div>
+<style>
+ .borderless tr:has(input.change.button) + tr {display:none}
+ .borderless tr:has(input.change.button:checked) + tr {display:table-row}
+ .change.button {visibility: hidden}
+ .change.button + label {font-size:.6em; border: none; background: transparent; text-decoration: underline; color: #db1f2a}
+ .borderless tr, .borderless td {border:none; padding: 0;}
+ .borderless td:first-child {white-space: nowrap;}
+.toggleRadio {visibility: hidden;}
+</style>
+<h2>Confirm your information</h2>
+<p>Our records show the following information for your email address. If any of these items are change or have changed, please click the link at right that say &ldquo;change&rdquo; to enter the correct information.
+</p>
+<table class="borderless"><tbody>
+<tr><td>First Name:</td><td>${userData.firstName}</td><td><input type="checkbox" id="showFirstNameChange" class="change button"><label for="showFirstNameChange">change</label></td></tr>
+  <tr><td>&nbsp;Change to:</td><td colspan="2" style="width: 100%;"><input type="text" id="changeFirstName" name="changeFirstName"></input></td></tr>
+<tr><td>Last Name:</td><td>${userData.lastName}</td><td><input type="checkbox" id="showLastNameChange" class="change button"><label for="showLastNameChange">change</label></td></tr>
+<tr><td>&nbsp;Change to:</td><td colspan="2" style="width: 100%;"><input type="text" id="changeLastName" name="changeLastName"></input></td></tr>
+<tr><td>School Name:&nbsp;</td><td>${userData.school}</td><td><input type="checkbox" id="showSchoolChange" class="change button"><label for="showSchoolChange">change</label></td></tr>
+<tr><td>&nbsp;Change to:</td><td colspan="2" style="width: 100%;"><input type="text" id="changeSchool" name="changeSchool"></input></td></tr>
+<tr><td>Position</td><td>${userData.jobTitle}</td><td><input type="checkbox" id="showPositionChange" class="change button"><label for="showPositionChange">change</label></td></tr>
+<tr><td>&nbsp;Change to:</td><td colspan="2" style="width: 100%;"><input type="text" id="changePosition" name="changePosition"></input></td></tr>
+</tbody></table>
+<h2>Tell Us Your Story</h2>
+<p>
+<label for=yourStory>
+How do these vacancies affect your classroom or the work you do at the school(s)? Are students harmed at all due to these vacancies?
+</label>
+</p>
+<textarea name="yourStory" id="yourStory" class="longform" style="width: 100%; max-width: 454px; height: 6em;"></textarea>
+<p><label for="shareStory">Can we share your story on this tracker?</label> <input name="shareStory" id="yesShareStory" class="yes shareStory" type="radio"><label for="yesShareStory">Yes</label>
+<input name="shareStory" id="noShareStory" class="no shareStory" type="radio"><label for="noShareStory">No</label>
+</p>
+<p><label>Does your school have an active Professional Problems Committee (PPC)? </label>
+<input name="hasPPC" id="yesHasPPC" class="yes hasPPC" type="radio"><label for="yesHasPPC">Yes</label>
+<input name="hasPPC" id="noHasPPC" class="no hasPPC" type="radio"><label for="noHasPPC">No</label>
+<input name="hasPPC" id="unsureHasPPC" class="unsure hasPPC" type="radio"><label for="unsureHasPPC">Unsure</label>
+</p>
+<p><label>Does your school have an active Professional Personnel Leadership Committee (PPLC)? </label>
+<input name="hasPPLC" id="yesHasPPLC" class="yes hasPPLC" type="radio"><label for="yesHasPPLC">Yes</label>
+<input name="hasPPLC" id="noHasPPLC" class="no hasPPLC" type="radio"><label for="noHasPPLC">No</label>
+<input name="hasPPLC" id="unsureHasPPLC" class="unsure hasPPLC" type="radio"><label for="unsureHasPPLC">Unsure</label>
+</p>
+<div id="isWorking" class="isWorking"><p><span class="one">Is</span><span style="display:none;" class="both">Are</span> the <span class="hasPPC">PPC</span> <span class="both">and/or</span> <span class="hasPPLC">PPLC</span> working on this vacancy issue?
+<span style="display:block;">
+<input name="isWorking" id="yesIsWorking" class="yes isWorking" type="radio"><label for="yesIsWorking">Yes</label>
+<input name="isWorking" id="noIsWorking" class="no isWorking" type="radio"><label for="noIsWorking">No</label>
+<input name="isWorking" id="unsureIsWorking" class="unsure isWorking" type="radio"><label for="unsureIsWorking">Unsure</label>
+</span></p>
+</div>
+<style>
+.yesHasPPC:not(:checked):has(~ .yesHasPPLC:not(:checked)) ~ div#isWorking) {display:none;}
+input.hasPPC, input.hasPPLC {display: inline;}
+.yesHasPPC:checked ~ span.hasPPC, .yesHasPPLC:checked ~ span.hasPPC {display: inline;}
+.yesHasPPC:checked ~ .noHasPPLC:checked ~ .one,
+.yesHasPPC:checked ~ .unsureHasPPLC:checked ~ .one,
+.noHasPPC:checked ~ .yesHasPPLC:checked ~ .one,
+.unsureHasPPC:checked ~ .yesHasPPLC:checked ~ .one {display: inline;}
+.yesHasPPC:checked ~ .yesHasPPLC:checked ~ .both, {display:inline;}
+</style>
+<p>Is your principal/administrator actively working to fill these positions?
+<span style="display:block;">
+<input name="isWorking" id="yesIsWorking" class="yes isWorking" type="radio"><label for="yesIsWorking">Yes</label>
+<input name="isWorking" id="noIsWorking" class="no isWorking" type="radio"><label for="noIsWorking">No</label>
+<input name="isWorking" id="unsureIsWorking" class="unsure isWorking" type="radio"><label for="unsureIsWorking">Unsure</label>
+</span>
+</p>
+<p>Is there any other information you want to share confidentially with organizers?</p>
+<p>
+<textarea name="tellOrganizer" id="tellOrganizer" class="tellOrganizer" style="width: 100%; max-width: 454px; height: 6em;"></textarea>
+</p>
+    <button type="submit" id="nextToVerify" style="width: 100px;">Next Section</button>
+<style>.knowledge {min-height: 280px} .if {display: none;} .knowledge input.no:checked ~ .if.no {display: block;} .knowledge input.yes:checked ~ .if.yes {display: block;}</style>
+
+`
+  modalContentBox.innerHTML = modalContentHTML;
+  const modalForm = document.querySelector("#modal-form");
+  modalForm.addEventListener("submit", () => verifyModalContent(emailAddress,schoolData,userData));
+}
+function waitingModalContent (emailAddress,schoolData) {
+  let modalContentHTML = `
+<div id="stepper"><span class="identify current">Identify</span><span></span><span class="testify">Testify</span><span></span><span class="verify">Verify</span><span></span><span class="review">Review</span><span></span><span class="done">Done!</span></div>
+<p style="text-align: center;">Matching ${emailAddress} to your record.</p>
+<p style="text-align: center;"><svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><style>.spinner_OSmW{transform-origin:center;animation:spinner_T6mA 1.75s step-end infinite}@keyframes spinner_T6mA{8.3%{transform:rotate(30deg)}16.6%{transform:rotate(60deg)}25%{transform:rotate(90deg)}33.3%{transform:rotate(120deg)}41.6%{transform:rotate(150deg)}50%{transform:rotate(180deg)}58.3%{transform:rotate(210deg)}66.6%{transform:rotate(240deg)}75%{transform:rotate(270deg)}83.3%{transform:rotate(300deg)}91.6%{transform:rotate(330deg)}100%{transform:rotate(360deg)}}</style><g class="spinner_OSmW"><rect x="11" y="1" width="2" height="5" opacity=".14"/><rect x="11" y="1" width="2" height="5" transform="rotate(30 12 12)" opacity=".29"/><rect x="11" y="1" width="2" height="5" transform="rotate(60 12 12)" opacity=".43"/><rect x="11" y="1" width="2" height="5" transform="rotate(90 12 12)" opacity=".57"/><rect x="11" y="1" width="2" height="5" transform="rotate(120 12 12)" opacity=".71"/><rect x="11" y="1" width="2" height="5" transform="rotate(150 12 12)" opacity=".86"/><rect x="11" y="1" width="2" height="5" transform="rotate(180 12 12)"/></g></svg>
+</p>
+</div>
+`
+  modalContentBox.innerHTML = modalContentHTML;
+  window.setTimeout(() => {matchingModal (emailAddress,schoolData)},2000);
+}
+function matchingModal (emailAddress,schoolData) {
+  console.log("Matching Modal top emailAddress:",emailAddress);
+  const email = emailAddress.trim().toLowerCase();
+  if (email === "unionkimmy@gmail.com") {
+testifyModalContent(email,schoolData,{firstName:"Kimberly",lastName:"Goldbaum",school:"Collins HS",memberId:"14326",jobCode:"500629",jobTitle:"Special Education Teacher"})
+  } else {
+    unmatchedModal (email,schoolData);
+  }
+}
+function unmatchedModal (emailAddress,schoolData) {
+  let modalContentHTML = `
+<div id="stepper"><span class="identify current">Identify</span><span></span><span class="testify">Testify</span><span></span><span class="verify">Verify</span><span></span><span class="review">Review</span><span></span><span class="done">Done!</span></div>
+  <h2>Unmatched Email Address</h2>
+  <p style="margin-bottom:0.25em;">The email address that you entered:
+  </p>
+  <p style="font-family: mono; margin: 0.25em 2em;">${emailAddress}
+  </p>
+  <p style="margin-top: 0.25em;">was not found in our records.</p>
+  <p>If you mistyped the email address, please try again below.
+  </p>
+  <p>If you are new to CPS, please note that you must sign yourself up for the Chicago Teachers Union, membership is not automatic. Please click <a href="https://members.ctulocal1.org/CTUMembershipApplication.aspx">ctulocal1.org/join</a> to complete our online membership card.</p>
+  <p>If you believe the address that you entered <em>should</em> be in the Union&rsquo;s records, please email the <a href="mailto:Membership@ctulocal1.org">Membership Department</a> with a correction, including your name, school, CPS Employee ID number and correct email address and phone number(s).
+  </p>
+  <p style="margin: 24px 0 6px 0; padding: 0;">
+    <label for="personalEmail" style="font-weight: bold; color: #444444;">Your personal email</label>
+  </p>
+  <p>
+    <input type="email" name="personalEmail" id="personalEmail" style="width: calc(100% - 120px);">
+    <button type="submit" id="emailMatch" style="width: 100px;">Check Email</button>
+  </p>
+</div>
+`
+//    console.log("SchoolData identifyModal:",JSON.stringify(schoolData));
+  modalContentBox.innerHTML = modalContentHTML;
+  const modalForm = document.querySelector("#modal-form");
+  modalForm.removeEventListener("submit", (e) => {ajaxSubmitEmail(e,schoolData)});
+  modalForm.addEventListener("submit", (e) => {ajaxSubmitEmail(e,schoolData)});
+}
+
+function identifyModalContent (schoolData) {
+  let modalContentHTML = `
+<div id="stepper"><span class="identify current">Identify</span><span></span><span class="testify">Testify</span><span></span><span class="verify">Verify</span><span></span><span class="review">Review</span><span></span><span class="done">Done!</span></div>
+<h2>Share Your Story</h2>
+<p>We want to know how staffing at your school affects your students and your work. Tell us your story and then, if you have the information, help us verify the numbers that CPS sent us.</p>
+<p>We’ll only accept information from verified members of the CTU. Provide the email where you get CTU messages, like our weekly bulletin. We will check it against our roster of CTU member emails.</p>
+<p style="margin: 24px 0 6px 0; padding: 0;"><label for="personalEmail" style="font-weight: bold; color: #444444;">Your personal email</label></p>
+<p>
+<input type="email" name="personalEmail" id="personalEmail" style="width: calc(100% - 120px);">
+<button type="submit" id="emailMatch" style="width: 100px;">Check Email</button>
+</p>
+</div>
+`
+//    console.log("SchoolData identifyModal:",JSON.stringify(schoolData));
+  modalContentBox.innerHTML = modalContentHTML;
+  const modalForm = document.querySelector("#modal-form");
+  modalForm.reset();
+  modalForm.removeEventListener("submit", (e) => {ajaxSubmitEmail(e,schoolData)});
+  modalForm.addEventListener("submit", (e) => {ajaxSubmitEmail(e,schoolData)});
+}
+async function ajaxSubmitEmail (e,schoolData) {
   e.preventDefault();
-  console.log("Form Submission",e);
+  // console.log("Form Submission",e,"SchoolData?",schoolData);
   const formData = new FormData(e.target);
+  console.log("ajaxSubmit FormData:",formData);
   const sentData = Object.fromEntries(formData);
-  console.log("Personal Email?",personalEmail);
+  const emailAddress = sentData.personalEmail;
+  console.log("ajaxSubmit SchoolData:",schoolData,"emailAddress:",emailAddress)
+  waitingModalContent (emailAddress,schoolData);
 }
-  </script>
+</script>
   </body>
 </html>
