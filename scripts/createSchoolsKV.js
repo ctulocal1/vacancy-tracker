@@ -1,4 +1,4 @@
-import { parse, stringify } from "jsr:@std/csv";
+// import { parse, stringify } from "jsr:@std/csv";
 
 // const schoolsCSV = Deno.readTextFileSync("./schools-represented.csv");
 // const schools = parse (schoolsCSV, {
