@@ -32,4 +32,11 @@ insert.innerHTML = `
       <figure id="cpsmap" class="cpsmap"></figure>
     </div>
 `;
-
+let dochead = document.querySelector("head");
+let link = document.createElement("link");
+    link.id   = "vCSS";
+    link.rel  = 'stylesheet';
+    link.type = 'text/css';
+    link.href = 'http://tracker.ctulocal1.org/vcss.css';
+    link.media = 'all';
+dochead.appendChild(link);
