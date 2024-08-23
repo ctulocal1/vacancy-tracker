@@ -4,7 +4,7 @@ routes.set("/map",{type:"html",file:"./public/index.html"})
 routes.set("/schools.json",{type:"json",file:"./data/schools.json"});
 routes.set("/cps-map.svg",{type:"svg",file:"./maps/cps-map.svg"});
 routes.set("/schools-vacancies.json",{type:"json",file:"./data/schools-vacancies.json"});
-routes.set("/schools-vacancies.html",{type:"html",file:"./public/schools-vacancies.html"});
+routes.set("/schools-vacancies.html",{type:"html",file:"./public/school-vacancies.html"});
 routes.set("/dialog.html",{type:"html",file:"./experiments/dialog.html"});
 routes.set("/vload.js",{type:"js",file:"./scripts/vload.js"})
 routes.set("/images/ctu-seal.png",{type:"png",file:"./images/ctu-seal.png"})
@@ -13,8 +13,11 @@ routes.set("/images/ctu-seal.svg",{type:"svg",file:"./images/ctu-seal.svg"})
 routes.set("/images/ctu-logo.svg",{type:"svg",file:"./images/ctu-logo.svg"})
 
 export function router(path) {
+  console.log("Router called on:",path)
   const route = routes.get(path);
+  console.log("Router:",route)
   if (route) {
+    console.log("route:",route)
     if (route.type === "html") return htmlRoute(route.file);
     if (route.type === "svg")  return svgRoute(route.file);
     if (route.type === "png")  return pngRoute(route.file);
@@ -25,8 +28,8 @@ export function router(path) {
 }
 
 function pngRoute (pathname) {
-  let mapPage = Deno.readTextFileSync (`./${pathname}`);
-  let resp = new Response (mapPage, {
+  let file = Deno.readTextFileSync (`./${pathname}`);
+  let resp = new Response (file, {
     status: 200,
     headers: {
       "content-type": "image/png",
@@ -37,8 +40,8 @@ function pngRoute (pathname) {
 }
 
 function svgRoute (pathname) {
-  let mapPage = Deno.readTextFileSync (`./${pathname}`);
-  let resp = new Response (mapPage, {
+  let file = Deno.readTextFileSync (`./${pathname}`);
+  let resp = new Response (file, {
     status: 200,
     headers: {
       "content-type": "image/svg+xml",
@@ -49,8 +52,9 @@ function svgRoute (pathname) {
 }
 
 function htmlRoute (pathname) {
-  let mapPage = Deno.readTextFileSync (`./${pathname}`);
-  let resp = new Response (mapPage, {
+  console.log("searching for:",pathname)
+  let file = Deno.readTextFileSync (`./${pathname}`);
+  let resp = new Response (file, {
     status: 200,
     headers: {
       "content-type": "text/html; charset=utf-8",
@@ -61,8 +65,8 @@ function htmlRoute (pathname) {
 
 
 function jsonRoute (pathname) {
-  let mapPage = Deno.readTextFileSync (`./${pathname}`);
-  let resp = new Response (mapPage, {
+  let file = Deno.readTextFileSync (`./${pathname}`);
+  let resp = new Response (file, {
     status: 200,
     headers: {
       "content-type": "text/html; charset=utf-8",
