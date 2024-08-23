@@ -4,7 +4,7 @@ routes.set("/map",{type:"html",file:"./public/index.html"})
 routes.set("/schools.json",{type:"json",file:"./data/schools.json"});
 routes.set("/cps-map.svg",{type:"svg",file:"./maps/cps-map.svg"});
 routes.set("/schools-vacancies.json",{type:"json",file:"./data/schools-vacancies.json"});
-routes.set("/schools-vacancies.html",{type:"html",file:"./data/schools-vacancies.html"});
+routes.set("/schools-vacancies.html",{type:"html",file:"./public/schools-vacancies.html"});
 routes.set("/dialog.html",{type:"html",file:"./experiments/dialog.html"});
 routes.set("/vload.js",{type:"js",file:"./scripts/vload.js"})
 routes.set("/images/ctu-seal.png",{type:"png",file:"./images/ctu-seal.png"})
