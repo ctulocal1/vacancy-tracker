@@ -1,7 +1,7 @@
 let routes = new Map();
 routes.set("/",{type:"html",file:"./public/index.html"})
 routes.set("/map",{type:"html",file:"./public/index.html"})
-routes.set("/schools.json",{type:"json",file:"./data.schools.json"});
+routes.set("/schools.json",{type:"json",file:"./data/schools.json"});
 routes.set("/cps-map.svg",{type:"svg",file:"./maps/cps-map.svg"});
 routes.set("/schools-vacancies.json",{type:"json",file:"./data/schools-vacancies.json"});
 routes.set("/dialog.html",{type:"html",file:"./experiments/dialog.html"});
