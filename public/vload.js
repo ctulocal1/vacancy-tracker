@@ -51,6 +51,7 @@ let link = document.createElement("link");
     link.type = 'text/css';
     link.href = 'https://tracker.ctulocal1.org/vcss.css';
     link.media = 'all';
+console.log("Is it sticking here?")
 dochead.appendChild(link);
 
 console.log("Script should have ended by now.");
