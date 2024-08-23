@@ -7,9 +7,6 @@
     <link rel="shortcut icon" href="/images/ctu-seal.png" type="image/png">
   </head>
   <body>
-    <header style="height: 120px;">
-      <img src="/images/ctu-logo.png" alt="Chicago Teachers Union" style="height: 100px;">
-    </header>
     <dialog id="modal" class="modal">
       <div class="modal-inner">
         <form id="modal-form">
@@ -19,10 +16,13 @@
       </div>
     </dialog>
     <div class="grid-container">
-      <header>
+    <header style="height: 120px;">
+      <img src="/images/ctu-logo.png" alt="Chicago Teachers Union" style="height: 100px;">
+    </header>
+      <div class="intro">
         <h1>Vacancy Tracker</h1>
         <p><strong>The Chicago Teachers Union is fighting for the schools Chicago&rsquo;s students deserve.</strong> Chicago Public Schools CEO Pedro Martinez claims that the district has improved services by allocating new positions, but the reality is that many of these positions exist on paper only. See the difference between the staffing CPS <em>says</em> it is providing and the number of clinicians, teachers, teacher assistants and all school staff <em>actually working</em> at any given school, network office, citywide job category or throughout an elementary network region. These vacant position numbers were provided by CPS itself, so if you can either confirm or correct it, please click the appropriate button below the data table.</p>
-      </header>
+      </div>
       <div id="text" class="text">
         <label for="cb1-input">Display data for:</label>
         <div class="combobox combobox-list">
@@ -144,7 +144,7 @@ input.deptChoice {
   border: none;
   margin: 0;
   display: grid;
-  grid-template-areas: "header" "legend" "map";
+  grid-template-areas: "header" "intro" "legend" "map";
   grid-template-columns: 1fr;
   gap: 20px;
   background: white;
@@ -152,6 +152,10 @@ input.deptChoice {
 .grid-container header {
   padding: 0 10px 0 0;
   grid-area: header;
+}
+.grid-container .intro {
+  padding: 0 10px 0 0;
+  grid-area: intro;
 }
 .grid-container header p {
   line-height: 1.4;
@@ -294,12 +298,11 @@ dialog input[type="email"] {
     margin: 40px auto 0 auto;
     grid-template-columns: 3fr 1fr;
     grid-template-areas:
-      "header legend"
+      "header header"
+      "intro legend"
       "map legend";
   }
   .grid-container header {
-    // grid-column: 1/2;
-    // grid-row: 1;
   }
   .grid-container .text {
     padding-top: 60px;
@@ -358,7 +361,7 @@ dialog input[type="email"] {
   let modalContentBox = document.querySelector("#modal-content");
 main ();
 async function getData() {
-  const url = "./schools.json";
+  const url = "./data/schools.json";
   try {
     const response = await fetch(url);
     if (!response.ok) {
@@ -371,7 +374,7 @@ async function getData() {
   }
 }
 async function getVacancies() {
-  const url = "./schools-vacancies.json";
+  const url = "./data/schools-vacancies.json";
   try {
     const response = await fetch(url);
     if (!response.ok) {
@@ -385,7 +388,7 @@ async function getVacancies() {
   }
 }
 async function getMap() {
-  const url = "./cps-map.svg";
+  const url = "./images/cps-map.svg";
   try {
     const response = await fetch(url);
     if (!response.ok) {

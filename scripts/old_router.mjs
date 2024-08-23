@@ -15,7 +15,7 @@ routes.set("/images/ctu-logo.svg",{type:"svg",file:"./images/ctu-logo.svg"})
 export function router(path) {
   console.log("Router called on:",path)
   const route = routes.get(path);
-  console.log("Router:",route)
+  console.log("Route Object:",route)
   if (route) {
     console.log("route:",route)
     if (route.type === "html") return htmlRoute(route.file);

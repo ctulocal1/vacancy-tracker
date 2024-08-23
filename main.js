@@ -1,18 +1,53 @@
-import {router} from "./scripts/router.mjs"
+import { Application, Router, Status } from 'https://deno.land/x/oak/mod.ts'
+import { oakCors } from "https://deno.land/x/cors/mod.ts";
 
-Deno.serve(async (req) => {
-  console.log("Method:", req.method);
+/* static_content.js */
 
-  const url = new URL(req.url);
-  console.log("Path:", url.pathname);
-  console.log("Query parameters:", url.searchParams);
-  console.log("Headers:", req.headers);
 
-  if (req.body) {
-    const body = await req.text();
+const port = 8000
+
+const app = new Application()
+const router = new Router()
+
+// error handler
+app.use(async (context, next) => {
+  try {
+    await next()
+  } catch (err) {
+        console.log(err)
   }
-  let resp = router(url.pathname);
-  console.log("Response Headers:",resp.headers)
-  return resp;
+})
 
-});
+// routes.set("/",{type:"html",file:"./public/index.html"})
+// routes.set("/map",{type:"html",file:"./public/index.html"})
+// routes.set("/schools.json",{type:"json",file:"./data.schools.json"});
+// routes.set("/cps-map.svg",{type:"svg",file:"./maps/cps-map.svg"});
+// routes.set("/schools-vacancies.json",{type:"json",file:"./data/schools-vacancies.json"});
+// routes.set("/dialog.html",{type:"html",file:"./experiments/dialog.html"});
+// routes.set("/vload.js",{type:"js",file:"./scripts/vload.js"})
+
+app.use(router.routes())
+app.use(router.allowedMethods())
+
+// static content
+app.use(async (context, next) => {
+    const root = `${Deno.cwd()}/public`
+    try {
+        await context.send({ 
+      root ,
+      index: "index.html"
+    })
+    } catch {
+        next()
+    }
+})
+
+// page not found
+app.use( async context => {
+    context.response.status = Status.NotFound
+  context.response.body = `"${context.request.url}" not found`
+})
+
+app.addEventListener("listen", ({ port }) => console.log(`listening on port: ${port}`) )
+
+await app.listen({ port })
