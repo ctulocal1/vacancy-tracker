@@ -1,5 +1,5 @@
-console.log ("vload.js is loaded");
 let insert = document.querySelector("#VInsert");
+console.log ("vload.js is loaded");
 insert.innerHTML = `
 <dialog id="modal" class="modal">
   <div class="modal-inner">
