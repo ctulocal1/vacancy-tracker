@@ -50,9 +50,10 @@ const jobsMap = new Map();
 for (const v of vacancies) {
   const deptID = v["Dept ID"];
   if (!jobsMap.get(v.JobCd)) {
-    const jobObj = {jobCode:v.JobCd,type:v.Type,jobTitle: v["Job Title"]}
+    const jobObj = {jobCode:v.JobCd,type:v.Type,jobTitle: v["Job Title"],citywideVacancies:0}
     jobsMap.set(v.JobCd,jobObj)
   }
+  jobsMap.get(v.JobCd).citywideVacancies++
   let dept = deptsMap.get(deptID);
   if (!dept) {
     deptsMap.set(deptID,{
@@ -125,7 +126,7 @@ Deno.writeTextFileSync("../public/school-vacancies.html",htmlDoc);
 
 
 // console.log(deptsMap);
-// console.log(jobsMap);
+console.log(jobsMap);
 // console.log("Jobs Count:",jobsMap.size);
 // console.log("CW Depts:",cwDepts);
 // console.log(vacancies) :;

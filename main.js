@@ -26,6 +26,13 @@ app.use(async (context, next) => {
 // routes.set("/dialog.html",{type:"html",file:"./experiments/dialog.html"});
 // routes.set("/vload.js",{type:"js",file:"./scripts/vload.js"})
 
+app.use(
+  oakCors({
+    origin: /ctulocal1.org$/,
+    optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+  }),
+);
+
 app.use(router.routes())
 app.use(router.allowedMethods())
 
@@ -41,6 +48,7 @@ app.use(async (context, next) => {
         next()
     }
 })
+
 
 // page not found
 app.use( async context => {
