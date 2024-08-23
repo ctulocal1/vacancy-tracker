@@ -37,6 +37,6 @@ let link = document.createElement("link");
     link.id   = "vCSS";
     link.rel  = 'stylesheet';
     link.type = 'text/css';
-    link.href = 'http://tracker.ctulocal1.org/vcss.css';
+    link.href = 'https://tracker.ctulocal1.org/vcss.css';
     link.media = 'all';
 dochead.appendChild(link);
