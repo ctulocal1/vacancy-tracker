@@ -1,0 +1,11 @@
+const object = {name: "Fred", surname: "Flintstone"};
+const map1 = new Map();
+const map2 = new Map();
+map1.set(1,object);
+map2.set(2,object);
+console.log("Map 1:",map1.get(1));
+console.log("Map 2:",map2.get(2));
+let object1 = map1.get(1);
+object1.surname = "Sanford";
+console.log("Map 1:",map1.get(1));
+console.log("Map 2:",map2.get(2));
