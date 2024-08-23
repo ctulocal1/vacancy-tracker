@@ -1,6 +1,8 @@
 console.log ("vload.js is loaded");
 let insert = document.querySelector("#insert");
 insert.innerHTML = `
+<div class="size-container"
+  <div class="grid-container">
       <div class="intro">
         <h1>Vacancy Tracker</h1>
         <p><strong>The Chicago Teachers Union is fighting for the schools Chicago&rsquo;s students deserve.</strong> Chicago Public Schools CEO Pedro Martinez claims that the district has improved services by allocating new positions, but the reality is that many of these positions exist on paper only. See the difference between the staffing CPS <em>says</em> it is providing and the number of clinicians, teachers, teacher assistants and all school staff <em>actually working</em> at any given school, network office, citywide job category or throughout an elementary network region. These vacant position numbers were provided by CPS itself, so if you can either confirm or correct it, please click the appropriate button below the data table.</p>
@@ -31,6 +33,8 @@ insert.innerHTML = `
       </div>
       <figure id="cpsmap" class="cpsmap"></figure>
     </div>
+  </div>
+</div>
 `;
 let dochead = document.querySelector("head");
 let link = document.createElement("link");
