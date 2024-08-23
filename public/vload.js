@@ -1,7 +1,7 @@
 console.log ("vload.js is loaded");
 let insert = document.querySelector("#insert");
 insert.innerHTML = `
-<div class="size-container"
+<div class="size-container">
   <div class="grid-container">
       <div class="intro">
         <h1>Vacancy Tracker</h1>
