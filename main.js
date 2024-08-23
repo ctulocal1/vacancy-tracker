@@ -10,9 +10,9 @@ Deno.serve(async (req) => {
 
   if (req.body) {
     const body = await req.text();
-    console.log("Body:", body);
   }
-
-  return router(url.pathname);
+  let resp = router(url.pathname);
+  console.log("Response Headers:",resp.headers)
+  return resp;
 
 });
