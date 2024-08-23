@@ -2,14 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>CTU Vacancy Tracker</title>
+    <title>Map Experiment</title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <link rel="shortcut icon" href="/images/ctu-seal.svg" type="image/svg">
   </head>
   <body>
-    <header style="height: 60px;">
-      <img src="/images/ctu-logo.svg" alt="Chicago Teachers Union" style="height: 50px;">
-    </header>
     <dialog id="modal" class="modal">
       <div class="modal-inner">
         <form id="modal-form">
@@ -20,8 +17,8 @@
     </dialog>
     <div class="grid-container">
       <header>
-        <h1>Vacancy Tracker</h1>
-        <p><strong>The Chicago Teachers Union is fighting for the schools Chicago&rsquo;s students deserve.</strong> Chicago Public Schools CEO Pedro Martinez claims that the district has improved services by allocating new positions, but the reality is that many of these positions exist on paper only. See the difference between the staffing CPS <em>says</em> it is providing and the number of clinicians, teachers, teacher assistants and all school staff <em>actually working</em> at any given school, network office, citywide job category or throughout an elementary network region. These vacant position numbers were provided by CPS itself, so if you can either confirm or correct it, please click the appropriate button below the data table.</p>
+        <h1>CPS Vacancy Tracker</h1>
+        <p><strong>Chicago Public Schools staffing isn’t what it’s cracked up to be.</strong> See the difference between the staffing CPS <em>says</em> it is providing and the number of clinicians, teachers, teacher assistants and all school staff <em>actually working</em> at any given school, network office, citywide job category or throughout an elementary network region. These vacant position numbers were provided by CPS itself, so if you can either confirm or correct it, please click the appropriate button below the data table.</p>
       </header>
       <div id="text" class="text">
         <label for="cb1-input">Display data for:</label>
@@ -358,7 +355,7 @@ dialog input[type="email"] {
   let modalContentBox = document.querySelector("#modal-content");
 main ();
 async function getData() {
-  const url = "./schools.json";
+  const url = "./data/schools.json";
   try {
     const response = await fetch(url);
     if (!response.ok) {
@@ -371,7 +368,7 @@ async function getData() {
   }
 }
 async function getVacancies() {
-  const url = "./schools-vacancies.json";
+  const url = "./data/schools-vacancies.json";
   try {
     const response = await fetch(url);
     if (!response.ok) {
@@ -385,7 +382,7 @@ async function getVacancies() {
   }
 }
 async function getMap() {
-  const url = "./cps-map.svg";
+  const url = "./maps/cps-map.svg";
   try {
     const response = await fetch(url);
     if (!response.ok) {

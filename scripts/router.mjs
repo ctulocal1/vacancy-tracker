@@ -6,6 +6,8 @@ routes.set("/cps-map.svg",{type:"svg",file:"./maps/cps-map.svg"});
 routes.set("/schools-vacancies.json",{type:"json",file:"./data/schools-vacancies.json"});
 routes.set("/dialog.html",{type:"html",file:"./experiments/dialog.html"});
 routes.set("/vload.js",{type:"js",file:"./scripts/vload.js"})
+routes.set("/images/ctu-seal.svg",{type:"svg",file:"./images/ctu-seal.svg"})
+routes.set("/images/ctu-logo.svg",{type:"svg",file:"./images/ctu-logo.svg"})
 
 export function router(path) {
   const route = routes.get(path);
