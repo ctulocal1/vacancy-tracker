@@ -1,14 +1,6 @@
 let insert = document.querySelector("#VInsert");
 console.log ("vload.js is loaded");
 insert.innerHTML = `
-<dialog id="modal" class="modal">
-  <div class="modal-inner">
-    <form id="modal-form">
-      <button type="button" aria-label="close" formmethod="dialog" class="modal-close" formnovalidate="">×</button>
-      <div id="modal-content"></div>
-    </form>
-  </div>
-</dialog>
 <div class="size-container">
   <div class="grid-container">
       <div class="intro">
