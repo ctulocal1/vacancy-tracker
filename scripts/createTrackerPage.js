@@ -168,7 +168,10 @@ if ( vacanciesByJob.has(jobCode) ) {
   }
 })
 outputString += `
-</tbody
+</tbody>
+<tfoot>
+<tr><th scope="row">District Total</th><td>${vacanciesByJob.get("District")}</td></tr>
+</tfoot>
 </table>
 <table>
 <thead class="thead">
