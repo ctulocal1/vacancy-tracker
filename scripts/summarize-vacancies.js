@@ -19,7 +19,8 @@ function addSchool (school) {
 }
 function initPositionsVacant(dept) {
   dept.positionsVacant = new Map();
-  const v = dept.positionsVacant;
+  dept.categoriesVacant = new Map();
+  const v = dept.categoriesVacant;
     v.set("SpecEd",0);
     v.set("Bilingual",0);
     v.set("Science",0);
@@ -77,17 +78,17 @@ for (const v of vacancies) {
   if (dept.positionsVacant.get(v.JobCd)) {
     dept.positionsVacant.set(v.JobCd,dept.positionsVacant.get(v.JobCd)+1) ;
   } else {dept.positionsVacant.set(v.JobCd,1)}
-  if (v.SpecEd.length > 0)  dept.positionsVacant.set("SpecEd",dept.positionsVacant.get("SpecEd")+1);
-  if (v.Bilingual.length > 0)  dept.positionsVacant.set("Bilingual",dept.positionsVacant.get("Bilingual")+1);
-  if (v.Science.length > 0)  dept.positionsVacant.set("Science",dept.positionsVacant.get("Science")+1);
-  if (v.Math.length > 0)  dept.positionsVacant.set("Math",dept.positionsVacant.get("Math")+1);
-  if (v.Arts.length > 0)  dept.positionsVacant.set("Arts",dept.positionsVacant.get("Arts")+1);
-  if (v.EarlyChild.length > 0)  dept.positionsVacant.set("EarlyChild",dept.positionsVacant.get("EarlyChild")+1);
-  if (v.PhysEd.length > 0)  dept.positionsVacant.set("PhysEd",dept.positionsVacant.get("PhysEd")+1);
-  if (v.Counselor.length > 0)  dept.positionsVacant.set("Counselor",dept.positionsVacant.get("Counselor")+1);
-  if (v.Clinician.length > 0)  dept.positionsVacant.set("SpecEd",dept.positionsVacant.get("SpecEd")+1);
-  if (v.Library.length > 0)  dept.positionsVacant.set("Library",dept.positionsVacant.get("Library")+1);
-  if (v.WorldLang.length > 0)  dept.positionsVacant.set("WorldLang",dept.positionsVacant.get("WorldLang")+1);
+  if (v.SpecEd.length > 0)  dept.categoriesVacant.set("SpecEd",dept.categoriesVacant.get("SpecEd")+1);
+  if (v.Bilingual.length > 0)  dept.categoriesVacant.set("Bilingual",dept.categoriesVacant.get("Bilingual")+1);
+  if (v.Science.length > 0)  dept.categoriesVacant.set("Science",dept.categoriesVacant.get("Science")+1);
+  if (v.Math.length > 0)  dept.categoriesVacant.set("Math",dept.categoriesVacant.get("Math")+1);
+  if (v.Arts.length > 0)  dept.categoriesVacant.set("Arts",dept.categoriesVacant.get("Arts")+1);
+  if (v.EarlyChild.length > 0)  dept.categoriesVacant.set("EarlyChild",dept.categoriesVacant.get("EarlyChild")+1);
+  if (v.PhysEd.length > 0)  dept.categoriesVacant.set("PhysEd",dept.categoriesVacant.get("PhysEd")+1);
+  if (v.Counselor.length > 0)  dept.categoriesVacant.set("Counselor",dept.categoriesVacant.get("Counselor")+1);
+  if (v.Clinician.length > 0)  dept.categoriesVacant.set("SpecEd",dept.categoriesVacant.get("SpecEd")+1);
+  if (v.Library.length > 0)  dept.categoriesVacant.set("Library",dept.categoriesVacant.get("Library")+1);
+  if (v.WorldLang.length > 0)  dept.categoriesVacant.set("WorldLang",dept.categoriesVacant.get("WorldLang")+1);
 }
 
 let schoolsAlphabeticalByName = Array.from(schoolsByName)
@@ -124,9 +125,23 @@ htmlDoc = htmlDoc.concat( tableStrings.join("\n"), `</body></html>` );
 
 Deno.writeTextFileSync("../public/school-vacancies.html",htmlDoc);
 
+let deptsString = "[\n";
+
+deptsMap.forEach(logMapElements);
+function logMapElements(value,key,map) {
+  let dept = {};
+  dept = value;
+  dept.positionsVacant = Object.fromEntries(value.positionsVacant);
+  dept.categoriesVacant = Object.fromEntries(value.categoriesVacant);
+  const deptString = JSON.stringify(dept);
+  deptsString += deptString + ",\n" 
+}
+deptsString += "]"
+
+Deno.writeTextFileSync("../public/data/vacancies-by-department.json",deptsString);
 
 // console.log(deptsMap);
-console.log(jobsMap);
+// console.log(jobsMap);
 // console.log("Jobs Count:",jobsMap.size);
 // console.log("CW Depts:",cwDepts);
 // console.log(vacancies) :;
