@@ -33,7 +33,6 @@ input.deptChoice {
   margin: 10px 0;
 }
 .cpsmap #offices g {
-  display: none;
 }
 .cpsmap #networks path {
   fill-opacity: 0.09;
