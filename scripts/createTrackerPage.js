@@ -170,7 +170,7 @@ if ( vacanciesByJob.has(jobCode) ) {
 outputString += `
 </tbody>
 <tfoot>
-<tr><th scope="row">District Total</th><td>${vacanciesByJob.get("District")}</td></tr>
+<tr><th scope="row">District Total</th><td>${vacanciesByJob.get("District").toLocaleString()}</td></tr>
 </tfoot>
 </table>
 <table>

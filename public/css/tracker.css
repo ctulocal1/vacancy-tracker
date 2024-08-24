@@ -92,6 +92,12 @@ input.deptChoice {
 .dataOutput table th[scope="row"] {
   text-align: left;
 }
+.dataOutput table tfoot th,
+.dataOutput table tfoot td {
+  border-top: 1px solid #333333;
+  border-bottom: 3px solid #333333;
+  font-weight: bold;
+}
 p.asterisk {
   display: list-item;
 }
