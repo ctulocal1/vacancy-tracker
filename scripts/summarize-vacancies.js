@@ -40,7 +40,7 @@ schools.forEach( (school) => {addSchool(school);
   schoolsByName.set(school.short_name,school.dept_id)});
 // console.log(deptsMap);
 // console.log(deptsMap.get("66602"));
-
+console.log(schoolsByName)
 
 const vacanciesCSV = Deno.readTextFileSync("./data/Vacancies-2024-08-21.csv");
 const vacancies = parse (vacanciesCSV, {
@@ -52,7 +52,7 @@ const jobsMap = new Map();
 
 for (const v of vacancies) {
   const deptID = v["Dept ID"];
-  if (!jobsMap.get(v.JobCd)) {
+  if (!jobsMap.has(v.JobCd)) {
     const jobObj = {jobCode:v.JobCd,type:v.Type,jobTitle: v["Job Title"],citywideVacancies:0}
     jobsMap.set(v.JobCd,jobObj)
   }
@@ -76,7 +76,7 @@ for (const v of vacancies) {
   delete v.Network2;
   delete v.Network;
   delete v.Zipcode;
-  if (dept.positionsVacant.get(v.JobCd)) {
+  if (dept.positionsVacant.has(v.JobCd)) {
     dept.positionsVacant.set(v.JobCd,dept.positionsVacant.get(v.JobCd)+parseFloat(v.FTE)) ;
   } else {dept.positionsVacant.set(v.JobCd,parseFloat(v.FTE))}
   if (v.SpecEd.length > 0)  dept.categoriesVacant.set("SpecEd",dept.categoriesVacant.get("SpecEd") + parseFloat(v.FTE));
@@ -127,6 +127,7 @@ htmlDoc = htmlDoc.concat( tableStrings.join("\n"), `</body></html>` );
 Deno.writeTextFileSync("./public/school-vacancies.html",htmlDoc);
 
 let deptsString = "";
+let deptsArray = []
 
 deptsMap.forEach(logMapElements);
 function logMapElements(value,key,map) {
@@ -135,10 +136,20 @@ function logMapElements(value,key,map) {
   dept.positionsVacant = Object.fromEntries(value.positionsVacant);
   dept.categoriesVacant = Object.fromEntries(value.categoriesVacant);
   const deptString = ",\n" + JSON.stringify(dept);
+  if (!dept.type && dept.short_name.match("Network")) dept.type = "Network Office"
+  else if (!dept.type) dept.type = "CW Department";
+  const type = dept.type;
+  console.log(dept.short_name,type)
   deptsString += deptString;
 }
-deptsString = deptsString.slice(2)
+deptsString = deptsString.slice(2) // Get rid of initial ,\n so JSON will be valid.
 deptsString = "[\n" + deptsString + "\n]"
+
+//const deptsArray = deptsMap.values()
+//for (const dept of deptsArray) {
+  //console.log(dept.short_name)
+//}
+//console.log(deptsArray)
 
 Deno.writeTextFileSync("./public/data/vacancies-by-department.json",deptsString);
 

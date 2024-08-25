@@ -29,9 +29,9 @@ let officeGroups = map.querySelectorAll("#offices g");
 for (let group of officeGroups) {
   const circle = group.querySelector("circle");
   const vacancy = vacancies.get(group.id);
-  console.log(vacancy)
+  //console.log(vacancy)
   if (vacancy) {
-    console.log(vacancy.short_name,"Job Title with Vacancies:",Object.entries(vacancy.positionsVacant).length);
+    //console.log(vacancy.short_name,"Job Title with Vacancies:",Object.entries(vacancy.positionsVacant).length);
     if (Object.entries(vacancy.positionsVacant).length > 0) {
       let vacantPositions = Object.values(vacancy.positionsVacant);
       //console.log(vacantPositions);
@@ -40,7 +40,7 @@ for (let group of officeGroups) {
       //console.log(vacancy.short_name,"Square Root of Total:",Math.sqrt(totalVacancies));
       circle.setAttributeNS(null,"r",Math.sqrt(totalVacancies)*3);
       circle.style.fill = "#ed1b2f"
-    } else circle.style.fill = "#cccccc"
+    }
   }
 }
 
@@ -49,7 +49,7 @@ for (let group of schoolGroups) {
   const circle = group.querySelector("circle");
   const vacancy = vacancies.get(group.id);
   if (vacancy) {
-    console.log(vacancy.short_name,"Job Title with Vacancies:",Object.entries(vacancy.positionsVacant).length);
+    //console.log(vacancy.short_name,"Job Title with Vacancies:",Object.entries(vacancy.positionsVacant).length);
     if (Object.entries(vacancy.positionsVacant).length > 0) {
       let vacantPositions = Object.values(vacancy.positionsVacant);
       //console.log(vacantPositions);

@@ -8,7 +8,7 @@ let typeSet = new Set();
 schools.map( (school) => schoolsMap.set(school.dept_id,school) )
 
 depts.map( (dept) => {
-  if ( schoolsMap.has(dept.dept_id) ) dept.shortName = schoolsMap.get(dept.dept_id).short_name;
+  if ( schoolsMap.has(dept.dept_id) ) dept.short_name = schoolsMap.get(dept.dept_id).short_name;
   deptsMap.set(dept.dept_id,dept);
   typeSet.add(dept.type);
 })
@@ -24,7 +24,7 @@ departments.office = depts.filter( (dept) => dept.type === "CW Department")
 departments.charter = sortObjectsByString(departments.charter,"ctu_name");
 departments.network = sortObjectsByString(departments.network,"ctu_name");
 departments.office = sortObjectsByString(departments.office,"ctu_name");
-departments.district = sortObjectsByString(departments.district,"shortName")
+departments.district = sortObjectsByString(departments.district,"short_name")
 
 console.log(departments)
 

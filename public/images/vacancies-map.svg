@@ -3,7 +3,7 @@
   <defs id="defs3378" />
   <sodipodi:namedview id="namedview3376" pagecolor="#ffffff" bordercolor="#111111" borderopacity="1" inkscape:pageshadow="0" inkscape:pageopacity="0" inkscape:pagecheckerboard="1" showgrid="false" inkscape:zoom="2.4229991" inkscape:cx="600.90819" inkscape:cy="190.87915" inkscape:window-width="2560" inkscape:window-height="1516" inkscape:window-x="0" inkscape:window-y="0" inkscape:window-maximized="1" inkscape:current-layer="11070" />
   <style id="style19575">
- #schools circle, #offices circle {fill: #ed1b2e; stroke: #555555; stroke-width: 0.5;}
+ #schools circle, #offices circle {fill: #ed1b2e00; stroke: #555555; stroke-width: 0.5;}
  #schools g:hover circle, #offices g:hover circle {stroke:blue; stroke-width: 2;}
  #networks path {fill: #888888; fill-opacity: .2; stroke: white; stroke-width: 0; stroke-opacity: 0.6;}
  #networks g:hover path {stroke: blue; stroke-opacity: 1; stroke-width: 0;}
@@ -3598,75 +3598,75 @@
       <title id="title22917">Network 17 Office</title>
       <circle cx="644.89429" cy="709.34851" r="3" data-network="17" data-address="110 N. Paulina St, Chicago, IL 60612" id="circle22919" />
     </g>
-    <g id="11385">
-      <title id="title11385">CW Early Childhood</title>
-      <circle style="fill:#ed1b2f" cx="580" cy="20" r="5.196152422706632" data-network="" id="circle11385" />
-      <text text-anchor="start" id="text11385" y="-1.8828111"><tspan direction="ltr" unicode-bidi="embed" x="590" y="24" id="tspan11385">CW Early Childhood</tspan></text>
-    </g>
-    <g id="10855">
-      <title id="title10855">CW Counseling / Postsecondary Ad</title>
-      <circle cx="580" cy="40" r="3" data-network="" id="circle10855" />
-      <text text-anchor="start" id="text10855" y="-1.8828111"><tspan direction="ltr" unicode-bidi="embed" x="590" y="44" id="tspan10855">CW Counseling/Postsecondary Ad</tspan></text>
-    </g>
     <g id="13727">
-      <title id="title13727">CW Early College and Career</title>
-      <circle cx="580" cy="60" r="3" data-network="" id="circle13727" />
-      <text text-anchor="start" id="text13727" y="-1.8828111"><tspan direction="ltr" unicode-bidi="embed" x="590" y="64" id="tspan13727">CW Early College and Career</tspan></text>
-    </g>
-    <g id="12670">
-      <title id="title12670">CW Education General</title>
-      <circle cx="580" cy="80" r="3" data-network="" id="circle12670" />
-      <text text-anchor="start" id="text12670" y="-1.8828111"><tspan direction="ltr" unicode-bidi="embed" x="590" y="84" id="tspan12670">CW Education General</tspan></text>
-    </g>
-    <g id="12470">
-      <title id="title12470">CW Finance General</title>
-      <circle cx="580" cy="100" r="3" data-network="" id="circle12470" />
-      <text text-anchor="start" id="text12470" y="-1.8828111"><tspan direction="ltr" unicode-bidi="embed" x="590" y="104" id="tspan12470">CW Finance General</tspan></text>
-    </g>
-    <g id="11070">
-      <title id="title11070">CW Human Resources</title>
-      <circle style="fill:#ed1b2f" cx="580" cy="120" r="18" data-network="" id="circle11070" />
-      <text text-anchor="start" id="text11070" y="-1.8828111"><tspan direction="ltr" unicode-bidi="embed" x="590" y="124" id="tspan11070">CW Human Resources</tspan></text>
-    </g>
-    <g id="11540">
-      <title id="title11540">CW Language and Culture</title>
-      <circle style="fill:#ed1b2f" cx="580" cy="140" r="3" data-network="" id="circle11540" />
-      <text text-anchor="start" id="text11540" y="-1.8828111"><tspan direction="ltr" unicode-bidi="embed" x="590" y="144" id="tspan11540">CW Language and Culture</tspan></text>
-    </g>
-    <g id="11510">
-      <title id="title11510">Dept. of Language and Cultural Ed</title>
-      <circle cx="580" cy="160" r="3" data-network="" id="circle11510" />
-      <text text-anchor="start" id="text11510" y="-1.8828111"><tspan direction="ltr" unicode-bidi="embed" x="590" y="164" id="tspan11510">Dept. of Language and Cultural Ed</tspan></text>
-    </g>
-    <g id="11010">
-      <title id="title11010">Human Resources</title>
-      <circle cx="580" cy="180" r="3" data-network="" id="circle11010" />
-      <text text-anchor="start" id="text11010" y="-1.8828111"><tspan direction="ltr" unicode-bidi="embed" x="590" y="184" id="tspan11010">Human Resources</tspan></text>
-    </g>
-    <g id="11675">
-      <title id="title11675">ODS - Related Svc Providers</title>
-      <circle style="fill:#ed1b2f" cx="580" cy="220" r="31.606961258558215" data-network="" id="circle11675" />
-      <text text-anchor="start" id="text11675" y="-1.8828111"><tspan direction="ltr" unicode-bidi="embed" x="590" y="224" id="tspan11675">ODS - Related Svc Providers</tspan></text>
-    </g>
-    <g id="11672">
-      <title id="title11672">ODS Diverse-Learner Supports</title>
-      <circle style="fill:#ed1b2f" cx="580" cy="200" r="7.937253933193772" data-network="" id="circle11672" />
-      <text text-anchor="start" id="text11672" y="-1.8828111"><tspan direction="ltr" unicode-bidi="embed" x="590" y="204" id="tspan11672">ODS Diverse-Learner Supports</tspan></text>
-    </g>
-    <g id="11673">
-      <title id="title11673">ODS Specially-Designed Instr</title>
-      <circle style="fill:#ed1b2f" cx="580" cy="240" r="10.606601717798213" data-network="" id="circle11673" />
-      <text text-anchor="start" id="text11673" y="-1.8828111"><tspan direction="ltr" unicode-bidi="embed" x="590" y="244" id="tspan11673">ODS Specially-Designed Instr</tspan></text>
-    </g>
-    <g id="14050">
-      <title id="title14050">Ofc of Student Health and Wellness</title>
-      <circle style="fill:#ed1b2f" cx="580" cy="260" r="4.242640687119286" data-network="" id="circle14050" />
-      <text text-anchor="start" id="text14050" y="-1.8828111"><tspan direction="ltr" unicode-bidi="embed" x="590" y="264" id="tspan14050">Ofc of Student Health and Wellness</tspan></text>
+      <title id="title13727">Adv. Learning and Speclty Progs CW</title>
+      <circle cx="580" cy="20" r="3" data-network="" id="circle13727" />
+      <text text-anchor="start" id="text13727" y="-1.8828111"><tspan direction="ltr" unicode-bidi="embed" x="590" y="24" id="tspan13727">Adv. Learning and Speclty Progs CW</tspan></text>
     </g>
     <g id="10875">
-      <title id="title10875">Pathways to College and Careers</title>
-      <circle cx="580" cy="280" r="3" data-network="" id="circle10875" />
-      <text text-anchor="start" id="text10875" y="-1.8828111"><tspan direction="ltr" unicode-bidi="embed" x="590" y="284" id="tspan10875">Pathways to College and Careers</tspan></text>
+      <title id="title10875">College / Career Success</title>
+      <circle cx="580" cy="40" r="3" data-network="" id="circle10875" />
+      <text text-anchor="start" id="text10875" y="-1.8828111"><tspan direction="ltr" unicode-bidi="embed" x="590" y="44" id="tspan10875">College / Career Success</tspan></text>
+    </g>
+    <g id="10855">
+      <title id="title10855">Counseling / Postsec Ad CW</title>
+      <circle cx="580" cy="60" r="3" data-network="" id="circle10855" />
+      <text text-anchor="start" id="text10855" y="-1.8828111"><tspan direction="ltr" unicode-bidi="embed" x="590" y="64" id="tspan10855">Counseling / Postsecondary Ad CW</tspan></text>
+    </g>
+    <g id="11385">
+      <title id="title11385">Early Childhd Ed CW</title>
+      <circle style="fill:#ed1b2f" cx="580" cy="80" r="5.196152422706632" data-network="" id="circle11385" />
+      <text text-anchor="start" id="text11385" y="-1.8828111"><tspan direction="ltr" unicode-bidi="embed" x="590" y="84" id="tspan11385">Early Childhood CW</tspan></text>
+    </g>
+    <g id="12670">
+      <title id="title12670">Education General CW</title>
+      <circle cx="580" cy="100" r="3" data-network="" id="circle12670" />
+      <text text-anchor="start" id="text12670" y="-1.8828111"><tspan direction="ltr" unicode-bidi="embed" x="590" y="104" id="tspan12670">Education General CW</tspan></text>
+    </g>
+    <g id="12470">
+      <title id="title12470">Finance General CW</title>
+      <circle cx="580" cy="120" r="3" data-network="" id="circle12470" />
+      <text text-anchor="start" id="text12470" y="-1.8828111"><tspan direction="ltr" unicode-bidi="embed" x="590" y="124" id="tspan12470">Finance General CW</tspan></text>
+    </g>
+    <g id="11510">
+      <title id="title11510">Multilingual Multicultural Ed</title>
+      <circle cx="580" cy="140" r="3" data-network="" id="circle11510" />
+      <text text-anchor="start" id="text11510" y="-1.8828111"><tspan direction="ltr" unicode-bidi="embed" x="590" y="144" id="tspan11510">Multilingual Multicultural Ed</tspan></text>
+    </g>
+    <g id="11540">
+      <title id="title11540">Multilingual Multicultural Ed CW</title>
+      <circle style="fill:#ed1b2f" cx="580" cy="160" r="3" data-network="" id="circle11540" />
+      <text text-anchor="start" id="text11540" y="-1.8828111"><tspan direction="ltr" unicode-bidi="embed" x="590" y="164" id="tspan11540">Multilingual Multicultural Ed CW</tspan></text>
+    </g>
+    <g id="11675">
+      <title id="title11675">Studnts w Disabilities - RSPs</title>
+      <circle style="fill:#ed1b2f" cx="580" cy="180" r="31.606961258558215" data-network="" id="circle11675" />
+      <text text-anchor="start" id="text11675" y="-1.8828111"><tspan direction="ltr" unicode-bidi="embed" x="590" y="184" id="tspan11675">Studnts w Disabilities - RSPs</tspan></text>
+    </g>
+    <g id="11672">
+      <title id="title11672">Studnts w Disabilities - Asmt / Asgn</title>
+      <circle style="fill:#ed1b2f" cx="580" cy="200" r="7.937253933193772" data-network="" id="circle11672" />
+      <text text-anchor="start" id="text11672" y="-1.8828111"><tspan direction="ltr" unicode-bidi="embed" x="590" y="204" id="tspan11672">Studnts w Disabilities - Asmt / Asgn</tspan></text>
+    </g>
+    <g id="11673">
+      <title id="title11673">Studnts w Disabilities - Svc Del</title>
+      <circle style="fill:#ed1b2f" cx="580" cy="220" r="10.606601717798213" data-network="" id="circle11673" />
+      <text text-anchor="start" id="text11673" y="-1.8828111"><tspan direction="ltr" unicode-bidi="embed" x="590" y="224" id="tspan11673">Studnts w Disabilities - Svc Del</tspan></text>
+    </g>
+    <g id="14050">
+      <title id="title14050">of Student Health / Wellness</title>
+      <circle style="fill:#ed1b2f" cx="580" cy="240" r="4.242640687119286" data-network="" id="circle14050" />
+      <text text-anchor="start" id="text14050" y="-1.8828111"><tspan direction="ltr" unicode-bidi="embed" x="590" y="244" id="tspan14050">of Student Health / Wellness</tspan></text>
+    </g>
+    <g id="11010">
+      <title id="title11010">Talent Office</title>
+      <circle cx="580" cy="260" r="3" data-network="" id="circle11010" />
+      <text text-anchor="start" id="text11010" y="-1.8828111"><tspan direction="ltr" unicode-bidi="embed" x="590" y="264" id="tspan11010">Talent Office</tspan></text>
+    </g>
+    <g id="11070">
+      <title id="title11070">Talent Office CW</title>
+      <circle style="fill:#ed1b2f" cx="580" cy="280" r="18" data-network="" id="circle11070" />
+      <text text-anchor="start" id="text11070" y="-1.8828111"><tspan direction="ltr" unicode-bidi="embed" x="590" y="284" id="tspan11070">Talent Office CW</tspan></text>
     </g>
   </g>
 </svg>
