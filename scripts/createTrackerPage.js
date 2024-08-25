@@ -24,13 +24,16 @@ let pageTop = `
       </header>
       <div class="intro">
 
-
+<!--
 <p>NOTE: Lookup functionality is temporarily off while I reconfigure the output to include all job categories. ~Nate</p>
+-->
 
 
-
-        <h1>Vacancy Tracker</h1>
-        <p><strong>The Chicago Teachers Union is fighting for the schools Chicago&rsquo;s students deserve.</strong> Chicago Public Schools CEO Pedro Martinez claims that the district has improved services by allocating new positions, but the reality is that many of these positions exist on paper only. See the difference between the staffing CPS <em>says</em> it is providing and the number of clinicians, teachers, teacher assistants and all school staff <em>actually working</em> at any given school, network office, citywide job category or throughout an elementary network region. These vacant position numbers were provided by CPS itself, so if you can either confirm or correct it, please click the appropriate button below the data table.</p>
+        <h1>Staffing Shortage Tracker</h1>
+        <p><strong>The Chicago Teachers Union is fighting for the schools Chicago&rsquo;s students deserve.</strong> Chicago Public Schools CEO Pedro Martinez claims that the district has improved services by allocating new positions, but the reality is that many of these positions exist on paper only. Select a school in the dropdown or on the map below to see the difference between the staffing CPS <em>says</em> it provides and the number of clinicians, teachers, teacher assistants and all school staff <em>actually working</em> at any given school, network office, citywide job category or throughout an elementary network region.</p>
+<h2>Tell Your Staffing Story</h2>
+<p>Nobody knows better than CTU members what&rsquo;s happening in our schools. Use our <a href="https://docs.google.com/forms/d/e/1FAIpQLSeSHguXxHgYvaO6vGBj1MCRBVcDLGVHWfcvwwLA0jnW9F3ieg/viewform">staffing report form</a> to tell us how unfilled positions, and positions that <em>should</em> be budgeted in your school or department are affecting your work and your students, Chicago&rsquo;s children.</p>
+<p><a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSeSHguXxHgYvaO6vGBj1MCRBVcDLGVHWfcvwwLA0jnW9F3ieg/viewform">Tell Your Story</a></p>
       </div>
 `
 let listBoxBefore = `
@@ -77,6 +80,8 @@ let outputAfter = `
 // its elements are accessible for DOM manipulation.
 let figureBefore = `
       <figure id="cpsmap" class="cpsmap">
+<h2>Staffing Map</h2>
+<p>On the map below, each cirle represents a school or office site. Citywide departments are represented in the upper right of the map. Circles are sized by the raw number of unfilled positions in the school or department. Circles that aren&rsquo;t filled have no vacancies. Click or touch each circle to see its name and a list of vacant positions in that school or department.</p>
 `
 let svgString = Deno.readTextFileSync("./public/images/vacancies-map.svg");
 
