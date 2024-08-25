@@ -82,17 +82,24 @@ let outputAfter = `
 let figureBefore = `
       <figure id="cpsmap" class="cpsmap">
 <h2>Staffing Map</h2>
-<p>On the map below, each cirle represents a school or office site. Citywide departments are represented in the upper right of the map. Circles are sized by the raw number of unfilled positions in the school or department. Circles that aren&rsquo;t filled have no vacancies. Click or touch each circle to see its name and a list of vacant positions in that school or department.</p>
+<p>On the map below, each cirle represents a school or office site. Citywide departments are represented in the upper right of the map. Circles are sized by the raw number of unfilled positions in the school or department. Circles that aren&rsquo;t filled have no vacancies. Click or touch any circle to see its name and a list of vacant positions in that school or department.</p>
+<div>
 `
 let svgString = Deno.readTextFileSync("./public/images/vacancies-map.svg");
 
-let figureLast = `</figure>`
+let figureLast = `</div></figure>`
 
 
 
 let pageLast = `
   </div>
 </div>
+<footer>
+<div>
+<p>Copyright 2024 Chicago Teachers Union, all rights reserved.</p>
+<p>For more information, please visit the main <a href="https://www.ctulocal1.org/">Chicago Teachers Union website</a>.</p>
+</div>
+</footer>
 `;
 
 
