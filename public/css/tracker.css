@@ -296,7 +296,6 @@ dialog input[type="email"] {
     margin: 0;
     max-height: 100%;
     max-width: 100%;
-    position: absolute;
     right: 0;
     top: 0;
     max-height: 700px;
