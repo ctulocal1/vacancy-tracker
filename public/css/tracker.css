@@ -52,6 +52,23 @@ h2 {
 .intro p {
   line-height: 1.4;
 }
+.button {
+  margin-top: 16px;
+  display: inline-block;
+  background: #ed1b2f;
+  color: white;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 10px;
+  border:2px solid #ed1b2f;
+  font-size: 1.3em;
+  font-weight: 600;
+}
+.button:hover,
+.button:focus {
+  background: white;
+  color: #ed1b2f;
+}
 .cpsmap {
   width: 100%;
   margin:0;
@@ -270,7 +287,7 @@ dialog input[type="email"] {
     max-width: 1100px;
     column-gap: 40px;
     margin: 40px auto 0 auto;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 5fr 2fr;
     grid-template-areas:
       "header header"
       "intro legend"
@@ -296,6 +313,9 @@ dialog input[type="email"] {
     // grid-column: 1;
     // grid-row:2;
   }
+  .text h2 {
+    margin-top: 20px;
+  }
   .cpsmap svg {
     margin: 0;
     max-height: 100%;
@@ -309,7 +329,7 @@ dialog input[type="email"] {
     display: block;
   }
   .dataOutput table {
-    max-width: 340px;
+    max-width: 360px;
     font-variant-numeric: lining-nums tabular-nums;
   }
   input.deptChoice {
