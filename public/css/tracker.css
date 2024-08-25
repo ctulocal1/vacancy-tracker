@@ -30,11 +30,12 @@ body * {
 }
 header {
   height: 100px;
-  padding: 0 6px 0 10px;
+  padding: 6px 0 10px 0;
   grid-area: header;
 }
 header img {
   height: 70px;
+  p
 }
 .intro {
   padding: 0 10px 0 0;
