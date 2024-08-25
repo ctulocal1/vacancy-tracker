@@ -79,17 +79,18 @@ for (const v of vacancies) {
   if (dept.positionsVacant.has(v.JobCd)) {
     dept.positionsVacant.set(v.JobCd,dept.positionsVacant.get(v.JobCd)+parseFloat(v.FTE)) ;
   } else {dept.positionsVacant.set(v.JobCd,parseFloat(v.FTE))}
-  if (v.SpecEd.length > 0)  dept.categoriesVacant.set("Special Ed",dept.categoriesVacant.get("SpecEd") + parseFloat(v.FTE));
+  if (v["Special Ed"].length > 0)  dept.categoriesVacant.set("Special Ed",dept.categoriesVacant.get("Special Ed") + parseFloat(v.FTE));
+  console.log(v,v["Special Ed"],dept.categoriesVacant.get("Special Ed"));
   if (v.Bilingual.length > 0)  dept.categoriesVacant.set("Bilingual",dept.categoriesVacant.get("Bilingual") + parseFloat(v.FTE));
   if (v.Science.length > 0)  dept.categoriesVacant.set("Science",dept.categoriesVacant.get("Science") + parseFloat(v.FTE));
   if (v.Math.length > 0)  dept.categoriesVacant.set("Math",dept.categoriesVacant.get("Math") + parseFloat(v.FTE));
   if (v.Arts.length > 0)  dept.categoriesVacant.set("Arts",dept.categoriesVacant.get("Arts") + parseFloat(v.FTE));
-  if (v.EarlyChild.length > 0)  dept.categoriesVacant.set("Early Childhood",dept.categoriesVacant.get("EarlyChild") + parseFloat(v.FTE));
-  if (v.PhysEd.length > 0)  dept.categoriesVacant.set("Physical Ed",dept.categoriesVacant.get("PhysEd") + parseFloat(v.FTE));
+  if (v["Early Childhood"].length > 0)  dept.categoriesVacant.set("Early Childhood",dept.categoriesVacant.get("Early Childhood") + parseFloat(v.FTE));
+  if (v["Physical Ed"].length > 0)  dept.categoriesVacant.set("Physical Ed",dept.categoriesVacant.get("Physical Ed") + parseFloat(v.FTE));
   if (v.Counselor.length > 0)  dept.categoriesVacant.set("Counselor",dept.categoriesVacant.get("Counselor") + parseFloat(v.FTE));
   if (v.Clinician.length > 0)  dept.categoriesVacant.set("Clinician",dept.categoriesVacant.get("Clinician") + parseFloat(v.FTE));
   if (v.Library.length > 0)  dept.categoriesVacant.set("Library",dept.categoriesVacant.get("Library") + parseFloat(v.FTE));
-  if (v.WorldLang.length > 0)  dept.categoriesVacant.set("World Language",dept.categoriesVacant.get("WorldLang") + parseFloat(v.FTE));
+  if (v["World Language"].length > 0)  dept.categoriesVacant.set("World Language",dept.categoriesVacant.get("World Language") + parseFloat(v.FTE));
 }
 
 let schoolsAlphabeticalByName = Array.from(schoolsByName)

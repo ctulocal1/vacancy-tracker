@@ -1,4 +1,4 @@
-PointInTimeDt,Pos #,FTE,ClsInd,JobCd,Job Title,Union,Dept ID,Department,Dept,DeptType,Network,Network2,Zipcode,Type,SpecEd,Bilingual,Science,Math,Arts,EarlyChild,PhysEd,Counselor,Clinician,Library,WorldLang,JobProfileDesc
+PointInTimeDt,Pos #,FTE,ClsInd,JobCd,Job Title,Union,Dept ID,Department,Dept,DeptType,Network,Network2,Zipcode,Type,Special Ed,Bilingual,Science,Math,Arts,Early Childhood,Physical Ed,Counselor,Clinician,Library,World Language,JobProfileDesc
 8/21/2024,613228,1,Tchr,601270,Instructional Support Leader,CTU,2431,Network 3,Network 3,CO/CW,,,60644,,,,,,,,,,,,,
 8/21/2024,496737,1,Tchr,601270,Instructional Support Leader,CTU,2451,Network 5,Network 5,CO/CW,,,60612,,,,,,,,,,,,,
 8/21/2024,496778,1,Tchr,601270,Instructional Support Leader,CTU,2471,Network 7,Network 7,CO/CW,,,60609,,,,,,,,,,,,,

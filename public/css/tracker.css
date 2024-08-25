@@ -157,6 +157,7 @@ input.deptChoice {
 }
 p.asterisk {
   display: list-item;
+  margin-left: 1ch;
 }
 p.asterisk::marker {
   width: 1em;
