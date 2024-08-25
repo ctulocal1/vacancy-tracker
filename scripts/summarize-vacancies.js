@@ -4,7 +4,7 @@ import schools from "../data/schools.json" with {type: "json"};
 let logged1 = 0;
 
 const deptsMap = new Map();
-// console.log("Schools[0]:",schools[0])
+//console.log("Schools[0]:",schools[0])
 
 const cwDeptsByName = new Map ();
 const schoolsByName = new Map ();
@@ -23,24 +23,24 @@ function initPositionsVacant(dept) {
   dept.positionsVacant = new Map();
   dept.categoriesVacant = new Map();
   const v = dept.categoriesVacant;
-    v.set("SpecEd",0);
+    v.set("Clinician",0);
     v.set("Bilingual",0);
     v.set("Science",0);
     v.set("Math",0);
     v.set("Arts",0);
-    v.set("EarlyChild",0);
-    v.set("PhysEd",0);
+    v.set("Early Childhood",0);
+    v.set("Physical Ed",0);
     v.set("Counselor",0);
-    v.set("SpecEd",0);
+    v.set("Special Ed",0);
     v.set("Library",0);
-    v.set("WorldLang",0);
+    v.set("World Language",0);
 }
 
 schools.forEach( (school) => {addSchool(school); 
   schoolsByName.set(school.short_name,school.dept_id)});
-// console.log(deptsMap);
-// console.log(deptsMap.get("66602"));
-console.log(schoolsByName)
+//console.log(deptsMap);
+//console.log(deptsMap.get("66602"));
+//console.log(schoolsByName)
 
 const vacanciesCSV = Deno.readTextFileSync("./data/Vacancies-2024-08-21.csv");
 const vacancies = parse (vacanciesCSV, {
@@ -79,17 +79,17 @@ for (const v of vacancies) {
   if (dept.positionsVacant.has(v.JobCd)) {
     dept.positionsVacant.set(v.JobCd,dept.positionsVacant.get(v.JobCd)+parseFloat(v.FTE)) ;
   } else {dept.positionsVacant.set(v.JobCd,parseFloat(v.FTE))}
-  if (v.SpecEd.length > 0)  dept.categoriesVacant.set("SpecEd",dept.categoriesVacant.get("SpecEd") + parseFloat(v.FTE));
+  if (v.SpecEd.length > 0)  dept.categoriesVacant.set("Special Ed",dept.categoriesVacant.get("SpecEd") + parseFloat(v.FTE));
   if (v.Bilingual.length > 0)  dept.categoriesVacant.set("Bilingual",dept.categoriesVacant.get("Bilingual") + parseFloat(v.FTE));
   if (v.Science.length > 0)  dept.categoriesVacant.set("Science",dept.categoriesVacant.get("Science") + parseFloat(v.FTE));
   if (v.Math.length > 0)  dept.categoriesVacant.set("Math",dept.categoriesVacant.get("Math") + parseFloat(v.FTE));
   if (v.Arts.length > 0)  dept.categoriesVacant.set("Arts",dept.categoriesVacant.get("Arts") + parseFloat(v.FTE));
-  if (v.EarlyChild.length > 0)  dept.categoriesVacant.set("EarlyChild",dept.categoriesVacant.get("EarlyChild") + parseFloat(v.FTE));
-  if (v.PhysEd.length > 0)  dept.categoriesVacant.set("PhysEd",dept.categoriesVacant.get("PhysEd") + parseFloat(v.FTE));
+  if (v.EarlyChild.length > 0)  dept.categoriesVacant.set("Early Childhood",dept.categoriesVacant.get("EarlyChild") + parseFloat(v.FTE));
+  if (v.PhysEd.length > 0)  dept.categoriesVacant.set("Physical Ed",dept.categoriesVacant.get("PhysEd") + parseFloat(v.FTE));
   if (v.Counselor.length > 0)  dept.categoriesVacant.set("Counselor",dept.categoriesVacant.get("Counselor") + parseFloat(v.FTE));
-  if (v.Clinician.length > 0)  dept.categoriesVacant.set("SpecEd",dept.categoriesVacant.get("SpecEd") + parseFloat(v.FTE));
+  if (v.Clinician.length > 0)  dept.categoriesVacant.set("Clinician",dept.categoriesVacant.get("Clinician") + parseFloat(v.FTE));
   if (v.Library.length > 0)  dept.categoriesVacant.set("Library",dept.categoriesVacant.get("Library") + parseFloat(v.FTE));
-  if (v.WorldLang.length > 0)  dept.categoriesVacant.set("WorldLang",dept.categoriesVacant.get("WorldLang") + parseFloat(v.FTE));
+  if (v.WorldLang.length > 0)  dept.categoriesVacant.set("World Language",dept.categoriesVacant.get("WorldLang") + parseFloat(v.FTE));
 }
 
 let schoolsAlphabeticalByName = Array.from(schoolsByName)
@@ -139,7 +139,7 @@ function logMapElements(value,key,map) {
   if (!dept.type && dept.short_name.match("Network")) dept.type = "Network Office"
   else if (!dept.type) dept.type = "CW Department";
   const type = dept.type;
-  console.log(dept.short_name,type)
+  //console.log(dept.short_name,type)
   deptsString += deptString;
 }
 deptsString = deptsString.slice(2) // Get rid of initial ,\n so JSON will be valid.
@@ -153,10 +153,10 @@ deptsString = "[\n" + deptsString + "\n]"
 
 Deno.writeTextFileSync("./public/data/vacancies-by-department.json",deptsString);
 
-// console.log(deptsMap);
-// console.log(jobsMap);
-// console.log("Jobs Count:",jobsMap.size);
-// console.log("CW Depts:",cwDepts);
-// console.log(vacancies) :;
-// console.log("Schools",cwDeptsByName);
-// console.log("Citywide:",schoolsByName);
+//console.log(deptsMap);
+//console.log(jobsMap);
+//console.log("Jobs Count:",jobsMap.size);
+//console.log("CW Depts:",cwDepts);
+//console.log(vacancies) :;
+//console.log("Schools",cwDeptsByName);
+//console.log("Citywide:",schoolsByName);
