@@ -72,7 +72,7 @@ let pageLast = `
   </div>
 </div>
 `;
-let svgString = Deno.readTextFileSync("../public/images/vacancies-map.svg");
+let svgString = Deno.readTextFileSync("./public/images/vacancies-map.svg");
 
 let choiceList = populateChoices()
 function populateChoices () {
@@ -193,4 +193,4 @@ outputString += `</tbody></table>
 //console.log(outputString);
 
 const pageString = render ();
-Deno.writeTextFileSync("../public/index.html",pageString);
+Deno.writeTextFileSync("./public/index.html",pageString);

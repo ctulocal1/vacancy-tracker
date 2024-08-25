@@ -42,7 +42,7 @@ schools.forEach( (school) => {addSchool(school);
 // console.log(deptsMap.get("66602"));
 
 
-const vacanciesCSV = Deno.readTextFileSync("../data/Vacancies-2024-08-21.csv");
+const vacanciesCSV = Deno.readTextFileSync("./data/Vacancies-2024-08-21.csv");
 const vacancies = parse (vacanciesCSV, {
   skipFirstRow: true,
   strip: true
@@ -124,7 +124,7 @@ tfoot td, tfoot th {border-top: 1px solid #333; border-bottom: 2px solid #333;}
 </style></head><body>`
 htmlDoc = htmlDoc.concat( tableStrings.join("\n"), `</body></html>` );
 
-Deno.writeTextFileSync("../public/school-vacancies.html",htmlDoc);
+Deno.writeTextFileSync("./public/school-vacancies.html",htmlDoc);
 
 let deptsString = "";
 
@@ -140,7 +140,7 @@ function logMapElements(value,key,map) {
 deptsString = deptsString.slice(2)
 deptsString = "[\n" + deptsString + "\n]"
 
-Deno.writeTextFileSync("../public/data/vacancies-by-department.json",deptsString);
+Deno.writeTextFileSync("./public/data/vacancies-by-department.json",deptsString);
 
 // console.log(deptsMap);
 // console.log(jobsMap);

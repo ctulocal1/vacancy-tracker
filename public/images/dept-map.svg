@@ -3643,15 +3643,15 @@
       <circle cx="580" cy="180" r="3" data-network="" id="circle11010" />
       <text text-anchor="start" id="text11010" y="-1.8828111"><tspan direction="ltr" unicode-bidi="embed" x="590" y="184" id="tspan11010">Human Resources</tspan></text>
     </g>
-    <g id="11672">
-      <title id="title11672">ODS Diverse-Learner Supports</title>
-      <circle cx="580" cy="200" r="3" data-network="" id="circle11672" />
-      <text text-anchor="start" id="text11672" y="-1.8828111"><tspan direction="ltr" unicode-bidi="embed" x="590" y="204" id="tspan11672">ODS Diverse-Learner Supports</tspan></text>
-    </g>
     <g id="11675">
       <title id="title11675">ODS - Related Svc Providers</title>
       <circle cx="580" cy="220" r="3" data-network="" id="circle11675" />
       <text text-anchor="start" id="text11675" y="-1.8828111"><tspan direction="ltr" unicode-bidi="embed" x="590" y="224" id="tspan11675">ODS - Related Svc Providers</tspan></text>
+    </g>
+    <g id="11672">
+      <title id="title11672">ODS Diverse-Learner Supports</title>
+      <circle cx="580" cy="200" r="3" data-network="" id="circle11672" />
+      <text text-anchor="start" id="text11672" y="-1.8828111"><tspan direction="ltr" unicode-bidi="embed" x="590" y="204" id="tspan11672">ODS Diverse-Learner Supports</tspan></text>
     </g>
     <g id="11673">
       <title id="title11673">ODS Specially-Designed Instr</title>
