@@ -38,6 +38,7 @@ let pageTop = `
 `
 let listBoxBefore = `
       <div id="text" class="text">
+        <h2>By the Numbers</h2>
         <label for="cb1-input">Display data for:</label>
         <div class="combobox combobox-list">
           <div class="group">
