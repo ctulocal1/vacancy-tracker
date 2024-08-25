@@ -1,6 +1,8 @@
 import { parse, stringify } from "jsr:@std/csv";
 import schools from "../data/schools.json" with {type: "json"};
 
+let logged1 = 0;
+
 const deptsMap = new Map();
 // console.log("Schools[0]:",schools[0])
 
@@ -58,7 +60,7 @@ for (const v of vacancies) {
   let dept = deptsMap.get(deptID);
   if (!dept) {
     deptsMap.set(deptID,{
-      deptId: deptID, 
+      dept_id: deptID, 
       short_name: v.Dept,
       ctu_name: v.Department,
       cps_network: v.Network
@@ -70,25 +72,24 @@ for (const v of vacancies) {
   }
   delete v.PointInTimeDt;
   delete v["Pos #"];
-  delete v.FTE;
   delete v["Dept ID"];
   delete v.Network2;
   delete v.Network;
   delete v.Zipcode;
   if (dept.positionsVacant.get(v.JobCd)) {
-    dept.positionsVacant.set(v.JobCd,dept.positionsVacant.get(v.JobCd)+1) ;
-  } else {dept.positionsVacant.set(v.JobCd,1)}
-  if (v.SpecEd.length > 0)  dept.categoriesVacant.set("SpecEd",dept.categoriesVacant.get("SpecEd")+1);
-  if (v.Bilingual.length > 0)  dept.categoriesVacant.set("Bilingual",dept.categoriesVacant.get("Bilingual")+1);
-  if (v.Science.length > 0)  dept.categoriesVacant.set("Science",dept.categoriesVacant.get("Science")+1);
-  if (v.Math.length > 0)  dept.categoriesVacant.set("Math",dept.categoriesVacant.get("Math")+1);
-  if (v.Arts.length > 0)  dept.categoriesVacant.set("Arts",dept.categoriesVacant.get("Arts")+1);
-  if (v.EarlyChild.length > 0)  dept.categoriesVacant.set("EarlyChild",dept.categoriesVacant.get("EarlyChild")+1);
-  if (v.PhysEd.length > 0)  dept.categoriesVacant.set("PhysEd",dept.categoriesVacant.get("PhysEd")+1);
-  if (v.Counselor.length > 0)  dept.categoriesVacant.set("Counselor",dept.categoriesVacant.get("Counselor")+1);
-  if (v.Clinician.length > 0)  dept.categoriesVacant.set("SpecEd",dept.categoriesVacant.get("SpecEd")+1);
-  if (v.Library.length > 0)  dept.categoriesVacant.set("Library",dept.categoriesVacant.get("Library")+1);
-  if (v.WorldLang.length > 0)  dept.categoriesVacant.set("WorldLang",dept.categoriesVacant.get("WorldLang")+1);
+    dept.positionsVacant.set(v.JobCd,dept.positionsVacant.get(v.JobCd)+parseFloat(v.FTE)) ;
+  } else {dept.positionsVacant.set(v.JobCd,parseFloat(v.FTE))}
+  if (v.SpecEd.length > 0)  dept.categoriesVacant.set("SpecEd",dept.categoriesVacant.get("SpecEd") + parseFloat(v.FTE));
+  if (v.Bilingual.length > 0)  dept.categoriesVacant.set("Bilingual",dept.categoriesVacant.get("Bilingual") + parseFloat(v.FTE));
+  if (v.Science.length > 0)  dept.categoriesVacant.set("Science",dept.categoriesVacant.get("Science") + parseFloat(v.FTE));
+  if (v.Math.length > 0)  dept.categoriesVacant.set("Math",dept.categoriesVacant.get("Math") + parseFloat(v.FTE));
+  if (v.Arts.length > 0)  dept.categoriesVacant.set("Arts",dept.categoriesVacant.get("Arts") + parseFloat(v.FTE));
+  if (v.EarlyChild.length > 0)  dept.categoriesVacant.set("EarlyChild",dept.categoriesVacant.get("EarlyChild") + parseFloat(v.FTE));
+  if (v.PhysEd.length > 0)  dept.categoriesVacant.set("PhysEd",dept.categoriesVacant.get("PhysEd") + parseFloat(v.FTE));
+  if (v.Counselor.length > 0)  dept.categoriesVacant.set("Counselor",dept.categoriesVacant.get("Counselor") + parseFloat(v.FTE));
+  if (v.Clinician.length > 0)  dept.categoriesVacant.set("SpecEd",dept.categoriesVacant.get("SpecEd") + parseFloat(v.FTE));
+  if (v.Library.length > 0)  dept.categoriesVacant.set("Library",dept.categoriesVacant.get("Library") + parseFloat(v.FTE));
+  if (v.WorldLang.length > 0)  dept.categoriesVacant.set("WorldLang",dept.categoriesVacant.get("WorldLang") + parseFloat(v.FTE));
 }
 
 let schoolsAlphabeticalByName = Array.from(schoolsByName)
@@ -125,7 +126,7 @@ htmlDoc = htmlDoc.concat( tableStrings.join("\n"), `</body></html>` );
 
 Deno.writeTextFileSync("../public/school-vacancies.html",htmlDoc);
 
-let deptsString = "[\n";
+let deptsString = "";
 
 deptsMap.forEach(logMapElements);
 function logMapElements(value,key,map) {
@@ -133,10 +134,11 @@ function logMapElements(value,key,map) {
   dept = value;
   dept.positionsVacant = Object.fromEntries(value.positionsVacant);
   dept.categoriesVacant = Object.fromEntries(value.categoriesVacant);
-  const deptString = JSON.stringify(dept);
-  deptsString += deptString + ",\n" 
+  const deptString = ",\n" + JSON.stringify(dept);
+  deptsString += deptString;
 }
-deptsString += "]"
+deptsString = deptsString.slice(2)
+deptsString = "[\n" + deptsString + "\n]"
 
 Deno.writeTextFileSync("../public/data/vacancies-by-department.json",deptsString);
 

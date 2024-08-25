@@ -1,5 +1,5 @@
 import depts from "../public/data/vacancies-by-department.json" with {type: "json"};
-import jobObj from "../ctu-jobs.json" with {type: "json"};
+import jobObj from "../public/data/ctu-jobs.json" with {type: "json"};
 import { DOMParser } from "npm:linkedom";
 import { assert } from "jsr:@std/assert@1";
 
@@ -16,7 +16,6 @@ let vacancies = new Map();
 depts.map( (dept) => {
   vacancies.set(dept.dept_id,dept)
 })
-console.log(vacancies)
 
 let jobs = new Map();
 jobObj.map( (job) => {
@@ -24,15 +23,15 @@ jobObj.map( (job) => {
 })
 
 //console.log(jobs)
-// console.log(vacancies);
+//console.log(vacancies);
 
 let officeGroups = map.querySelectorAll("#offices g");
 for (let group of officeGroups) {
   const circle = group.querySelector("circle");
   const vacancy = vacancies.get(group.id);
+  console.log(vacancy)
   if (vacancy) {
-    console.log(vacancy)
-    //console.log(vacancy.short_name,"Job Title with Vacancies:",Object.entries(vacancy.positionsVacant).length);
+    console.log(vacancy.short_name,"Job Title with Vacancies:",Object.entries(vacancy.positionsVacant).length);
     if (Object.entries(vacancy.positionsVacant).length > 0) {
       let vacantPositions = Object.values(vacancy.positionsVacant);
       //console.log(vacantPositions);
@@ -50,7 +49,7 @@ for (let group of schoolGroups) {
   const circle = group.querySelector("circle");
   const vacancy = vacancies.get(group.id);
   if (vacancy) {
-    //console.log(vacancy.short_name,"Job Title with Vacancies:",Object.entries(vacancy.positionsVacant).length);
+    console.log(vacancy.short_name,"Job Title with Vacancies:",Object.entries(vacancy.positionsVacant).length);
     if (Object.entries(vacancy.positionsVacant).length > 0) {
       let vacantPositions = Object.values(vacancy.positionsVacant);
       //console.log(vacantPositions);

@@ -72,7 +72,7 @@ let pageLast = `
   </div>
 </div>
 `;
-let svgString = Deno.readTextFileSync("./public/images/vacancies-map.svg");
+let svgString = Deno.readTextFileSync("../public/images/vacancies-map.svg");
 
 let choiceList = populateChoices()
 function populateChoices () {
@@ -164,13 +164,13 @@ let outputString = `
 jobsByAlpha.map( ({jobCode}) => {
 if ( vacanciesByJob.has(jobCode) ) {
     outputString += `
-<tr><th scope="row">${jobsMap.get(jobCode)}</th><td>${vacanciesByJob.get(jobCode)}</td></tr>`
+<tr><th scope="row">${jobsMap.get(jobCode)}</th><td>${parseFloat( vacanciesByJob.get(jobCode) ).toFixed(1)}</td></tr>`
   }
 })
 outputString += `
 </tbody>
 <tfoot>
-<tr><th scope="row">District Total</th><td>${vacanciesByJob.get("District").toLocaleString()}</td></tr>
+<tr><th scope="row">District Total</th><td>${vacanciesByJob.get("District").toLocaleString(undefined,{minimumFractionDigits: 1})}</td></tr>
 </tfoot>
 </table>
 <table>
@@ -185,7 +185,7 @@ const catsByAlpha = sortObjectsByString([...vacanciesByCat.entries()],0)
 
 catsByAlpha.map( ([category,vacancies]) => {
   outputString += `
-<tr><th scope="row">${category}</th><td>${vacancies}</td></tr>`
+<tr><th scope="row">${category}</th><td>${parseFloat(vacancies).toFixed(1)}</td></tr>`
 })
 outputString += `</tbody></table>
 <p class="asterisk">Not every job fits one of these categories and some fit multiple categories.`;
@@ -193,4 +193,4 @@ outputString += `</tbody></table>
 //console.log(outputString);
 
 const pageString = render ();
-Deno.writeTextFileSync("./public/index.html",pageString);
+Deno.writeTextFileSync("../public/index.html",pageString);
