@@ -82,7 +82,7 @@ input.deptChoice {
   margin: 20px 0;
 }
 .dataOutput table {
-  width: calc(100vw - 80px);
+  width: calc(100vw - 40px);
   max-width: 460px;
   font-size: 18px;
   border-collapse: collapse;
