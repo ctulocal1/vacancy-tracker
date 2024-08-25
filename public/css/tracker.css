@@ -27,7 +27,7 @@ p {
   border: none;
   margin: 0;
   display: grid;
-  grid-template-areas: "header" "intro" "legend" "map";
+  grid-template-areas: "header" "intro" "map" "legend" ;
   grid-template-columns: 1fr;
   gap: 0;
   background: white;
