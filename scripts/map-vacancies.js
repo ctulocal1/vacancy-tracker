@@ -58,7 +58,7 @@ for (let group of schoolGroups) {
       //console.log(vacancy.short_name,"Square Root of Total:",Math.sqrt(totalVacancies));
       circle.setAttributeNS(null,"r",Math.sqrt(totalVacancies)*3);
       circle.style.fill = "#ed1b2f"
-    } else circle.style.fill = "#cccccc"
+    }
   }
 }
 

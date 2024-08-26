@@ -8,6 +8,9 @@ let pageTop = `
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <link rel="shortcut icon" href="/images/ctu-seal.png" type="image/png">
     <link rel="stylesheet" type="text/css" href="/css/tracker.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&display=swap" rel="stylesheet">
   </head>
   <body>
     <dialog id="modal" class="modal">
@@ -24,9 +27,7 @@ let pageTop = `
       </header>
       <div class="intro">
 
-<!--
 <p>NOTE: Lookup functionality is temporarily off while I reconfigure the output to include all job categories. ~Nate</p>
--->
 
 
         <h1>Staffing Shortage Tracker</h1>
