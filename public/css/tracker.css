@@ -202,7 +202,6 @@ label[for="cb1-input"] {
 
 .combobox input {
   width: calc(100vw - 80px);
-  border-right: none;
   outline: none;
   font-size: 87.5%;
   padding: 1px 3px;
