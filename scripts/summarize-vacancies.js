@@ -67,7 +67,7 @@ for (const v of vacancies) {
     })
     dept = deptsMap.get(deptID);
     initPositionsVacant(dept);
-    // console.log(v.Dept)
+    //console.log(v.Dept)
     cwDeptsByName.set(deptID,v.Dept);
   }
   delete v.PointInTimeDt;
@@ -80,7 +80,7 @@ for (const v of vacancies) {
     dept.positionsVacant.set(v.JobCd,dept.positionsVacant.get(v.JobCd)+parseFloat(v.FTE)) ;
   } else {dept.positionsVacant.set(v.JobCd,parseFloat(v.FTE))}
   if (v["Special Ed"].length > 0)  dept.categoriesVacant.set("Special Ed",dept.categoriesVacant.get("Special Ed") + parseFloat(v.FTE));
-  console.log(v,v["Special Ed"],dept.categoriesVacant.get("Special Ed"));
+ //console.log(v,v["Special Ed"],dept.categoriesVacant.get("Special Ed"));
   if (v.Bilingual.length > 0)  dept.categoriesVacant.set("Bilingual",dept.categoriesVacant.get("Bilingual") + parseFloat(v.FTE));
   if (v.Science.length > 0)  dept.categoriesVacant.set("Science",dept.categoriesVacant.get("Science") + parseFloat(v.FTE));
   if (v.Math.length > 0)  dept.categoriesVacant.set("Math",dept.categoriesVacant.get("Math") + parseFloat(v.FTE));
@@ -94,22 +94,21 @@ for (const v of vacancies) {
 }
 
 let schoolsAlphabeticalByName = Array.from(schoolsByName)
-// console.log(schoolsAlphabeticalByName);
+//console.log(schoolsAlphabeticalByName);
 let tableStrings = schoolsAlphabeticalByName.map( (schoolName) => {
   let htmlString = `<table><thead><caption>${schoolName[0]}</caption></thead><tbody>`
   let school = deptsMap.get(schoolName[1]);
-  // if (!school) console.log(schoolName)
   let vacantJobs = Array.from(school.positionsVacant);
   let totalVacancies = 0;
   for (const job of vacantJobs) {
     if ( !job[0].match(/[A-Za-z]/) ) {
       totalVacancies += job[1];
-      // console.log("Job Title Code:",job[0],"Running Total:",totalVacancies);
+      //console.log("Job Title Code:",job[0],"Running Total:",totalVacancies);
       let jobObj = jobsMap.get(job[0])
-      // console.log(jobObj.jobTitle,":",job[1],"vacancies");
+      //console.log(jobObj.jobTitle,":",job[1],"vacancies");
       htmlString = htmlString.concat(`<tr><th scope="row">${job[0]} ${jobObj.jobTitle}</th><td>${job[1]} vacancies</td></tr>` )
-  // console.log(job[0],htmlString);
-    }// else console.log("Job Code?",job[0]);
+  //console.log(job[0],htmlString);
+    }
   }
   htmlString = htmlString.concat( `</tbody><tfoot><th scope="row">Total</th><td>${totalVacancies} vacancies</td></tr></tfoot></table>` )
   return htmlString;
@@ -153,6 +152,7 @@ deptsString = "[\n" + deptsString + "\n]"
 //console.log(deptsArray)
 
 Deno.writeTextFileSync("./public/data/vacancies-by-department.json",deptsString);
+console.log("Updated vacancy info in ./public/data/vacancies-by-department.json.")
 
 //console.log(deptsMap);
 //console.log(jobsMap);

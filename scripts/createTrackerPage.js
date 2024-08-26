@@ -4,7 +4,7 @@ let pageTop = `
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>CTU Vacancy Tracker</title>
+    <title>CTU Staffing Shortage Tracker</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <link rel="shortcut icon" href="/images/ctu-seal.png" type="image/png">
     <link rel="stylesheet" type="text/css" href="/css/tracker.css" />
@@ -32,9 +32,9 @@ let pageTop = `
 
         <h1>Staffing Shortage Tracker</h1>
         <p><strong>The Chicago Teachers Union is fighting for the schools Chicago&rsquo;s students deserve.</strong> Chicago Public Schools CEO Pedro Martinez claims that the district has improved services by allocating new positions, but the reality is that many of these positions exist on paper only. Select a school in the dropdown or on the map below to see the difference between the staffing CPS <em>says</em> it provides and the number of clinicians, teachers, teacher assistants and all school staff <em>actually working</em> at any given school, network office or citywide department.</p>
-<h2>Tell Your Staffing Story</h2>
+<h2>Share Your Staffing Story</h2>
 <p>Nobody knows better than CTU members what&rsquo;s happening in our schools. Use our <a href="https://docs.google.com/forms/d/e/1FAIpQLSeSHguXxHgYvaO6vGBj1MCRBVcDLGVHWfcvwwLA0jnW9F3ieg/viewform">staffing report form</a> to tell us how unfilled positions, and positions that <em>should</em> be budgeted in your school or department are affecting your work and your students, Chicago&rsquo;s children.</p>
-<p><a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSeSHguXxHgYvaO6vGBj1MCRBVcDLGVHWfcvwwLA0jnW9F3ieg/viewform">Tell Your Story</a></p>
+<p><a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSeSHguXxHgYvaO6vGBj1MCRBVcDLGVHWfcvwwLA0jnW9F3ieg/viewform">Share Your Story</a></p>
       </div>
 `
 let listBoxBefore = `
@@ -55,8 +55,8 @@ let listBoxBefore = `
 //
 // A series of <li role="option"...> elements will be generated and inserted here as choiceList.
 // The populateChoices function is after the render and before the citywide.
-//let choiceList = populateChoices()
-let choiceList = "";
+//
+let choiceList = populateChoices()
 
 let listBoxAfter = `
           </ul> <!-- closes the choiceList ul element -->
@@ -98,9 +98,12 @@ let pageLast = `
 <footer>
 <div>
 <p>Copyright 2024 Chicago Teachers Union, all rights reserved.</p>
-<p>For more information, please visit the main <a href="https://www.ctulocal1.org/">Chicago Teachers Union website</a>.</p>
+<p>For more information, visit the <a href="https://www.ctulocal1.org/">Chicago Teachers Union</a> website.</p>
 </div>
 </footer>
+<script src="js/combobox.js"
+</body>
+</html>
 `;
 
 
@@ -229,19 +232,22 @@ function citywide () {
 //
 // Generates the <li role="option"...> elements to populate the combobox.
 //
-//function populateChoices () {
-  //let deptsByAlphaObj = {}
-  //for (const vac of vacancies) {
-  //if (vac.type="Network Office") deptsByAlphaObj.
-  //}
-  //let allLIs = ""
-  //for ()
-  //let li = `<li id="lb-${}"`
-  //return "<li>Placeholder</li>"
-//}
+function populateChoices () {
+let deptsByAlphaObj = {}
+let allLIs = ""
+return `
+<li id="lb-1" role="option">Option 1</li>
+<li id="lb-2" role="option">Option 2</li>
+<li id="lb-3" role="option">Option 3</li>
+<li id="lb-4" role="option">Option 4</li>
+<li id="lb-5" role="option">Option 5</li>
+<li id="lb-6" role="option">Option 6</li>
+`
+}
 
 
 
 
 const pageString = render ();
 Deno.writeTextFileSync("./public/index.html",pageString);
+console.log("Site written to ./public/index.html")

@@ -648,12 +648,12 @@ function initCombobox (schoolVacancies) {
   const vacancies = {};
   vacancies.schools = schoolVacancies;
   console.log("initCombobox schoolVacancies:",schoolVacancies);
-  const nameSortedVacancies = vacancies.schools.sort ( (a, b) => stringPropertySort(a,b,"name_short"))
-  // console.log("nameSortedVacancies:",nameSortedVacancies);
+  const nameSortedVacancies = vacancies.schools;
+  console.log("nameSortedVacancies:",nameSortedVacancies);
   nameSortedVacancies.forEach(school => {
     const option = document.createElement("li");
     option.id = `${school.school_id}`;
-    option.innerText = school.name_short;
+    option.innerText = school.short_name;
     option.role = "option";
     option.dataset.members = `${school.ActiveMemb}`;
     option.dataset.vacancy = `${school.TotVacancy}`;

@@ -7,7 +7,6 @@ const mapString = Deno.readTextFileSync("./public/images/dept-map.svg");
 const map = new DOMParser().parseFromString(mapString, "image/svg+xml" );
 assert(map);
 
-console.log(depts[0].dept_id);
 assert(depts);
 
 // let laneObject = depts.find( (dept) => parseInt(dept.dept_id) === parseInt(laneID));
@@ -65,6 +64,7 @@ for (let group of schoolGroups) {
 let mapOut = map.toString();
 
 Deno.writeTextFileSync("./public/images/vacancies-map.svg",mapOut);
+console.log("Map at ./public/images/vacancies-map.svg updated.")
 
 /*
 let officeCircles = map.querySelectorAll("#offices g");
