@@ -39,18 +39,13 @@ let pageTop = `
 `
 let listBoxBefore = `
       <div id="text" class="text">
+<div class="sticker">
         <h2>By the Numbers</h2>
         <label for="cb1-input">Display data for:</label>
         <div class="combobox combobox-list">
           <div class="group">
-            <input id="cb1-input" class="cb_edit" type="text" role="combobox" aria-autocomplete="both" aria-expanded="false" aria-controls="cb1-listbox">
-            <button type="button" id="cb1-button" aria-label="Schools" aria-expanded="false" aria-controls="cb1-listbox" tabindex="-1">
-              <svg width="18" height="16" aria-hidden="true" focusable="false" style="forced-color-adjust: auto">
-                <polygon class="arrow" stroke-width="0" fill-opacity="0.75" fill="currentcolor" points="3,6 15,6 9,14"></polygon>
-              </svg>
-            </button>
-          </div>
-          <ul id="choiceList" role="listbox" aria-label="Schools">
+            <input list="departments" id="cb1-input" class="cb_edit" type="text" role="combobox" aria-autocomplete="both" aria-expanded="false" aria-controls="cb1-listbox">
+<datalist id="departments">
 `
 //
 // A series of <li role="option"...> elements will be generated and inserted here as choiceList.
@@ -59,21 +54,23 @@ let listBoxBefore = `
 let choiceList = populateChoices()
 
 let listBoxAfter = `
-          </ul> <!-- closes the choiceList ul element -->
-        </div> <!-- closes out the listBox section -->
+</datalist>
+          </div>
+      </div> <!-- closes out the listBox section -->
 `
   
 
 
-let outputBefore = ` <output for="cb1-input" id="dataOutput" class="dataOutput"> `
+let outputBefore = ` <div id="dataOutput" class="dataOutput"> `
 //
 // On load, this includes the citywide data calculated below.
 // Content of "output" will dynamically change when a school is picked in either the combobox or map.
 let outputString = citywide();
 
 let outputAfter = `
-        </output>
+        </div>
       </div>
+        </div>
 `
 
 
@@ -94,18 +91,18 @@ let figureLast = `</div></figure>`
 
 let pageLast = `
   </div>
-</div>
 <footer>
 <div>
 <p>Copyright 2024 Chicago Teachers Union, all rights reserved.</p>
 <p>For more information, visit the <a href="https://www.ctulocal1.org/">Chicago Teachers Union</a> website.</p>
 </div>
 </footer>
-<script src="js/combobox.js"
+<script src="js/vacancy-output.js"></script>
 </body>
 </html>
 `;
 
+// <script src="js/combobox.js"></script>
 
 function render () {
   const pageArray = [
@@ -236,12 +233,12 @@ function populateChoices () {
 let deptsByAlphaObj = {}
 let allLIs = ""
 return `
-<li id="lb-1" role="option">Option 1</li>
-<li id="lb-2" role="option">Option 2</li>
-<li id="lb-3" role="option">Option 3</li>
-<li id="lb-4" role="option">Option 4</li>
-<li id="lb-5" role="option">Option 5</li>
-<li id="lb-6" role="option">Option 6</li>
+<option id="lb-1" role="option">Option 1</option>
+<option id="lb-2" role="option">Option 2</option>
+<option id="lb-3" role="option">Option 3</option>
+<option id="lb-4" role="option">Option 4</option>
+<option id="lb-5" role="option">Option 5</option>
+<option id="lb-6" role="option">Option 6</option>
 `
 }
 

@@ -344,6 +344,10 @@ footer a:visited {
     padding-top: 60px;
     max-width: 460px;
   }
+  .sticker {
+    position: sticky;
+    top: 0px;
+  }
   .grid-container .cpsmap {
     margin:0;
     padding:0;

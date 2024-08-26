@@ -1,5 +1,5 @@
 import { parse, stringify } from "jsr:@std/csv";
-import schools from "../data/schools.json" with {type: "json"};
+import schools from "../public/data/schools.json" with {type: "json"};
 
 let logged1 = 0;
 
@@ -42,7 +42,7 @@ schools.forEach( (school) => {addSchool(school);
 //console.log(deptsMap.get("66602"));
 //console.log(schoolsByName)
 
-const vacanciesCSV = Deno.readTextFileSync("./data/Vacancies-2024-08-21.csv");
+const vacanciesCSV = Deno.readTextFileSync("../data/Vacancies-2024-08-21.csv");
 const vacancies = parse (vacanciesCSV, {
   skipFirstRow: true,
   strip: true
@@ -124,7 +124,7 @@ tfoot td, tfoot th {border-top: 1px solid #333; border-bottom: 2px solid #333;}
 </style></head><body>`
 htmlDoc = htmlDoc.concat( tableStrings.join("\n"), `</body></html>` );
 
-Deno.writeTextFileSync("./public/school-vacancies.html",htmlDoc);
+Deno.writeTextFileSync("../public/school-vacancies.html",htmlDoc);
 
 let deptsString = "";
 let deptsArray = []
@@ -151,7 +151,7 @@ deptsString = "[\n" + deptsString + "\n]"
 //}
 //console.log(deptsArray)
 
-Deno.writeTextFileSync("./public/data/vacancies-by-department.json",deptsString);
+//Deno.writeTextFileSync("./public/data/vacancies-by-department.json",deptsString);
 console.log("Updated vacancy info in ./public/data/vacancies-by-department.json.")
 
 //console.log(deptsMap);

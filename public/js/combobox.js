@@ -4,16 +4,6 @@
  */
 
 
-document.addEventListener('load', function () {
-  console.log("Loaded.")
-  var combobox = document.querySelector('#choiceList');
-  var comboboxNode = combobox.querySelector('input');
-  var buttonNode = combobox.querySelector('button');
-  var listboxNode = combobox.querySelector('[role="listbox"]');
-  new ComboboxAutocomplete(comboboxNode, buttonNode, listboxNode);
-});
-
-
 class ComboboxAutocomplete {
   constructor(comboboxNode, buttonNode, listboxNode) {
     this.comboboxNode = comboboxNode;
@@ -601,3 +591,15 @@ class ComboboxAutocomplete {
     setTimeout(this.close.bind(this, false), 300);
   }
 }
+
+
+
+
+window.addEventListener('load', function () {
+
+  var combobox = document.querySelector('.combobox');
+  var comboboxNode = combobox.querySelector('input');
+  var buttonNode = combobox.querySelector('button');
+  var listboxNode = combobox.querySelector('[role="listbox"]');
+  new ComboboxAutocomplete(comboboxNode, buttonNode, listboxNode);
+})
