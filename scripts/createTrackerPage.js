@@ -29,9 +29,9 @@ let pageTop = `
 
 
         <h1>Underfunded &amp; Understaffed Tracker</h1>
-        <p><strong>The Chicago Teachers Union is fighting for the schools Chicago&rsquo;s students deserve.</strong> Chicago Public Schools CEO Pedro Martinez claims that the district has improved services by allocating new positions, but the reality is that many of these positions exist on paper only. Select a school in the dropdown or on the map below to see the difference between the staffing CPS <em>says</em> it provides and the number of clinicians, teachers, teacher assistants and all school staff <em>actually working</em> at any given school, network office or citywide department.</p>
-<h2>Share Your Staffing Story</h2>
-<p>Nobody knows better than CTU members what&rsquo;s happening in our schools. Use our <a href="https://docs.google.com/forms/d/e/1FAIpQLSeSHguXxHgYvaO6vGBj1MCRBVcDLGVHWfcvwwLA0jnW9F3ieg/viewform">staffing report form</a> to tell us how unfilled positions, and positions that <em>should</em> be budgeted in your school or department are affecting your work and your students, Chicago&rsquo;s children.</p>
+        <p><strong>The Chicago Teachers Union is fighting for the schools Chicago’s students deserve.</strong> Chicago Public Schools CEO Pedro Martinez claims that the district has improved resources for our students by allocating new positions, but the reality is that many of these positions exist on paper only. Select a school in the dropdown or on the map below to see the difference between the staffing CPS <em>says</em> it provides and the number of clinicians, teachers, teacher assistants and all school staff <em>actually working</em> at any given school, network office or citywide department.</p>
+<h2>CTU Members: Share Your School’s Staffing Story</h2>
+<p>Nobody knows better than CTU members what’s happening in our schools. Use our <a href="https://docs.google.com/forms/d/e/1FAIpQLSeSHguXxHgYvaO6vGBj1MCRBVcDLGVHWfcvwwLA0jnW9F3ieg/viewform">staffing report form</a> to tell us how many unfilled positions are at your school and, and the impact that those vacancies and other positions that <em>should</em> be budgeted in your school or department are affecting your students and your work.</p>
 <p><a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSeSHguXxHgYvaO6vGBj1MCRBVcDLGVHWfcvwwLA0jnW9F3ieg/viewform">Share Your Story</a></p>
       </div>
 `
@@ -77,8 +77,8 @@ let outputAfter = `
 // its elements are accessible for DOM manipulation.
 let figureBefore = `
       <figure id="cpsmap" class="cpsmap">
-<h2>Staffing Map</h2>
-<p>On the map below, each circle represents a school or office site. Citywide departments are represented in the upper right of the map. Circles are sized by the raw number of unfilled positions in the school or department. Circles that aren&rsquo;t filled have no vacancies. Click or touch any circle to see its name and a list of vacant positions in that school or department.</p>
+<h2>Underfunded and Understaffed Map</h2>
+<p>On the map below, each circle represents a CPS school or CPS office site. Citywide departments are represented in the upper right of the map. Circles are sized by the raw number of unfilled positions in the school or department. Circles that aren’t filled have no vacancies. Click or tap any circle to see its name and a list of vacant positions in that school or department.</p>
 <div>
 `
 let svgString = Deno.readTextFileSync("./public/images/vacancies-map.svg");
