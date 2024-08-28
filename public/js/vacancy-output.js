@@ -151,7 +151,7 @@ function outputSchoolData(e) {
     }
   }
   //console.log("Chose:",entry, dept)
-
+output.scrollIntoView({behavior: smooth});
 output.innerHTML = data2Table (dept);
 }
 
