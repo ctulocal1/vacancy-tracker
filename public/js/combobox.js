@@ -1,7 +1,4 @@
-/*
- *   This content is licensed according to the W3C Software License at
- *   https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
- */
+'use strict';
 
 
 class ComboboxAutocomplete {
@@ -87,7 +84,6 @@ class ComboboxAutocomplete {
       node.addEventListener('pointerover', this.onOptionPointerover.bind(this));
       node.addEventListener('pointerout', this.onOptionPointerout.bind(this));
     }
-    console.log("Combobox Code All Options:",this.allOptions);
 
     this.filterOptions();
 
@@ -108,11 +104,11 @@ class ComboboxAutocomplete {
     var bounding = option.getBoundingClientRect();
     return (
       bounding.top >= 0 &&
-        bounding.left >= 0 &&
-        bounding.bottom <=
-          (window.innerHeight || document.documentElement.clientHeight) &&
-        bounding.right <=
-          (window.innerWidth || document.documentElement.clientWidth)
+      bounding.left >= 0 &&
+      bounding.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
+      bounding.right <=
+        (window.innerWidth || document.documentElement.clientWidth)
     );
   }
 
@@ -128,14 +124,10 @@ class ComboboxAutocomplete {
   }
 
   setValue(value) {
-    this.filter = value.textContent;
-    this.dataset = value.dataset;
-    console.log(this.dataset);
+    this.filter = value;
     this.comboboxNode.value = this.filter;
     this.comboboxNode.setSelectionRange(this.filter.length, this.filter.length);
     this.filterOptions();
-
-    outputSchoolData(this);
   }
 
   setOption(option, flag) {
@@ -209,7 +201,7 @@ class ComboboxAutocomplete {
       option = this.allOptions[i];
       if (
         filter.length === 0 ||
-          this.getLowercaseContent(option).indexOf(filter) === 0
+        this.getLowercaseContent(option).indexOf(filter) === 0
       ) {
         this.filteredOptions.push(option);
         this.listboxNode.appendChild(option);
@@ -243,7 +235,7 @@ class ComboboxAutocomplete {
         opt.setAttribute('aria-selected', 'true');
         if (
           this.listboxNode.scrollTop + this.listboxNode.offsetHeight <
-            opt.offsetTop + opt.offsetHeight
+          opt.offsetTop + opt.offsetHeight
         ) {
           this.listboxNode.scrollTop =
             opt.offsetTop + opt.offsetHeight - this.listboxNode.offsetHeight;
@@ -303,9 +295,9 @@ class ComboboxAutocomplete {
 
     if (
       force ||
-        (!this.comboboxHasVisualFocus &&
-          !this.listboxHasVisualFocus &&
-          !this.hasHover)
+      (!this.comboboxHasVisualFocus &&
+        !this.listboxHasVisualFocus &&
+        !this.hasHover)
     ) {
       this.setCurrentOptionStyle(false);
       this.listboxNode.style.display = 'none';
@@ -320,7 +312,7 @@ class ComboboxAutocomplete {
 
   onComboboxKeyDown(event) {
     var flag = false,
-    altKey = event.altKey;
+      altKey = event.altKey;
 
     if (event.ctrlKey || event.shiftKey) {
       return;
@@ -329,10 +321,7 @@ class ComboboxAutocomplete {
     switch (event.key) {
       case 'Enter':
         if (this.listboxHasVisualFocus) {
-          this.setValue(this.option);
-        } else {
-          console.log("Entered on text",this);
-          outputSchoolData(this);
+          this.setValue(this.option.textContent);
         }
         this.close(true);
         this.setVisualFocusCombobox();
@@ -348,7 +337,7 @@ class ComboboxAutocomplete {
             this.open();
             if (
               this.listboxHasVisualFocus ||
-                (this.isBoth && this.filteredOptions.length > 1)
+              (this.isBoth && this.filteredOptions.length > 1)
             ) {
               this.setOption(this.getNextOption(this.option), true);
               this.setVisualFocusListbox();
@@ -428,8 +417,8 @@ class ComboboxAutocomplete {
 
   onComboboxKeyUp(event) {
     var flag = false,
-    option = null,
-    char = event.key;
+      option = null,
+      char = event.key;
 
     if (this.isPrintableCharacter(char)) {
       this.filter += char;
@@ -543,8 +532,8 @@ class ComboboxAutocomplete {
   onBackgroundPointerUp(event) {
     if (
       !this.comboboxNode.contains(event.target) &&
-        !this.listboxNode.contains(event.target) &&
-        !this.buttonNode.contains(event.target)
+      !this.listboxNode.contains(event.target) &&
+      !this.buttonNode.contains(event.target)
     ) {
       this.comboboxHasVisualFocus = false;
       this.setCurrentOptionStyle(null);
@@ -592,14 +581,17 @@ class ComboboxAutocomplete {
   }
 }
 
-
-
+// Initialize comboboxes
 
 window.addEventListener('load', function () {
+  var comboboxes = document.querySelectorAll('.combobox-list');
 
-  var combobox = document.querySelector('.combobox');
-  var comboboxNode = combobox.querySelector('input');
-  var buttonNode = combobox.querySelector('button');
-  var listboxNode = combobox.querySelector('[role="listbox"]');
-  new ComboboxAutocomplete(comboboxNode, buttonNode, listboxNode);
-})
+  for (var i = 0; i < comboboxes.length; i++) {
+    var combobox = comboboxes[i];
+    var comboboxNode = combobox.querySelector('input');
+    var buttonNode = combobox.querySelector('button');
+    var listboxNode = combobox.querySelector('[role="listbox"]');
+    new ComboboxAutocomplete(comboboxNode, buttonNode, listboxNode);
+  }
+});
+

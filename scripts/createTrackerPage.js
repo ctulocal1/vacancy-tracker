@@ -43,16 +43,23 @@ let listBoxBefore = `
         <div class="combobox combobox-list">
           <div class="group">
             <input list="departments" id="cb1-input" class="cb_edit" type="text" role="combobox" aria-autocomplete="both" aria-expanded="false" aria-controls="cb1-listbox">
-<datalist id="departments">
+    <button type="button" id="cb1-button" aria-label="Schools and Departments" aria-expanded="false" aria-controls="cb1-listbox" tabindex="-1">
+      <svg width="18" height="16" aria-hidden="true" focusable="false" style="forced-color-adjust: auto">
+        <polygon class="arrow" stroke-width="0" fill-opacity="0.75" fill="currentcolor" points="3,6 15,6 9,14"></polygon>
+      </svg>
+    </button>
+<ul role="listbox" id="departments" aria-label="Schools and Departments">
 `
 //
 // A series of <li role="option"...> elements will be generated and inserted here as choiceList.
 // The populateChoices function is after the render and before the citywide.
 //
+
+import optionObj from "../public/data/deptnames.json" with {type: "json"};
 let choiceList = populateChoices()
 
 let listBoxAfter = `
-</datalist>
+</ul>
           </div>
       </div> <!-- closes out the listBox section -->
 `
@@ -96,6 +103,7 @@ let pageLast = `
 </div>
 </footer>
 <script src="js/vacancy-output.js"></script>
+<script src="js/combobox.js"></script>
 </body>
 </html>
 `;
@@ -227,18 +235,26 @@ function citywide () {
 // Generates the <li role="option"...> elements to populate the combobox.
 //
 function populateChoices () {
-let deptsByAlphaObj = {}
-let allLIs = ""
-return `
-<option id="lb-1" role="option">Option 1</option>
-<option id="lb-2" role="option">Option 2</option>
-<option id="lb-3" role="option">Option 3</option>
-<option id="lb-4" role="option">Option 4</option>
-<option id="lb-5" role="option">Option 5</option>
-<option id="lb-6" role="option">Option 6</option>
-`
-}
 
+//console.log ("Option Object:",optionObj)
+let datalistOpts = `
+<li id="lb-district" role="option">District-wide Data</li>
+`
+datalistOpts += `<div>Network Office</div>`
+for (const net of optionObj.network) {
+  datalistOpts += `<li id="lb-${net}" role="option">${net}</li>`
+}
+for (const ofc of optionObj.office) {
+  datalistOpts += `<li id="lb-${ofc}" role="option">${ofc}</li>`
+}
+for (const dist of optionObj.district) {
+  datalistOpts += `<li id="lb-${dist}" role="option">${dist}</li>`
+}
+for (const chrt of optionObj.charter) {
+  datalistOpts += `<li id="lb-${chrt}" role="option">${chrt}</li>`
+}
+return datalistOpts;
+}
 
 
 
