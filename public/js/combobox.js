@@ -47,7 +47,7 @@ class ComboboxAutocomplete {
     );
     this.comboboxNode.addEventListener(
       'input',
-      this.onComboboxKeyUp.bind(this)
+      this.onComboboxInput.bind(this)
     );
     this.comboboxNode.addEventListener(
       'click',
@@ -422,6 +422,43 @@ class ComboboxAutocomplete {
   isPrintableCharacter(str) {
     return str.length === 1 && str.match(/\S| /);
   }
+
+    onComboboxInput (event) {
+          this.setCurrentOptionStyle(false);
+          flag = true;
+
+          if (this.isList || this.isBoth) {
+            option = this.filterOptions();
+            if (option) {
+              if (this.isClosed() && this.comboboxNode.value.length) {
+                this.open();
+              }
+
+              if (
+                this.getLowercaseContent(option).indexOf(
+                  this.comboboxNode.value.toLowerCase()
+                ) === 0
+              ) {
+                this.option = option;
+                if (this.isBoth || this.listboxHasVisualFocus) {
+                  this.setCurrentOptionStyle(option);
+                  if (this.isBoth) {
+                    this.setOption(option);
+                  }
+                }
+              } else {
+                this.option = null;
+                this.setCurrentOptionStyle(false);
+              }
+            } else {
+              this.close();
+              this.option = null;
+              this.setActiveDescendant(false);
+            }
+          } else if (this.comboboxNode.value.length) {
+            this.open();
+          }
+    }
 
   onComboboxKeyUp(event) {
     var flag = false,
