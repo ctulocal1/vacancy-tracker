@@ -182,7 +182,7 @@ label[for="cb1-input"] {
   display: inline-flex;
   max-width: 400px;
   padding: 4px;
-  margin-left: 24px;
+  margin-left: -4px;
   cursor: pointer;
 }
 
@@ -223,7 +223,7 @@ ul[role="listbox"] {
   margin: 0;
   padding: 0;
   position: absolute;
-  left: 28px;
+  left: 20px;
   top: 34px;
   list-style: none;
   background-color: white;
@@ -231,12 +231,12 @@ ul[role="listbox"] {
   box-sizing: border-box;
   border: 2px currentcolor solid;
   max-height: 250px;
-  width: 168px;
+  width: 128px;
   overflow: scroll;
   overflow-x: hidden;
   font-size: 87.5%;
   cursor: pointer;
-  width: calc(100% - 8px);
+  width: calc(100% - 60px);
 }
 
 ul[role="listbox"] li[role="option"] {
@@ -278,15 +278,26 @@ ul[role="listbox"] li[role="option"] {
 }
 .combobox .group button.clear {
   position: absolute;
-  top: 6px;
+  top: 0px;
   left: 0px;
-  width: 24px;
+  width: 20px;
   border: 1px solid #777777;
-  border-radius: 30%;
   line-height: 1;
+  font-family: 'Open Sans', sans-serif;
   font-size: 18px;
   padding: 3px 4px;
   z-index: 4;
+  background-color: white;
+  font-weight: 600;
+  color: rgb(0 90 156);
+  box-sizing: border-box;
+  height: 30px;
+  padding: 0;
+  margin: 0;
+  vertical-align: bottom;
+  border: 1px solid gray;
+  position: relative;
+  cursor: pointer;
 }
 dialog {
   width: calc(100vw - 40px);
