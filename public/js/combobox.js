@@ -424,9 +424,12 @@ class ComboboxAutocomplete {
     }
 
     onComboboxInput (event) {
-      this.filter = this.comboboxNode.value;
-      this.option = null;
-      this.filterOptions();
+        this.setVisualFocusCombobox();
+        this.setCurrentOptionStyle(false);
+        this.filter = this.comboboxNode.value;
+        this.option = null;
+        this.filterOptions();
+        flag = true;
     }
 
   onComboboxKeyUp(event) {
