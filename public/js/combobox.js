@@ -334,6 +334,7 @@ class ComboboxAutocomplete {
         this.close(true);
         this.setVisualFocusCombobox();
         flag = true;
+        outputSchoolData(this.option.textContent);
         break;
 
       case 'Down':
@@ -424,12 +425,14 @@ class ComboboxAutocomplete {
     }
 
     onComboboxInput (event) {
+        var flag = false;
         this.setVisualFocusCombobox();
         this.setCurrentOptionStyle(false);
         this.filter = this.comboboxNode.value;
         this.option = null;
         this.filterOptions();
         flag = true;
+        this.close();
     }
 
   onComboboxKeyUp(event) {
@@ -601,12 +604,12 @@ class ComboboxAutocomplete {
   }
 }
 
-let clearButton = document.querySelector(".combobox .clear");
+const clearButton = document.querySelector(".combobox .clear");
 clearButton.addEventListener("click",clearInput)
 
 function clearInput () {
-    const input = document.querySelector(".combobox input");
     input.value = "";
+    clearButton.focus();
 }
 
 // Initialize comboboxes
