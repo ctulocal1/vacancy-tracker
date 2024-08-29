@@ -46,6 +46,10 @@ class ComboboxAutocomplete {
       this.onComboboxKeyUp.bind(this)
     );
     this.comboboxNode.addEventListener(
+      'input',
+      this.onComboboxKeyUp.bind(this)
+    );
+    this.comboboxNode.addEventListener(
       'click',
       this.onComboboxClick.bind(this)
     );
