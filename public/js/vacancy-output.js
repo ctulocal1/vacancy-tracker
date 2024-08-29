@@ -112,29 +112,36 @@ function stringSort(items) {
 }
 
 function outputSchoolData(e) {
-  //console.log("outputSchoolData called. E:",e)
-  //console.log("e.target",e.target)
-  //console.log("e.currentTarget",e.currentTarget)
-  let dept = {}
-  let entry = "";
-  if (e.target.value) {
-    entry = e.target.value.trim().toUpperCase();
-    if ( index.short_name.has(entry) ) { 
-      //console.log("NameTarget:",entry,index.short_name.get(entry));
-      dept = index.short_name.get(entry) 
+    let dept = {}
+    let entry = "";
+    console.log(typeof e, e);
+    if (typeof e === "string") {
+        entry = e.trim().toUpperCase();
+        if ( index.short_name.has(entry) ) { 
+            //console.log("NameTarget:",entry,index.short_name.get(entry));
+            dept = index.short_name.get(entry) 
+        }
+    } else {
+        if (e.currentTarget.value) {
+            entry = e.target.value.trim().toUpperCase();
+            if ( index.short_name.has(entry) ) { 
+                //console.log("NameTarget:",entry,index.short_name.get(entry));
+                dept = index.short_name.get(entry) 
+            }
+        } else {
+            if (e.currentTarget.id) {
+                entry = e.currentTarget.id;
+                if ( index.dept_id.has(entry) ) {
+                    //console.log("CurrentTarget:",entry,index.dept_id.get(entry));
+                    dept = index.dept_id.get(entry);
+                }
+            }
+        }
     }
-  } else {
-    if (e.target.id) {
-      entry = e.currentTarget.id;
-      if ( index.dept_id.has(entry) ) {
-        //console.log("CurrentTarget:",entry,index.dept_id.get(entry));
-        dept = index.dept_id.get(entry);
-      }
-    }
-  }
-  //console.log("Chose:",entry, dept)
-output.scrollIntoView({behavior: "smooth"});
-output.innerHTML = data2Table (dept);
+    //console.log("Chose:",entry, dept)
+    output.scrollIntoView({behavior: "smooth"});
+    output.innerHTML = data2Table (dept);
+    clearInput();
 }
 
 function data2Table (dept) {

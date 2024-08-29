@@ -210,7 +210,7 @@ class ComboboxAutocomplete {
 
     // Use populated options array to initialize firstOption and lastOption.
     var numItems = this.filteredOptions.length;
-    if (numItems > 1) {
+    if (numItems > 0) {
       this.firstOption = this.filteredOptions[0];
       this.lastOption = this.filteredOptions[numItems - 1];
 
@@ -219,10 +219,6 @@ class ComboboxAutocomplete {
       } else {
         option = this.firstOption;
       }
-    } else if (numItems === 1) {
-        // Trigger selection method
-        outputSchoolData(this.filteredOptions[0].textContent)
-        console.log(this.filteredOptions[0].textContent)
     } else {
       this.firstOption = null;
       option = null;
@@ -572,9 +568,6 @@ class ComboboxAutocomplete {
   onOptionClick(event) {
     this.comboboxNode.value = event.target.textContent;
     this.close(true);
-    // Trigger selection event
-      outputSchoolData(this.comboboxNode.value);
-    console.log(event.target.textContent);
   }
 
   onOptionPointerover() {
@@ -586,14 +579,6 @@ class ComboboxAutocomplete {
     this.hasHover = false;
     setTimeout(this.close.bind(this, false), 300);
   }
-}
-
-let clearButton = document.querySelector(".combobox .clear");
-clearButton.addEventListener("click",clearInput)
-
-function clearInput () {
-    const input = document.querySelector(".combobox input");
-    input.value = "";
 }
 
 // Initialize comboboxes

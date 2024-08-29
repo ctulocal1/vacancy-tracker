@@ -182,12 +182,12 @@ label[for="cb1-input"] {
   display: inline-flex;
   max-width: 400px;
   padding: 4px;
-  margin-left: -4px;
+  margin-left: 24px;
   cursor: pointer;
 }
 
 .combobox input,
-.combobox button {
+.combobox button.arrow {
   background-color: white;
   color: black;
   box-sizing: border-box;
@@ -198,6 +198,7 @@ label[for="cb1-input"] {
   border: 1px solid gray;
   position: relative;
   cursor: pointer;
+  z-index: 1;
 }
 
 .combobox input {
@@ -207,14 +208,14 @@ label[for="cb1-input"] {
   padding: 1px 3px;
 }
 
-.combobox button {
+.combobox button.arrow {
   width: 19px;
   border-left: none;
   outline: none;
   color: rgb(0 90 156);
 }
 
-.combobox button[aria-expanded="true"] svg {
+.combobox button.arrow[aria-expanded="true"] svg {
   transform: rotate(180deg) translate(0, -3px);
 }
 
@@ -222,7 +223,7 @@ ul[role="listbox"] {
   margin: 0;
   padding: 0;
   position: absolute;
-  left: 4px;
+  left: 28px;
   top: 34px;
   list-style: none;
   background-color: white;
@@ -261,9 +262,9 @@ ul[role="listbox"] li[role="option"] {
 }
 
 .combobox .group.focus input,
-.combobox .group.focus button,
+.combobox .group.focus button.arrow,
 .combobox .group input:hover,
-.combobox .group button:hover {
+.combobox .group button.arrow:hover {
   background-color: #def;
 }
 
@@ -274,6 +275,18 @@ ul[role="listbox"] li[role="option"] {
   padding-bottom: 0;
   border-top: 2px solid currentcolor;
   border-bottom: 2px solid currentcolor;
+}
+.combobox .group button.clear {
+  position: absolute;
+  top: 6px;
+  left: 0px;
+  width: 24px;
+  border: 1px solid #777777;
+  border-radius: 30%;
+  line-height: 1;
+  font-size: 18px;
+  padding: 3px 4px;
+  z-index: 4;
 }
 dialog {
   width: calc(100vw - 40px);

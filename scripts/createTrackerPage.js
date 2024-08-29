@@ -42,8 +42,9 @@ let listBoxBefore = `
         <label for="cb1-input">Display data for:</label>
         <div class="combobox combobox-list">
           <div class="group">
+            <button class="clear" aria-label="clear input" type="button">×</button>
             <input list="departments" id="cb1-input" class="cb_edit" type="text" role="combobox" aria-autocomplete="both" aria-expanded="false" aria-controls="cb1-listbox">
-    <button type="button" id="cb1-button" aria-label="Schools and Departments" aria-expanded="false" aria-controls="cb1-listbox" tabindex="-1">
+    <button type="button" id="cb1-button" aria-label="Schools and Departments" aria-expanded="false" aria-controls="cb1-listbox" tabindex="-1" class="arrow">
       <svg width="18" height="16" aria-hidden="true" focusable="false" style="forced-color-adjust: auto">
         <polygon class="arrow" stroke-width="0" fill-opacity="0.75" fill="currentcolor" points="3,6 15,6 9,14"></polygon>
       </svg>
