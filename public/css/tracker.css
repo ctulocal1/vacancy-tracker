@@ -1,3 +1,6 @@
+:root {
+  scroll-behavior: smooth;
+}
 body {
   font-family: 'Open Sans',sans-serif;
   padding: 0;
@@ -6,6 +9,7 @@ body {
 }
 body * {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 h1 {
   margin-top: 60px 0 6px 0;
@@ -75,6 +79,18 @@ a.button:focus {
   background: white;
   color: #ed1b2f;
 }
+.skiplink {
+  display: none;
+}
+.skiplink a {
+  color: #db1425;
+}
+.skiplink a:focus,
+.skiplink a:active,
+.skiplink a:hover {
+  color: #ab0415;
+}
+
 .cpsmap {
   width: 100%;
   margin:0;
@@ -368,7 +384,7 @@ footer a:visited {
     padding: 0 20px 0 0;
   }
   .grid-container .text {
-    padding-top: 60px;
+    padding-top: 20px;
     max-width: 460px;
   }
   .sticker {
@@ -482,16 +498,17 @@ footer a:visited {
   margin: 40px 0;
   height: fit-content;
   min-height: 600px;
-  border: 6px solid #ed1b2f;
-  border-left: none;
-  border-right: none;
   color: #ed1b2f;
   font-family: "Source Serif 4", "Source Serif", serif;
   position: relative;
   overflow-x: hidden;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
 .quotebox blockquote p {
-  font-size: 28px;
+  font-size: 22px;
   font-weight: 700;
   width: calc(100% - 30px);
   position: relative;
@@ -517,7 +534,7 @@ footer a:visited {
   clear: both;
   text-indent: -1ch;
   font-style: italic;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 500;
   width: fit-content;
   margin-left: 4em;
@@ -529,21 +546,29 @@ footer a:visited {
   white-space: nowrap;
 }
 .quotebox blockquote {
-  margin: 20px 10px 20px 20px;
+  width: 100%;
+  margin: 0;
+  padding: 20px 10px 20px 20px;
+  border: 6px solid #ed1b2f;
+  border-left: none;
+  border-right: none;
 }
 .quotebox blockquote.centered {
   animation-duration: 2s;
   animation-name: slideIn;
+  z-index: 2;
 }
 .quotebox blockquote.offLeft {
-  top: 0;
   position: absolute;
   animation-duration: 1s;
   animation-name: slideOut;
   opacity: 0;
+  z-index: 1;
 }
 .quotebox blockquote.offRight {
+  position: absolute;
   opacity: 0;
+  z-index: 1;
 }
 @keyframes slideOut {
  from {
@@ -567,7 +592,19 @@ footer a:visited {
     min-height: 400px;
   }
   .quotebox blockquote {
-    width: calc(100% - 70px);
-    margin: 40px 30px 40px 40px;
+    width: calc(100% - 0px);
+    margin: 0px 0px 0px 0px;
+  }
+  .quotebox blockquote p {
+    font-size: 28px;
+  }
+  .quotebox blockquote cite {
+    font-size: 22px;
+  }
+  .grid-container .text {
+    padding-top: 20px;
+  }
+  .skiplink {
+    display: block;
   }
 }

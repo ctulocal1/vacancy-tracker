@@ -33,7 +33,7 @@ let pageTop = `
         <p><strong>The Chicago Teachers Union is fighting for the schools Chicago’s students deserve.</strong> Chicago Public Schools CEO Pedro Martinez claims that the district has improved resources for our students by allocating new positions, but the reality is that many of these positions exist on paper only. Select a school in the dropdown or on the map below to see the number of clinicians, teachers, teacher assistants, librarians and all school staff <em>actually working</em> at any given school, network office or citywide department. Our members’ reports from the field provide an even clearer picture of the impact #UnderfundedUnderstaffed schools have on our students.</p>
 <div class="quotebox">
   <blockquote class="offLeft"></blockquote>
-  <blockquote class="centered"><p>Having 32 seven-year-olds in a class is really tough! It means way more time is spent on behavior management and classroom management and way less time on teaching. It is nearly impossible to meet the needs of our students, especially the newcomers.</p><cite>Caitlin Sheehan, <span class="nobreak">Clinton Elementary</span></cite></blockquote>
+  <blockquote class="centered"><p>Class sizes are too big. My largest class has 36 students. Students who legally require a one-on-one [aide] are not receiving support. Newcomers are not getting adequate language support and become easily frustrated or disengaged.</p><cite>Teacher, <span class="nobreak">Daley Elementary</span></cite></blockquote>
 <blockquote class="offRight"></blockquote>
 </div>
 <h2>CTU Members: Share Your School’s Staffing Story</h2>
@@ -43,6 +43,7 @@ let pageTop = `
 `
 let listBoxBefore = `
       <div id="text" class="text">
+<p class="skiplink"><a href="#cpsmap">Go to Tracker Map</a></p>
 <div class="sticker">
         <h2>By the Numbers</h2>
         <p>The information below is based on CPS vacancy data provided Aug. 28, 2024.</p>
