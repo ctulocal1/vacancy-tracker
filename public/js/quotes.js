@@ -17,7 +17,7 @@ function slideQuotes () {
     citation += newQuote.name
     if (newQuote.school) citation += `, `
   }
-  if (newQuote.school) citation += `<span>${newQuote.school}`
+  if (newQuote.school) citation += `<span class="nobreak">${newQuote.school}`
   if (newQuote.name) citation += "</cite>"
   incoming.innerHTML = `<p>${newQuote.quote}</p>${citation}`
   outgoing.className = "offLeft";
