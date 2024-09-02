@@ -226,7 +226,7 @@ class ComboboxAutocomplete {
     } else if (numItems === 1) {
         // Trigger selection method
         outputSchoolData(this.filteredOptions[0].textContent)
-        console.log(this.filteredOptions[0].textContent)
+        //console.log(this.filteredOptions[0].textContent)
     } else {
       this.firstOption = null;
       option = null;
@@ -625,4 +625,3 @@ window.addEventListener('load', function () {
     new ComboboxAutocomplete(comboboxNode, buttonNode, listboxNode);
   }
 });
-

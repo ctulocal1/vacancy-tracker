@@ -10,6 +10,7 @@ let pageTop = `
     <link rel="stylesheet" type="text/css" href="/css/tracker.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@1,8..60,200..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&display=swap" rel="stylesheet">
   </head>
   <body>
@@ -30,9 +31,14 @@ let pageTop = `
 
         <h1>Underfunded &amp; Understaffed Tracker</h1>
         <p><strong>The Chicago Teachers Union is fighting for the schools Chicago’s students deserve.</strong> Chicago Public Schools CEO Pedro Martinez claims that the district has improved resources for our students by allocating new positions, but the reality is that many of these positions exist on paper only. Select a school in the dropdown or on the map below to see the difference between the staffing CPS <em>says</em> it provides and the number of clinicians, teachers, teacher assistants and all school staff <em>actually working</em> at any given school, network office or citywide department.</p>
+<div class="quotebox">
+  <blockquote class="offLeft"></blockquote>
+  <blockquote class="centered"><p>Having 32 7-year-olds in a class is really tough! It means way more time is spent on behavior management and classroom management and way less time on teaching. It is nearly impossible to meet the needs of our students, especially the newcomers.</p><cite>Caitlin Sheehan, <span class="nobreak">Clinton Elementary</span></cite></blockquote>
+<blockquote class="offRight"></blockquote>
+</div>
 <h2>CTU Members: Share Your School’s Staffing Story</h2>
 <p>Nobody knows better than CTU members what’s happening in our schools. Use our <a href="https://docs.google.com/forms/d/e/1FAIpQLSeSHguXxHgYvaO6vGBj1MCRBVcDLGVHWfcvwwLA0jnW9F3ieg/viewform">staffing report form</a> to tell us how many unfilled positions are at your school and, and the ways that those vacancies and other positions that <em>should</em> be budgeted in your school or department affect your students and your work.</p>
-<p><a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSeSHguXxHgYvaO6vGBj1MCRBVcDLGVHWfcvwwLA0jnW9F3ieg/viewform">Share Your Story</a></p>
+<p class="button"><a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSeSHguXxHgYvaO6vGBj1MCRBVcDLGVHWfcvwwLA0jnW9F3ieg/viewform">Share Your Story</a></p>
       </div>
 `
 let listBoxBefore = `
@@ -91,7 +97,7 @@ let figureBefore = `
 <p>On the map below, each circle represents a CPS school or CPS office site. Citywide departments are represented in the upper right of the map. Circles are sized by the raw number of unfilled positions in the school or department. Circles that aren’t filled have no vacancies. Click or tap any circle to see its name and a list of vacant positions in that school or department.</p>
 <div>
 `
-let svgString = Deno.readTextFileSync("./public/images/vacancies-map.svg");
+let svgString = Deno.readTextFileSync("../public/images/vacancies-map.svg");
 
 let figureLast = `</div></figure>`
 
@@ -107,6 +113,7 @@ let pageLast = `
 </footer>
 <script src="js/vacancy-output.js"></script>
 <script src="js/combobox.js"></script>
+<script src="js/quotes.js"></script>
 </body>
 </html>
 `;
@@ -135,64 +142,17 @@ function render () {
 // These functions will be slightly altered to dynamically insert data in the output element when 
 // a user selects a school or department.
 // 
-import depts from "../public/data/departments.json" with {type: "json"};
+import depts from "../public/data/schools.json" with {type: "json"};
 import deptVacancies from "../public/data/vacancies-by-department.json" with {type: "json"};
 import jobs from "../public/data/ctu-jobs.json" with {type: "json"};
 
 function citywide () {
-  const vacanciesByJob = new Map();
-  vacanciesByJob.set("District",0);
 
-  const vacanciesByCat = new Map();
-
-  for (const dept of deptVacancies) {
-    const posArray = Object.entries(dept.positionsVacant);
-    posArray.map ( (posVac) => {
-      //console.log(posVac)
-      const [jobCode,jobVacs] = posVac;
-      //console.log("Position Code:",jobCode,"Position Vacancies:",jobVacs)
-      const acc = vacanciesByJob.get("District")
-      vacanciesByJob.set("District",acc+jobVacs)
-      if (vacanciesByJob.has(jobCode)) {
-        const acc = vacanciesByJob.get(jobCode)
-        vacanciesByJob.set(jobCode, acc + jobVacs)
-      } else vacanciesByJob.set(jobCode,jobVacs);
-    })
-
-
-    const catArray = Object.entries(dept.categoriesVacant);
-    catArray.map ( (catVac) => {
-      const [catCode,catVacs] = catVac;
-      if (vacanciesByCat.has(catCode)) {
-        const acc = vacanciesByCat.get(catCode)
-        vacanciesByCat.set(catCode, acc + catVacs)
-      } else vacanciesByCat.set(catCode,catVacs);
-    })
-  }
-  // console.log(vacanciesByJob)
-  // console.log(vacanciesByCat)
-  function sortObjectsByString (items,key) {
-    //console.log(items[0][key])
-    const sorted = items.sort((a, b) => {
-      const nameA = a[key].toUpperCase(); // ignore upper and lowercase
-      const nameB = b[key].toUpperCase(); // ignore upper and lowercase
-      if (nameA < nameB) {
-        return -1;
-      }
-      if (nameA > nameB) {
-        return 1;
-      }
-
-      // names must be equal
-      return 0;
-    });
-    // console.log(sorted)
-    return sorted;
-  }
-
+  let districtTotal = 0;
   const jobsMap = new Map();
   const jobsByAlpha = sortObjectsByString(jobs,"jobTitle");
-  jobsByAlpha.map((job)=>jobsMap.set(job.jobCode,job.jobTitle));
+  jobsByAlpha.map((job)=>jobsMap.set(parseInt(job.jobCode),job.jobTitle));
+//console.log(jobsMap);
 
   let outputString = `
 <table><caption><div>District Vacancies By Job</div></caption>
@@ -203,16 +163,31 @@ function citywide () {
 `
   // let vacJobArray = [...vacanciesByJob];
 
-  jobsByAlpha.map( ({jobCode}) => {
-
-    if ( vacanciesByJob.has(jobCode) ) {
+  let dist = deptVacancies.find (dept => dept.dept_id="00000");
+    //console.log(dist.positionsVacant)
+  let pos = Object.entries(dist.positionsVacant);
+  let cat = Object.entries(dist.categoriesVacant);
+    //console.log(pos,cat)
+  let posMap = new Map ();
+    pos.map( vac => {
+        //console.log(vac);
+        posMap.set(parseInt(vac[0]),vac[1]);
+})
+  let catMap = new Map ();
+    cat.map( vac => catMap.set(vac[0],vac[1]))
+ //console.log(posMap,catMap);
+  pos.map( (vac) => {
+      let jobCode = parseInt(vac[0]);
+      //console.log(jobCode);
+    if ( posMap.has(jobCode) ) {
       outputString += `
-<tr><th scope="row">${jobsMap.get(jobCode)}</th><td>${parseFloat( vacanciesByJob.get(jobCode) ).toFixed(1)}</td></tr>`
+<tr><th scope="row">${jobsMap.get(jobCode)}</th><td>${parseFloat( posMap.get(jobCode) ).toFixed(1)}</td></tr>`
     }
+    districtTotal += posMap.get(jobCode);
   })
   outputString += `
 </tbody> <tfoot>
-<tr><th scope="row">District Total</th><td>${vacanciesByJob.get("District").toLocaleString(undefined,{minimumFractionDigits: 1})}</td></tr>
+<tr><th scope="row">District Total</th><td>${districtTotal.toLocaleString(undefined,{minimumFractionDigits: 1})}</td></tr>
 </tfoot> </table>
 <table> <thead class="thead">
 <tr><td colspan="2" style="font-weight:bold">By Job Category*</td></tr>
@@ -220,9 +195,8 @@ function citywide () {
 </thead> <tbody>
 `;
 
-  const catsByAlpha = sortObjectsByString([...vacanciesByCat.entries()],0)
 
-  catsByAlpha.map( ([category,vacancies]) => {
+  cat.map( ([category,vacancies]) => {
     outputString += `
 <tr><th scope="row">${category}</th><td>${parseFloat(vacancies).toFixed(1)}</td></tr>`
   })
@@ -233,6 +207,24 @@ function citywide () {
   return outputString;
 }
 
+function sortObjectsByString (items,key) {
+    //console.log(items[0][key])
+    const sorted = items.sort((a, b) => {
+        const nameA = a[key].toUpperCase(); // ignore upper and lowercase
+        const nameB = b[key].toUpperCase(); // ignore upper and lowercase
+        if (nameA < nameB) {
+            return -1;
+        }
+        if (nameA > nameB) {
+            return 1;
+        }
+
+        // names must be equal
+        return 0;
+    });
+    // console.log(sorted)
+    return sorted;
+}
 //
 //
 // Generates the <li role="option"...> elements to populate the combobox.
@@ -262,5 +254,5 @@ return datalistOpts;
 
 
 const pageString = render ();
-Deno.writeTextFileSync("./public/index.html",pageString);
+Deno.writeTextFileSync("../public/index.html",pageString);
 console.log("Site written to ./public/index.html")

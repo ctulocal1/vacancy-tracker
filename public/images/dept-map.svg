@@ -3658,15 +3658,15 @@
       <circle cx="580" cy="240" r="3" data-network="" id="circle14050" />
       <text text-anchor="start" id="text14050" y="-1.8828111"><tspan direction="ltr" unicode-bidi="embed" x="590" y="244" id="tspan14050">Student Health / Wellness</tspan></text>
     </g>
-    <g id="11010">
-      <title id="title11010">Talent Office</title>
-      <circle cx="580" cy="260" r="3" data-network="" id="circle11010" />
-      <text text-anchor="start" id="text11010" y="-1.8828111"><tspan direction="ltr" unicode-bidi="embed" x="590" y="264" id="tspan11010">Talent Office</tspan></text>
-    </g>
     <g id="11070">
       <title id="title11070">Talent Office CW</title>
       <circle cx="580" cy="280" r="3" data-network="" id="circle11070" />
       <text text-anchor="start" id="text11070" y="-1.8828111"><tspan direction="ltr" unicode-bidi="embed" x="590" y="284" id="tspan11070">Talent Office CW</tspan></text>
+    </g>
+    <g id="11010">
+      <title id="title11010">Talent Office</title>
+      <circle cx="580" cy="260" r="3" data-network="" id="circle11010" />
+      <text text-anchor="start" id="text11010" y="-1.8828111"><tspan direction="ltr" unicode-bidi="embed" x="590" y="264" id="tspan11010">Talent Office</tspan></text>
     </g>
   </g>
 </svg>

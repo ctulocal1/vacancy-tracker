@@ -11,10 +11,6 @@ const schoolsByName = new Map ();
 
 function addSchool (school) {
   delete school.school_id2;
-  school.short_name = school.name_short;
-  school.ctu_name = school.name_ctu;
-  delete school.name_short;
-  delete school.name_ctu;
   delete school.organizer;
   deptsMap.set(school.dept_id,school);
   initPositionsVacant(school)
@@ -42,13 +38,14 @@ schools.forEach( (school) => {addSchool(school);
 //console.log(deptsMap.get("66602"));
 //console.log(schoolsByName)
 
-const vacanciesCSV = Deno.readTextFileSync("../data/Vacancies-2024-08-21.csv");
+const vacanciesCSV = Deno.readTextFileSync("../data/ctu-vacancies-2024-08-27.csv");
 const vacancies = parse (vacanciesCSV, {
   skipFirstRow: true,
   strip: true
 })
 
 const jobsMap = new Map();
+const cps = {};
 
 for (const v of vacancies) {
   const deptID = v["Dept ID"];
@@ -56,7 +53,7 @@ for (const v of vacancies) {
     const jobObj = {jobCode:v.JobCd,type:v.Type,jobTitle: v["Job Title"],citywideVacancies:0}
     jobsMap.set(v.JobCd,jobObj)
   }
-  jobsMap.get(v.JobCd).citywideVacancies++
+  jobsMap.get(v.JobCd).citywideVacancies += parseFloat(v.FTE)
   let dept = deptsMap.get(deptID);
   if (!dept) {
     deptsMap.set(deptID,{
@@ -79,18 +76,18 @@ for (const v of vacancies) {
   if (dept.positionsVacant.has(v.JobCd)) {
     dept.positionsVacant.set(v.JobCd,dept.positionsVacant.get(v.JobCd)+parseFloat(v.FTE)) ;
   } else {dept.positionsVacant.set(v.JobCd,parseFloat(v.FTE))}
-  if (v["Special Ed"].length > 0)  dept.categoriesVacant.set("Special Ed",dept.categoriesVacant.get("Special Ed") + parseFloat(v.FTE));
- //console.log(v,v["Special Ed"],dept.categoriesVacant.get("Special Ed"));
+    //console.log("V:",v)
+  if (v.SpecEd.length > 0)  dept.categoriesVacant.set("Special Ed",dept.categoriesVacant.get("Special Ed") + parseFloat(v.FTE));
   if (v.Bilingual.length > 0)  dept.categoriesVacant.set("Bilingual",dept.categoriesVacant.get("Bilingual") + parseFloat(v.FTE));
   if (v.Science.length > 0)  dept.categoriesVacant.set("Science",dept.categoriesVacant.get("Science") + parseFloat(v.FTE));
   if (v.Math.length > 0)  dept.categoriesVacant.set("Math",dept.categoriesVacant.get("Math") + parseFloat(v.FTE));
   if (v.Arts.length > 0)  dept.categoriesVacant.set("Arts",dept.categoriesVacant.get("Arts") + parseFloat(v.FTE));
-  if (v["Early Childhood"].length > 0)  dept.categoriesVacant.set("Early Childhood",dept.categoriesVacant.get("Early Childhood") + parseFloat(v.FTE));
-  if (v["Physical Ed"].length > 0)  dept.categoriesVacant.set("Physical Ed",dept.categoriesVacant.get("Physical Ed") + parseFloat(v.FTE));
+  if (v.EarlyChild.length > 0)  dept.categoriesVacant.set("Early Childhood",dept.categoriesVacant.get("Early Childhood") + parseFloat(v.FTE));
+  if (v.PhysEd.length > 0)  dept.categoriesVacant.set("Physical Ed",dept.categoriesVacant.get("Physical Ed") + parseFloat(v.FTE));
   if (v.Counselor.length > 0)  dept.categoriesVacant.set("Counselor",dept.categoriesVacant.get("Counselor") + parseFloat(v.FTE));
   if (v.Clinician.length > 0)  dept.categoriesVacant.set("Clinician",dept.categoriesVacant.get("Clinician") + parseFloat(v.FTE));
   if (v.Library.length > 0)  dept.categoriesVacant.set("Library",dept.categoriesVacant.get("Library") + parseFloat(v.FTE));
-  if (v["World Language"].length > 0)  dept.categoriesVacant.set("World Language",dept.categoriesVacant.get("World Language") + parseFloat(v.FTE));
+  if (v.WorldLang.length > 0)  dept.categoriesVacant.set("World Language",dept.categoriesVacant.get("World Language") + parseFloat(v.FTE));
 }
 
 let schoolsAlphabeticalByName = Array.from(schoolsByName)
@@ -129,20 +126,43 @@ Deno.writeTextFileSync("../public/school-vacancies.html",htmlDoc);
 let deptsString = "";
 let deptsArray = []
 
+let dist = {dept_id:"00000",short_name:"District-wide Data",ctu_name:"District-wide Data",type:"District"}
+dist.posVacant = new Map();
+dist.catVacant = new Map();
+let distTotal = 0;
 deptsMap.forEach(logMapElements);
 function logMapElements(value,key,map) {
+  addToDistrict (value);
   let dept = {};
   dept = value;
   dept.positionsVacant = Object.fromEntries(value.positionsVacant);
   dept.categoriesVacant = Object.fromEntries(value.categoriesVacant);
-  const deptString = ",\n" + JSON.stringify(dept);
   if (!dept.type && dept.short_name.match("Network")) dept.type = "Network Office"
   else if (!dept.type) dept.type = "CW Department";
   const type = dept.type;
+  const deptString = ",\n" + JSON.stringify(dept);
   //console.log(dept.short_name,type)
   deptsString += deptString;
 }
-deptsString = deptsString.slice(2) // Get rid of initial ,\n so JSON will be valid.
+function addToDistrict(value) {
+    //console.log("value:",value.short_name,"Type Vacancies:",typeof value.positionsVacant,"\nObject:",value);
+    let posArray = Array.from(value.positionsVacant.keys())
+    let catArray = Array.from(value.categoriesVacant.keys());
+    posArray.map( (pos) => {
+        dist.posVacant.set(pos,dist.posVacant.get(pos)+value.positionsVacant.get(pos)||value.positionsVacant.get(pos));
+        distTotal += value.positionsVacant.get(pos);
+    })
+    catArray.map( (cat) => {
+        dist.catVacant.set(cat,dist.catVacant.get(cat)+value.categoriesVacant.get(cat)||value.categoriesVacant.get(cat));
+    })
+    //console.log(dist);
+    //console.log("Total:",distTotal);
+}
+
+dist.positionsVacant = Object.fromEntries(dist.posVacant)
+dist.categoriesVacant = Object.fromEntries(dist.catVacant)
+
+deptsString = JSON.stringify(dist) + deptsString;
 deptsString = "[\n" + deptsString + "\n]"
 
 //const deptsArray = deptsMap.values()
@@ -151,7 +171,7 @@ deptsString = "[\n" + deptsString + "\n]"
 //}
 //console.log(deptsArray)
 
-//Deno.writeTextFileSync("./public/data/vacancies-by-department.json",deptsString);
+Deno.writeTextFileSync("../public/data/vacancies-by-department.json",deptsString);
 console.log("Updated vacancy info in ./public/data/vacancies-by-department.json.")
 
 //console.log(deptsMap);

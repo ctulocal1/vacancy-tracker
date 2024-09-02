@@ -62,8 +62,9 @@ getData("data/schools.json")
   })
   .then ( (index) => getData("data/vacancies-by-department.json") )
   .then ( (vacancies) => {
-    //console.log("Vacancies:",vacancies)
+    console.log("Vacancies:",vacancies)
     for (const v of vacancies) {
+        if (!v.type) console.log(v.short_name)
       v.short_name = "No Name"+v.dept_id;
       if (circles.has(v.dept_id)) v.short_name = circles.get(v.dept_id) 
       else v.short_name = v.ctu_name;
@@ -72,6 +73,10 @@ getData("data/schools.json")
         let name = "No Name";
         if (v.ctu_name) name = v.ctu_name;
         if (v.short_name) name = v.short_name;
+        if (v.type.match("CW Department")) {
+            name = v.ctu_name;
+            v.short_name = name;
+        }
         if (v.type === "Charter") { names.charter.add(name) }
         else if (v.type) { names.district.add(name) }
         else if (name.match("Network")) names.network.add(name);
@@ -116,14 +121,14 @@ function outputSchoolData(e) {
     let entry = "";
     console.log(typeof e, e);
     if (typeof e === "string") {
-        entry = e.trim().toUpperCase();
+        entry = e.trim();
         if ( index.short_name.has(entry) ) { 
             //console.log("NameTarget:",entry,index.short_name.get(entry));
             dept = index.short_name.get(entry) 
         }
     } else {
         if (e.currentTarget.value) {
-            entry = e.target.value.trim().toUpperCase();
+            entry = e.target.value.trim();
             if ( index.short_name.has(entry) ) { 
                 //console.log("NameTarget:",entry,index.short_name.get(entry));
                 dept = index.short_name.get(entry) 
@@ -152,7 +157,11 @@ function data2Table (dept) {
   if (dept.positionsVacant) {
     let posVac = Object.entries(dept.positionsVacant);
     //console.log("Pos Vac:",posVac);
-    if (posVac.length === 0) {
+  if (dept.type.toLowerCase() ==="charter") {
+    outputString = `
+<p>CPS does not provide any vacancy data for charter schools. If you want to inform the Union about the situation at your charter school, please complete the <a href="https://docs.google.com/forms/d/e/1FAIpQLSeSHguXxHgYvaO6vGBj1MCRBVcDLGVHWfcvwwLA0jnW9F3ieg/viewform">reporting form</a>.</p>
+`
+  } else if (posVac.length === 0) {
       outputString = `
 <p>CPS says ${dept.short_name} has no vacant positions.</p>
 `
@@ -164,8 +173,10 @@ function data2Table (dept) {
 <tr><th scope="col">Job Title</th><th scope="col">Vacancies</th></tr>
 </thead> <tbody>
 `
+        console.log(jobsMap)
       for (const v of posVac) {
         [jobCode,vacancyCount] = v;
+      console.log("V:",v,"Job Code:",jobCode);
         const jobTitle = jobsMap.get(parseInt( jobCode )).jobTitle
         outputString += `
 <tr><th scope="row">${jobTitle}</th><td>${parseFloat( vacancyCount ).toFixed(1)}</td></tr>`
@@ -175,7 +186,7 @@ function data2Table (dept) {
 
       outputString += `
 </tbody> <tfoot>
-<tr><th scope="row">Total</th><td>${sum.toFixed(1)}</td></tr>
+<tr><th scope="row">Total</th><td>${sum.toLocaleString("en-US",{minimumFractionDigits: 1})}</td></tr>
 </tfoot> </table>
 `
       let count = 0
@@ -203,10 +214,10 @@ function data2Table (dept) {
       if (count > 0) outputString += categoriesString;
     }
   }
-  if (sum === 0) outputString = `
-<p>CPS says ${dept.short_name} has no vacant positions.</p>
-`
+
   //console.log(outputString);
   return outputString;
 }
 
+
+outputSchoolData("District-wide Data");

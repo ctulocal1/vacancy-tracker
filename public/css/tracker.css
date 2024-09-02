@@ -54,8 +54,11 @@ header img {
   padding: 0 10px 0 0;
   grid-area: intro;
 }
-.button {
-  margin-top: 16px;
+p.button {
+  text-align: center;
+}
+a.button {
+  margin-top: 32px;
   display: inline-block;
   background: #ed1b2f;
   color: white;
@@ -66,8 +69,8 @@ header img {
   font-size: 1.3em;
   font-weight: 600;
 }
-.button:hover,
-.button:focus {
+a.button:hover,
+a.button:focus {
   background: white;
   color: #ed1b2f;
 }
@@ -473,3 +476,94 @@ footer a:visited {
   }
 }
 
+.quotebox {
+  width: 100%;
+  margin: 40px 0;
+  height: fit-content;
+  min-height: 360px;
+  border: 6px solid #ed1b2f;
+  border-left: none;
+  border-right: none;
+  color: #ed1b2f;
+  font-family: "Source Serif 4", "Source Serif", serif;
+  position: relative;
+  overflow-x: hidden;
+}
+.quotebox blockquote {
+  margin: 20px;
+}
+.quotebox blockquote p {
+  font-size: 28px;
+  font-weight: 700;
+  position: relative;
+}
+.quotebox blockquote p::before {
+  content: "“";
+  display: block;
+  position: absolute;
+  font-size: 130%;
+  line-height: 1.2;
+  left: -1ch;
+}
+.quotebox blockquote p:last-of-type::after {
+  content: "”";
+  font-size: 130%;
+  line-height: 1;
+}
+.quotebox blockquote cite {
+  display: inline-block;
+  text-align: left;
+  clear: both;
+  text-indent: -1ch;
+  font-style: italic;
+  font-size: 22px;
+  font-weight: 500;
+  width: fit-content;
+  margin-left: 4em;
+}
+.quotebox blockquote cite::before {
+  content: "~";
+}
+.quotebox blockquote cite .nobreak {
+  white-space: nowrap;
+}
+.quotebox blockquote.centered {
+  width: calc(100% - 80px);
+  animation: 1s 1 normal slideIn;
+}
+.quotebox blockquote.offLeft {
+  position: absolute;
+  left: calc(-100% - 1.3em);
+  width: calc(100% - 80px);
+  animation: 1s 1 normal slideLeft;
+}
+.quotebox blockquote.offRight {
+  position: absolute;
+  left: calc(100% + 1.3em);
+  width: calc(100% - 80px);
+}
+@keyframes slideLeft {
+ from {
+    translate: 0 0;
+  }
+
+  to {
+    translate: -150vw 0;
+  }
+}
+}
+@keyframes slideIn {
+ from {
+    translate: 150vw 0;
+  }
+
+  to {
+    translate: 0 0;
+  }
+}
+
+@media screen and (min-width: 840px) {
+  .quotebox blockquote {
+    margin: 40px;
+  }
+}

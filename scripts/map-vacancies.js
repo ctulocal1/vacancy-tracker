@@ -3,7 +3,7 @@ import jobObj from "../public/data/ctu-jobs.json" with {type: "json"};
 import { DOMParser } from "npm:linkedom";
 import { assert } from "jsr:@std/assert@1";
 
-const mapString = Deno.readTextFileSync("./public/images/dept-map.svg");
+const mapString = Deno.readTextFileSync("../public/images/dept-map.svg");
 const map = new DOMParser().parseFromString(mapString, "image/svg+xml" );
 assert(map);
 
@@ -63,8 +63,8 @@ for (let group of schoolGroups) {
 
 let mapOut = map.toString();
 
-Deno.writeTextFileSync("./public/images/vacancies-map.svg",mapOut);
-console.log("Map at ./public/images/vacancies-map.svg updated.")
+Deno.writeTextFileSync("../public/images/vacancies-map.svg",mapOut);
+console.log("Map at ../public/images/vacancies-map.svg updated.")
 
 /*
 let officeCircles = map.querySelectorAll("#offices g");
