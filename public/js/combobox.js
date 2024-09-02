@@ -590,7 +590,7 @@ class ComboboxAutocomplete {
     this.close(true);
     // Trigger selection event
       outputSchoolData(this.comboboxNode.value);
-    console.log(event.target.textContent);
+    //console.log(event.target.textContent);
   }
 
   onOptionPointerover() {
