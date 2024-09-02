@@ -30,7 +30,8 @@ p {
   grid-template-areas: "header" "intro" "map" "legend" ;
   grid-template-columns: 1fr;
   gap: 0;
-  background: white;
+  /*background: white;
+* */
 }
 .grid-container .text {
   grid-area: legend;
@@ -489,13 +490,12 @@ footer a:visited {
   position: relative;
   overflow-x: hidden;
 }
-.quotebox blockquote {
-  margin: 20px;
-}
 .quotebox blockquote p {
   font-size: 28px;
   font-weight: 700;
+  width: calc(100% - 30px);
   position: relative;
+  margin-top:0;
 }
 .quotebox blockquote p::before {
   content: "“";
@@ -527,43 +527,43 @@ footer a:visited {
 .quotebox blockquote cite .nobreak {
   white-space: nowrap;
 }
+.quotebox blockquote {
+  top: 0;
+  position: absolute;
+  margin: 20px 10px 20px 20px;
+}
 .quotebox blockquote.centered {
-  width: calc(100% - 80px);
-  animation: 1s 1 normal slideIn;
+  animation-duration: 2s;
+  animation-name: slideIn;
 }
 .quotebox blockquote.offLeft {
-  position: absolute;
-  left: calc(-100% - 1.3em);
-  width: calc(100% - 80px);
-  animation: 1s 1 normal slideLeft;
+  animation-duration: 1s;
+  animation-name: slideOut;
+  opacity: 0;
 }
 .quotebox blockquote.offRight {
-  position: absolute;
-  left: calc(100% + 1.3em);
-  width: calc(100% - 80px);
+  opacity: 0;
 }
-@keyframes slideLeft {
+@keyframes slideOut {
  from {
-    translate: 0 0;
+  opacity: 1;
   }
-
   to {
-    translate: -150vw 0;
+  opacity: 0;
   }
-}
 }
 @keyframes slideIn {
  from {
-    translate: 150vw 0;
+  opacity: 0;
   }
-
   to {
-    translate: 0 0;
+  opacity: 1;
   }
 }
 
 @media screen and (min-width: 840px) {
   .quotebox blockquote {
-    margin: 40px;
+    width: calc(100% - 70px);
+    margin: 40px 30px 40px 40px;
   }
 }
