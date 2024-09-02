@@ -29,10 +29,11 @@ for (const office of offices) {
 let jobsMap = new Map(); // all job titles indexed by job code
 const index = {} // One property points to Map of schools by dept_id key or by short_name key
 const names = {} // used to populate listbox. The groups represent types of schools/offices.
-names.network = new Set()
-names.office = new Set()
-names.district = new Set()
-names.charter = new Set()
+names.network = new Set();
+names.office = new Set();
+names.district = new Set();
+names.charter = new Set();
+let librarians = new Set();
 
 
 getData("data/schools.json")
@@ -48,9 +49,9 @@ getData("data/schools.json")
       index.short_name.set(d.short_name,d);
       let name = d.short_name;
       if (d.type === "Charter") { names.charter.add(name); }
-      else if (d.type === "Network Office") { names.network.add(name);}
-      else if (d.type === "CW Department") { names.office.add(name);}
-      else if (d.type) { names.district.add(name);}
+      else if (d.type === "Network Office") { names.network.add(name) }
+      else if (d.type === "CW Department") { names.office.add(name) }
+      else if (d.type === "District") { names.district.add(name) }
     }
     //console.log("After depts:",names);
   })
@@ -78,11 +79,16 @@ getData("data/schools.json")
             v.short_name = name;
         }
         if (v.type === "Charter") { names.charter.add(name) }
-        else if (v.type) { names.district.add(name) }
         else if (name.match("Network")) names.network.add(name);
-        else names.office.add(name);
+        else if (v.type.match("CW")) names.office.add(name);
+        else if (v.type) { names.district.add(name) }
     }
     //console.log("Index after vacancies:",index)
+  })
+  .then( (index) => getData( "data/schools-librarians.json"))
+  .then( (schoolLibraries) => {
+    schoolLibraries.map( (school) => librarians.add(school))
+    console.log(librarians);
   })
 
 async function getData(url) {
@@ -119,7 +125,8 @@ function stringSort(items) {
 function outputSchoolData(e) {
     let dept = {}
     let entry = "";
-    console.log(typeof e, e);
+    console.log(typeof e, e, e.currentTarget);
+  console.log(names.district)
     if (typeof e === "string") {
         entry = e.trim();
         if ( index.short_name.has(entry) ) { 
@@ -156,7 +163,7 @@ function data2Table (dept) {
   let outputString = "";
   if (dept.positionsVacant) {
     let posVac = Object.entries(dept.positionsVacant);
-    //console.log("Pos Vac:",posVac);
+    console.log("Pos Vac:",posVac);
   if (dept.type.toLowerCase() ==="charter") {
     outputString = `
 <p>CPS does not provide any vacancy data for charter schools. If you want to inform the Union about the situation at your charter school, please complete the <a href="https://docs.google.com/forms/d/e/1FAIpQLSeSHguXxHgYvaO6vGBj1MCRBVcDLGVHWfcvwwLA0jnW9F3ieg/viewform">reporting form</a>.</p>
@@ -166,10 +173,19 @@ function data2Table (dept) {
 <p>CPS says ${dept.short_name} has no vacant positions.</p>
 `
     } else {
-      outputString = `
+      outputString += `
 <table><caption><div>${dept.short_name}</div></caption>
-<thead class="thead">
-<tr><td colspan="2" style="font-weight:bold">By Job Title</td></tr>
+<thead class="thead">`
+      if ( names.district.has(dept.short_name) ) {
+        console.log("Has short_name:",names.district.has(dept.short_name) )
+        if (librarians.has( parseInt(dept.dept_id) )) {
+          outputString += `<tr><td colspan="2"><p>This school has a librarian.</p></td></tr>`
+        } else {
+          outputString += `<tr><td colspan="2"><p>This school <strong>does not</strong> have a librarian.</p></td</tr>`
+        }
+      }
+      outputString +=   `
+<tr><td colspan="2" style="font-weight:bold">Vacancies by Job Title</td></tr>
 <tr><th scope="col">Job Title</th><th scope="col">Vacancies</th></tr>
 </thead> <tbody>
 `
@@ -192,7 +208,7 @@ function data2Table (dept) {
       let count = 0
       let categoriesString = `
 <table> <thead class="thead">
-<tr><td colspan="2" style="font-weight:bold">By Job Category*</td></tr>
+<tr><td colspan="2" style="font-weight:bold">Vacancies by Job Category*</td></tr>
 <tr><th scope="col">Job Category</th><th scope="col">Vacancies</th></tr>
 </thead> <tbody>
 `;
@@ -221,3 +237,13 @@ function data2Table (dept) {
 
 
 outputSchoolData("District-wide Data");
+
+/*
+
+
+
+
+  if ( librarians.has(dept.dept_id) ) {
+    outputString = `<p>This school has a librarian.</p>`;
+  } else outputString = `<p>This school <strong><em>does not</em></strong> have a librarian.</p>`
+*/
