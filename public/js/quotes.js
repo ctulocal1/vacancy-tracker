@@ -2,7 +2,7 @@ let quoteBox = document.querySelector(".quotebox");
 let i = 0;
 
 let quotes = initQuotes () // Initializes quoteString
-let slideInterval = setInterval (slideQuotes,9000);
+let slideInterval = setInterval (slideQuotes,12000);
 
 
 function slideQuotes () {
@@ -44,7 +44,7 @@ function initQuotes () {
     quote: "Having 32 seven-year-olds in a class is really tough! It means way more time is spent on behavior management and classroom management and way less time on teaching. It is nearly impossible to meet the needs of our students, especially the newcomers."
   })
   quotes.push ({
-    quote: "Our resources are scarce. Each department gets three cases of paper for the year. We haven’t had department funds since before the pandemic. Our chemistry teacher is buying her supplies out of pocket."
+    quote: "Our students now have to learn Spanish virtually and we are outsourcing that to a third party. Our resources are scarce. Each department gets three cases of paper for the year. We haven’t had department funds since before the pandemic. Our chemistry teacher is buying her supplies out of pocket."
   })
   quotes.push ({
     name: "Anita Guaman",
