@@ -52,12 +52,12 @@ function initQuotes () {
     quote: "I have to diaper change my blended classes room, our bilingual kindergarten classroom has 28 students, teachers are being moved around and students are not getting services."
   })
   quotes.push ({
-    quote: "I have 31 desks. 33 children. My room is a safety hazard. Neither students nor teacher can safely navigate the room due to congestion. 1st grade room 35 Students. Teacher has to utilize another room in order to provide instructions that require use of the rug."
+    quote: "I have 31 desks. 33 children. My room is a safety hazard. Neither students nor teacher can safely navigate the room due to congestion. The first grade room has 35 students. The teacher has to utilize another room in order to provide instructions that require use of the rug."
   })
   quotes.push ({
     name: "Amaziah Burton",
     school: "Phillips HS",
-    quote: "We do not have enough TAs for our sped students who need dedicated assistants. There are sped students who should have a TA in Spanish classes according to their IEPs and are not receiving their services."
+    quote: "We do not have enough TAs for our special education students who need dedicated assistants. There are special education students who should have a TA in Spanish classes according to their Individualized Education Plans and are not receiving their services."
   })
   quotes.push ({
     name: "Sarah Tschaen",

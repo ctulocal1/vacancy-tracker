@@ -481,7 +481,7 @@ footer a:visited {
   width: 100%;
   margin: 40px 0;
   height: fit-content;
-  min-height: 360px;
+  min-height: 800px;
   border: 6px solid #ed1b2f;
   border-left: none;
   border-right: none;
@@ -496,6 +496,7 @@ footer a:visited {
   width: calc(100% - 30px);
   position: relative;
   margin-top:0;
+  text-wrap: balance;
 }
 .quotebox blockquote p::before {
   content: "“";
@@ -528,8 +529,6 @@ footer a:visited {
   white-space: nowrap;
 }
 .quotebox blockquote {
-  top: 0;
-  position: absolute;
   margin: 20px 10px 20px 20px;
 }
 .quotebox blockquote.centered {
@@ -537,6 +536,8 @@ footer a:visited {
   animation-name: slideIn;
 }
 .quotebox blockquote.offLeft {
+  top: 0;
+  position: absolute;
   animation-duration: 1s;
   animation-name: slideOut;
   opacity: 0;
@@ -562,6 +563,9 @@ footer a:visited {
 }
 
 @media screen and (min-width: 840px) {
+  .quotebox {
+    min-height: 400px;
+  }
   .quotebox blockquote {
     width: calc(100% - 70px);
     margin: 40px 30px 40px 40px;
