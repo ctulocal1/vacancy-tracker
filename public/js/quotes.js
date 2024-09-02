@@ -40,7 +40,7 @@ function initQuotes () {
   quotes.push ({
     name: "Caitlin Sheehan",
     school: "Clinton Elementary",
-    quote: "Having 32 7-year-olds in a class is really tough! It means way more time is spent on behavior management and classroom management and way less time on teaching. It is nearly impossible to meet the needs of our students, especially the newcomers."
+    quote: "Having 32 seven-year-olds in a class is really tough! It means way more time is spent on behavior management and classroom management and way less time on teaching. It is nearly impossible to meet the needs of our students, especially the newcomers."
   })
   quotes.push ({
     quote: "Our students now have to learn Spanish virtually, and we are outsourcing that to a third party. Our Sped/ELL instructor is stretched thin, and our school should be TBE. But we don’t have the funding for it. Our resources are scarce - each department gets 3 cases of paper for the year. We haven’t had department funds since before the pandemic - our chemistry teacher is buying her supplies out of pocket. We are the only school offering Aviation classes, but the district is dragging its feet in fixing our simulators."
