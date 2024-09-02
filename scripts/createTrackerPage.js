@@ -30,14 +30,14 @@ let pageTop = `
 
 
         <h1>Underfunded &amp; Understaffed Tracker</h1>
-        <p><strong>The Chicago Teachers Union is fighting for the schools Chicago’s students deserve.</strong> Chicago Public Schools CEO Pedro Martinez claims that the district has improved resources for our students by allocating new positions, but the reality is that many of these positions exist on paper only. Select a school in the dropdown or on the map below to see the difference between the staffing CPS <em>says</em> it provides and the number of clinicians, teachers, teacher assistants and all school staff <em>actually working</em> at any given school, network office or citywide department.</p>
+        <p><strong>The Chicago Teachers Union is fighting for the schools Chicago’s students deserve.</strong> Chicago Public Schools CEO Pedro Martinez claims that the district has improved resources for our students by allocating new positions, but the reality is that many of these positions exist on paper only. Select a school in the dropdown or on the map below to see the number of clinicians, teachers, teacher assistants, librarians and all school staff <em>actually working</em> at any given school, network office or citywide department. Our members’ reports from the field provide an even clearer picture of the impact #UnderfundedUnderstaffed schools have on our students.</p>
 <div class="quotebox">
   <blockquote class="offLeft"></blockquote>
   <blockquote class="centered"><p>Having 32 seven-year-olds in a class is really tough! It means way more time is spent on behavior management and classroom management and way less time on teaching. It is nearly impossible to meet the needs of our students, especially the newcomers.</p><cite>Caitlin Sheehan, <span class="nobreak">Clinton Elementary</span></cite></blockquote>
 <blockquote class="offRight"></blockquote>
 </div>
 <h2>CTU Members: Share Your School’s Staffing Story</h2>
-<p>Nobody knows better than CTU members what’s happening in our schools. Use our <a href="https://docs.google.com/forms/d/e/1FAIpQLSeSHguXxHgYvaO6vGBj1MCRBVcDLGVHWfcvwwLA0jnW9F3ieg/viewform">staffing report form</a> to tell us how many unfilled positions are at your school and, and the ways that those vacancies and other positions that <em>should</em> be budgeted in your school or department affect your students and your work.</p>
+<p>Nobody knows better than CTU members what’s happening in our schools. Use our <a href="https://docs.google.com/forms/d/e/1FAIpQLSeSHguXxHgYvaO6vGBj1MCRBVcDLGVHWfcvwwLA0jnW9F3ieg/viewform">staffing report form</a> to tell us how many unfilled positions are at your school. And share the ways that those vacancies and other positions your school or department needs affect your students and your work.</p>
 <p class="button"><a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSeSHguXxHgYvaO6vGBj1MCRBVcDLGVHWfcvwwLA0jnW9F3ieg/viewform">Share Your Story</a></p>
       </div>
 `
@@ -45,6 +45,7 @@ let listBoxBefore = `
       <div id="text" class="text">
 <div class="sticker">
         <h2>By the Numbers</h2>
+        <p>The information below is based on CPS vacancy data provided Aug. 28, 2024.</p>
         <label for="cb1-input">Display data for:</label>
         <div class="combobox combobox-list">
           <div class="group">
@@ -93,7 +94,7 @@ let outputAfter = `
 // its elements are accessible for DOM manipulation.
 let figureBefore = `
       <figure id="cpsmap" class="cpsmap">
-<h2>Underfunded and Understaffed Map</h2>
+<h2>#UnderfundedUnderstaffed Map</h2>
 <p>On the map below, each circle represents a CPS school or CPS office site. Citywide departments are represented in the upper right of the map. Circles are sized by the raw number of unfilled positions in the school or department. Circles that aren’t filled have no vacancies. Click or tap any circle to see its name and a list of vacant positions in that school or department.</p>
 <div>
 `
@@ -235,18 +236,21 @@ function populateChoices () {
 let datalistOpts = `
 <li id="lb-district" role="option">District-wide Data</li>
 `
-datalistOpts += `<div>Network Office</div>`
-for (const net of optionObj.network) {
-  datalistOpts += `<li id="lb-${net}" role="option">${net}</li>`
-}
+  datalistOpts +=`<div>Citywide Departments</div>`
 for (const ofc of optionObj.office) {
   datalistOpts += `<li id="lb-${ofc}" role="option">${ofc}</li>`
 }
+  datalistOpts +=`<div>District Schools</div>`
 for (const dist of optionObj.district) {
   datalistOpts += `<li id="lb-${dist}" role="option">${dist}</li>`
 }
+  datalistOpts +=`<div>Charter Schools</div>`
 for (const chrt of optionObj.charter) {
   datalistOpts += `<li id="lb-${chrt}" role="option">${chrt}</li>`
+}
+datalistOpts += `<div>Network Offices</div>`
+for (const net of optionObj.network) {
+  datalistOpts += `<li id="lb-${net}" role="option">${net}</li>`
 }
 return datalistOpts;
 }
