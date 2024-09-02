@@ -63,9 +63,9 @@ getData("data/schools.json")
   })
   .then ( (index) => getData("data/vacancies-by-department.json") )
   .then ( (vacancies) => {
-    console.log("Vacancies:",vacancies)
+    //console.log("Vacancies:",vacancies)
     for (const v of vacancies) {
-        if (!v.type) console.log(v.short_name)
+        //if (!v.type) console.log(v.short_name)
       v.short_name = "No Name"+v.dept_id;
       if (circles.has(v.dept_id)) v.short_name = circles.get(v.dept_id) 
       else v.short_name = v.ctu_name;
@@ -79,7 +79,7 @@ getData("data/schools.json")
             v.short_name = name;
         }
         if (v.type === "Charter") { names.charter.add(name) }
-        else if (name.match("Network")) names.network.add(name);
+        else if (v.type.match("Network")) names.network.add(name);
         else if (v.type.match("CW")) names.office.add(name);
         else if (v.type) { names.district.add(name) }
     }
@@ -88,7 +88,7 @@ getData("data/schools.json")
   .then( (index) => getData( "data/schools-librarians.json"))
   .then( (schoolLibraries) => {
     schoolLibraries.map( (school) => librarians.add(school))
-    console.log(librarians);
+    //console.log(librarians);
   })
 
 async function getData(url) {
@@ -125,8 +125,8 @@ function stringSort(items) {
 function outputSchoolData(e) {
     let dept = {}
     let entry = "";
-    console.log(typeof e, e, e.currentTarget);
-  console.log(names.district)
+    //console.log(typeof e, e, e.currentTarget);
+  //console.log(names.district)
     if (typeof e === "string") {
         entry = e.trim();
         if ( index.short_name.has(entry) ) { 
@@ -163,7 +163,7 @@ function data2Table (dept) {
   let outputString = "";
   if (dept.positionsVacant) {
     let posVac = Object.entries(dept.positionsVacant);
-    console.log("Pos Vac:",posVac);
+    //console.log("Pos Vac:",posVac);
   if (dept.type.toLowerCase() ==="charter") {
     outputString = `
 <p>CPS does not provide any vacancy data for charter schools. If you want to inform the Union about the situation at your charter school, please complete the <a href="https://docs.google.com/forms/d/e/1FAIpQLSeSHguXxHgYvaO6vGBj1MCRBVcDLGVHWfcvwwLA0jnW9F3ieg/viewform">reporting form</a>.</p>
@@ -177,7 +177,7 @@ function data2Table (dept) {
 <table><caption><div>${dept.short_name}</div></caption>
 <thead class="thead">`
       if ( names.district.has(dept.short_name) ) {
-        console.log("Has short_name:",names.district.has(dept.short_name) )
+        //console.log("Has short_name:",names.district.has(dept.short_name) )
         if (librarians.has( parseInt(dept.dept_id) )) {
           outputString += `<tr><td colspan="2"><p>This school has a librarian.</p></td></tr>`
         } else {
@@ -189,10 +189,10 @@ function data2Table (dept) {
 <tr><th scope="col">Job Title</th><th scope="col">Vacancies</th></tr>
 </thead> <tbody>
 `
-        console.log(jobsMap)
+        //console.log(jobsMap)
       for (const v of posVac) {
         [jobCode,vacancyCount] = v;
-      console.log("V:",v,"Job Code:",jobCode);
+      //console.log("V:",v,"Job Code:",jobCode);
         const jobTitle = jobsMap.get(parseInt( jobCode )).jobTitle
         outputString += `
 <tr><th scope="row">${jobTitle}</th><td>${parseFloat( vacancyCount ).toFixed(1)}</td></tr>`
