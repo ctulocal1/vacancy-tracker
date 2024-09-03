@@ -166,6 +166,7 @@ function data2Table (dept) {
     //console.log("Pos Vac:",posVac);
   if (dept.type.toLowerCase() ==="charter") {
     outputString = `
+<h3 style="border-bottom: 2px solid black;">${dept.short_name}</h3>
 <p>CPS does not provide any vacancy data for charter schools. If you want to inform the Union about the situation at your charter school, please complete the <a href="https://docs.google.com/forms/d/e/1FAIpQLSeSHguXxHgYvaO6vGBj1MCRBVcDLGVHWfcvwwLA0jnW9F3ieg/viewform">reporting form</a>.</p>
 `
   } else if (posVac.length === 0) {
