@@ -173,6 +173,14 @@ function data2Table (dept) {
       outputString = `
 <p>CPS says ${dept.short_name} has no vacant positions.</p>
 `
+      if ( names.district.has(dept.short_name) ) {
+        //console.log("Has short_name:",names.district.has(dept.short_name) )
+        if (librarians.has( parseInt(dept.dept_id) )) {
+          outputString += `<p>This school has a librarian.</p>`
+        } else {
+          outputString += `<p>This school <strong>does not</strong> have a librarian.</p>`
+        }
+      }
     } else {
       outputString += `
 <table><caption><div>${dept.short_name}</div></caption>
