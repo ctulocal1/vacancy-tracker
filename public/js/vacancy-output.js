@@ -63,7 +63,7 @@ getData("data/schools.json")
   })
   .then ( (index) => getData("data/vacancies-by-department.json") )
   .then ( (vacancies) => {
-    //console.log("Vacancies:",vacancies)
+    console.log("Vacancies:",vacancies)
     for (const v of vacancies) {
         //if (!v.type) console.log(v.short_name)
       v.short_name = "No Name"+v.dept_id;
@@ -237,13 +237,3 @@ function data2Table (dept) {
 
 
 outputSchoolData("District-wide Data");
-
-/*
-
-
-
-
-  if ( librarians.has(dept.dept_id) ) {
-    outputString = `<p>This school has a librarian.</p>`;
-  } else outputString = `<p>This school <strong><em>does not</em></strong> have a librarian.</p>`
-*/
