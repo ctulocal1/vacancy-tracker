@@ -46,7 +46,7 @@ let listBoxBefore = `
 <p class="skiplink"><a href="#cpsmap">Go to Tracker Map</a></p>
 <div class="sticker">
         <h2>By the Numbers</h2>
-        <p>The information below is based on CPS vacancy data provided Aug. 27, 2024.</p>
+        <p>The information below is based on CPS vacancy data as of Aug. 27, 2024.</p>
         <label for="cb1-input">Display data for:</label>
         <div class="combobox combobox-list">
           <div class="group">
