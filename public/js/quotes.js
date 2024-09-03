@@ -51,19 +51,19 @@ school: "elementary school"
 })
 
 quotes.push({
-  quote: "Our Youth Interventionist Specialist position was cut. This position is vital to our school because of daily behavior issues. The English Language Program Teacher is still listed as a half position when we have 81 EL students as of today. She’s also working in a half position as the case manager. This affects the whole school because something is not going to get done and we need all these services and supports for our students.",
+  quote: "Our Youth Intervention Specialist position was cut. This position is vital to our school because of daily behavior issues. The English Language Program Teacher is still listed as a half position when we have 81 EL students as of today. She’s also working in a half position as the case manager. Something our students need is not going to get done.",
   name: "Teacher",
   school: "Nash Elementary"
   })
 
 quotes.push({
-quote:"We are busting at the seams right now. Both 5th grade classes are at 34 students with no money to hire a TA. We have special education students with IEPs with SECA minutes not being met. Admin has requested for more and they keep getting denied. We keep getting told they won’t do anything until the 20th day. I have 7 tables in my room with 5 students at every table.",
+quote:"We are busting at the seams right now. Both 5th grade classes are at 34 students with no money to hire a TA. Admin has requested for more and they keep getting denied. We keep getting told they won’t do anything until the 20th day. I have 7 tables in my room with 5 students at every table.",
 name: "Teacher",
 school:"Belding Elementary",
 })
 
 quotes.push({
-quote:"Missing resources: our Student Voice Committee has been cut, a librarian, a full time nurse, sports coaches, dance or drama teacher. Most students would love to be part of a sports team and have a dance coach. Students would love healthy choices for their time. Many students have medical conditions that deserve a nurse full time.",
+quote:"Missing resources: our Student Voice Committee has been cut, a librarian, a full time nurse, sports coaches, dance or drama teacher. Students would love healthy choices like sports or dance for their time. Many students have medical conditions that deserve a nurse full time.",
 name: "Teacher",
 school:"elementary school",
 })

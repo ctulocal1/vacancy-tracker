@@ -497,7 +497,7 @@ footer a:visited {
   width: 100%;
   margin: 40px 0;
   height: fit-content;
-  min-height: 600px;
+  min-height: 534px;
   color: #ed1b2f;
   font-family: "Source Serif 4", "Source Serif", serif;
   position: relative;
@@ -589,7 +589,7 @@ footer a:visited {
 
 @media screen and (min-width: 840px) {
   .quotebox {
-    min-height: 400px;
+    min-height: 440px;
   }
   .quotebox blockquote {
     width: calc(100% - 0px);
