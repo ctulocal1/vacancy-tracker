@@ -563,12 +563,14 @@ footer a:visited {
   animation-duration: 1s;
   animation-name: slideOut;
   opacity: 0;
+  max-height: 400px;
   z-index: 1;
 }
 .quotebox blockquote.offRight {
   position: absolute;
   opacity: 0;
   z-index: 1;
+  max-height: 400px;
 }
 @keyframes slideOut {
  from {
