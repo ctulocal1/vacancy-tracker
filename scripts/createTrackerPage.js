@@ -9,7 +9,9 @@ let pageTop = `
     <meta property="og:title" content="#UnderfundedUnderstaffed Tracker" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://tracker.ctulocal1.org" />
+    <meta property="fb:app_id" content="370623053370932" />
     <meta property="og:image" content="https://tracker.ctulocal1.org/images/share.png" />
+    <meta property="og:description" content="Chicago Public Schools CEO Pedro Martinez claims that the district has improved resources for our students by allocating new positions, but the reality is that many of these positions exist on paper only." />
     <link rel="shortcut icon" href="/images/ctu-seal.png" type="image/png">
     <link rel="stylesheet" type="text/css" href="/css/tracker.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
