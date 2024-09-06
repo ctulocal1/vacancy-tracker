@@ -6,6 +6,9 @@ let pageTop = `
     <meta charset="UTF-8">
     <title>Underfunded &amp; Understaffed Tracker</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta property="og:title" content="#UnderfundedUnderstaffed Tracker" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tracker.ctulocal1.org" />
     <meta property="og:image" content="https://tracker.ctulocal1.org/images/share.png" />
     <link rel="shortcut icon" href="/images/ctu-seal.png" type="image/png">
     <link rel="stylesheet" type="text/css" href="/css/tracker.css" />
