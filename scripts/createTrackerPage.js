@@ -82,14 +82,14 @@ let listBoxAfter = `
   
 
 
-let outputBefore = ` <div role="region" aria-live="polite" id="dataOutput" class="dataOutput"> `
+let outputBefore = ` <section aria-live="polite" id="dataOutput" class="dataOutput" aria-label="School Vacancy Data"> `
 //
 // On load, this includes the citywide data calculated below.
 // Content of "output" will dynamically change when a school is picked in either the combobox or map.
 let outputString = citywide();
 
 let outputAfter = `
-        </div>
+        </section>
       </div>
         </div>
 `
