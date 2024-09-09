@@ -1,0 +1,681 @@
+dept_id,short_name,school_id,ctu_name,type,address,zip,grade_category,es_network,ctu_network,cps_network,ward,county_dist,congress,house,senate,community_area,community_name,community_side,planning_zone
+22021,ADDAMS,609772,Addams Elementary School,Neighborhood,10810 S AVENUE H,60617,ES,13,13B,13,10,4,2,25,13,52,EAST SIDE,Far Southeast Side,Far South Side - Far East Side
+13727,Adv. Learning and Speclty Progs CW,,Adv. Learning and Speclty Progs CW,CW Department,,,,,,,,,,,,,,,
+45231,AIR FORCE HS,610513,Air Force Academy High School,Military academy,3630 S WELLS ST,60609,HS,6,16,16,11,11,7,6,3,34,ARMOUR SQUARE,South Side,Near N-Near W-Loop-BridgePort-Chinatown
+32011,ALBANY PARK,610212,Albany Park Multicultural Acad,Neighborhood,4929 N SAWYER AVE,60625,ES,1,01C,1,33,12,3,40,20,14,ALBANY PARK,Far North Side,Saug-ReedDunning-AlbanyPk
+70241,ALCOTT HS,610524,Alcott College Prep H.S.,Small,2957 N HOYNE AVE,60618,HS,4,15,15,32,12,5,40,20,5,NORTH CENTER,North Side,Logan-Lincoln Park
+22041,ALCOTT ES,609774,Alcott Elem School,Neighborhood,2625 N ORCHARD ST,60614,ES,4,04B,4,43,10,5,12,6,7,LINCOLN PARK,North Side,Logan-Lincoln Park
+22641,ALDRIDGE,609848,Aldridge Elem School,Neighborhood,630 E 131ST ST,60827,ES,13,13B,13,10,5,2,29,15,54,RIVERDALE,Far Southeast Side,Far South Side - Far East Side
+46031,AMUNDSEN HS,609695,Amundsen High School,Neighborhood,5110 N DAMEN AVE,60625,HS,2,02B,2,40,12,9,13,7,4,LINCOLN SQUARE,North Side,Ravenswood
+23421,ARIEL,609951,Ariel Community Academy,Small,1119 E 46TH ST,60653,ES,9,09A,9,4,3,2,25,13,39,KENWOOD,South Side,Bronzeville-Hyde Park-Woodlawn
+22061,ARMOUR,609777,Armour Elem School,Neighborhood,950 W 33RD PL,60608,ES,6,06B,6,11,11,4,24,12,60,BRIDGEPORT,South Side,Near N-Near W-Loop-BridgePort-Chinatown
+22081,ARMSTRONG G,609779,"Armstrong, G. Elem School",Neighborhood,2110 W GREENLEAF AVE,60645,ES,2,02A,2,50,13,9,14,7,2,WEST RIDGE,Far North Side,Ravenswood
+32081,ASHBURN,610287,Ashburn Comm. Elem. School,Small,8300 S ST LOUIS AVE,60652,ES,10,10B,10,18,3,1,31,16,70,ASHBURN,Far Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+26191,ASHE,610268,Ashe Elem School,Neighborhood,8505 S INGLESIDE AVE,60619,ES,12,12B,12,8,4,1,33,17,44,CHATHAM,Far Southeast Side,Chatham-South Shore
+66255,ASPIRA - BUSINESS & FINANCE HS,400172,Aspira Business & Finance Charter HS,Charter,2989 N MILWAUKEE AVE,60618,HS,4,CTUA2,4,35,8,3,40,20,21,AVONDALE,North Side,Logan-Lincoln Park
+66109,YCCS - ASSOCIATION HOUSE,400126,Association House Charter High School,Charter,1116 N KEDZIE AVE,60651,HS,5,CTUA2,5,26,8,3,4,2,23,HUMBOLDT PARK,West Side,Humboldt Park-Garfield W-N Lawndale
+22091,AUDUBON,609782,Audubon Elem School,Neighborhood,3500 N HOYNE AVE,60618,ES,4,04A,4,32,12,5,11,6,5,NORTH CENTER,North Side,Logan-Lincoln Park
+46621,AUSTIN CCA HS,610518,Austin College and Career Academy H.S. ,Small,231 N PINE AVE,60644,HS,3,15,15,37,1,7,8,4,25,AUSTIN,West Side,Belmont-Austin
+22101,AVALON PARK,609786,Avalon Park Elem School,Neighborhood,8045 S KENWOOD AVE,60619,ES,12,12A,12,8,4,1,33,17,45,AVALON PARK,Far Southeast Side,Chatham-South Shore
+41091,AVONDALE-LOGANDALE,610325,Avondale-Logandale Elementary School,Neighborhood,3212 W GEORGE ST,60618,ES,4,04C,4,35,8,3,40,20,21,AVONDALE,North Side,Logan-Lincoln Park
+22921,AZUELA,610544,Azuela Elementary School,Neighborhood,4707 W MARQUETTE RD,60629,ES,10,10B,10,23,11,4,22,11,65,WEST LAWN,Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+46551,BACK OF THE YARDS HS,610563,Back of the Yards IB H.S.,Neighborhood,2111 W 47TH ST,60609,HS,8,08A,8,12,7,4,1,1,61,NEW CITY,Southwest Side,McKinley Park
+22131,BARNARD,609788,Barnard Elem School,Neighborhood,10354 S CHARLES ST,60643,ES,10,10C,10,19,11,1,35,18,72,BEVERLY,Far Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+22141,BARRY,609789,Barry Elem School,Neighborhood,2828 N KILBOURN AVE,60641,ES,4,04A,4,31,8,3,39,20,20,HERMOSA,Northwest Side,Logan-Lincoln Park
+22151,BARTON,609790,Barton Elem School,Neighborhood,7650 S WOLCOTT AVE,60620,ES,11,11C,11,17,3,1,31,16,71,AUBURN GRESHAM,Far Southwest Side,Englewood-Auburn Gresham
+22161,BASS,609791,Bass Elem School,Neighborhood,1140 W 66TH ST,60621,ES,11,11C,11,16,2,7,32,16,68,ENGLEWOOD,Southwest Side,Englewood-Auburn Gresham
+22171,BATEMAN,609792,Bateman Elem School,Neighborhood,4220 N RICHMOND ST,60618,ES,1,01C,1,33,12,3,40,20,16,IRVING PARK,Northwest Side,Saug-ReedDunning-AlbanyPk
+30051,BEARD,610083,Beard Spec. Ed. Facility,Special Education,6445 W STRONG ST,60656,ES,1,01A,1,41,10,5,19,10,10,NORWOOD PARK,Far North Side,Saug-ReedDunning-AlbanyPk
+29321,BEASLEY,610246,Beasley Academic Center,Regional gifted center,5255 S STATE ST,60615,ES,9,09B,9,3,2,7,5,3,40,WASHINGTON PARK,South Side,Bronzeville-Hyde Park-Woodlawn
+22201,BEAUBIEN,609796,Beaubien Elem School,Regional gifted center,5025 N LARAMIE AVE,60630,ES,1,01B,1,45,10,5,19,10,11,JEFFERSON PARK,Far North Side,Saug-ReedDunning-AlbanyPk
+25931,BEETHOVEN,610237,Beethoven Elem School,Neighborhood,25 W 47TH ST,60609,ES,9,09A,9,3,2,7,5,3,38,GRAND BOULEVARD,South Side,Bronzeville-Hyde Park-Woodlawn
+22211,BEIDLER,609797,Beidler Elem School,Neighborhood,3151 W WALNUT ST,60612,ES,5,05A,5,27,2,7,10,5,27,EAST GARFIELD PARK,West Side,Humboldt Park-Garfield W-N Lawndale
+22221,BELDING,609798,Belding Elem School,Neighborhood,4257 N TRIPP AVE,60641,ES,1,01B,1,39,12,5,19,10,16,IRVING PARK,Northwest Side,Saug-ReedDunning-AlbanyPk
+22231,BELL,609799,Bell Elem School,Regional gifted center,3730 N OAKLEY AVE,60618,ES,4,04A,4,47,12,5,11,6,5,NORTH CENTER,North Side,Logan-Lincoln Park
+26771,BELMONT-CRAGIN,609922,Belmont-Cragin Comm. Elem. Sch,Small,6112 W FULLERTON AVE,60639,ES,3,03A,3,36,8,3,3,2,19,BELMONT CRAGIN,Northwest Side,Belmont-Austin
+22241,BENNETT,609800,Bennett Elem School,Neighborhood,10115 S PRAIRIE AVE,60628,ES,13,13A,13,9,5,2,34,17,49,ROSELAND,Far Southeast Side,Far South Side - Far East Side
+29381,BLACK,610350,Black Magnet,Magnet,9101 S EUCLID AVE,60617,ES,12,12A,12,8,4,1,33,17,48,CALUMET HEIGHTS,Far Southeast Side,Chatham-South Shore
+22261,BLAINE,609803,Blaine Elem School,Neighborhood,1420 W GRACE ST,60613,ES,4,04C,4,46,10,5,13,7,6,LAKE VIEW,North Side,Logan-Lincoln Park
+30071,BLAIR,610087,Blair Spec. Ed. Facility,Special Education,6751 W 63RD PL,60638,ES,10,10A,10,13,11,6,22,11,64,CLEARING,Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+46041,BOGAN HS,609698,Bogan High School,Neighborhood,3939 W 79TH ST,60652,HS,10,16,16,18,11,1,32,16,70,ASHBURN,Far Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+25941,BOND,610238,Bond Elem School,Neighborhood,7050 S MAY ST,60621,ES,11,11C,11,16,2,7,32,16,68,ENGLEWOOD,Southwest Side,Englewood-Auburn Gresham
+22371,BOUCHET,609815,Bouchet Math & Science Academy,Neighborhood,7355 S JEFFERY BLVD,60649,ES,12,12A,12,7,4,1,26,13,43,SOUTH SHORE,South Side,Chatham-South Shore
+46491,BOWEN HS,610323,Bowen High School,Small,2710 E 89TH ST,60617,HS,12,17,17,7,4,1,25,13,46,SOUTH CHICAGO,Far Southeast Side,Chatham-South Shore
+22291,BRADWELL,609806,Bradwell Elem School,Neighborhood,7736 S BURNHAM AVE,60649,ES,12,AUSL-S,12,7,4,2,25,13,43,SOUTH SHORE,South Side,Chatham-South Shore
+25991,BRENNEMANN,610242,Brennemann Elem School,Neighborhood,4251 N CLARENDON AVE,60613,ES,2,02B,2,46,10,9,11,6,3,UPTOWN,Far North Side,Ravenswood
+22311,BRENTANO,609809,Brentano Math & Sci Academy,Neighborhood,2723 N FAIRFIELD AVE,60647,ES,4,04C,4,1,8,3,39,20,22,LOGAN SQUARE,North Side,Logan-Lincoln Park
+22321,BRIDGE,609810,Bridge Elem School,Neighborhood,3800 N NEW ENGLAND AVE,60634,ES,1,01A,1,38,9,3,19,10,17,DUNNING,Northwest Side,Saug-ReedDunning-AlbanyPk
+22331,BRIGHT,609811,Bright Elem School,Neighborhood,10740 S CALHOUN AVE,60617,ES,13,13B,13,10,4,2,33,17,51,SOUTH DEERING,Far Southeast Side,Far South Side - Far East Side
+66602,ACERO - BRIGHTON PARK,400153,Brighton Park Charter Elem School,Charter,4420 S FAIRFIELD AVE,60632,ES,8,CTUA1,8,12,7,4,23,12,58,BRIGHTON PARK,Southwest Side,McKinley Park
+26451,BRIGHTON PARK,610317,Brighton Park Elem,Neighborhood,3825 S WASHTENAW AVE,60632,ES,8,08A,8,12,7,4,24,12,58,BRIGHTON PARK,Southwest Side,McKinley Park
+26181,BRONZEVILLE CLASSICAL,610590,Bronzeville Classical,Classical,8 W ROOT ST,60609,ES,9,09A,9,3,2,7,5,3,38,GRAND BOULEVARD,South Side,Bronzeville-Hyde Park-Woodlawn
+55191,BRONZEVILLE HS,610381,Bronzeville Scholastic,Small,4934 S WABASH AVE,60615,HS,9,17,17,3,3,7,5,3,38,GRAND BOULEVARD,South Side,Bronzeville-Hyde Park-Woodlawn
+47051,BROOKS HS,609726,Brooks College Prep H.S.,Selective enrollment,250 E 111TH ST,60628,HS,13,17,17,9,5,2,28,14,49,ROSELAND,Far Southeast Side,Far South Side - Far East Side
+24631,BROWN R,610091,"Brown, R. Community Academy",Neighborhood,12607 S UNION AVE,60628,ES,13,13A,13,9,5,1,28,14,53,WEST PULLMAN,Far Southeast Side,Far South Side - Far East Side
+22351,BROWN W,609812,"Brown, W. Elem School",Neighborhood,54 N HERMITAGE AVE,60612,ES,6,06A,6,27,2,7,10,5,28,NEAR WEST SIDE,West Side,Near N-Near W-Loop-BridgePort-Chinatown
+22361,BROWNELL,609813,Brownell Elem School,Neighborhood,6741 S MICHIGAN AVE,60637,ES,12,12A,12,6,2,1,6,3,69,GREATER GRAND CROSSING,South Side,Chatham-South Shore
+22491,BRUNSON,609830,Brunson Specialty School,Neighborhood,932 N CENTRAL AVE,60651,ES,3,03B,3,29,1,7,78,39,25,AUSTIN,West Side,Belmont-Austin
+22391,BUDLONG,609817,Budlong Elem School,Neighborhood,2701 W FOSTER AVE,60625,ES,2,02B,2,40,12,5,13,7,4,LINCOLN SQUARE,North Side,Ravenswood
+22401,BURBANK,609818,Burbank Elem School,Neighborhood,2035 N MOBILE AVE,60639,ES,3,03A,3,29,8,7,4,2,19,BELMONT CRAGIN,Northwest Side,Belmont-Austin
+22411,BURKE,609819,Burke Elem School,Neighborhood,5356 S KING DR,60615,ES,9,09B,9,3,2,7,5,3,40,WASHINGTON PARK,South Side,Bronzeville-Hyde Park-Woodlawn
+22421,BURLEY,609820,Burley Elem School,Neighborhood,1630 W BARRY AVE,60657,ES,4,04C,4,32,12,5,11,6,6,LAKE VIEW,North Side,Logan-Lincoln Park
+22431,BURNHAM,609821,Burnham Elem School,Neighborhood,9928 S CRANDON AVE,60617,ES,13,13B,13,7,4,1,33,17,51,SOUTH DEERING,Far Southeast Side,Far South Side - Far East Side
+29021,BURNSIDE,609827,Burnside Scholastic Academy,Magnet,650 E 91ST PL,60619,ES,12,12B,12,8,4,1,34,17,44,CHATHAM,Far Southeast Side,Chatham-South Shore
+22471,BURR,609828,Burr Elementary School,Neighborhood,1621 W WABANSIA AVE,60622,ES,6,06A,6,32,12,5,10,5,24,WEST TOWN,West Side,Near N-Near W-Loop-BridgePort-Chinatown
+22481,BURROUGHS,609829,Burroughs Elem School,Neighborhood,3542 S WASHTENAW AVE,60632,ES,8,08A,8,12,7,4,24,12,58,BRIGHTON PARK,Southwest Side,McKinley Park
+22501,BYRNE,609832,Byrne Elem School,Neighborhood,5329 S OAK PARK AVE,60638,ES,10,10A,10,23,16,6,21,11,56,GARFIELD RIDGE,Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+26821,CALMECA,610353,Calmeca Academy of Fine Arts,Small,3456 W 38TH ST,60632,ES,8,08A,8,12,7,4,23,12,58,BRIGHTON PARK,Southwest Side,McKinley Park
+22531,CAMERON,609835,Cameron Elem School,Neighborhood,1234 N MONTICELLO AVE,60651,ES,5,05A,5,36,8,3,4,2,23,HUMBOLDT PARK,West Side,Humboldt Park-Garfield W-N Lawndale
+22691,CAMRAS,610539,Camras Elementary School,Neighborhood,3000 N MANGO AVE,60634,ES,3,03A,3,30,8,3,3,2,19,BELMONT CRAGIN,Northwest Side,Belmont-Austin
+22541,CANTY,609836,Canty Elem School,Neighborhood,3740 N PANAMA AVE,60634,ES,1,01A,1,38,9,3,20,10,17,DUNNING,Northwest Side,Saug-ReedDunning-AlbanyPk
+24051,CARDENAS,610024,Cardenas Elem School,Neighborhood,2345 S MILLARD AVE,60623,ES,7,07A,7,22,7,4,23,12,30,SOUTH LAWNDALE,West Side,Pilsen-Little Village
+22551,CARNEGIE,609837,Carnegie Elem School,Regional gifted center,1414 E 61ST PL,60637,ES,9,09B,9,5,3,1,26,13,42,WOODLAWN,South Side,Bronzeville-Hyde Park-Woodlawn
+22571,CARROLL,609839,Carroll Elem School,Neighborhood,2929 W 83RD ST,60652,ES,10,10B,10,18,3,1,31,16,70,ASHBURN,Far Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+22601,CARSON,609842,Carson Elementary School,Neighborhood,5516 S MAPLEWOOD AVE,60629,ES,8,08B,8,15,11,4,1,1,63,GAGE PARK,Southwest Side,McKinley Park
+22611,CARTER,609844,Carter Elem School,Neighborhood,5740 S MICHIGAN AVE,60637,ES,9,AUSL-S,9,20,2,7,5,3,40,WASHINGTON PARK,South Side,Bronzeville-Hyde Park-Woodlawn
+22621,CARVER G,609845,Carver Elem. School,Neighborhood,901 E 133RD PL,60827,ES,13,13B,13,10,5,2,29,15,54,RIVERDALE,Far Southeast Side,Far South Side - Far East Side
+46381,CARVER MILITARY HS,609760,Carver Military Academy,Military academy,13100 S DOTY AVE,60827,HS,13,17,17,10,4,2,34,17,54,RIVERDALE,Far Southeast Side,Far South Side - Far East Side
+24011,CASALS,610021,Casals Elementary School,Neighborhood,3501 W POTOMAC AVE,60651,ES,5,AUSL-W,5,26,8,3,4,2,23,HUMBOLDT PARK,West Side,Humboldt Park-Garfield W-N Lawndale
+66392,ACERO - DE LAS CASAS,400081,Casas Charter Elem School,Charter,1641 W 16TH ST,60608,ES,7,CTUA1,7,25,7,4,24,12,31,LOWER WEST SIDE,West Side,Pilsen-Little Village
+22651,CASSELL,609849,Cassell Elem School,Neighborhood,11314 S SPAULDING AVE,60655,ES,10,10C,10,19,11,6,35,18,74,MOUNT GREENWOOD,Far Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+26021,CATHER,610251,Cather Elem School,Neighborhood,2908 W WASHINGTON BLVD,60612,ES,5,05A,5,27,1,7,10,5,27,EAST GARFIELD PARK,West Side,Humboldt Park-Garfield W-N Lawndale
+22671,CHALMERS,609851,Chalmers Elem School,Neighborhood,2745 W ROOSEVELT RD,60608,ES,5,AUSL-W,5,28,2,7,9,5,29,NORTH LAWNDALE,West Side,Humboldt Park-Garfield W-N Lawndale
+22681,CHAPPELL,609852,Chappell Achieve. Skills Cntr.,Neighborhood,2135 W FOSTER AVE,60625,ES,2,02B,2,40,12,9,13,7,4,LINCOLN SQUARE,North Side,Ravenswood
+22701,CHASE,609853,Chase Elem School,Neighborhood,2021 N POINT ST,60647,ES,4,04A,4,1,1,3,39,20,22,LOGAN SQUARE,North Side,Logan-Lincoln Park
+25151,CHAVEZ,610148,Chavez Elem School,Neighborhood,4747 S MARSHFIELD AVE,60609,ES,8,08B,8,20,7,4,6,3,61,NEW CITY,Southwest Side,McKinley Park
+45211,CHICAGO ACADEMY ES,610248,Chicago Academy,Small,3400 N AUSTIN AVE,60634,ES,1,AUSL-W,1,30,8,3,3,2,17,DUNNING,Northwest Side,Saug-ReedDunning-AlbanyPk
+46481,CHICAGO ACADEMY HS,610340,Chicago Academy H.S.,Small,3400 N AUSTIN AVE,60634,HS,1,AUSL-W,14,30,8,3,3,2,17,DUNNING,Northwest Side,Saug-ReedDunning-AlbanyPk
+47091,CHICAGO AGRICULTURE HS,609753,Chicago Agriculture H.S.,Magnet,3857 W 111TH ST,60655,HS,10,10C,10,19,11,1,35,18,74,MOUNT GREENWOOD,Far Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+63051,CHIARTS HS,400022,Chicago High School for the Arts,Charter,2714 W AUGUSTA BLVD,60622,HS,5,CTUA2,5,26,1,3,4,2,24,WEST TOWN,West Side,Humboldt Park-Garfield W-N Lawndale
+70070,CHICAGO MILITARY HS,609754,Chicago Military Academy,Military academy,3519 S GILES AVE,60653,HS,9,17,17,3,3,1,5,3,35,DOUGLAS,South Side,Bronzeville-Hyde Park-Woodlawn
+53011,CHICAGO VOCATIONAL HS,609674,Chicago Voc Career Academy,Career academy,2100 E 87TH ST,60617,HS,12,17,17,8,4,1,33,17,45,AVALON PARK,Far Southeast Side,Chatham-South Shore
+29171,CHICAGO WORLD LANGUAGE ACADEMY,610060,Chicago World Language Acad.,Magnet,1340 W HARRISON ST,60607,ES,6,06B,6,34,2,7,9,5,28,NEAR WEST SIDE,West Side,Near N-Near W-Loop-BridgePort-Chinatown
+22721,CHOPIN,609854,Chopin Elem School,Neighborhood,2450 W RICE ST,60622,ES,5,05A,5,36,1,3,4,2,24,WEST TOWN,West Side,Humboldt Park-Garfield W-N Lawndale
+30031,CHRISTOPHER,609855,Christopher Elem School,Neighborhood,5042 S ARTESIAN AVE,60632,ES,8,08A,8,15,7,4,1,1,63,GAGE PARK,Southwest Side,McKinley Park
+66661,CHRISTOPHER HOUSE,400159,Christopher House Charter Elem School,Charter,5235 W BELDEN AVE,60639,ES,3,CTUA2,3,36,8,3,3,2,19,BELMONT CRAGIN,Northwest Side,Belmont-Austin
+66398,ACERO - CISNEROS,400101,Cisneros Charter Elem School,Charter,2744 W PERSHING RD,60632,ES,8,CTUA1,8,12,7,4,24,12,58,BRIGHTON PARK,Southwest Side,McKinley Park
+31301,CLAREMONT,610347,Claremont Academy,Neighborhood,2300 W 64TH ST,60636,ES,10,10A,10,16,2,7,6,3,66,CHICAGO LAWN,Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+22191,CLARK ES,609795,Clark Elementary School,Neighborhood,1045 S MONITOR AVE,60644,ES,3,03B,3,29,1,7,8,4,25,AUSTIN,West Side,Belmont-Austin
+41051,CLARK HS,610244,"Clark, M. Magnet High School",Magnet,5101 W HARRISON ST,60644,HS,3,15,15,29,1,7,8,4,25,AUSTIN,West Side,Belmont-Austin
+22731,CLAY,609856,Clay Elem School,Neighborhood,13231 S BURLEY AVE,60633,ES,13,13B,13,10,4,2,33,17,55,HEGEWISCH,Far Southeast Side,Far South Side - Far East Side
+66133,ACERO - CLEMENTE,400120,Clemente Charter Elem School,Charter,2050 N NATCHEZ AVE,60707,ES,3,CTUA1,3,29,8,3,4,2,19,BELMONT CRAGIN,Northwest Side,Belmont-Austin
+51091,CLEMENTE HS,609759,Clemente Comm Acad High School,Neighborhood,1147 N WESTERN AVE,60622,HS,5,15,15,1,1,7,4,2,24,WEST TOWN,West Side,Humboldt Park-Garfield W-N Lawndale
+22741,CLEVELAND,609857,Cleveland Elem School,Neighborhood,3121 W BYRON ST,60618,ES,1,01C,1,33,12,3,40,20,16,IRVING PARK,Northwest Side,Saug-ReedDunning-AlbanyPk
+22751,CLINTON,609859,Clinton Elem School,Neighborhood,6110 N FAIRFIELD AVE,60659,ES,2,02A,2,50,13,9,15,8,2,WEST RIDGE,Far North Side,Ravenswood
+22761,CLISSOLD,609861,Clissold Elem School,Neighborhood,2350 W 110TH PL,60643,ES,10,10C,10,19,11,1,35,18,75,MORGAN PARK,Far Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+26751,COLEMON,610199,Colemon Academy,Neighborhood,1441 W 119TH ST,60643,ES,13,13A,13,21,5,1,28,14,53,WEST PULLMAN,Far Southeast Side,Far South Side - Far East Side
+22771,COLES,609862,Coles Elem School,Neighborhood,8441 S YATES BLVD,60617,ES,12,12A,12,7,4,1,33,17,46,SOUTH CHICAGO,Far Southeast Side,Chatham-South Shore
+10875,College / Career Success,,College / Career Success,CW Department,,,,,,,,,,,,,,,
+49131,COLLINS HS,610499,Collins  Academy,Small,1313 S SACRAMENTO DR,60623,HS,5,AUSL-W,15,24,2,7,9,5,29,NORTH LAWNDALE,West Side,Humboldt Park-Garfield W-N Lawndale
+20071,COLUMBIA EXPLORERS,610170,Columbia Explorers Academy,Neighborhood,4520 S KEDZIE AVE,60632,ES,8,08A,8,12,7,4,23,12,58,BRIGHTON PARK,Southwest Side,McKinley Park
+22801,COOK,609864,Cook Elem School,Neighborhood,8150 S BISHOP ST,60620,ES,11,11C,11,17,4,1,31,16,71,AUBURN GRESHAM,Far Southwest Side,Englewood-Auburn Gresham
+22821,COONLEY,609866,Coonley Elem School,Regional gifted center,4046 N LEAVITT ST,60618,ES,2,02B,2,47,12,5,11,6,5,NORTH CENTER,North Side,Ravenswood
+22831,COOPER,609867,Cooper Elem School,Neighborhood,1624 W 19TH ST,60608,ES,7,07B,7,25,7,4,24,12,31,LOWER WEST SIDE,West Side,Pilsen-Little Village
+22851,CORKERY,609870,Corkery Elem School,Neighborhood,2510 S KILDARE AVE,60623,ES,7,07A,7,22,7,4,23,12,30,SOUTH LAWNDALE,West Side,Pilsen-Little Village
+46391,CORLISS HS,609761,Corliss High School,Neighborhood,821 E 103RD ST,60628,HS,13,17,17,9,4,2,34,17,50,PULLMAN,Far Southeast Side,Far South Side - Far East Side
+10855,Counseling / Postsec Ad CW,,Counseling / Postsec Ad CW,CW Department,,,,,,,,,,,,,,,
+30141,COURTENAY,610355,Courtenay Elem School,Small,4420 N BEACON ST,60640,ES,2,02B,2,46,10,9,13,7,3,UPTOWN,Far North Side,Ravenswood
+46641,CRANE MEDICAL HS,610561,Crane Medical Prep H.S.,Magnet,2245 W JACKSON BLVD,60612,HS,6,15,15,27,2,7,9,5,28,NEAR WEST SIDE,West Side,Near N-Near W-Loop-BridgePort-Chinatown
+31041,CROWN,609873,Crown Comm Academy,Neighborhood,2128 S SAINT LOUIS AVE,60623,ES,5,05B,5,24,2,7,9,5,29,NORTH LAWNDALE,West Side,Humboldt Park-Garfield W-N Lawndale
+66134,ACERO - DE LA CRUZ,400121,Cruz Charter Elem & HS,Charter,7416 N RIDGE BLVD,60645,ES,2,CTUA1,2,49,13,9,14,7,2,WEST RIDGE,Far North Side,Ravenswood
+23881,CUFFE,610003,"Cuffe Math, Sci & Tech Acad",Neighborhood,8324 S RACINE AVE,60620,ES,11,11C,11,17,4,1,31,16,71,AUBURN GRESHAM,Far Southwest Side,Englewood-Auburn Gresham
+23891,CULLEN,610004,Cullen Elem School,Neighborhood,10650 S EBERHART AVE,60628,ES,13,13A,13,9,5,2,34,17,49,ROSELAND,Far Southeast Side,Far South Side - Far East Side
+53101,CURIE HS,609756,Curie Metro High School,Magnet,4959 S ARCHER AVE,60632,HS,8,15,15,14,7,4,1,1,57,ARCHER HEIGHTS,Southwest Side,McKinley Park
+23061,CURTIS,609900,Curtis Elem School,Neighborhood,32 E 115TH ST,60628,ES,13,AUSL-S,13,9,5,2,28,14,49,ROSELAND,Far Southeast Side,Far South Side - Far East Side
+22511,DAISY BATES,609833,Daisy Bates Acad. of Soc. Justice (formerly Caldwell),Neighborhood,8546 S CREGIER AVE,60617,ES,12,12A,12,8,4,1,33,17,45,AVALON PARK,Far Southeast Side,Chatham-South Shore
+25951,DALEY,610239,Daley Academy,Neighborhood,5024 S WOLCOTT AVE,60609,ES,8,08B,8,20,7,4,6,3,61,NEW CITY,Southwest Side,McKinley Park
+22881,DARWIN,609875,Darwin Elem School,Neighborhood,3116 W BELDEN AVE,60647,ES,4,04A,4,35,8,3,39,20,22,LOGAN SQUARE,North Side,Logan-Lincoln Park
+29391,DAVIS M,610521,"Davis, M. Magnet Academy",Magnet,6740 S PAULINA ST,60636,ES,11,11C,11,16,2,7,32,16,67,WEST ENGLEWOOD,Southwest Side,Englewood-Auburn Gresham
+22891,DAVIS N,609876,"Davis, N. Elem School",Neighborhood,3014 W 39TH PL,60632,ES,8,08A,8,12,7,4,23,12,58,BRIGHTON PARK,Southwest Side,McKinley Park
+22901,DAWES,609879,Dawes Elem School,Neighborhood,3810 W 81ST PL,60652,ES,10,10B,10,18,11,1,32,16,70,ASHBURN,Far Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+29031,DECATUR,609880,Decatur Classical School,Classical,7030 N SACRAMENTO AVE,60645,ES,2,02A,2,50,13,9,16,8,2,WEST RIDGE,Far North Side,Ravenswood
+22931,DENEEN,609883,Deneen Elem School,Neighborhood,7240 S WABASH AVE,60619,ES,12,AUSL-S,12,6,3,1,32,16,69,GREATER GRAND CROSSING,South Side,Chatham-South Shore
+26631,DEPRIEST,610367,DePriest Elem School,Neighborhood,139 S PARKSIDE AVE,60644,ES,3,03B,3,29,1,7,8,4,25,AUSTIN,West Side,Belmont-Austin
+26031,DETT,610252,Dett Elem School,Neighborhood,2131 W MONROE ST,60612,ES,6,06A,6,27,2,7,10,5,28,NEAR WEST SIDE,West Side,Near N-Near W-Loop-BridgePort-Chinatown
+22941,DEVER,609884,Dever Elem School,Neighborhood,3436 N OSCEOLA AVE,60634,ES,1,01A,1,38,9,3,20,10,17,DUNNING,Northwest Side,Saug-ReedDunning-AlbanyPk
+46521,DEVRY HS,610402,Devry Advantage,Magnet,1900 W LAWRENCE AVE,60640,HS,2,04A,14,47,10,5,13,7,4,LINCOLN SQUARE,North Side,Ravenswood
+22951,DEWEY,609885,Dewey Elem School,Neighborhood,5415 S UNION AVE,60609,ES,8,AUSL-S,8,16,2,7,6,3,61,NEW CITY,Southwest Side,McKinley Park
+31261,DE DIEGO,610313,Diego Comm Academy,Neighborhood,1313 N CLAREMONT AVE,60622,ES,5,05A,5,1,1,7,4,2,24,WEST TOWN,West Side,Humboldt Park-Garfield W-N Lawndale
+22871,DIRKSEN,609874,Dirksen Elem School,Neighborhood,8601 W FOSTER AVE,60656,ES,1,01A,1,41,9,8,20,10,76,OHARE,Far North Side,Saug-ReedDunning-AlbanyPk
+26921,DISNEY II ES,610515,Disney II,Magnet,3815 N KEDVALE AVE,60641,ES,1,14,14,30,8,5,19,10,16,IRVING PARK,Northwest Side,Saug-ReedDunning-AlbanyPk
+26921,DISNEY II HS,610564,Disney II,Magnet,3900 N LAWNDALE AVE,60618,HS,1,14,14,45,8,3,40,20,16,IRVING PARK,Northwest Side,Saug-ReedDunning-AlbanyPk
+29401,DISNEY,610363,Disney Magnet School,Magnet,4140 N MARINE DR,60613,ES,2,02B,2,46,10,9,11,6,3,UPTOWN,Far North Side,Ravenswood
+22971,DIXON,609887,Dixon Elem School,Neighborhood,8306 S SAINT LAWRENCE AVE,60619,ES,12,12A,12,6,4,1,34,17,44,CHATHAM,Far Southeast Side,Chatham-South Shore
+23411,ORTIZ DE DOMINGUEZ,609950,Dominguez Elementary School,Neighborhood,3000 S LAWNDALE AVE,60623,ES,7,07A,7,22,7,4,23,12,30,SOUTH LAWNDALE,West Side,Pilsen-Little Village
+22991,DOOLITTLE,609891,Doolittle East Elem School,Neighborhood,535 E 35TH ST,60653,ES,9,09A,9,4,3,1,26,13,35,DOUGLAS,South Side,Bronzeville-Hyde Park-Woodlawn
+23001,DORE,609893,Dore Elem School,Neighborhood,7134 W 65TH ST,60638,ES,10,10A,10,13,11,6,22,11,64,CLEARING,Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+41061,DOUGLASS HS,610245,Douglass High School,Neighborhood,543 N WALLER AVE,60644,HS,3,15,15,29,1,7,78,39,25,AUSTIN,West Side,Belmont-Austin
+23011,DRAKE,609894,Drake Elem School,Neighborhood,2710 S DEARBORN ST,60616,ES,9,09A,9,3,2,7,6,3,35,DOUGLAS,South Side,Bronzeville-Hyde Park-Woodlawn
+23021,DRUMMOND,609896,Drummond Elem School,Magnet,1845 W CORTLAND ST,60622,ES,6,06A,6,32,12,5,10,5,22,LOGAN SQUARE,North Side,Near N-Near W-Loop-BridgePort-Chinatown
+26601,DUBOIS,610364,DuBois Elem School,Neighborhood,330 E 133RD ST,60827,ES,13,13B,13,9,5,2,29,15,54,RIVERDALE,Far Southeast Side,Far South Side - Far East Side
+26141,DULLES,610263,Dulles Elem School,Neighborhood,6311 S CALUMET AVE,60637,ES,9,AUSL-S,9,20,2,1,5,3,69,GREATER GRAND CROSSING,South Side,Bronzeville-Hyde Park-Woodlawn
+53021,DUNBAR HS,609676,Dunbar Voc. High School,Career academy,3000 S KING DR,60616,HS,9,17,17,4,3,1,5,3,35,DOUGLAS,South Side,Bronzeville-Hyde Park-Woodlawn
+25491,DUNNE,610188,Dunne Elem School,Neighborhood,10845 S UNION AVE,60628,ES,13,13A,13,21,5,1,27,14,49,ROSELAND,Far Southeast Side,Far South Side - Far East Side
+26831,DURKIN PARK,610352,Durkin Park Elem. School,Neighborhood,8445 S KOLIN AVE,60652,ES,10,10B,10,18,11,4,32,16,70,ASHBURN,Far Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+26051,DVORAK,610254,Dvorak Elem School,Neighborhood,3615 W 16TH ST,60623,ES,7,AUSL-W,7,24,2,7,9,5,29,NORTH LAWNDALE,West Side,Pilsen-Little Village
+46681,DYETT ARTS HS,610587,Dyett H.S. for the Arts,Neighborhood,555 E 51ST ST,60615,HS,9,09B,17,20,3,1,26,13,40,WASHINGTON PARK,South Side,Bronzeville-Hyde Park-Woodlawn
+26441,EARHART,610316,Earhart Elem School,Neighborhood,1710 E 93RD ST,60617,ES,12,12B,12,8,4,1,33,17,48,CALUMET HEIGHTS,Far Southeast Side,Chatham-South Shore
+23031,EARLE,609897,Earle Elem School,Neighborhood,2040 W 62ND ST,60636,ES,11,11A,11,16,2,7,6,3,67,WEST ENGLEWOOD,Southwest Side,Englewood-Auburn Gresham
+11385,Early Childhd Ed CW,,Early Childhd Ed CW,CW Department,,,,,,,,,,,,,,,
+66254,ASPIRA - EARLY COLLEGE HS,400013,Early College Charter High School,Charter,3986 W BARRY AVE,60618,HS,4,CTUA2,4,31,8,3,40,20,21,AVONDALE,North Side,Logan-Lincoln Park
+23041,EBERHART,609898,Eberhart Elem School,Neighborhood,3400 W 65TH PL,60629,ES,10,10B,10,14,7,4,1,1,66,CHICAGO LAWN,Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+23051,EBINGER,609899,Ebinger Elem School,Neighborhood,7350 W PRATT AVE,60631,ES,1,01A,1,41,9,9,20,10,9,EDISON PARK,Far North Side,Saug-ReedDunning-AlbanyPk
+23071,EDGEBROOK,609901,Edgebrook Elem School,Neighborhood,6525 N HIAWATHA AVE,60646,ES,1,01B,1,45,10,5,15,8,12,FOREST GLEN,Far North Side,Saug-ReedDunning-AlbanyPk
+29011,EDISON,609794,Edison Comp Gifted School,Regional gifted center,4929 N SAWYER AVE,60625,ES,1,01C,1,33,12,3,40,20,14,ALBANY PARK,Far North Side,Saug-ReedDunning-AlbanyPk
+28081,EDISON PARK,610523,Edison Park Elem. School,Neighborhood,6220 N OLCOTT AVE,60631,ES,1,01A,1,41,9,5,20,10,10,NORWOOD PARK,Far North Side,Saug-ReedDunning-AlbanyPk
+12670,Education General CW,,Education General CW,CW Department,,,,,,,,,,,,,,,
+23081,EDWARDS,609903,Edwards Elem School,Neighborhood,4815 S KARLOV AVE,60632,ES,8,08A,8,14,7,4,1,1,57,ARCHER HEIGHTS,Southwest Side,McKinley Park
+23101,ELLINGTON,609904,Ellington Elem School,Neighborhood,243 N PARKSIDE AVE,60644,ES,3,03B,3,29,1,7,8,4,25,AUSTIN,West Side,Belmont-Austin
+66072,CICS - ELLISON HS,400032,Ellison Charter High School,Charter,1817 W 80TH ST,60620,HS,11,CTUA2,11,17,3,1,31,16,71,AUBURN GRESHAM,Far Southwest Side,Englewood-Auburn Gresham
+46691,ENGLEWOOD STEM HS,610592,Englewood STEM H.S.,Neighborhood,6835 S NORMAL BLVD,60621,HS,11,16,16,6,2,1,32,16,68,ENGLEWOOD,Southwest Side,Englewood-Auburn Gresham
+63081,EPIC HS,400094,Epic Academy Charter High School,Charter,8255 S HOUSTON AVE,60617,HS,12,CTUA2,12,7,4,2,25,13,46,SOUTH CHICAGO,Far Southeast Side,Chatham-South Shore
+29051,ERICSON,609907,Ericson Elem School,Magnet,3600 W 5TH AVE,60624,ES,5,05B,5,28,1,7,10,5,27,EAST GARFIELD PARK,West Side,Humboldt Park-Garfield W-N Lawndale
+23131,ESMOND,609908,Esmond Elem School,Neighborhood,1865 W MONTVALE AVE,60643,ES,10,10C,10,19,11,1,35,18,75,MORGAN PARK,Far Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+23141,EVERETT,609909,Everett Elem School,Neighborhood,3419 S BELL AVE,60608,ES,8,08B,8,12,7,4,1,1,59,MCKINLEY PARK,Southwest Side,McKinley Park
+26461,EVERGREEN,610319,Evergreen Academy,Neighborhood,3537 S PAULINA ST,60609,ES,8,08B,8,11,11,4,24,12,59,MCKINLEY PARK,Southwest Side,McKinley Park
+26591,EVERS,610362,Evers Elem School,Neighborhood,9811 S LOWE AVE,60628,ES,11,11B,11,9,5,1,27,14,73,WASHINGTON HEIGHTS,Far Southwest Side,Englewood-Auburn Gresham
+26701,FAIRFIELD,610057,Fairfield Academy,Neighborhood,6201 S FAIRFIELD AVE,60629,ES,10,10A,10,16,11,4,6,3,66,CHICAGO LAWN,Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+23151,FALCONER,609910,Falconer Elem School,Neighborhood,3020 N LAMON AVE,60641,ES,3,03A,3,31,8,3,39,20,19,BELMONT CRAGIN,Northwest Side,Belmont-Austin
+24371,FARADAY,610055,Faraday Elem School,Neighborhood,3250 W MONROE ST,60624,ES,5,05A,5,28,1,7,10,5,27,EAST GARFIELD PARK,West Side,Humboldt Park-Garfield W-N Lawndale
+23271,FARMER,609928,Farmer Elem School,Neighborhood,4214 S ST LAWRENCE AVE,60653,ES,9,AUSL-S,9,4,3,1,26,13,38,GRAND BOULEVARD,South Side,Bronzeville-Hyde Park-Woodlawn
+23161,FARNSWORTH,609912,Farnsworth Elem School,Neighborhood,5414 N LINDER AVE,60630,ES,1,01B,1,45,10,5,19,10,11,JEFFERSON PARK,Far North Side,Saug-ReedDunning-AlbanyPk
+53091,FARRAGUT HS,609704,Farragut Car Acad High School,Neighborhood,2345 S CHRISTIANA AVE,60623,HS,7,16,16,22,7,4,23,12,30,SOUTH LAWNDALE,West Side,Pilsen-Little Village
+46111,FENGER HS,609705,Fenger High School,Neighborhood,11220 S WALLACE ST,60628,HS,13,17,17,21,5,1,27,14,49,ROSELAND,Far Southeast Side,Far South Side - Far East Side
+23201,FERNWOOD,609917,Fernwood Elem School,Neighborhood,10041 S UNION AVE,60628,ES,13,13A,13,21,5,1,27,14,73,WASHINGTON HEIGHTS,Far Southwest Side,Far South Side - Far East Side
+23211,FIELD,609918,Field Elem School,Neighborhood,7019 N ASHLAND AVE,60626,ES,2,02A,2,49,13,9,14,7,1,ROGERS PARK,Far North Side,Ravenswood
+12470,Finance General CW,,Finance General CW,CW Department,,,,,,,,,,,,,,,
+23541,FINKL,609967,Finkl Academy,Neighborhood,2332 S WESTERN AVE,60608,ES,7,07B,7,25,7,4,24,12,31,LOWER WEST SIDE,West Side,Pilsen-Little Village
+23221,FISKE,609919,Fiske Elem School,Neighborhood,6020 S LANGLEY AVE,60637,ES,9,09B,9,20,3,1,5,3,42,WOODLAWN,South Side,Bronzeville-Hyde Park-Woodlawn
+46131,FOREMAN HS,609708,Foreman High School,Neighborhood,3235 N LECLAIRE AVE,60641,HS,1,14,14,31,8,3,39,20,15,PORTAGE PARK,Northwest Side,Saug-ReedDunning-AlbanyPk
+23241,FORT DEARBORN,609924,Fort Dearborn Elem School,Neighborhood,9025 S THROOP ST,60620,ES,11,11B,11,21,4,1,27,14,73,WASHINGTON HEIGHTS,Far Southwest Side,Englewood-Auburn Gresham
+23261,FOSTER PARK,609927,Foster Park Elem School,Neighborhood,8530 S WOOD ST,60620,ES,11,11B,11,18,4,1,31,16,71,AUBURN GRESHAM,Far Southwest Side,Englewood-Auburn Gresham
+29081,FRANKLIN,609926,Franklin Magnet School,Magnet,225 W EVERGREEN AVE,60610,ES,4,04B,4,2,3,7,12,6,8,NEAR NORTH SIDE,Central,Logan-Lincoln Park
+29411,FRAZIER PROSPECTIVE,610503,Frazier International Magnet,Magnet,4027 W GRENSHAW ST,60624,ES,5,05B,5,24,2,7,9,5,29,NORTH LAWNDALE,West Side,Humboldt Park-Garfield W-N Lawndale
+66393,ACERO - FUENTES,400082,Fuentes Charter Elem School,Charter,2845 W BARRY AVE,60618,ES,4,CTUA1,4,35,12,3,40,20,21,AVONDALE,North Side,Logan-Lincoln Park
+23281,FULTON,609929,Fulton Elem School,Neighborhood,5300 S HERMITAGE AVE,60609,ES,8,11A,8,16,11,7,6,3,61,NEW CITY,Southwest Side,McKinley Park
+23291,FUNSTON,609930,Funston Elem School,Neighborhood,2010 N CENTRAL PARK AVE,60647,ES,4,04A,4,26,8,3,3,2,22,LOGAN SQUARE,North Side,Logan-Lincoln Park
+46141,GAGE PARK HS,609709,Gage Park High School,Neighborhood,5630 S ROCKWELL ST,60629,HS,8,16,16,15,7,4,1,1,63,GAGE PARK,Southwest Side,McKinley Park
+31081,GALE,609933,Gale Community Academy,Neighborhood,1631 W JONQUIL TER,60626,ES,2,02A,2,49,13,9,14,7,1,ROGERS PARK,Far North Side,Ravenswood
+29141,GALILEO,610009,Galileo Magnet Academy,Magnet,820 S CARPENTER ST,60607,ES,6,06B,6,34,2,7,9,5,28,NEAR WEST SIDE,West Side,Near N-Near W-Loop-BridgePort-Chinatown
+29091,GALLISTEL,609935,Gallistel Magnet School,Magnet,10347 S EWING AVE,60617,ES,13,13B,13,10,4,2,25,13,52,EAST SIDE,Far Southeast Side,Far South Side - Far East Side
+66394,ACERO - GARCIA HS,400085,Garcia Charter High School,Charter,4248 W 47TH ST,60632,HS,8,CTUA1,8,14,7,4,1,1,57,ARCHER HEIGHTS,Southwest Side,McKinley Park
+24951,GARVEY,610128,"Garvey, M. Elem School",Neighborhood,10309 S MORGAN ST,60643,ES,13,13A,13,21,5,1,27,14,73,WASHINGTON HEIGHTS,Far Southwest Side,Far South Side - Far East Side
+23301,GARVY,609937,"Garvy, J. Elem School",Neighborhood,5225 N OAK PARK AVE,60656,ES,1,01A,1,41,10,5,20,10,10,NORWOOD PARK,Far North Side,Saug-ReedDunning-AlbanyPk
+23311,GARY,609938,Gary Elem School,Neighborhood,3740 W 31ST ST,60623,ES,7,07A,7,22,7,4,23,12,30,SOUTH LAWNDALE,West Side,Pilsen-Little Village
+23321,GILLESPIE,609939,Gillespie Elem School,Neighborhood,9301 S STATE ST,60619,ES,12,12B,12,6,4,1,34,17,49,ROSELAND,Far Southeast Side,Chatham-South Shore
+22791,GINSBERG,609863,Ginsberg Elem School,Neighborhood,1003 N LEAVITT ST,60622,ES,5,05A,5,1,12,7,4,2,24,WEST TOWN,West Side,Humboldt Park-Garfield W-N Lawndale
+23341,GOETHE,609942,Goethe Elem School,Neighborhood,2236 N ROCKWELL ST,60647,ES,4,04C,4,1,8,3,39,20,22,LOGAN SQUARE,North Side,Logan-Lincoln Park
+46611,GOODE HS,610558,"Goode, STEM Academy HS",Magnet,7651 S HOMAN AVE,60652,HS,10,16,16,18,3,1,32,16,70,ASHBURN,Far Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+23371,GOUDY,609945,Goudy Elem School,Neighborhood,5120 N WINTHROP AVE,60640,ES,2,02B,2,48,10,9,13,7,3,UPTOWN,Far North Side,Ravenswood
+23391,GRAHAM ES,609947,"Graham, A. Elem School",Neighborhood,4436 S UNION AVE,60609,ES,6,06B,6,15,11,7,6,3,61,NEW CITY,Southwest Side,Near N-Near W-Loop-BridgePort-Chinatown
+49101,GRAHAM HS,609769,"Graham, R. Training Center",Special Education,2347 S WABASH AVE,60616,HS,6,14,14,3,2,7,5,3,33,NEAR SOUTH SIDE,Central,Near N-Near W-Loop-BridgePort-Chinatown
+23401,GRAY,609949,Gray Elem School,Neighborhood,3730 N LARAMIE AVE,60641,ES,1,01B,1,30,8,3,19,10,15,PORTAGE PARK,Northwest Side,Saug-ReedDunning-AlbanyPk
+22661,GREELEY,609850,Greeley Elem School,Neighborhood,832 W SHERIDAN RD,60613,ES,4,04B,4,46,10,9,13,7,6,LAKE VIEW,North Side,Logan-Lincoln Park
+24131,GREEN,610032,"Green, Wendell Elem School",Neighborhood,1150 W 96TH ST,60643,ES,11,11B,11,21,4,1,27,14,73,WASHINGTON HEIGHTS,Far Southwest Side,Englewood-Auburn Gresham
+23431,GREENE,609952,"Greene, N. Elem School",Neighborhood,3525 S HONORE ST,60609,ES,8,08B,8,12,7,4,24,12,59,MCKINLEY PARK,Southwest Side,McKinley Park
+23441,GREGORY,609954,Gregory Elem School,Neighborhood,3715 W POLK ST,60624,ES,5,05B,5,24,2,7,9,5,27,EAST GARFIELD PARK,West Side,Humboldt Park-Garfield W-N Lawndale
+23451,GRESHAM,609955,Gresham Elem School,Neighborhood,8524 S GREEN ST,60620,ES,11,AUSL-S,11,17,4,1,27,14,71,AUBURN GRESHAM,Far Southwest Side,Englewood-Auburn Gresham
+23461,GRIMES,609956,Grimes Elem School,Neighborhood,5450 W 64TH PL,60638,ES,10,10A,10,13,11,4,22,11,64,CLEARING,Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+23361,GRISSOM,609944,Grissom Elem School,Neighborhood,12810 S ESCANABA AVE,60633,ES,13,13B,13,10,4,2,33,17,55,HEGEWISCH,Far Southeast Side,Far South Side - Far East Side
+29121,GUNSAULUS,609958,Gunsaulus Scholastic Academy,Magnet,4420 S SACRAMENTO AVE,60632,ES,8,08A,8,12,7,4,23,12,58,BRIGHTON PARK,Southwest Side,McKinley Park
+23481,HAINES,609959,Haines Elem School,Neighborhood,247 W 23RD PL,60616,ES,6,06B,6,11,2,7,24,12,34,ARMOUR SQUARE,South Side,Near N-Near W-Loop-BridgePort-Chinatown
+23491,HALE,609960,Hale Elem School,Neighborhood,6140 S MELVINA AVE,60638,ES,10,10A,10,13,11,6,22,11,64,CLEARING,Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+22301,HALEY,609808,Haley Elem School,Neighborhood,11411 S EGGLESTON AVE,60628,ES,13,13A,13,21,5,1,28,14,49,ROSELAND,Far Southeast Side,Far South Side - Far East Side
+23501,HAMILTON,609963,Hamilton Elem School,Neighborhood,1650 W CORNELIA AVE,60657,ES,4,04C,4,47,12,5,11,6,6,LAKE VIEW,North Side,Logan-Lincoln Park
+23511,HAMLINE,609964,Hamline Elem School,Neighborhood,4747 S BISHOP ST,60609,ES,8,08B,8,20,7,4,6,3,61,NEW CITY,Southwest Side,McKinley Park
+23531,HAMMOND,609966,Hammond Elem School,Neighborhood,2819 W 21ST PL,60623,ES,7,07B,7,25,7,4,24,12,30,SOUTH LAWNDALE,West Side,Pilsen-Little Village
+32021,HAMPTON,609807,Hampton Fine Arts,Neighborhood,3434 W 77TH ST,60652,ES,10,10B,10,18,3,1,32,16,70,ASHBURN,Far Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+46021,HANCOCK HS,609694,Hancock High School,Selective enrollment,5437 W 64TH PL,60638,HS,10,15,15,13,11,4,22,11,64,CLEARING,Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+24461,HANSON PARK,610068,Hanson Park Elem School,Neighborhood,5411 W FULLERTON AVE,60639,ES,3,03A,3,36,8,3,3,2,19,BELMONT CRAGIN,Northwest Side,Belmont-Austin
+51021,HARLAN HS,609710,Harlan Comm Acad High School,Neighborhood,9652 S MICHIGAN AVE,60628,HS,12,17,17,9,4,1,34,17,49,ROSELAND,Far Southeast Side,Chatham-South Shore
+23561,HARTE,609969,Harte Elem School,Neighborhood,1556 E 56TH ST,60637,ES,9,09B,9,5,3,2,25,13,41,HYDE PARK,South Side,Bronzeville-Hyde Park-Woodlawn
+23581,HARVARD,609971,Harvard School of Excellence,Neighborhood,7525 S HARVARD,60620,ES,11,AUSL-S,11,6,3,1,31,16,69,GREATER GRAND CROSSING,South Side,Englewood-Auburn Gresham
+66351,ASPIRA - HAUGAN,400017,Haugan Charter Middle School,Charter,3729 W LELAND AVE,60625,ES,1,CTUA2,1,33,12,3,40,20,14,ALBANY PARK,Far North Side,Saug-ReedDunning-AlbanyPk
+23591,HAUGAN,609972,Haugan Elem School,Neighborhood,4540 N HAMLIN AVE,60625,ES,1,01C,1,33,12,3,40,20,14,ALBANY PARK,Far North Side,Saug-ReedDunning-AlbanyPk
+29131,HAWTHORNE,609974,Hawthorne Scholastic Academy,Magnet,3319 N CLIFTON AVE,60657,ES,4,04B,4,44,10,5,11,6,6,LAKE VIEW,North Side,Logan-Lincoln Park
+31111,HAY,609975,Hay Community Academy,Neighborhood,1018 N LARAMIE AVE,60651,ES,3,03B,3,37,1,7,8,4,25,AUSTIN,West Side,Belmont-Austin
+23621,HAYT,609976,Hayt Elem School,Neighborhood,1518 W GRANVILLE AVE,60660,ES,2,02A,2,48,10,9,14,7,77,EDGEWATER,Far North Side,Ravenswood
+23651,HEALY,609979,Healy Achievement Skills Ctr,Neighborhood,3010 S PARNELL AVE,60616,ES,6,06B,6,11,11,7,24,12,60,BRIDGEPORT,South Side,Near N-Near W-Loop-BridgePort-Chinatown
+23671,HEARST,609981,Hearst Elem School,Neighborhood,4640 S LAMON AVE,60638,ES,10,10A,10,22,7,4,1,1,56,GARFIELD RIDGE,Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+23681,HEDGES,609983,Hedges Main Elem School,Neighborhood,4747 S WINCHESTER AVE,60609,ES,8,08B,8,15,7,4,6,3,61,NEW CITY,Southwest Side,McKinley Park
+23711,HEFFERAN,609985,Hefferan Elem School,Neighborhood,4409 W WILCOX ST,60624,ES,5,05B,5,28,1,7,10,5,26,WEST GARFIELD PARK,West Side,Humboldt Park-Garfield W-N Lawndale
+23721,HENDERSON,609986,Henderson Elem School,Neighborhood,5650 S WOLCOTT AVE,60636,ES,8,11A,8,15,2,7,6,3,67,WEST ENGLEWOOD,Southwest Side,McKinley Park
+31121,HENDRICKS,609987,Hendricks Elem School,Neighborhood,4316 S PRINCETON AVE,60609,ES,9,09A,9,20,2,7,6,3,37,FULLER PARK,South Side,Bronzeville-Hyde Park-Woodlawn
+23731,HENRY,609988,Henry Elem School,Neighborhood,4250 N SAINT LOUIS AVE,60618,ES,1,01C,1,33,8,3,40,20,16,IRVING PARK,Northwest Side,Saug-ReedDunning-AlbanyPk
+22441,HERNANDEZ,610532,Hernandez Middle School,Neighborhood,3510 W 55TH ST,60632,ES,8,08A,8,14,7,4,1,1,63,GAGE PARK,Southwest Side,McKinley Park
+23771,HERZL,609991,Herzl Elem School,Neighborhood,3711 W DOUGLAS BLVD,60623,ES,7,AUSL-W,7,24,2,7,9,5,29,NORTH LAWNDALE,West Side,Pilsen-Little Village
+23801,HIBBARD,609994,Hibbard Elem School,Neighborhood,3244 W AINSLIE ST,60625,ES,1,01C,1,33,12,3,40,20,14,ALBANY PARK,Far North Side,Saug-ReedDunning-AlbanyPk
+31251,HIGGINS,610295,Higgins Community Academy,Neighborhood,11710 S MORGAN ST,60643,ES,13,13A,13,21,5,1,27,14,53,WEST PULLMAN,Far Southeast Side,Far South Side - Far East Side
+47031,HIRSCH HS,609712,Hirsch Metro H.S. of Communica,Neighborhood,7740 S INGLESIDE AVE,60619,HS,12,17,17,8,3,1,32,16,69,GREATER GRAND CROSSING,South Side,Chatham-South Shore
+23811,HITCH,609995,Hitch Elem School,Neighborhood,5625 N MCVICKER AVE,60646,ES,1,01B,1,45,10,5,19,10,10,NORWOOD PARK,Far North Side,Saug-ReedDunning-AlbanyPk
+23821,HOLDEN,609996,Holden Elem School,Neighborhood,1104 W 31ST ST,60608,ES,6,06B,6,11,11,4,24,12,60,BRIDGEPORT,South Side,Near N-Near W-Loop-BridgePort-Chinatown
+23831,HOLMES,609997,Holmes Elem School,Neighborhood,955 W GARFIELD BLVD,60621,ES,8,11A,8,16,2,7,6,3,68,ENGLEWOOD,Southwest Side,McKinley Park
+23851,HOWE,610000,Howe Elem School,Neighborhood,720 N LOREL AVE,60644,ES,3,AUSL-W,3,37,1,7,8,4,25,AUSTIN,West Side,Belmont-Austin
+23871,HOYNE,610002,Hoyne Elem School,Neighborhood,8905 S CRANDON AVE,60617,ES,12,12B,12,7,4,1,25,13,48,CALUMET HEIGHTS,Far Southeast Side,Chatham-South Shore
+46341,HUBBARD HS,609741,Hubbard High School,Neighborhood,6200 S HAMLIN AVE,60629,HS,10,16,16,23,7,4,22,11,65,WEST LAWN,Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+23901,HUGHES C,610005,"Hughes, C. Elem School",Neighborhood,4247 W 15TH ST,60623,ES,7,05B,7,24,2,7,9,5,29,NORTH LAWNDALE,West Side,Pilsen-Little Village
+22451,HUGHES L,610368,"Hughes, L. Magnet School",Neighborhood,240 W 104TH ST,60628,ES,13,13A,13,21,5,1,27,14,49,ROSELAND,Far Southeast Side,Far South Side - Far East Side
+23911,HURLEY,610006,Hurley Elem School,Neighborhood,3849 W 69TH PL,60629,ES,10,10B,10,23,11,4,22,11,65,WEST LAWN,Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+46171,HYDE PARK HS,609713,Hyde Park Academy H.S.,Neighborhood,6220 S STONY ISLAND AVE,60637,HS,9,17,17,5,3,1,25,13,42,WOODLAWN,South Side,Bronzeville-Hyde Park-Woodlawn
+66399,ACERO - IDAR,400112,Idar Charter Elem School,Charter,5050 S HOMAN AVE,60632,ES,8,CTUA1,8,14,7,4,1,1,63,GAGE PARK,Southwest Side,McKinley Park
+55151,INFINITY HS,610384,Infinity Math & Science School,Small,3120 S KOSTNER AVE,60623,HS,7,07A,15,22,7,4,23,12,30,SOUTH LAWNDALE,West Side,Pilsen-Little Village
+63131,INSTITUTO - HEALTH,400104,Instituto Health Science Career Academy-Charter,Charter,2520 S WESTERN AVE,60608,HS,7,CTUA2,7,25,7,4,24,12,31,LOWER WEST SIDE,West Side,Pilsen-Little Village
+66921,INSTITUTO - JUSTICE HS,400164,Instituto Justice Leadership Acad. Charter,Charter,2570 S BLUE ISLAND AVE,60608,HS,7,CTUA2,7,25,7,4,24,12,31,LOWER WEST SIDE,West Side,Pilsen-Little Village
+29191,INTER-AMERICAN,610078,Inter-American Magnet School,Magnet,851 W WAVELAND AVE,60613,ES,4,04B,4,44,10,5,11,6,6,LAKE VIEW,North Side,Logan-Lincoln Park
+24881,IRVING,610121,"Irving, W. Elementary School",Neighborhood,749 S OAKLEY BLVD,60612,ES,6,06B,6,28,2,7,9,5,28,NEAR WEST SIDE,West Side,Near N-Near W-Loop-BridgePort-Chinatown
+26651,JACKSON M,610369,"Jackson, Mahalia Elem School",Neighborhood,917 W 88TH ST,60620,ES,11,11B,11,21,4,1,27,14,71,AUBURN GRESHAM,Far Southwest Side,Englewood-Auburn Gresham
+23921,JAHN,610010,Jahn Elem School,Neighborhood,3149 N WOLCOTT AVE,60657,ES,4,04C,4,32,12,5,11,6,5,NORTH CENTER,North Side,Logan-Lincoln Park
+23931,JAMIESON,610011,Jamieson Achievement Skills Ct,Neighborhood,5650 N MOZART ST,60659,ES,2,02B,2,50,10,5,15,8,2,WEST RIDGE,Far North Side,Ravenswood
+30011,JEFFERSON HS,609783,"Jefferson, N. Alternative Sch",Alternative,1100 S HAMILTON AVE,60612,HS,6,16,16,27,2,7,9,5,28,NEAR WEST SIDE,West Side,Near N-Near W-Loop-BridgePort-Chinatown
+29341,JENSEN,610271,Jensen Scholastic Academy,Magnet,3030 W HARRISON ST,60612,ES,5,05B,5,28,2,7,9,5,27,EAST GARFIELD PARK,West Side,Humboldt Park-Garfield W-N Lawndale
+26231,JOHNSON,610274,Johnson Elem School,Neighborhood,1420 S ALBANY AVE,60623,ES,5,AUSL-W,5,24,2,7,9,5,29,NORTH LAWNDALE,West Side,Humboldt Park-Garfield W-N Lawndale
+47021,JONES HS,609678,Jones College Prep High School,Selective enrollment,700 S STATE ST,60605,HS,6,06B,15,4,3,7,6,3,32,LOOP,Central,Near N-Near W-Loop-BridgePort-Chinatown
+22281,JOPLIN,609805,Joplin Elem School,Neighborhood,7931 S HONORE ST,60620,ES,11,11C,11,17,3,1,31,16,71,AUBURN GRESHAM,Far Southwest Side,Englewood-Auburn Gresham
+22811,JORDAN,609865,Jordan Community School,Neighborhood,7414 N WOLCOTT AVE,60626,ES,2,02A,2,49,13,9,14,7,1,ROGERS PARK,Far North Side,Ravenswood
+46421,JUAREZ HS,609764,Juarez Community Academy,Neighborhood,1450 W CERMAK RD,60608,HS,7,07B,15,25,7,4,24,12,31,LOWER WEST SIDE,West Side,Pilsen-Little Village
+46401,JULIAN HS,609762,Julian High School,Neighborhood,10330 S ELIZABETH ST,60643,HS,10,16,16,21,5,1,27,14,73,WASHINGTON HEIGHTS,Far Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+23961,JUNGMAN,610015,Jungman Elem School,Neighborhood,1746 S MILLER ST,60608,ES,7,07B,7,25,7,4,24,12,31,LOWER WEST SIDE,West Side,Pilsen-Little Village
+29071,KANOON,609920,Kanoon Magnet School,Neighborhood,2233 S KEDZIE AVE,60623,ES,7,07A,7,24,7,4,23,12,30,SOUTH LAWNDALE,West Side,Pilsen-Little Village
+29211,KELLER,610084,Keller Magnet School,Regional gifted center,3020 W 108TH ST,60655,ES,10,10C,10,19,11,6,35,18,74,MOUNT GREENWOOD,Far Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+23251,KELLMAN,609925,Kellman Corporate Comm. School,Neighborhood,3030 W ARTHINGTON ST,60612,ES,5,05B,5,28,2,7,9,5,27,EAST GARFIELD PARK,West Side,Humboldt Park-Garfield W-N Lawndale
+23971,KELLOGG,610016,Kellogg Elem School,Neighborhood,9241 S LEAVITT ST,60620,ES,10,10C,10,19,11,6,36,18,72,BEVERLY,Far Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+46181,KELLY HS,609715,Kelly College Prep,Neighborhood,4136 S CALIFORNIA AVE,60632,HS,8,16,16,12,7,4,23,12,58,BRIGHTON PARK,Southwest Side,McKinley Park
+46191,KELVYN PARK HS,609716,Kelvyn Park High School,Neighborhood,4343 W WRIGHTWOOD AVE,60639,HS,4,14,14,31,8,3,39,20,20,HERMOSA,Northwest Side,Logan-Lincoln Park
+46201,KENNEDY HS,609718,Kennedy High School,Neighborhood,6325 W 56TH ST,60638,HS,10,16,16,13,11,6,22,11,56,GARFIELD RIDGE,Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+46361,KENWOOD HS,609746,Kenwood Acad. High School,Neighborhood,5015 S BLACKSTONE AVE,60615,HS,9,17,17,4,3,2,25,13,39,KENWOOD,South Side,Bronzeville-Hyde Park-Woodlawn
+23991,KERSHAW,610019,Kershaw Elem School,Magnet,6450 S LOWE AVE,60621,ES,11,11C,11,16,2,1,6,3,68,ENGLEWOOD,Southwest Side,Englewood-Auburn Gresham
+24021,KILMER,610022,Kilmer Elem School,Neighborhood,6700 N GREENVIEW AVE,60626,ES,2,02A,2,49,13,9,14,7,1,ROGERS PARK,Far North Side,Ravenswood
+46371,KING HS,609751,King College Prep,Selective enrollment,4445 S DREXEL BLVD,60653,HS,9,17,17,4,3,2,25,13,39,KENWOOD,South Side,Bronzeville-Hyde Park-Woodlawn
+26371,KING ES,610299,"King, Dr. Martin Luther King Jr. Acad. of Soc. Justice",Neighborhood,644 W 71ST ST,60621,ES,11,11B,11,6,2,1,32,16,68,ENGLEWOOD,Southwest Side,Englewood-Auburn Gresham
+24071,KINZIE,610026,Kinzie Elem School,Neighborhood,5625 S MOBILE AVE,60638,ES,10,10A,10,13,11,6,22,11,56,GARFIELD RIDGE,Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+24081,KIPLING,610027,Kipling Elem School,Neighborhood,9351 S LOWE AVE,60620,ES,11,11B,11,9,4,1,27,14,73,WASHINGTON HEIGHTS,Far Southwest Side,Englewood-Auburn Gresham
+31151,KOZMINSKI,610030,Kozminski Community Academy,Neighborhood,936 E 54TH ST,60615,ES,9,09B,9,5,3,1,25,13,41,HYDE PARK,South Side,Bronzeville-Hyde Park-Woodlawn
+46211,LAKE VIEW HS,609719,Lake View High School,Neighborhood,4015 N ASHLAND AVE,60613,HS,2,14,14,47,10,5,11,6,6,LAKE VIEW,North Side,Ravenswood
+46221,LANE TECH HS,609720,Lane Tech High School,Selective enrollment,2501 W ADDISON ST,60618,HS,4,14,14,47,12,3,40,20,5,NORTH CENTER,North Side,Logan-Lincoln Park
+22841,LANGFORD,609869,Langford Elem School,Neighborhood,6010 S THROOP ST,60636,ES,11,11A,11,16,2,7,6,3,67,WEST ENGLEWOOD,Southwest Side,Englewood-Auburn Gresham
+23791,LARA,609993,Lara Academy,Neighborhood,4619 S WOLCOTT AVE,60609,ES,8,08B,8,15,7,4,24,12,61,NEW CITY,Southwest Side,McKinley Park
+29101,LASALLE II,610520,LaSalle II Magnet School,Magnet,1148 N HONORE ST,60622,ES,6,06A,6,1,12,7,4,2,24,WEST TOWN,West Side,Near N-Near W-Loop-BridgePort-Chinatown
+29161,LASALLE,610033,LaSalle Language Academy,Magnet,1734 N ORLEANS ST,60614,ES,4,04B,4,43,12,5,12,6,7,LINCOLN PARK,North Side,Logan-Lincoln Park
+66619,YCCS - LATINO YOUTH,400135,Latino Youth Charter High School,Charter,2001 S CALIFORNIA AVE,60608,HS,7,CTUA2,7,25,7,4,24,12,30,SOUTH LAWNDALE,West Side,Pilsen-Little Village
+25671,LAVIZZO,610208,Lavizzo Elem. School,Neighborhood,138 W 109TH ST,60628,ES,13,13A,13,9,5,1,27,14,49,ROSELAND,Far Southeast Side,Far South Side - Far East Side
+31161,LAWNDALE,610034,Lawndale Comm Academy,Neighborhood,3500 W DOUGLAS BLVD,60623,ES,5,05B,5,24,2,7,9,5,29,NORTH LAWNDALE,West Side,Humboldt Park-Garfield W-N Lawndale
+26331,LEE,610291,Lee Elem School,Neighborhood,6448 S TRIPP AVE,60629,ES,10,10B,10,13,11,4,22,11,65,WEST LAWN,Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+26391,LELAND,610305,Leland Elem School,Neighborhood,512 S LAVERGNE AVE,60644,ES,3,03B,3,29,1,7,8,4,25,AUSTIN,West Side,Belmont-Austin
+29361,LENART,610298,Lenart Gifted Ctr,Regional gifted center,8101 S LASALLE ST,60620,ES,11,11B,11,6,4,1,34,17,44,CHATHAM,Far Southeast Side,Englewood-Auburn Gresham
+24151,LEWIS,610036,Lewis Elem School,Neighborhood,1431 N LEAMINGTON AVE,60651,ES,3,AUSL-W,3,37,1,7,8,4,25,AUSTIN,West Side,Belmont-Austin
+24171,LIBBY,610037,Libby Elem School,Neighborhood,5300 S LOOMIS BLVD,60609,ES,8,11A,8,20,2,7,6,3,61,NEW CITY,Southwest Side,McKinley Park
+24191,LINCOLN,610038,Lincoln Elem School,Neighborhood,615 W KEMPER PL,60614,ES,4,04B,4,43,12,5,12,6,7,LINCOLN PARK,North Side,Logan-Lincoln Park
+30151,FISHER,610595,Lincoln Park Early Learning Center,Magnet,1840 N CLARK ST,60614,ES,4,04B,4,43,12,5,11,6,7,LINCOLN PARK,North Side,Logan-Lincoln Park
+46321,LINCOLN PARK HS,609738,Lincoln Park High School,Neighborhood,2001 N ORCHARD ST,60614,HS,4,04B,14,43,12,5,12,6,7,LINCOLN PARK,North Side,Logan-Lincoln Park
+46511,LINDBLOM HS,610391,Lindblom Math & Science Acad.,Selective enrollment,6130 S WOLCOTT AVE,60636,HS,11,16,16,16,2,7,6,3,67,WEST ENGLEWOOD,Southwest Side,Englewood-Auburn Gresham
+24201,VON LINNE,610039,Linne Elem School,Neighborhood,3221 N SACRAMENTO AVE,60618,ES,4,04C,4,33,12,3,40,20,21,AVONDALE,North Side,Logan-Lincoln Park
+22521,LITTLE VILLAGE,609834,Little Village Academy,Neighborhood,2620 S LAWNDALE AVE,60623,ES,7,07A,7,22,7,4,23,12,30,SOUTH LAWNDALE,West Side,Pilsen-Little Village
+24221,LLOYD,610040,Lloyd Elem School,Neighborhood,2103 N LAMON AVE,60639,ES,3,03A,3,26,8,3,4,2,19,BELMONT CRAGIN,Northwest Side,Belmont-Austin
+24231,LOCKE J,610041,Locke Elem School,Neighborhood,2828 N OAK PARK AVE,60634,ES,3,03A,3,36,8,3,3,2,18,MONTCLARE,Northwest Side,Belmont-Austin
+24531,LOGAN SQUARE,610074,Logan Square Elem School,Neighborhood,3651 W SCHUBERT AVE,60647,ES,4,04A,4,35,8,3,39,20,22,LOGAN SQUARE,North Side,Logan-Lincoln Park
+22341,LORCA,610541,LORCA,Neighborhood,3231 N SPRINGFIELD AVE,60618,ES,4,04C,4,30,8,3,40,20,21,AVONDALE,North Side,Logan-Lincoln Park
+24241,LOVETT,610043,Lovett Elem School,Neighborhood,6333 W BLOOMINGDALE AVE,60639,ES,3,03B,3,29,1,7,78,39,25,AUSTIN,West Side,Belmont-Austin
+24251,LOWELL,610044,Lowell Elem School,Neighborhood,3320 W HIRSCH ST,60651,ES,5,05A,5,26,8,3,4,2,23,HUMBOLDT PARK,West Side,Humboldt Park-Garfield W-N Lawndale
+24101,LOZANO,610029,Lozano Blg. & Int'l. Ctr.,Neighborhood,1501 N GREENVIEW AVE,60642,ES,6,06A,6,1,12,5,10,5,24,WEST TOWN,West Side,Near N-Near W-Loop-BridgePort-Chinatown
+24281,LYON,610046,Lyon Elem School,Neighborhood,2941 N MCVICKER AVE,60634,ES,3,03A,3,30,8,3,3,2,19,BELMONT CRAGIN,Northwest Side,Belmont-Austin
+41041,MADERO,610215,Madero Elementary School,Neighborhood,3202 W 28TH ST,60623,ES,7,07A,7,22,7,4,23,12,30,SOUTH LAWNDALE,West Side,Pilsen-Little Village
+24301,MADISON,610047,Madison Elem School,Neighborhood,7433 S DORCHESTER AVE,60619,ES,12,12A,12,8,3,1,26,13,43,SOUTH SHORE,South Side,Chatham-South Shore
+24311,MANIERRE,610048,Manierre Elem School,Neighborhood,1420 N HUDSON AVE,60610,ES,4,04B,4,27,3,7,9,5,8,NEAR NORTH SIDE,Central,Logan-Lincoln Park
+53111,MANLEY HS,609722,Manley High School,Neighborhood,2935 W POLK ST,60612,HS,5,15,15,28,2,7,9,5,27,EAST GARFIELD PARK,West Side,Humboldt Park-Garfield W-N Lawndale
+24331,MANN,610052,Mann Elem School,Neighborhood,8050 S CHAPPEL AVE,60617,ES,12,12B,12,8,4,1,33,17,46,SOUTH CHICAGO,Far Southeast Side,Chatham-South Shore
+41111,MARINE LEADERSHIP AT AMES HS,609780,Marine Leadership Acad. at Ames,Military academy,1920 N HAMLIN AVE,60647,HS,4,04A,14,26,8,3,3,2,22,LOGAN SQUARE,North Side,Logan-Lincoln Park
+24341,MARQUETTE,610053,Marquette West Elem School,Neighborhood,6550 S RICHMOND ST,60629,ES,10,AUSL-S,10,15,11,7,32,16,66,CHICAGO LAWN,Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+66397,ACERO - MARQUEZ,400089,Marquez Charter Elem School,Charter,2916 W 47TH ST,60632,ES,8,CTUA1,8,12,7,4,23,12,58,BRIGHTON PARK,Southwest Side,McKinley Park
+24361,MARSH,610054,Marsh Elem School,Neighborhood,9822 S EXCHANGE AVE,60617,ES,13,13B,13,10,4,2,33,17,51,SOUTH DEERING,Far Southeast Side,Far South Side - Far East Side
+47041,MARSHALL HS,609723,Marshall Metro High School,Neighborhood,3250 W ADAMS ST,60624,HS,5,15,15,28,1,7,10,5,27,EAST GARFIELD PARK,West Side,Humboldt Park-Garfield W-N Lawndale
+24381,MASON,610056,Mason Elem School,Small,4217 W 18TH ST,60623,ES,7,05B,7,24,2,7,9,5,29,NORTH LAWNDALE,West Side,Pilsen-Little Village
+46241,MATHER HS,609724,Mather High School,Neighborhood,5835 N LINCOLN AVE,60659,HS,2,14,14,40,10,5,13,7,2,WEST RIDGE,Far North Side,Ravenswood
+24401,MAYER,610059,Mayer Elem School,Magnet,2250 N CLIFTON AVE,60614,ES,4,04B,4,43,12,5,10,5,7,LINCOLN PARK,North Side,Logan-Lincoln Park
+26321,MAYS,610290,Mays Academy,Neighborhood,6656 S NORMAL BLVD,60621,ES,11,11A,11,6,2,1,6,3,68,ENGLEWOOD,Southwest Side,Englewood-Auburn Gresham
+23551,MCAULIFFE,609968,"McAuliffe, C. Elem. School",Neighborhood,1841 N SPRINGFIELD AVE,60647,ES,4,04A,4,26,8,3,4,2,20,HERMOSA,Northwest Side,Logan-Lincoln Park
+24431,MCCORMICK,610063,McCormick Elem School,Neighborhood,2712 S SAWYER AVE,60623,ES,7,07A,7,22,7,4,23,12,30,SOUTH LAWNDALE,West Side,Pilsen-Little Village
+26201,MCCUTCHEON,610269,McCutcheon Elem School,Neighborhood,4865 N SHERIDAN RD,60640,ES,2,02B,2,46,10,9,13,7,3,UPTOWN,Far North Side,Ravenswood
+29181,MCDADE,610066,McDade Classical School,Classical,8801 S INDIANA AVE,60619,ES,12,12B,12,6,4,1,34,17,44,CHATHAM,Far Southeast Side,Chatham-South Shore
+26421,MCDOWELL,610312,McDowell Elem School,Neighborhood,1419 E 89TH ST,60619,ES,12,12B,12,8,4,1,33,17,48,CALUMET HEIGHTS,Far Southeast Side,Chatham-South Shore
+24451,MCKAY,610067,McKay Elem School,Neighborhood,6901 S FAIRFIELD AVE,60629,ES,10,10B,10,17,2,7,32,16,66,CHICAGO LAWN,Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+26301,MCNAIR,610282,McNair School of Excellence,Neighborhood,4820 W WALTON ST,60651,ES,3,AUSL-W,3,37,1,7,8,4,25,AUSTIN,West Side,Belmont-Austin
+24471,MCPHERSON,610070,McPherson Elem School,Neighborhood,4728 N WOLCOTT AVE,60640,ES,2,02B,2,47,10,5,13,7,4,LINCOLN SQUARE,North Side,Ravenswood
+26351,MELODY,610293,Melody Elem School,Neighborhood,3937 W WILCOX ST,60624,ES,5,05B,5,28,1,7,10,5,26,WEST GARFIELD PARK,West Side,Humboldt Park-Garfield W-N Lawndale
+31061,METCALFE,609902,Metcalfe Magnet School,Neighborhood,12339 S NORMAL AVE,60628,ES,13,13A,13,9,5,1,28,14,53,WEST PULLMAN,Far Southeast Side,Far South Side - Far East Side
+24421,MINOSO,610062,Minoso Elem School (formerly McClellan),Neighborhood,3527 S WALLACE ST,60609,ES,6,06B,6,11,11,7,24,12,60,BRIDGEPORT,South Side,Near N-Near W-Loop-BridgePort-Chinatown
+25331,MIRELES,610171,Mireles Academy,Neighborhood,9000 S EXCHANGE AVE,60617,ES,12,12B,12,10,4,2,25,13,46,SOUTH CHICAGO,Far Southeast Side,Chatham-South Shore
+24511,MITCHELL,610073,Mitchell Elem School,Neighborhood,2233 W OHIO ST,60612,ES,5,05A,5,36,1,7,4,2,24,WEST TOWN,West Side,Humboldt Park-Garfield W-N Lawndale
+26251,MOLLISON,610276,Mollison Elem School,Neighborhood,4415 S DR MARTIN L KING JR DR,60653,ES,9,09A,9,3,3,7,5,3,38,GRAND BOULEVARD,South Side,Bronzeville-Hyde Park-Woodlawn
+25631,MONARCAS ACADEMY,610203,Monarcas Elem School (formerly Tonti),Neighborhood,5815 S HOMAN AVE,60629,ES,8,08B,8,14,7,4,1,1,63,GAGE PARK,Southwest Side,McKinley Park
+24551,MOOS,610076,Moos Elem School,Neighborhood,1711 N CALIFORNIA AVE,60647,ES,5,05A,5,26,8,3,3,2,24,WEST TOWN,West Side,Humboldt Park-Garfield W-N Lawndale
+46251,MORGAN PARK HS,609725,Morgan Park High School,Neighborhood,1744 W PRYOR AVE,60643,HS,10,16,16,19,11,1,35,18,75,MORGAN PARK,Far Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+24571,MORRILL,610077,Morrill Elem School,Neighborhood,6011 S ROCKWELL ST,60629,ES,10,10A,10,16,11,7,6,3,66,CHICAGO LAWN,Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+26091,MORTON,610257,Morton School of Excellence,Neighborhood,431 N TROY ST,60612,ES,5,AUSL-W,5,27,1,7,10,5,23,HUMBOLDT PARK,West Side,Humboldt Park-Garfield W-N Lawndale
+22271,MOSAIC,609804,Mosaic Elem School (formerly Boone),Neighborhood,6710 N WASHTENAW AVE,60645,ES,2,02A,2,50,13,9,16,8,2,WEST RIDGE,Far North Side,Ravenswood
+24611,MOZART,610088,Mozart Elem School,Neighborhood,2200 N HAMLIN AVE,60647,ES,4,04A,4,35,8,3,3,2,22,LOGAN SQUARE,North Side,Logan-Lincoln Park
+24591,MOUNT GREENWOOD,610082,Mt. Greenwood Elementary School,Neighborhood,10841 S HOMAN AVE,60655,ES,10,10C,10,19,11,6,35,18,74,MOUNT GREENWOOD,Far Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+24601,MOUNT VERNON,610086,Mt. Vernon Elem School,Neighborhood,10540 S MORGAN ST,60643,ES,13,13A,13,21,5,1,27,14,73,WASHINGTON HEIGHTS,Far Southwest Side,Far South Side - Far East Side
+55181,MULTICULTURAL ARTS HS,610385,Multicultural Arts School,Small,3120 S KOSTNER AVE,60623,HS,7,15,15,22,7,4,23,12,30,SOUTH LAWNDALE,West Side,Pilsen-Little Village
+11510,Multilingual Multicultural Ed,,Multilingual Multicultural Ed,CW Department,,,,,,,,,,,,,,,
+11540,Multilingual Multicultural Ed CW,,Multilingual Multicultural Ed CW,CW Department,,,,,,,,,,,,,,,
+24621,MURPHY,610089,Murphy Elem School,Neighborhood,3539 W GRACE ST,60618,ES,1,01C,1,35,8,3,40,20,16,IRVING PARK,Northwest Side,Saug-ReedDunning-AlbanyPk
+29221,MURRAY,610090,Murray Language Academy,Magnet,5335 S KENWOOD AVE,60615,ES,9,09B,9,5,3,1,25,13,41,HYDE PARK,South Side,Bronzeville-Hyde Park-Woodlawn
+66271,NAMASTE,400050,Namaste Charter School,Charter,3737 S PAULINA ST,60609,ES,8,CTUA2,8,12,11,4,24,12,59,MCKINLEY PARK,Southwest Side,McKinley Park
+24641,NASH,610092,Nash Elem School,Neighborhood,4837 W ERIE ST,60644,ES,3,03B,3,37,1,7,8,4,25,AUSTIN,West Side,Belmont-Austin
+32031,NATIONAL TEACHERS,610231,National Teachers Academy,Neighborhood,55 W CERMAK RD,60616,ES,6,AUSL-S,6,3,2,7,6,3,33,NEAR SOUTH SIDE,Central,Near N-Near W-Loop-BridgePort-Chinatown
+24651,NEIL,610093,Neil Elem School,Neighborhood,8555 S MICHIGAN AVE,60619,ES,12,12B,12,6,4,1,34,17,44,CHATHAM,Far Southeast Side,Chatham-South Shore
+24661,NETTELHORST,610094,Nettelhorst Elem School,Neighborhood,3252 N BROADWAY ST,60657,ES,4,04B,4,44,10,5,12,6,6,LAKE VIEW,North Side,Logan-Lincoln Park
+2411,Network 1 Office,,Network 1 Office,Network Office,6323 N AVONDALE,60631,,1,,1,,,,,,,,,
+2501,Network 10 Office,,Network 10 Office,Network Office,11424 S WESTERN,60643,,10,,10,,,,,,,,,
+2511,Network 11 Office,,Network 11 Office,Network Office,4655 S DEARBORN,60609,,11,,11,,,,,,,,,
+2521,Network 12 Office,,Network 12 Office,Network Office,4655 S DEARBORN,60609,,12,,12,,,,,,,,,
+2531,Network 13 Office,,Network 13 Office,Network Office,11424 S WESTERN,60643,,13,,13,,,,,,,,,
+2641,Network 14 Office,,Network 14 Office,Network Office,110 N PAULINA ST,60612,,,,14,,,,,,,,,
+2651,Network 15 Office,,Network 15 Office,Network Office,110 N PAULINA ST,60613,,,,15,,,,,,,,,
+2661,Network 16 Office,,Network 16 Office,Network Office,110 N PAULINA ST,60614,,,,16,,,,,,,,,
+2671,Network 17 Office,,Network 17 Office,Network Office,110 N PAULINA ST,60615,,,,17,,,,,,,,,
+2421,Network 2 Office,,Network 2 Office,Network Office,6323 N AVONDALE,60631,,2,,2,,,,,,,,,
+2431,Network 3 Office,,Network 3 Office,Network Office,5101 W HARRISON ST,60644,,3,,3,,,,,,,,,
+2441,Network 4 Office,,Network 4 Office,Network Office,6323 N AVONDALE,60631,,4,,4,,,,,,,,,
+2451,Network 5 Office,,Network 5 Office,Network Office,2935 W POLK STREET,60612,,5,,5,,,,,,,,,
+2461,Network 6 Office,,Network 6 Office,Network Office,2245 W JACKSON BLVD,60612,,6,,6,,,,,,,,,
+2471,Network 7 Office,,Network 7 Office,Network Office,4655 S DEARBORN ST,60609,,7,,7,,,,,,,,,
+2481,Network 8 Office,,Network 8 Office,Network Office,4655 S DEARBORN ST,60609,,8,,8,,,,,,,,,
+2491,Network 9 Office,,Network 9 Office,Network Office,4655 S DEARBORN,60609,,9,,9,,,,,,,,,
+22071,NEW FIELD,610284,New Field Primary School,Neighborhood,1707 W MORSE AVE,60626,ES,2,02A,2,49,13,9,14,7,1,ROGERS PARK,Far North Side,Ravenswood
+25541,NEW SULLIVAN,610193,New Sullivan Elem. School,Neighborhood,8331 S MACKINAW AVE,60617,ES,12,12A,12,10,4,2,25,13,46,SOUTH CHICAGO,Far Southeast Side,Chatham-South Shore
+29231,NEWBERRY,610095,Newberry Magnet School,Magnet,700 W WILLOW ST,60614,ES,4,04B,4,43,12,5,12,6,7,LINCOLN PARK,North Side,Logan-Lincoln Park
+22181,NICHOLSON,609793,Nicholson Elem School,Neighborhood,6006 S PEORIA ST,60621,ES,11,11A,11,16,2,7,6,3,68,ENGLEWOOD,Southwest Side,Englewood-Auburn Gresham
+24671,NIGHTINGALE,610096,Nightingale Elem School,Neighborhood,5250 S ROCKWELL ST,60632,ES,8,08A,8,14,7,4,1,1,63,GAGE PARK,Southwest Side,McKinley Park
+31101,NINOS HEROES,609961,Ninos Heroes Magnet School,Neighborhood,8344 S COMMERCIAL AVE,60617,ES,12,12A,12,7,4,2,26,13,46,SOUTH CHICAGO,Far Southeast Side,Chatham-South Shore
+24681,NIXON,610097,Nixon Elem School,Neighborhood,2121 N KEELER AVE,60639,ES,4,04A,4,35,8,3,3,2,20,HERMOSA,Northwest Side,Logan-Lincoln Park
+24691,NOBEL,610098,Nobel Elem School,Neighborhood,4127 W HIRSCH ST,60651,ES,5,05A,5,36,8,3,4,2,23,HUMBOLDT PARK,West Side,Humboldt Park-Garfield W-N Lawndale
+26841,NORTH RIVER,610354,North River Elem. School,Small,3729 W LELAND AVE,60625,ES,1,01C,1,33,12,3,40,20,14,ALBANY PARK,Far North Side,Saug-ReedDunning-AlbanyPk
+46431,NORTH-GRAND HS,609691,North-Grand H.S.,Neighborhood,4338 W WABANSIA AVE,60639,HS,5,15,15,26,8,3,4,2,23,HUMBOLDT PARK,West Side,Humboldt Park-Garfield W-N Lawndale
+46061,NORTHSIDE PREP HS,609749,Northside College Prep. H.S.,Selective enrollment,5501 N KEDZIE AVE,60625,HS,1,01C,14,39,10,5,15,8,13,NORTH PARK,Far North Side,Saug-ReedDunning-AlbanyPk
+49021,NORTHSIDE LEARNING HS,609744,Northside Learning Center,Special Education,3730 W BRYN MAWR AVE,60659,HS,1,14,14,39,10,5,15,8,13,NORTH PARK,Far North Side,Saug-ReedDunning-AlbanyPk
+66241,CICS - NORTHTOWN HS,400034,Northtown Charter High School,Charter,3900 W PETERSON AVE,60646,HS,1,CTUA2,1,39,10,5,15,8,13,NORTH PARK,Far North Side,Saug-ReedDunning-AlbanyPk
+26081,CATALPA,610599,Northwest Early Childhood Center,Magnet,4434 N LARAMIE AVE,60630,ES,1,01A,1,45,12,5,19,10,15,PORTAGE PARK,Northwest Side,Saug-ReedDunning-AlbanyPk
+41121,NORTHWEST,610051,Northwest Middle School,Neighborhood,5252 W PALMER ST,60639,ES,3,03A,3,36,8,3,3,2,19,BELMONT CRAGIN,Northwest Side,Belmont-Austin
+24711,NORWOOD PARK,610099,Norwood Park Elem School,Neighborhood,5900 N NINA AVE,60631,ES,1,01A,1,41,9,5,20,10,10,NORWOOD PARK,Far North Side,Saug-ReedDunning-AlbanyPk
+24751,OKEEFFE,610103,O'Keeffe Elem School,Neighborhood,6940 S MERRILL AVE,60649,ES,12,AUSL-S,12,5,3,2,25,13,43,SOUTH SHORE,South Side,Chatham-South Shore
+24801,OTOOLE,610108,O'Toole Elem School,Neighborhood,6550 S SEELEY AVE,60636,ES,11,11A,11,16,2,7,6,3,67,WEST ENGLEWOOD,Southwest Side,Englewood-Auburn Gresham
+24731,OGDEN HS,610529,Ogden International School,Magnet,1250 W ERIE ST,60642,HS,6,15,15,27,2,7,10,5,24,WEST TOWN,West Side,Near N-Near W-Loop-BridgePort-Chinatown
+24731,OGDEN ES,610101,Ogden International School,Neighborhood,24 W WALTON ST,60610,ES,6,15,15,2,12,5,12,6,8,NEAR NORTH SIDE,Central,Near N-Near W-Loop-BridgePort-Chinatown
+24741,OGLESBY,610102,Oglesby Elem School,Neighborhood,7646 S GREEN ST,60620,ES,11,11C,11,17,3,1,31,16,71,AUBURN GRESHAM,Far Southwest Side,Englewood-Auburn Gresham
+24761,ONAHAN,610104,Onahan Elem School,Neighborhood,6634 W RAVEN ST,60631,ES,1,01A,1,41,10,5,20,10,10,NORWOOD PARK,Far North Side,Saug-ReedDunning-AlbanyPk
+24771,ORIOLE PARK,610105,Oriole Park Elem School,Neighborhood,5424 N OKETO AVE,60656,ES,1,01A,1,41,10,5,20,10,10,NORWOOD PARK,Far North Side,Saug-ReedDunning-AlbanyPk
+31281,OROZCO,610329,Orozco Comm Academy,Neighborhood,1940 W 18TH ST,60608,ES,7,07B,7,25,7,4,24,12,31,LOWER WEST SIDE,West Side,Pilsen-Little Village
+28151,ORR HS,610389,Orr Academy High School,Neighborhood,730 N PULASKI RD,60624,HS,5,AUSL-W,15,37,1,7,10,5,23,HUMBOLDT PARK,West Side,Humboldt Park-Garfield W-N Lawndale
+24791,OTIS,610107,Otis Elem School,Neighborhood,525 N ARMOUR ST,60642,ES,6,06A,6,1,2,7,10,5,24,WEST TOWN,West Side,Near N-Near W-Loop-BridgePort-Chinatown
+29241,OWEN,610109,"Owen, W. Scholastic Acad.",Magnet,8247 S CHRISTIANA AVE,60652,ES,10,10B,10,18,3,1,31,16,70,ASHBURN,Far Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+23351,OWENS,609943,"Owens, J. Elem. Comm. Academy",Neighborhood,12302 S STATE ST,60628,ES,13,13B,13,9,5,1,28,14,53,WEST PULLMAN,Far Southeast Side,Far South Side - Far East Side
+24821,PALMER,610111,Palmer Elem School,Neighborhood,5051 N KENNETH AVE,60630,ES,1,01B,1,39,12,5,15,8,14,ALBANY PARK,Far North Side,Saug-ReedDunning-AlbanyPk
+66108,YCCS - ASPIRA PANTOJA,400125,Pantoja Charter High School,Charter,3121 N PULASKI RD,60618,HS,4,CTUA2,4,31,8,3,40,20,21,AVONDALE,North Side,Logan-Lincoln Park
+24841,PARK MANOR,610115,Park Manor Elem School,Neighborhood,7037 S RHODES AVE,60637,ES,12,12A,12,6,3,1,32,16,69,GREATER GRAND CROSSING,South Side,Chatham-South Shore
+31181,PARKER,610112,Parker Comm Academy,Neighborhood,6800 S STEWART AVE,60621,ES,11,11A,11,6,2,1,32,16,68,ENGLEWOOD,Southwest Side,Englewood-Auburn Gresham
+31201,PARKSIDE,610116,Parkside Comm Academy,Neighborhood,6938 S EAST END AVE,60649,ES,12,12A,12,5,3,2,26,13,43,SOUTH SHORE,South Side,Chatham-South Shore
+66191,AHS - PASSAGES,400060,Passages Charter School,Charter,1643 W BRYN MAWR AVE,60640,ES,2,CTUA2,2,40,10,9,13,7,77,EDGEWATER,Far North Side,Ravenswood
+24851,PASTEUR,610117,Pasteur Elem School,Neighborhood,5825 S KOSTNER AVE,60629,ES,8,08A,8,13,11,4,22,11,62,WEST ELSDON,Southwest Side,McKinley Park
+70020,PAYTON HS,609680,Payton College Prep.,Selective enrollment,1034 N WELLS ST,60610,HS,6,06A,15,27,12,7,12,6,8,NEAR NORTH SIDE,Central,Near N-Near W-Loop-BridgePort-Chinatown
+66131,ACERO - PAZ,400083,Paz Charter Campus,Charter,2651 W 23RD ST,60608,ES,7,CTUA1,7,25,7,4,24,12,30,SOUTH LAWNDALE,West Side,Pilsen-Little Village
+67021,PEACE AND EDUCATION HS,610386,Peace & Ed. Coal. Altr. H.S.,Alternative,4946 S PAULINA ST,60609,HS,8,08B,16,20,7,4,6,3,61,NEW CITY,Southwest Side,McKinley Park
+24871,PECK,610120,Peck Elem School,Neighborhood,3826 W 58TH ST,60629,ES,8,08A,8,23,7,4,22,11,62,WEST ELSDON,Southwest Side,McKinley Park
+24891,PEIRCE,610122,Peirce Elem School,Neighborhood,1423 W BRYN MAWR AVE,60640,ES,2,02B,2,48,10,9,14,7,77,EDGEWATER,Far North Side,Ravenswood
+24911,PENN,610123,Penn Elem School,Neighborhood,1616 S AVERS AVE,60623,ES,7,05B,5,24,2,7,9,5,29,NORTH LAWNDALE,West Side,Pilsen-Little Village
+22861,PEREZ,609872,Perez Elem School,Neighborhood,1241 W 19TH ST,60608,ES,7,07B,7,25,7,4,24,12,31,LOWER WEST SIDE,West Side,Pilsen-Little Village
+29251,PERSHING,610126,Pershing East Magnet School,Magnet,3200 S CALUMET AVE,60616,ES,9,09A,9,4,3,1,5,3,35,DOUGLAS,South Side,Bronzeville-Hyde Park-Woodlawn
+24941,PETERSON,610127,Peterson Elem. School,Neighborhood,5510 N CHRISTIANA AVE,60625,ES,1,01C,1,39,10,5,15,8,13,NORTH PARK,Far North Side,Saug-ReedDunning-AlbanyPk
+46261,PHILLIPS HS,609727,Phillips High School,Neighborhood,244 E PERSHING RD,60653,HS,9,AUSL-S,17,3,3,1,5,3,35,DOUGLAS,South Side,Bronzeville-Hyde Park-Woodlawn
+55011,PHOENIX MILITARY HS,610304,Phoenix Mil. Acad.,Military academy,145 S CAMPBELL AVE,60612,HS,6,06A,6,27,2,7,10,5,28,NEAR WEST SIDE,West Side,Near N-Near W-Loop-BridgePort-Chinatown
+24781,PICCOLO,610106,Piccolo Specialty School,Neighborhood,1040 N KEELER AVE,60651,ES,5,AUSL-W,5,37,1,3,4,2,23,HUMBOLDT PARK,West Side,Humboldt Park-Garfield W-N Lawndale
+24961,PICKARD,610129,Pickard Elem School,Neighborhood,2301 W 21ST PL,60608,ES,7,07B,7,25,7,4,24,12,31,LOWER WEST SIDE,West Side,Pilsen-Little Village
+31141,PILSEN,610013,Pilsen Comm Academy,Neighborhood,1420 W 17TH ST,60608,ES,7,07B,7,25,7,4,24,12,31,LOWER WEST SIDE,West Side,Pilsen-Little Village
+24971,PIRIE,610130,Pirie Elem School,Neighborhood,650 E 85TH ST,60619,ES,12,12B,12,6,4,1,34,17,44,CHATHAM,Far Southeast Side,Chatham-South Shore
+24981,PLAMONDON,610131,Plamondon Elem School,Neighborhood,2642 W 15TH PL,60608,ES,5,05B,5,28,7,7,9,5,29,NORTH LAWNDALE,West Side,Humboldt Park-Garfield W-N Lawndale
+29261,POE,610132,Poe Classical School,Classical,10538 S LANGLEY AVE,60628,ES,13,13B,13,9,4,2,34,17,50,PULLMAN,Far Southeast Side,Far South Side - Far East Side
+25011,PORTAGE PARK,610135,Portage Park Elem School,Neighborhood,5330 W BERTEAU AVE,60641,ES,1,01B,1,38,12,3,19,10,15,PORTAGE PARK,Northwest Side,Saug-ReedDunning-AlbanyPk
+26291,POWELL,610281,Powell Elem School,Neighborhood,7511 S SOUTH SHORE DR,60649,ES,12,12A,12,7,4,2,25,13,43,SOUTH SHORE,South Side,Chatham-South Shore
+25021,PRESCOTT,610136,Prescott Elem School,Neighborhood,1632 W WRIGHTWOOD AVE,60614,ES,4,04C,4,32,12,5,40,20,7,LINCOLN PARK,North Side,Logan-Lincoln Park
+22581,PRIETO,610533,Prieto Academy,Neighborhood,2231 N CENTRAL AVE,60639,ES,3,03A,3,36,8,3,3,2,19,BELMONT CRAGIN,Northwest Side,Belmont-Austin
+25871,PRITZKER,610229,"Pritzker, A N  Elem School",Regional gifted center,2009 W SCHILLER ST,60622,ES,6,06A,6,1,12,7,3,2,24,WEST TOWN,West Side,Near N-Near W-Loop-BridgePort-Chinatown
+53041,PROSSER HS,609679,Prosser Voc High School,Career academy,2148 N LONG AVE,60639,HS,3,15,15,36,8,3,3,2,19,BELMONT CRAGIN,Northwest Side,Belmont-Austin
+25031,PRUSSING,610137,Prussing Elem School,Neighborhood,4650 N MENARD AVE,60630,ES,1,01B,1,45,12,5,19,10,15,PORTAGE PARK,Northwest Side,Saug-ReedDunning-AlbanyPk
+31211,PULASKI,610138,Pulaski Comm. Academy,Neighborhood,2230 W MCLEAN AVE,60647,ES,6,06A,6,32,1,5,39,20,22,LOGAN SQUARE,North Side,Near N-Near W-Loop-BridgePort-Chinatown
+25041,PULLMAN,610139,Pullman Elem School,Neighborhood,11311 S FORRESTVILLE AVE,60628,ES,13,13B,13,9,4,2,34,17,50,PULLMAN,Far Southeast Side,Far South Side - Far East Side
+46471,RABY HS,610334,Raby School (Flower),Small,3545 W FULTON BLVD,60624,HS,5,15,15,28,1,7,10,5,27,EAST GARFIELD PARK,West Side,Humboldt Park-Garfield W-N Lawndale
+29111,RANDOLPH,609941,Randolph Magnet School,Magnet,7316 S HOYNE AVE,60636,ES,11,11C,11,17,2,7,32,16,67,WEST ENGLEWOOD,Southwest Side,Englewood-Auburn Gresham
+25061,RAVENSWOOD,610141,Ravenswood Elem School,Neighborhood,4332 N PAULINA ST,60613,ES,2,02B,2,47,12,5,13,7,6,LAKE VIEW,North Side,Ravenswood
+25071,RAY,610142,Ray Elem School,Neighborhood,5631 S KIMBARK AVE,60637,ES,9,09B,9,5,3,1,25,13,41,HYDE PARK,South Side,Bronzeville-Hyde Park-Woodlawn
+25091,REAVIS,610143,Reavis Elem School,Neighborhood,834 E 50TH ST,60615,ES,9,09A,9,4,3,1,26,13,39,KENWOOD,South Side,Bronzeville-Hyde Park-Woodlawn
+25101,REILLY,610144,Reilly Elem School,Neighborhood,3650 W SCHOOL ST,60618,ES,4,04C,4,30,8,3,40,20,21,AVONDALE,North Side,Logan-Lincoln Park
+25111,REINBERG,610145,Reinberg Elem School,Neighborhood,3425 N MAJOR AVE,60634,ES,1,01B,1,30,8,3,3,2,15,PORTAGE PARK,Northwest Side,Saug-ReedDunning-AlbanyPk
+25121,REVERE,610146,Revere Elem School,Neighborhood,1010 E 72ND ST,60619,ES,12,12A,12,5,3,1,5,3,69,GREATER GRAND CROSSING,South Side,Chatham-South Shore
+53051,RICHARDS HS,609682,Richards Academy,Neighborhood,5009 S LAFLIN ST,60609,HS,8,16,16,20,7,7,6,3,61,NEW CITY,Southwest Side,McKinley Park
+23381,RICHARDSON,610588,Richardson Middle School,Neighborhood,6018 S KARLOV AVE,60629,ES,10,10A,10,13,7,4,22,11,65,WEST LAWN,Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+45221,RICKOVER MILITARY HS,610390,Rickover Naval Academy,Military academy,5700 W BERTEAU AVE,60634,HS,1,02A,2,38,12,3,19,10,15,PORTAGE PARK,Northwest Side,Saug-ReedDunning-AlbanyPk
+26061,ROBINSON,610256,Robinson Elem School,Neighborhood,4225 S LAKE PARK AVE,60653,ES,9,09A,9,4,3,1,26,13,36,OAKLAND,South Side,Bronzeville-Hyde Park-Woodlawn
+25141,ROGERS,610147,Rogers Elem School,Neighborhood,7345 N WASHTENAW AVE,60645,ES,2,02A,2,50,13,9,18,9,2,WEST RIDGE,Far North Side,Ravenswood
+46271,ROOSEVELT HS,609728,Roosevelt High School,Neighborhood,3436 W WILSON AVE,60625,HS,1,14,14,33,12,3,40,20,14,ALBANY PARK,Far North Side,Saug-ReedDunning-AlbanyPk
+30121,RUDOLPH,610308,Rudolph Learning Center,Special Education,1628 W WASHINGTON BLVD,60612,ES,6,06A,6,27,2,7,10,5,28,NEAR WEST SIDE,West Side,Near N-Near W-Loop-BridgePort-Chinatown
+25181,RUGGLES,610152,Ruggles Elem School,Neighborhood,7831 S PRAIRIE AVE,60619,ES,12,12B,12,6,4,1,34,17,69,GREATER GRAND CROSSING,South Side,Chatham-South Shore
+24931,RUIZ,610125,Ruiz Elementary School,Neighborhood,2410 S LEAVITT ST,60608,ES,7,07B,7,25,7,4,24,12,31,LOWER WEST SIDE,West Side,Pilsen-Little Village
+25191,RYDER,610153,Ryder Elem School,Neighborhood,8716 S WALLACE ST,60620,ES,11,11B,11,21,4,1,31,16,71,AUBURN GRESHAM,Far Southwest Side,Englewood-Auburn Gresham
+29371,SABIN,610342,Sabin Magnet School,Magnet,2216 W HIRSCH ST,60622,ES,5,05A,5,1,1,7,3,2,24,WEST TOWN,West Side,Humboldt Park-Garfield W-N Lawndale
+22631,SADLOWSKI,610586,Sadlowski Elementary School,Neighborhood,3930 E 105TH ST,60617,ES,13,13B,13,10,4,2,25,13,52,EAST SIDE,Far Southeast Side,Far South Side - Far East Side
+30101,SALAZAR,610250,Salazar Blng Ed Ctr,Small,160 W WENDELL ST,60610,ES,6,06A,6,27,3,7,12,6,8,NEAR NORTH SIDE,Central,Near N-Near W-Loop-BridgePort-Chinatown
+26721,SANDOVAL,610226,Sandoval Elem. School,Neighborhood,5534 S SAINT LOUIS AVE,60629,ES,8,08A,8,14,7,4,1,1,63,GAGE PARK,Southwest Side,McKinley Park
+66601,ACERO - SANTIAGO,400114,Santiago Charter Elem School,Charter,2510 W CORTEZ ST,60622,ES,5,CTUA1,5,36,1,3,4,2,24,WEST TOWN,West Side,Humboldt Park-Garfield W-N Lawndale
+29151,SAUCEDO,610017,Saucedo Scholastic Academy,Magnet,2850 W 24TH BLVD,60623,ES,7,07B,7,24,7,4,24,12,30,SOUTH LAWNDALE,West Side,Pilsen-Little Village
+25211,SAUGANASH,610155,Sauganash Elem School,Neighborhood,6040 N KILPATRICK AVE,60646,ES,1,01B,1,39,10,5,15,8,12,FOREST GLEN,Far North Side,Saug-ReedDunning-AlbanyPk
+25231,SAWYER,610157,Sawyer Elem School,Neighborhood,5248 S SAWYER AVE,60632,ES,8,08A,8,14,7,4,1,1,63,GAGE PARK,Southwest Side,McKinley Park
+29271,SAYRE,610158,Sayre Language Academy,Neighborhood,1850 N NEWLAND AVE,60707,ES,3,03B,3,29,1,7,78,39,25,AUSTIN,West Side,Belmont-Austin
+25241,SCAMMON,610159,Scammon Elem School,Neighborhood,4201 W HENDERSON ST,60641,ES,1,01B,1,30,8,3,40,20,16,IRVING PARK,Northwest Side,Saug-ReedDunning-AlbanyPk
+25391,SCHMID,610178,Schmid Elem School,Neighborhood,9755 S GREENWOOD AVE,60628,ES,12,12B,12,8,4,1,34,17,50,PULLMAN,Far Southeast Side,Chatham-South Shore
+25291,SCHUBERT,610165,Schubert Elem School,Neighborhood,2727 N LONG AVE,60639,ES,3,03A,3,31,8,3,39,20,19,BELMONT CRAGIN,Northwest Side,Belmont-Austin
+46281,SCHURZ HS,609729,Schurz High School,Neighborhood,3601 N MILWAUKEE AVE,60641,HS,1,14,14,30,8,5,19,10,16,IRVING PARK,Northwest Side,Saug-ReedDunning-AlbanyPk
+47061,SENN HS,609730,Senn High School,Neighborhood,5900 N GLENWOOD AVE,60660,HS,2,14,14,48,10,9,14,7,77,EDGEWATER,Far North Side,Ravenswood
+25301,SEWARD,610167,Seward Elem School,Neighborhood,4600 S HERMITAGE AVE,60609,ES,8,08B,8,15,7,4,24,12,61,NEW CITY,Southwest Side,McKinley Park
+29201,SHERIDAN,610081,"Sheridan, M. Academy",Magnet,533 W 27TH ST,60616,ES,6,06B,6,11,11,7,24,12,60,BRIDGEPORT,South Side,Near N-Near W-Loop-BridgePort-Chinatown
+25341,SHERMAN,610172,Sherman Elem School,Neighborhood,1000 W 52ND ST,60609,ES,8,AUSL-S,8,20,2,7,6,3,61,NEW CITY,Southwest Side,McKinley Park
+25351,SHERWOOD,610173,Sherwood Elem School,Neighborhood,245 W 57TH ST,60621,ES,8,11A,11,20,2,7,5,3,68,ENGLEWOOD,Southwest Side,McKinley Park
+25361,SHIELDS,610174,Shields Elem School,Neighborhood,4250 S ROCKWELL ST,60632,ES,8,08B,8,12,7,4,23,12,58,BRIGHTON PARK,Southwest Side,McKinley Park
+27091,SHIELDS MIDDLE,610559,Shields Middle School,Neighborhood,2611 W 48TH ST,60632,ES,8,08B,8,15,7,4,1,1,58,BRIGHTON PARK,Southwest Side,McKinley Park
+25371,SHOESMITH,610175,Shoesmith Elem School,Neighborhood,1330 E 50TH ST,60615,ES,9,09B,9,4,3,2,25,13,39,KENWOOD,South Side,Bronzeville-Hyde Park-Woodlawn
+25381,SHOOP,610176,Shoop Academy,Neighborhood,11140 S BISHOP ST,60643,ES,13,13A,13,21,5,1,27,14,75,MORGAN PARK,Far Southwest Side,Far South Side - Far East Side
+53061,SIMEON HS,609692,Simeon Vocational High School,Career academy,8147 S VINCENNES AVE,60620,HS,11,17,17,6,4,1,31,16,44,CHATHAM,Far Southeast Side,Englewood-Auburn Gresham
+49051,SIMPSON HS,609750,Simpson Academy,Alternative,1321 S PAULINA ST,60608,HS,6,15,15,28,2,7,9,5,28,NEAR WEST SIDE,West Side,Near N-Near W-Loop-BridgePort-Chinatown
+29281,SKINNER,610177,Skinner Classical West School,Classical,1260 W ADAMS ST,60607,ES,6,06B,6,27,2,7,10,5,28,NEAR WEST SIDE,West Side,Near N-Near W-Loop-BridgePort-Chinatown
+22591,SKINNER NORTH,610534,Skinner North School,Classical,640 W SCOTT ST,60610,ES,4,04B,4,27,3,7,9,5,8,NEAR NORTH SIDE,Central,Logan-Lincoln Park
+23641,SMITH,609978,"Smith, W. Elem School",Neighborhood,744 E 103RD ST,60628,ES,13,13A,13,8,4,1,34,17,50,PULLMAN,Far Southeast Side,Far South Side - Far East Side
+25401,SMYSER,610179,Smyser Elem School,Neighborhood,4310 N MELVINA AVE,60634,ES,1,01A,1,38,12,3,19,10,15,PORTAGE PARK,Northwest Side,Saug-ReedDunning-AlbanyPk
+25411,SMYTH,610180,"Smyth, J. Elem School",Magnet,1059 W 13TH ST,60608,ES,6,06B,6,28,2,7,9,5,28,NEAR WEST SIDE,West Side,Near N-Near W-Loop-BridgePort-Chinatown
+55171,SOCIAL JUSTICE HS,610383,Social Justice High School,Small,3120 S KOSTNER AVE,60623,HS,7,15,15,22,7,4,23,12,30,SOUTH LAWNDALE,West Side,Pilsen-Little Village
+25431,SOLOMON,610182,Solomon Elem School,Neighborhood,6206 N HAMLIN AVE,60659,ES,1,01C,1,39,10,5,15,8,13,NORTH PARK,Far North Side,Saug-ReedDunning-AlbanyPk
+46101,SOLORIO HS,610543,Solorio Academy High School,Neighborhood,5400 S ST LOUIS AVE,60632,HS,8,AUSL-S,15,14,7,4,1,1,63,GAGE PARK,Southwest Side,McKinley Park
+23521,SOR JUANA,610589,Sor Juana Classical,Classical,4034 W 56TH ST,60629,ES,8,08A,8,13,7,4,22,11,62,WEST ELSDON,Southwest Side,McKinley Park
+66137,ACERO - SOTO HS,400149,Soto Charter High School,Charter,5025 S SAINT LOUIS AVE,60632,HS,8,CTUA1,8,14,7,4,1,1,63,GAGE PARK,Southwest Side,McKinley Park
+23751,SOUTH LOOP,609990,South Loop Elem School,Regional gifted center,1601 S DEARBORN ST,60616,ES,6,06B,6,3,2,7,6,3,33,NEAR SOUTH SIDE,Central,Near N-Near W-Loop-BridgePort-Chinatown
+22251,SOUTH SHORE ES,610530,South Shore Fine Arts Academy,Small,1415 E 70TH ST,60637,ES,12,12A,12,5,3,1,26,13,43,SOUTH SHORE,South Side,Chatham-South Shore
+46631,SOUTH SHORE INTL HS,610547,South Shore Int'l Col. Prep.,Selective enrollment,1955 E 75TH ST,60649,HS,12,17,17,8,3,1,33,17,43,SOUTH SHORE,South Side,Chatham-South Shore
+49031,SOUTHSIDE HS,609745,Southside Occ. Academy,Special Education,7342 S HOYNE AVE,60636,HS,11,11C,11,17,2,7,32,16,67,WEST ENGLEWOOD,Southwest Side,Englewood-Auburn Gresham
+25441,SPENCER,610183,Spencer Elem School,Neighborhood,214 N LAVERGNE AVE,60644,ES,3,03B,3,28,1,7,8,4,25,AUSTIN,West Side,Belmont-Austin
+46461,SPRY HS,610357,Spry Comm Links H.S.,Neighborhood,2400 S MARSHALL BLVD,60623,HS,7,16,16,24,7,4,23,12,30,SOUTH LAWNDALE,West Side,Pilsen-Little Village
+25451,SPRY ES,610184,Spry Elem School,Neighborhood,2400 S MARSHALL BLVD,60623,ES,7,07A,7,24,7,4,23,12,30,SOUTH LAWNDALE,West Side,Pilsen-Little Village
+26521,STAGG,610339,Stagg Elem School,Neighborhood,7424 S MORGAN ST,60621,ES,11,AUSL-S,11,17,2,7,31,16,68,ENGLEWOOD,Southwest Side,Englewood-Auburn Gresham
+46291,STEINMETZ HS,609732,Steinmetz High School,Neighborhood,3030 N MOBILE AVE,60634,HS,3,14,14,30,8,3,3,2,19,BELMONT CRAGIN,Northwest Side,Belmont-Austin
+22711,STEM,610548,STEM,Magnet,1522 W FILLMORE ST,60607,ES,6,06B,6,28,2,7,9,5,28,NEAR WEST SIDE,West Side,Near N-Near W-Loop-BridgePort-Chinatown
+25471,STEVENSON,610185,Stevenson Elem School,Neighborhood,8010 S KOSTNER AVE,60652,ES,10,10B,10,18,11,4,32,16,70,ASHBURN,Far Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+30081,STOCK,610163,"Stock, F. Elem School",Neighborhood,7507 W BIRCHWOOD AVE,60631,ES,1,01A,1,41,9,9,20,10,9,EDISON PARK,Far North Side,Saug-ReedDunning-AlbanyPk
+29291,STONE,610191,Stone Scholastic Academy,Magnet,6239 N LEAVITT ST,60659,ES,2,02A,2,50,13,9,16,8,2,WEST RIDGE,Far North Side,Ravenswood
+25521,STOWE,610192,Stowe Elem School,Neighborhood,3444 W WABANSIA AVE,60647,ES,5,05A,5,26,8,3,4,2,23,HUMBOLDT PARK,West Side,Humboldt Park-Garfield W-N Lawndale
+14050,Student Health / Wellness,,Student Health / Wellness,CW Department,,,,,,,,,,,,,,,
+11672,Students w Disabilities - Asmt / Asgn,,Students w Disabilities - Asmt / Asgn,CW Department,,,,,,,,,,,,,,,
+11675,Students w Disabilities - RSPs,,Students w Disabilities - RSPs,CW Department,,,,,,,,,,,,,,,
+11673,Students w Disabilities - Svc Del,,Students w Disabilities - Svc Del,CW Department,,,,,,,,,,,,,,,
+26881,SUDER,610405,Suder Campus Montessori,Magnet,2022 W WASHINGTON BLVD,60612,ES,6,06A,6,27,2,7,10,5,28,NEAR WEST SIDE,West Side,Near N-Near W-Loop-BridgePort-Chinatown
+46301,SULLIVAN HS,609733,Sullivan High School,Neighborhood,6631 N BOSWORTH AVE,60626,HS,2,14,14,49,13,9,14,7,1,ROGERS PARK,Far North Side,Ravenswood
+31221,SUMNER,610194,Sumner Elem School,Neighborhood,4320 W 5TH AVE,60624,ES,5,05B,5,24,2,7,10,5,26,WEST GARFIELD PARK,West Side,Humboldt Park-Garfield W-N Lawndale
+25561,SUTHERLAND,610195,Sutherland Elem School,Neighborhood,10015 S LEAVITT ST,60643,ES,10,10C,10,19,11,6,35,18,72,BEVERLY,Far Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+25571,SWIFT,610196,Swift Elem School,Neighborhood,5900 N WINTHROP AVE,60660,ES,2,02A,2,48,10,9,14,7,77,EDGEWATER,Far North Side,Ravenswood
+46311,TAFT HS,609734,Taft High School,Neighborhood,6530 W BRYN MAWR AVE,60631,HS,1,14,14,41,10,5,20,10,10,NORWOOD PARK,Far North Side,Saug-ReedDunning-AlbanyPk
+25581,TALCOTT,610197,Talcott Elem School,Neighborhood,1840 W OHIO ST,60622,ES,6,06A,6,36,2,7,4,2,24,WEST TOWN,West Side,Near N-Near W-Loop-BridgePort-Chinatown
+11010,Talent Office,,Talent Office,CW Department,,,,,,,,,,,,,,,
+11070,Talent Office CW,,Talent Office CW,CW Department,,,,,,,,,,,,,,,
+26781,TALMAN,610249,Talman Comm. Elem. School,Neighborhood,5450 S TALMAN AVE,60632,ES,8,08B,8,14,7,4,1,1,63,GAGE PARK,Southwest Side,McKinley Park
+66391,ACERO - TAMAYO,400084,Tamayo Charter Elem School,Charter,5135 S CALIFORNIA AVE,60632,ES,8,CTUA1,8,14,7,4,1,1,63,GAGE PARK,Southwest Side,McKinley Park
+26281,TANNER,610279,Tanner Elem School,Neighborhood,7350 S EVANS AVE,60619,ES,12,12A,12,6,3,1,32,16,69,GREATER GRAND CROSSING,South Side,Chatham-South Shore
+26791,TARKINGTON,610396,Tarkington Sch of Excellence,Neighborhood,3330 W 71ST ST,60629,ES,10,AUSL-S,10,17,11,4,32,16,66,CHICAGO LAWN,Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+25591,TAYLOR,610198,Taylor Elem School,Neighborhood,9912 S AVENUE H,60617,ES,13,13B,13,10,4,2,25,13,52,EAST SIDE,Far Southeast Side,Far South Side - Far East Side
+23231,TELPOCHCALLI,609921,Telpochcalli  Elem. School,Neighborhood,2832 W 24TH BLVD,60623,ES,7,07B,7,24,7,4,24,12,30,SOUTH LAWNDALE,West Side,Pilsen-Little Village
+26891,THOMAS,610504,Thomas Early Chld Ctr,Neighborhood,3625 S HOYNE AVE,60609,ES,8,08B,8,12,7,4,1,1,59,MCKINLEY PARK,Southwest Side,McKinley Park
+25601,THORP J,610200,"Thorp, J. N. Elem School",Neighborhood,8914 S BUFFALO AVE,60617,ES,12,12B,12,10,4,2,25,13,46,SOUTH CHICAGO,Far Southeast Side,Chatham-South Shore
+29301,THORP O,610201,"Thorp, O. A. Scholastic Acad",Magnet,6024 W WARWICK AVE,60634,ES,1,01A,1,38,12,3,19,10,17,DUNNING,Northwest Side,Saug-ReedDunning-AlbanyPk
+53121,TILDEN HS,609735,Tilden High School,Neighborhood,4747 S UNION AVE,60609,HS,8,16,16,15,11,7,6,3,61,NEW CITY,Southwest Side,McKinley Park
+24441,TILL,610065,Till Math and Science Academy,Neighborhood,6543 S CHAMPLAIN AVE,60637,ES,9,09B,9,20,3,1,5,3,42,WOODLAWN,South Side,Bronzeville-Hyde Park-Woodlawn
+25621,TILTON,610202,Tilton Elem School,Neighborhood,223 N KEELER AVE,60624,ES,5,05B,5,28,1,7,10,5,26,WEST GARFIELD PARK,West Side,Humboldt Park-Garfield W-N Lawndale
+66396,ACERO - TORRES,400080,Torres Charter Elem School,Charter,4248 W 47TH ST,60632,ES,8,CTUA1,8,14,7,4,1,1,57,ARCHER HEIGHTS,Southwest Side,McKinley Park
+22031,TUBMAN,609773,"Tubman, H Elem School",Neighborhood,2851 N SEMINARY AVE,60657,ES,4,04C,4,44,10,5,11,6,6,LAKE VIEW,North Side,Logan-Lincoln Park
+29041,TURNER-DREW,609895,Turner-Drew Language Academy,Magnet,9300 S PRINCETON AVE,60620,ES,11,11B,11,9,4,1,27,14,49,ROSELAND,Far Southeast Side,Englewood-Auburn Gresham
+25661,TWAIN,610206,Twain Elem School,Neighborhood,5134 S LOTUS AVE,60638,ES,10,10A,10,23,11,4,1,1,56,GARFIELD RIDGE,Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+26861,UPLIFT HS,610394,UPLIFT Community School,Small,900 W WILSON AVE,60640,HS,2,14,14,46,10,9,13,7,3,UPTOWN,Far North Side,Ravenswood
+66442,URBAN PREP - BRONZEVILLE HS,400105,Urban Prep Bronzeville Campus,Charter,521 E 35TH ST,60653,HS,9,CTUA2,9,4,3,1,26,13,35,DOUGLAS,South Side,Bronzeville-Hyde Park-Woodlawn
+66441,URBAN PREP - ENGLEWOOD HS,400086,Urban Prep Englewood Campus,Charter,6201 S STEWART AVE,60621,HS,11,CTUA2,11,20,2,7,5,3,68,ENGLEWOOD,Southwest Side,Englewood-Auburn Gresham
+29311,VANDERPOEL,610207,Vanderpoel Magnet School,Magnet,9510 S PROSPECT AVE,60643,ES,10,10C,10,19,11,1,35,18,72,BEVERLY,Far Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+49081,VAUGHN HS,609766,Vaughn Occ High School,Special Education,4355 N LINDER AVE,60641,HS,1,14,14,45,12,3,19,10,15,PORTAGE PARK,Northwest Side,Saug-ReedDunning-AlbanyPk
+26731,VICK,609871,Vick Early Chld & Fam Center,Special Education,2554 W 113TH ST,60655,ES,10,10C,10,19,11,6,35,18,75,MORGAN PARK,Far Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+26931,VIRTUAL ACADEMY ES,610596,Virtual Academy,Magnet,1326 W 14TH ST,60608,ES,6,06A,6,28,2,7,9,5,28,NEAR WEST SIDE,West Side,Near N-Near W-Loop-BridgePort-Chinatown
+26931,VIRTUAL ACADEMY HS,610597,Virtual Academy,Magnet,1326 W 14TH ST,60608,HS,6,06A,6,28,2,7,9,5,28,NEAR WEST SIDE,West Side,Near N-Near W-Loop-BridgePort-Chinatown
+25681,VOLTA,610209,Volta Elem School,Neighborhood,4950 N AVERS AVE,60625,ES,1,01C,1,39,12,3,40,20,14,ALBANY PARK,Far North Side,Saug-ReedDunning-AlbanyPk
+47081,VON STEUBEN HS,609737,Von Steuben Metro High School,Magnet,5039 N KIMBALL AVE,60625,HS,1,14,14,39,12,3,15,8,13,NORTH PARK,Far North Side,Saug-ReedDunning-AlbanyPk
+26621,WACKER,610366,Wacker Elem School,Neighborhood,9746 S MORGAN ST,60643,ES,11,11B,11,21,5,1,27,14,73,WASHINGTON HEIGHTS,Far Southwest Side,Englewood-Auburn Gresham
+25711,WADSWORTH,610213,Wadsworth Elem School,Neighborhood,6650 S ELLIS AVE,60637,ES,9,09B,9,20,3,1,5,3,42,WOODLAWN,South Side,Bronzeville-Hyde Park-Woodlawn
+25731,WALSH,610216,Walsh Elem School,Neighborhood,2015 S PEORIA ST,60608,ES,7,07B,7,25,7,4,24,12,31,LOWER WEST SIDE,West Side,Pilsen-Little Village
+25751,WARD J,610217,"Ward, J. Elem School",Neighborhood,2701 S SHIELDS AVE,60616,ES,6,06B,6,11,11,7,24,12,34,ARMOUR SQUARE,South Side,Near N-Near W-Loop-BridgePort-Chinatown
+24991,WARD L,610133,"Ward, L. Elem School",Neighborhood,646 N LAWNDALE AVE,60624,ES,5,05A,5,27,1,7,10,5,23,HUMBOLDT PARK,West Side,Humboldt Park-Garfield W-N Lawndale
+25761,WARREN,610218,Warren Elem School,Neighborhood,9239 S JEFFERY AVE,60617,ES,12,12B,12,7,4,1,25,13,48,CALUMET HEIGHTS,Far Southeast Side,Chatham-South Shore
+25771,WASHINGTON G ES,610219,"Washington, G. Elem School",Neighborhood,3611 E 114TH ST,60617,ES,13,13B,13,10,4,2,25,13,52,EAST SIDE,Far Southeast Side,Far South Side - Far East Side
+46331,WASHINGTON HS,609739,"Washington, G. High School",Neighborhood,3535 E 114TH ST,60617,HS,13,17,17,10,4,2,25,13,52,EAST SIDE,Far Southeast Side,Far South Side - Far East Side
+24921,WASHINGTON H ES,610124,"Washington, Harold Elem. Sch.",Neighborhood,9130 S UNIVERSITY AVE,60619,ES,12,12B,12,8,4,1,33,17,47,BURNSIDE,Far Southeast Side,Chatham-South Shore
+25781,WATERS,610220,Waters Elem School,Neighborhood,4540 N CAMPBELL AVE,60625,ES,2,02B,2,47,12,5,11,6,4,LINCOLN SQUARE,North Side,Ravenswood
+25791,WEBSTER,610221,Webster Elem School,Neighborhood,4055 W ARTHINGTON ST,60624,ES,5,05B,5,24,2,7,10,5,26,WEST GARFIELD PARK,West Side,Humboldt Park-Garfield W-N Lawndale
+51071,WELLS HS,609740,Wells Comm Acad High School,Neighborhood,936 N ASHLAND AVE,60622,HS,6,15,15,1,2,7,4,2,24,WEST TOWN,West Side,Near N-Near W-Loop-BridgePort-Chinatown
+24811,WELLS ES,610110,Wells Preparatory School,Small,249 E 37TH ST,60653,ES,9,09A,9,3,3,1,5,3,35,DOUGLAS,South Side,Bronzeville-Hyde Park-Woodlawn
+25811,WENTWORTH,610223,Wentworth Elem School,Neighborhood,1340 W 71ST ST,60636,ES,11,11C,11,17,2,7,32,16,67,WEST ENGLEWOOD,Southwest Side,Englewood-Auburn Gresham
+24721,WEST PARK,610100,West Park Acad Fine Arts & Tec,Neighborhood,1425 N TRIPP AVE,60651,ES,5,05A,5,36,8,3,4,2,23,HUMBOLDT PARK,West Side,Humboldt Park-Garfield W-N Lawndale
+22381,WEST RIDGE,610542,West Ridge Elementary School,Neighborhood,6700 N WHIPPLE ST,60645,ES,2,02A,2,50,13,9,16,8,2,WEST RIDGE,Far North Side,Ravenswood
+26381,WESTCOTT,610300,Westcott Elem School,Neighborhood,409 W 80TH ST,60620,ES,11,11B,11,6,3,1,31,16,44,CHATHAM,Far Southeast Side,Englewood-Auburn Gresham
+53071,WESTINGHOUSE HS,609693,Westinghouse College Prep.,Selective enrollment,3223 W FRANKLIN BLVD,60624,HS,5,15,15,28,1,7,10,5,23,HUMBOLDT PARK,West Side,Humboldt Park-Garfield W-N Lawndale
+25831,WHISTLER,610225,Whistler Elem School,Neighborhood,11533 S ADA ST,60643,ES,13,13A,13,21,5,1,27,14,53,WEST PULLMAN,Far Southeast Side,Far South Side - Far East Side
+26431,WHITE,610315,White Academy,Neighborhood,1136 W 122ND ST,60643,ES,13,13A,13,21,5,1,28,14,53,WEST PULLMAN,Far Southeast Side,Far South Side - Far East Side
+25841,WHITNEY,610227,Whitney Elem School,Neighborhood,2815 S KOMENSKY AVE,60623,ES,7,07A,7,22,7,4,23,12,30,SOUTH LAWNDALE,West Side,Pilsen-Little Village
+25861,WHITTIER,610228,Whittier Elem School,Magnet,1900 W 23RD ST,60608,ES,7,07B,7,25,7,4,24,12,31,LOWER WEST SIDE,West Side,Pilsen-Little Village
+25881,WILDWOOD,610230,Wildwood Elem School,Magnet,6950 N HIAWATHA AVE,60646,ES,1,01A,1,45,10,5,15,8,12,FOREST GLEN,Far North Side,Saug-ReedDunning-AlbanyPk
+55161,WILLIAMS HS,610380,Williams Prep. Sch. of Med,Small,4934 S WABASH AVE,60615,HS,9,17,17,3,3,7,5,3,38,GRAND BOULEVARD,South Side,Bronzeville-Hyde Park-Woodlawn
+23631,WOODLAWN,609977,Woodlawn Community,Small,6657 S KIMBARK AVE,60637,ES,9,09B,9,20,3,1,5,3,42,WOODLAWN,South Side,Bronzeville-Hyde Park-Woodlawn
+26541,WOODSON,610345,Woodson Elem Sch.,Neighborhood,4414 S EVANS AVE,60653,ES,9,09A,9,3,3,1,26,13,38,GRAND BOULEVARD,South Side,Bronzeville-Hyde Park-Woodlawn
+52011,WORLD LANGUAGE HS,610392,World Language School,Small,3120 S KOSTNER AVE,60623,HS,7,15,15,22,7,4,23,12,30,SOUTH LAWNDALE,West Side,Pilsen-Little Village
+66381,CICS - WRIGHTWOOD,400031,Wrightwood Charter Elem School,Charter,8130 S CALIFORNIA AVE,60652,ES,10,CTUA2,10,18,3,1,31,16,70,ASHBURN,Far Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+25911,YATES,610234,Yates Elem School,Neighborhood,1839 N RICHMOND ST,60647,ES,5,05A,5,26,8,3,3,2,22,LOGAN SQUARE,North Side,Humboldt Park-Garfield W-N Lawndale
+49041,YORK HS,609748,York Alternative High School,Alternative,2700 S CALIFORNIA AVE,60623,HS,7,16,16,24,7,4,23,12,30,SOUTH LAWNDALE,West Side,Pilsen-Little Village
+25921,YOUNG ES,610235,Young Elem School,Neighborhood,1434 N PARKSIDE AVE,60651,ES,3,03B,3,29,1,7,78,39,25,AUSTIN,West Side,Belmont-Austin
+47101,YOUNG HS,609755,Young Magnet High School,Selective enrollment,211 S LAFLIN ST,60607,HS,6,06B,15,27,2,7,10,5,28,NEAR WEST SIDE,West Side,Near N-Near W-Loop-BridgePort-Chinatown
+66629,YCCS - YOUTH CONNECTION,400145,Youth Connection Leadership Acad. Charter,Charter,1814 S UNION AVE,60616,HS,7,CTUA2,7,25,7,4,24,12,31,LOWER WEST SIDE,West Side,Pilsen-Little Village
+23611,ZAPATA,609973,Zapata Academy,Neighborhood,2728 S KOSTNER AVE,60623,ES,7,07A,7,22,7,4,23,12,30,SOUTH LAWNDALE,West Side,Pilsen-Little Village
+66395,ACERO - ZIZUMBO,400079,Zizumbo Charter Elem School,Charter,4248 W 47TH ST,60632,ES,8,CTUA1,8,14,7,4,1,1,57,ARCHER HEIGHTS,Southwest Side,McKinley Park
+65013,OMBUDSMAN - NORTHWEST HS,610569,,Non-Union Alternative,7500 N HARLEM AVE,60631,HS,1,0,1,41,9,9,20,10,9,EDISON PARK,Far North Side,Saug-ReedDunning-AlbanyPk
+65016,PATHWAYS - AVONDALE HS,610568,,Non-Union Alternative,3100 W BELMONT AVE,60618,HS,4,0,4,33,12,3,40,20,21,AVONDALE,North Side,Logan-Lincoln Park
+69618,PATHWAYS - HUMBOLDT PARK HS,610594,,Non-Union Alternative,2421 W DIVISION ST,60622,HS,5,0,5,26,1,3,4,2,24,WEST TOWN,West Side,Humboldt Park-Garfield W-N Lawndale
+65015,OMBUDSMAN - WEST HS,610571,,Non-Union Alternative,2401 W CONGRESS PKWY,60612,HS,6,0,6,28,2,7,9,5,28,NEAR WEST SIDE,West Side,Near N-Near W-Loop-BridgePort-Chinatown
+66801,PATHWAYS - BRIGHTON PARK HS,400173,,Non-Union Alternative,3124 W 47TH STREET,60632,HS,8,0,8,14,7,4,23,12,58,BRIGHTON PARK,Southwest Side,McKinley Park
+63144,EXCEL SOUTHWEST HS,400176,,Non-Union Alternative,7050 S WASHTENAW AVE,60629,HS,10,0,10,17,2,7,32,16,66,CHICAGO LAWN,Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+65014,OMBUDSMAN - SOUTH HS,610570,,Non-Union Alternative,6057 S WESTERN AVE,60636,HS,10,0,10,16,11,7,6,3,66,CHICAGO LAWN,Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+65018,PATHWAYS - ASHBURN HS,610557,,Non-Union Alternative,3284 W 87TH ST,60652,HS,10,0,10,18,3,1,31,16,70,ASHBURN,Far Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+63142,EXCEL ENGLEWOOD HS,610565,,Non-Union Alternative,7141 S MORGAN ST,60621,HS,11,0,11,17,2,7,32,16,68,ENGLEWOOD,Southwest Side,Englewood-Auburn Gresham
+63143,EXCEL SOUTH SHORE HS,400175,,Non-Union Alternative,7530 S SOUTH SHORE DR,60649,HS,12,0,12,7,4,2,25,13,43,SOUTH SHORE,South Side,Chatham-South Shore
+66011,SAFE ACHIEVE ES,610572,,Non-Union Alternative,7530 S SOUTH SHORE DR,60649,ES,12,0,12,7,4,2,25,13,43,SOUTH SHORE,South Side,Chatham-South Shore
+66012,SAFE ACHIEVE HS,610573,,Non-Union Alternative,7530 S SOUTH SHORE DR,60649,HS,12,0,12,7,4,2,25,13,43,SOUTH SHORE,South Side,Chatham-South Shore
+63141,CHICAGO EXCEL HS,400147,,Non-Union Alternative,1257 W 111TH ST,60643,HS,13,0,13,21,5,1,27,14,75,MORGAN PARK,Far Southwest Side,Far South Side - Far East Side
+69617,OMBUDSMAN - ROSELAND HS,610593,,Non-Union Alternative,10928 S HALSTED ST,60643,HS,13,0,13,21,5,1,27,14,75,MORGAN PARK,Far Southwest Side,Far South Side - Far East Side
+66074,CICS - IRVING PARK,400027,,Non-Union Charter,3820 N SPAULDING AVE,60618,ES,1,0,1,33,8,3,40,20,16,IRVING PARK,Northwest Side,Saug-ReedDunning-AlbanyPk
+66691,INTRINSIC HS,400162,,Non-Union Charter,4540 W BELMONT AVE,60641,HS,1,0,1,30,8,3,39,20,16,IRVING PARK,Northwest Side,Saug-ReedDunning-AlbanyPk
+66281,CHICAGO MATH & SCIENCE HS,400035,,Non-Union Charter,7212 N CLARK ST,60626,HS,2,0,2,49,13,9,14,7,1,ROGERS PARK,Far North Side,Ravenswood
+66625,YCCS - TRUMAN,400141,,Non-Union Charter,1145 W WILSON AVE,60640,HS,2,0,2,46,10,9,13,7,3,UPTOWN,Far North Side,Ravenswood
+66031,KIPP - ACADEMY,400146,,Non-Union Charter,4818 W OHIO ST,60644,ES,3,0,3,37,1,7,8,4,25,AUSTIN,West Side,Belmont-Austin
+66106,YCCS - SCHOLASTIC ACHIEVEMENT,400123,,Non-Union Charter,4651 W MADISON ST,60644,HS,3,0,3,28,1,7,10,5,25,AUSTIN,West Side,Belmont-Austin
+66149,NOBLE - ITW SPEER HS,400169,,Non-Union Charter,5321 W GRAND AVE,60639,HS,3,0,3,37,8,3,4,2,19,BELMONT CRAGIN,Northwest Side,Belmont-Austin
+66221,CICS - WEST BELDEN,400030,,Non-Union Charter,2245 N MCVICKER AVE,60639,ES,3,0,3,36,8,3,4,2,19,BELMONT CRAGIN,Northwest Side,Belmont-Austin
+66432,CATALYST - CIRCLE ROCK,400021,,Non-Union Charter,5608 W WASHINGTON BLVD,60644,ES,3,0,3,29,1,7,8,4,25,AUSTIN,West Side,Belmont-Austin
+66628,YCCS - WEST,400144,,Non-Union Charter,4909 W DIVISION ST,60651,HS,3,0,3,37,1,7,8,4,25,AUSTIN,West Side,Belmont-Austin
+66911,MOVING EVEREST,400178,,Non-Union Charter,416 N LARAMIE AVE,60644,ES,3,0,3,37,1,7,8,4,25,AUSTIN,West Side,Belmont-Austin
+66142,NOBLE - PRITZKER HS,400054,,Non-Union Charter,4131 W CORTLAND AVE,60639,HS,4,0,4,26,8,3,4,2,20,HERMOSA,Northwest Side,Logan-Lincoln Park
+66578,NOBLE - ACADEMY HS,400170,,Non-Union Charter,1443 N OGDEN AVE,60610,HS,4,0,4,27,3,7,9,5,8,NEAR NORTH SIDE,Central,Logan-Lincoln Park
+66032,KIPP - ONE,400180,,Non-Union Charter,730 N PULASKI RD,60624,ES,5,0,5,37,1,7,10,5,23,HUMBOLDT PARK,West Side,Humboldt Park-Garfield W-N Lawndale
+66091,NLCP - CHRISTIANA HS,400058,,Non-Union Charter,1615 S CHRISTIANA AVE.,60623,HS,5,0,5,24,2,7,9,5,29,NORTH LAWNDALE,West Side,Humboldt Park-Garfield W-N Lawndale
+66092,NLCP - COLLINS HS,400059,,Non-Union Charter,1313 S SACRAMENTO DR,60623,HS,5,0,5,24,2,7,9,5,29,NORTH LAWNDALE,West Side,Humboldt Park-Garfield W-N Lawndale
+66144,NOBLE - ROWE CLARK HS,400056,,Non-Union Charter,3645 W CHICAGO AVE,60624,HS,5,0,5,27,1,7,10,5,23,HUMBOLDT PARK,West Side,Humboldt Park-Garfield W-N Lawndale
+66151,LOCKE A,400011,,Non-Union Charter,3141 W JACKSON BLVD,60612,ES,5,0,5,28,2,7,10,5,27,EAST GARFIELD PARK,West Side,Humboldt Park-Garfield W-N Lawndale
+66211,LEARN - BUTLER,400046,,Non-Union Charter,1132 S HOMAN AVE,60624,ES,5,0,5,24,2,7,9,5,29,NORTH LAWNDALE,West Side,Humboldt Park-Garfield W-N Lawndale
+66331,ERIE,400039,,Non-Union Charter,1405 N WASHTENAW AVE,60622,ES,5,0,5,26,1,3,4,2,24,WEST TOWN,West Side,Humboldt Park-Garfield W-N Lawndale
+66561,LEARN - EXCEL,400048,,Non-Union Charter,3021 W CARROLL AVE,60612,ES,5,0,5,27,2,7,10,5,27,EAST GARFIELD PARK,West Side,Humboldt Park-Garfield W-N Lawndale
+66562,LEARN - CAMPBELL,400047,,Non-Union Charter,212 S FRANCISCO AVE,60612,ES,5,0,5,27,2,7,10,5,27,EAST GARFIELD PARK,West Side,Humboldt Park-Garfield W-N Lawndale
+66566,LEARN - 7,400151,,Non-Union Charter,3021 W CARROLL AVE,60612,ES,5,0,5,27,2,7,10,5,27,EAST GARFIELD PARK,West Side,Humboldt Park-Garfield W-N Lawndale
+66567,LEARN - MIDDLE,400165,,Non-Union Charter,3021 W CARROLL AVE,60612,ES,5,0,5,27,2,7,10,5,27,EAST GARFIELD PARK,West Side,Humboldt Park-Garfield W-N Lawndale
+66575,NOBLE - DRW HS,400118,,Non-Union Charter,931 S HOMAN AVE,60624,HS,5,0,5,24,2,7,9,5,29,NORTH LAWNDALE,West Side,Humboldt Park-Garfield W-N Lawndale
+66615,YCCS - CAMPOS,400131,,Non-Union Charter,2739 W DIVISION ST,60622,HS,5,0,5,26,1,3,4,2,24,WEST TOWN,West Side,Humboldt Park-Garfield W-N Lawndale
+66627,YCCS - WEST TOWN,400143,,Non-Union Charter,500 N SACRAMENTO BLVD,60612,HS,5,0,5,27,1,7,10,5,23,HUMBOLDT PARK,West Side,Humboldt Park-Garfield W-N Lawndale
+66641,LEGAL PREP HS,400119,,Non-Union Charter,4319 W WASHINGTON BLVD,60624,HS,5,0,5,28,1,7,10,5,26,WEST GARFIELD PARK,West Side,Humboldt Park-Garfield W-N Lawndale
+67071,LEGACY,400049,,Non-Union Charter,3318 W OGDEN AVE,60623,ES,5,0,5,24,2,7,9,5,29,NORTH LAWNDALE,West Side,Humboldt Park-Garfield W-N Lawndale
+67081,POLARIS,400069,,Non-Union Charter,620 N SAWYER AVE,60624,ES,5,0,5,27,1,7,10,5,23,HUMBOLDT PARK,West Side,Humboldt Park-Garfield W-N Lawndale
+66051,PERSPECTIVES - JOSLIN HS,400064,,Non-Union Charter,1930 S ARCHER AVE,60616,HS,6,0,6,3,2,7,6,3,33,NEAR SOUTH SIDE,Central,Near N-Near W-Loop-BridgePort-Chinatown
+66071,CICS - BUCKTOWN,400025,,Non-Union Charter,2235 N HAMILTON AVE,60647,ES,6,0,6,32,12,5,39,20,22,LOGAN SQUARE,North Side,Near N-Near W-Loop-BridgePort-Chinatown
+66141,NOBLE - NOBLE HS,400051,,Non-Union Charter,1010 N NOBLE ST,60642,HS,6,0,6,1,12,7,10,5,24,WEST TOWN,West Side,Near N-Near W-Loop-BridgePort-Chinatown
+66143,NOBLE - RAUNER HS,400055,,Non-Union Charter,1337 W OHIO ST,60642,HS,6,0,6,1,2,7,10,5,24,WEST TOWN,West Side,Near N-Near W-Loop-BridgePort-Chinatown
+66145,NOBLE - GOLDER HS,400053,,Non-Union Charter,1454 W SUPERIOR ST,60642,HS,6,0,6,27,2,7,10,5,24,WEST TOWN,West Side,Near N-Near W-Loop-BridgePort-Chinatown
+66147,NOBLE - UIC HS,400057,,Non-Union Charter,1231 S DAMEN AVE,60608,HS,6,0,6,28,2,7,9,5,28,NEAR WEST SIDE,West Side,Near N-Near W-Loop-BridgePort-Chinatown
+66571,ROWE,400096,,Non-Union Charter,1424 N CLEAVER ST,60642,ES,6,0,6,1,12,5,10,5,24,WEST TOWN,West Side,Near N-Near W-Loop-BridgePort-Chinatown
+66572,NOBLE - BULLS HS,400097,,Non-Union Charter,2040 W ADAMS ST,60612,HS,6,0,6,27,2,7,10,5,28,NEAR WEST SIDE,West Side,Near N-Near W-Loop-BridgePort-Chinatown
+66573,NOBLE - MUCHIN HS,400098,,Non-Union Charter,1 N STATE ST,60602,HS,6,0,6,34,2,7,5,3,32,LOOP,Central,Near N-Near W-Loop-BridgePort-Chinatown
+66617,YCCS - INNOVATIONS,400133,,Non-Union Charter,17 N STATE ST.,60602,HS,6,0,6,34,2,7,5,3,32,LOOP,Central,Near N-Near W-Loop-BridgePort-Chinatown
+66261,KIPP - ASCEND,400044,,Non-Union Charter,1616 S AVERS AVE,60623,ES,7,0,7,24,2,7,9,5,29,NORTH LAWNDALE,West Side,Pilsen-Little Village
+66612,YCCS - CCA ACADEMY,400128,,Non-Union Charter,1231 S PULASKI RD,60623,HS,7,0,7,24,2,7,9,5,29,NORTH LAWNDALE,West Side,Pilsen-Little Village
+63011,GLOBAL CITIZENSHIP,400009,,Non-Union Charter,4647 W 47TH ST,60632,ES,8,0,8,22,7,4,1,1,56,GARFIELD RIDGE,Southwest Side,McKinley Park
+63181,HORIZON - SOUTHWEST,400167,,Non-Union Charter,5401 S WESTERN,60609,ES,8,0,8,15,11,4,1,1,63,GAGE PARK,Southwest Side,McKinley Park
+66231,CICS - BASIL,400024,,Non-Union Charter,1816 W GARFIELD BLVD,60609,ES,8,0,8,16,2,7,6,3,61,NEW CITY,Southwest Side,McKinley Park
+66579,NOBLE - MANSUETO HS,400179,,Non-Union Charter,2911 W 47TH ST,60632,HS,8,0,8,14,7,4,1,1,58,BRIGHTON PARK,Southwest Side,McKinley Park
+66931,KIPP - BLOOM,400163,,Non-Union Charter,5515 S LOWE AVE,60621,ES,8,0,8,20,2,7,5,3,68,ENGLEWOOD,Southwest Side,McKinley Park
+63161,LITTLE BLACK PEARL HS,400137,,Non-Union Charter,1060 E 47TH ST,60653,HS,9,0,9,4,3,2,25,13,39,KENWOOD,South Side,Bronzeville-Hyde Park-Woodlawn
+66056,PERSPECTIVES - MATH & SCI HS,400066,,Non-Union Charter,3663 S WABASH AVE,60653,HS,9,0,9,3,3,1,5,3,35,DOUGLAS,South Side,Bronzeville-Hyde Park-Woodlawn
+66107,YCCS - MCKINLEY,400124,,Non-Union Charter,2920 S WABASH AVE,60616,HS,9,0,9,3,2,7,5,3,35,DOUGLAS,South Side,Bronzeville-Hyde Park-Woodlawn
+66111,U OF C - NKO,400076,,Non-Union Charter,1119 E 46TH ST,60653,ES,9,0,9,4,3,2,25,13,39,KENWOOD,South Side,Bronzeville-Hyde Park-Woodlawn
+66112,U OF C - WOODLAWN HS,400077,,Non-Union Charter,6300 S UNIVERSITY AVE,60637,HS,9,0,9,20,3,1,5,3,42,WOODLAWN,South Side,Bronzeville-Hyde Park-Woodlawn
+66181,CICS - WASHINGTON PARK,400029,,Non-Union Charter,110 E 61ST ST,60637,ES,9,0,9,20,2,7,5,3,40,WASHINGTON PARK,South Side,Bronzeville-Hyde Park-Woodlawn
+66321,U OF C - DONOGHUE,400075,,Non-Union Charter,707 E 37TH ST,60653,ES,9,0,9,4,3,1,26,13,36,OAKLAND,South Side,Bronzeville-Hyde Park-Woodlawn
+66613,YCCS - PROGRESSIVE LEADERSHIP,400129,,Non-Union Charter,6620 S DR MARTIN LUTHER KING JR DR,60637,HS,9,0,9,20,2,1,5,3,69,GREATER GRAND CROSSING,South Side,Bronzeville-Hyde Park-Woodlawn
+66433,CATALYST - MARIA ES,400115,,Non-Union Charter,6727 S CALIFORNIA AVE,60629,ES,10,0,10,16,2,7,32,16,66,CHICAGO LAWN,Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+66433,CATALYST - MARIA HS,400182,,Non-Union Charter,6727 S CALIFORNIA AVE,60629,HS,10,0,10,16,2,7,32,16,66,CHICAGO LAWN,Southwest Side,Midway-Chgo Lawn-Ashburn-Beverly
+66052,PERSPECTIVES - LEADERSHIP HS,400061,,Non-Union Charter,8522 S LAFAYETTE AVE,60620,HS,11,0,11,21,4,1,34,17,44,CHATHAM,Far Southeast Side,Englewood-Auburn Gresham
+66053,PERSPECTIVES - TECH HS,400062,,Non-Union Charter,8522 S LAFAYETTE AVE,60620,HS,11,0,11,21,4,1,34,17,44,CHATHAM,Far Southeast Side,Englewood-Auburn Gresham
+66061,CICS - LONGWOOD,400033,,Non-Union Charter,1309 W 95TH ST,60643,HS,11,0,11,21,4,1,27,14,73,WASHINGTON HEIGHTS,Far Southwest Side,Englewood-Auburn Gresham
+66075,CICS - LOOMIS,400026,,Non-Union Charter,9535 S LOOMIS ST,60643,ES,11,0,11,21,4,1,27,14,73,WASHINGTON HEIGHTS,Far Southwest Side,Englewood-Auburn Gresham
+66148,NOBLE - JOHNSON HS,400106,,Non-Union Charter,6350 S STEWART AVE,60621,HS,11,0,11,20,2,1,6,3,68,ENGLEWOOD,Southwest Side,Englewood-Auburn Gresham
+66471,PROVIDENCE ENGLEWOOD,400071,,Non-Union Charter,6515 S ASHLAND AVE,60636,ES,11,0,11,16,2,7,6,3,67,WEST ENGLEWOOD,Southwest Side,Englewood-Auburn Gresham
+66564,LEARN - PERKINS,400111,,Non-Union Charter,1700 W 83RD ST,60620,ES,11,0,11,17,4,1,31,16,71,AUBURN GRESHAM,Far Southwest Side,Englewood-Auburn Gresham
+66574,NOBLE - HANSBERRY HS,400117,,Non-Union Charter,8748 S ABERDEEN ST,60620,HS,11,0,11,21,4,1,27,14,71,AUBURN GRESHAM,Far Southwest Side,Englewood-Auburn Gresham
+66591,MONTESSORI ENGLEWOOD,400116,,Non-Union Charter,6936 S HERMITAGE AVE,60636,ES,11,0,11,17,2,7,32,16,67,WEST ENGLEWOOD,Southwest Side,Englewood-Auburn Gresham
+66614,YCCS - YOUTH DEVELOPMENT,400130,,Non-Union Charter,7836 S UNION AVE,60620,HS,11,0,11,17,3,1,31,16,71,AUBURN GRESHAM,Far Southwest Side,Englewood-Auburn Gresham
+66146,NOBLE - COMER,400052,,Non-Union Charter,7131 SOUTH CHICAGO AVE,60619,HS,12,0,12,5,3,1,5,3,69,GREATER GRAND CROSSING,South Side,Chatham-South Shore
+66371,CICS - AVALON/SOUTH SHORE,400023,,Non-Union Charter,1501 E 83RD PL,60619,ES,12,0,12,8,4,1,33,17,45,AVALON PARK,Far Southeast Side,Chatham-South Shore
+66563,LEARN - SOUTH CHICAGO,400107,,Non-Union Charter,8914 S BUFFALO AVE,60617,ES,12,0,12,10,4,2,25,13,46,SOUTH CHICAGO,Far Southeast Side,Chatham-South Shore
+66577,NOBLE - BAKER HS,400157,,Non-Union Charter,2710 E 89TH ST,60617,HS,12,0,12,7,4,1,25,13,46,SOUTH CHICAGO,Far Southeast Side,Chatham-South Shore
+66621,YCCS - OLIVE HARVEY,400136,,Non-Union Charter,10001 S WOODLAWN AVE,60628,HS,12,0,12,8,4,2,34,17,50,PULLMAN,Far Southeast Side,Chatham-South Shore
+66623,YCCS - SULLIVAN,400139,,Non-Union Charter,8164 S SOUTH CHICAGO AVE,60617,HS,12,0,12,8,4,1,33,17,45,AVALON PARK,Far Southeast Side,Chatham-South Shore
+66631,YCCS - CHATHAM,400150,,Non-Union Charter,9035 S LANGLEY AVE,60619,HS,12,0,12,8,4,1,34,17,44,CHATHAM,Far Southeast Side,Chatham-South Shore
+66951,GREAT LAKES,400168,,Non-Union Charter,8401 S SAGINAW AVE,60617,ES,12,0,12,7,4,1,33,17,46,SOUTH CHICAGO,Far Southeast Side,Chatham-South Shore
+69228,ART IN MOTION,400181,,Non-Union Charter,7415 S EAST END AVE,60649,HS,12,0,12,8,3,1,26,13,43,SOUTH SHORE,South Side,Chatham-South Shore
+66076,CICS - BOND,400092,,Non-Union Charter,13300 S LANGLEY AVE,60827,ES,13,0,13,10,5,2,29,15,54,RIVERDALE,Far Southeast Side,Far South Side - Far East Side
+66161,CICS - PRAIRIE,400028,,Non-Union Charter,11530 S PRAIRIE AVE,60628,ES,13,0,13,9,5,2,34,17,53,WEST PULLMAN,Far Southeast Side,Far South Side - Far East Side
+66576,NOBLE - BUTLER HS,400156,,Non-Union Charter,821 E 103RD ST,60628,HS,13,0,13,9,4,2,34,17,50,PULLMAN,Far Southeast Side,Far South Side - Far East Side
+66671,CHICAGO COLLEGIATE,400161,,Non-Union Charter,11816 S INDIANA AVE,60628,HS,13,0,13,9,5,2,29,15,53,WEST PULLMAN,Far Southeast Side,Far South Side - Far East Side
+63021,PLATO,400068,,Non-Union Contract,5545 W HARRISON ST,60644,ES,3,0,3,29,1,7,8,4,25,AUSTIN,West Side,Belmont-Austin
+63091,CHICAGO TECH HS,400091,,Non-Union Contract,1301 W 14TH ST,60608,HS,6,0,6,28,2,7,9,5,28,NEAR WEST SIDE,West Side,Near N-Near W-Loop-BridgePort-Chinatown
