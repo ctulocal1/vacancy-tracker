@@ -53,7 +53,6 @@ header {
 }
 header img {
   height: 70px;
-  p
 }
 .intro {
   padding: 0 10px 0 0;
@@ -123,6 +122,11 @@ input.deptChoice {
   max-width: 460px;
   margin: 20px 0;
 }
+.dataOutput p {
+  animation-duration: 0.4s;
+  animation-name: slideIn;
+  opacity: 1;
+}
 .dataOutput table {
   width: calc(100vw - 40px);
   max-width: 460px;
@@ -138,6 +142,9 @@ input.deptChoice {
   height: 2.6em;
   border-bottom: 3px solid #333333;
   position: relative;
+  animation-duration: 0.1s;
+  animation-name: slideIn;
+  opacity: 1;
 }
 .dataOutput table caption div {
   width: 100%;
@@ -150,9 +157,15 @@ input.deptChoice {
 }
 .dataOutput table tbody {
   width: 100%;
+  animation-duration: 0.4s;
+  animation-name: slideIn;
+  opacity: 1;
 }
 .dataOutput table .thead td {
   padding-top: 1em;
+  animation-duration: 0.25s;
+  animation-name: slideIn;
+  opacity: 1;
 }
 .dataOutput table .thead th[scope="col"]:first-child,
 .dataOutput table .thead td:first-child {
