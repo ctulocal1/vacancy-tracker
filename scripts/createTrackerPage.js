@@ -242,19 +242,12 @@ function populateChoices () {
 let datalistOpts = `
 <li id="lb-district" role="option">District-wide Data</li>
 `
-  datalistOpts +=`<div>Citywide Departments</div>`
 for (const ofc of optionObj.office) {
   datalistOpts += `<li id="lb-${ofc}" role="option">${ofc}</li>`
 }
-  datalistOpts +=`<div>District Schools</div>`
 for (const dist of optionObj.district) {
   datalistOpts += `<li id="lb-${dist}" role="option">${dist}</li>`
 }
-  datalistOpts +=`<div>Charter Schools</div>`
-for (const chrt of optionObj.charter) {
-  datalistOpts += `<li id="lb-${chrt}" role="option">${chrt}</li>`
-}
-datalistOpts += `<div>Network Offices</div>`
 for (const net of optionObj.network) {
   datalistOpts += `<li id="lb-${net}" role="option">${net}</li>`
 }
