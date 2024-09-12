@@ -171,6 +171,7 @@ function data2Table (dept) {
 `
   } else if (posVac.length === 0) {
       outputString = `
+<h3><span>${dept.short_name}</span></h3>
 <p>CPS says ${dept.short_name} has no vacant positions.</p>
 `
       if ( names.district.has(dept.short_name) ) {
