@@ -1,0 +1,76 @@
+:root {
+  scroll-behavior: smooth;
+  --text-color: #100808;
+  --edge-color: #aaa;
+  --background: #f9faf8;
+}
+@media (prefers-color-scheme: dark) {
+:root {
+  scroll-behavior: smooth;
+  --text-color: #eaebe9;
+  --edge-color: #aaa;
+  --background: #100808;
+}
+}
+body {
+  background: var(--background);
+  font-family: 'Open Sans',sans-serif;
+  font-size: 18px
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: var(--text-color);
+}
+body * {
+  box-sizing: border-box;
+}
+main {
+  width: 100%;
+  max-width: 800px;
+  margin: 40px auto;
+}
+h1 {
+  margin-top: 60px 0 6px 0;
+  padding-top: 0;
+  line-height: 1.3;
+}
+h2 {
+  margin: 1.6em 0 0.6em 0;
+  padding: 0;
+}
+p {
+  font-size: 18px;
+  line-height: 1.4;
+}
+#uploaded-quotes table,
+#new-quote {
+  margin: 40px auto;
+  min-height: 180px;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  align-contents: center;
+  justify-contents: center;
+  border-radius: 18px;
+  border: 1px solid var(--edge-color);
+}
+#new-quote p {
+  font-size: 24px;
+  font-weight: 100;
+  text-align: center;
+  width: 100%;
+}
+#uploaded-quotes table th,
+#uploaded-quotes table td {
+  padding: 8px;
+  vertical-align: top;
+  font-size: 18px
+}
+#uploaded-quotes table th {
+  font-weight: 300;
+}
+#uploaded-quotes table td {
+  font-weight: 500;
+  font-style: italic;
+}
