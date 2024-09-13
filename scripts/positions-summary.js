@@ -38,7 +38,7 @@ schools.forEach( (school) => {addSchool(school);
 //console.log(deptsMap.get("66602"));
 //console.log(schoolsByName)
 
-const vacanciesCSV = Deno.readTextFileSync("../data/ctu-vacancies-2024-08-27.csv");
+const vacanciesCSV = Deno.readTextFileSync("../public/data/all-positions-2024-09-09.csv");
 const vacancies = parse (vacanciesCSV, {
   skipFirstRow: true,
   strip: true
