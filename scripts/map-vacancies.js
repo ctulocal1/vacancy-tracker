@@ -35,8 +35,8 @@ for (let group of officeGroups) {
       let vacantPositions = Object.values(vacancy.positionsVacant);
       //console.log(vacantPositions);
       let totalVacancies = vacantPositions.reduce( (total,job) =>  total + job ,0)
-      //console.log(vacancy.short_name,"Total Vacancies:",totalVacancies);
-      //console.log(vacancy.short_name,"Square Root of Total:",Math.sqrt(totalVacancies));
+      console.log(vacancy.short_name,"Total Vacancies:",totalVacancies);
+      console.log(vacancy.short_name,"Square Root of Total x 3:",Math.sqrt(totalVacancies)*3);
       circle.setAttributeNS(null,"r",Math.sqrt(totalVacancies)*3);
       circle.style.fill = "#ed1b2f"
     }
@@ -53,8 +53,8 @@ for (let group of schoolGroups) {
       let vacantPositions = Object.values(vacancy.positionsVacant);
       //console.log(vacantPositions);
       let totalVacancies = vacantPositions.reduce( (total,job) =>  total + job ,0)
-      //console.log(vacancy.short_name,"Total Vacancies:",totalVacancies);
-      //console.log(vacancy.short_name,"Square Root of Total:",Math.sqrt(totalVacancies));
+      console.log(vacancy.short_name,"Total Vacancies:",totalVacancies);
+      console.log(vacancy.short_name,"Square Root of Total x 3:",Math.sqrt(totalVacancies)*3);
       circle.setAttributeNS(null,"r",Math.sqrt(totalVacancies)*3);
       circle.style.fill = "#ed1b2f"
     }
