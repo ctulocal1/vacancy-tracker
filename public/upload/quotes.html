@@ -18,25 +18,57 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&display=swap" rel="stylesheet">
   </head>
   <body>
-    <dialog id="modal" class="modal">
+    <dialog class="modal" class="modal">
       <div class="modal-inner">
-        <form id="modal-form">
+        <form class="modal-form">
           <button type="button" aria-label="close" formmethod="dialog" class="modal-close" formnovalidate="">×</button>
-          <div id="modal-content"></div>
         </form>
+        <div class="modal-content">
+          <form class="add-quote" id="add-quote">
+            <table>
+              <tr>
+                <th scope="row"><label for="date-added">Date Added: </label></th>
+                <td><input type="date" id="date-added" value="9/12/2024"></td>
+              </tr>
+              <tr>
+                <th scope="row"><label for="position">Position: </label></th>
+                <td><input type="text" id="position"></td>
+              </tr>
+              <tr>
+                <th scope="row"><label for="school">School: </label></th>
+                <td><input type="text" id="school"></td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <label for="quote">Quote: </label>
+                </th>
+                <td>
+                  <textarea id="quote"></textarea>
+                </td>
+              </tr>
+              <tr>
+                <th style="vertical-align:baseline;"><input style="width:20px;" type="checkbox" id="new-visibility" checked><label for="new-visibility">Visible?</label></th>
+                <td style="vertical-align:baseline;">
+                  <button type="reset" class="reset">Reset</button><button type="button" class="cancel">Cancel</button><button type="submit">Submit</button>
+                </td>
+              </tr>
+            </table>
+          </form>
+        </div>
       </div>
     </dialog>
     <main>
       <h1>Upload quote information</h1>
-      <div id="new-quote"><p>Add a quote<br><span style="font-size: 200%;">+</span></p></div>
-      <section id="uploaded-quotes">
+      <button class="new-quote"><p>Add a quote<br><span style="font-size: 200%;">+</span></p></button>
+      <section class="uploaded-quotes">
         <table>
+          <tr><th scope="row">Added:</th><td>September 4, 2024</td><td><input type="checkbox" checked><label>Visible</label></td></tr>
           <tr><th scope="row">Position:</th><td>Teacher</td></tr>
           <tr><th scope="row">School:</th><td>Elementary School</td></tr>
-          <tr><th scope="row">Quote:</th><td>Huge classes, my school’s largest class has 39 students. We have no arts, no library, all after school programming was cut so we have nothing for the kids now.</td></tr>
+          <tr><th scope="row">Quote:</th><td colspan="2">Huge classes, my school’s largest class has 39 students. We have no arts, no library, all after school programming was cut so we have nothing for the kids now.</td></tr>
         </table>
       </section>
     </main>
+    <script src="/js/upload/quotes.js"></script>
   </body>
 </html>
-

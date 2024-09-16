@@ -42,8 +42,9 @@ p {
   font-size: 18px;
   line-height: 1.4;
 }
-#uploaded-quotes table,
-#new-quote {
+.uploaded-quotes table,
+.new-quote {
+  background: var(--background);
   margin: 40px auto;
   min-height: 180px;
   width: 100%;
@@ -55,22 +56,83 @@ p {
   border-radius: 18px;
   border: 1px solid var(--edge-color);
 }
-#new-quote p {
+.new-quote p {
   font-size: 24px;
   font-weight: 100;
   text-align: center;
   width: 100%;
+  color: var(--text-color);
 }
-#uploaded-quotes table th,
-#uploaded-quotes table td {
-  padding: 8px;
+.uploaded-quotes table th,
+.uploaded-quotes table td {
+  padding: 1px 8px;
   vertical-align: top;
   font-size: 18px
 }
-#uploaded-quotes table th {
+.uploaded-quotes table th {
   font-weight: 300;
 }
-#uploaded-quotes table td {
+.uploaded-quotes table td {
   font-weight: 500;
   font-style: italic;
+}
+.modal {
+  width: 80%;
+  min-width: 380px;
+  max-width: 600px;
+  min-height: 240px;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  padding: 20px;
+  background: var(--background);
+  color: var(--text-color);
+  margin-top: 100px;
+}
+.modal-close {
+  border-radius: 50%;
+  padding: 0.2em;
+  line-height: 0.4;
+  border: 1px solid var(--edge-color);
+  width: 1em;
+  height: 1em;
+  position: absolute;
+  right: 10px;
+  text-align: center;
+  font-size: 120%;
+  top: 10px;
+}
+.modal-content {
+  position: relative;
+  margin: 20px 0 0 0;
+}
+form.add-quote table,
+form.add-quote input,
+form.add-quote textarea,
+form.add-quote td {
+  vertical-align: top;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: 'Open Sans',sans-serif;
+  padding: 3px;
+  margin: 3px;
+}
+form.add-quote th {
+  padding-top: 10px;
+  vertical-align: top;
+  font-size: 18px;
+  font-weight: 300;
+  white-space: nowrap;
+  text-align: right;
+}
+form.add-quote textarea {
+  height: fit-content;
+  min-height: 12em;
+}
+form.add-quote button {
+  margin: 10px;
+  font-family: 'Open Sans',sans-serif;
+  font-size: 20px;
+  font-weight: 400;
 }
