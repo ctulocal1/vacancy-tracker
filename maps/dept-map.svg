@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg version="1.2" width="800" height="896" viewBox="0 0 800 896" stroke-linecap="round" stroke-linejoin="round" id="svg22923" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
   <style id="style19575">
- #schools circle, #offices circle {fill: #ed1b2e; stroke: #555555; stroke-width: 0.5;}
+ #schools circle, #offices circle {fill: #a0faaf; stroke: #555555; stroke-width: 0.5;}
  #schools circle:hover, #offices circle:hover {stroke:blue; stroke-width: 2;}
  #networks path {fill: #888888; fill-opacity: .2; stroke: white; stroke-width: 2; stroke-opacity: 0.6;}
  #networks path:hover {stroke: blue; stroke-opacity: 1; stroke-width: 2;}
