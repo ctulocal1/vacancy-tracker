@@ -130,6 +130,8 @@ class ComboboxAutocomplete {
   setValue(value) {
     this.filter = value;
     this.comboboxNode.value = this.filter;
+    this.comboboxNode.textContent = this.filter;
+    this.comboboxNode.placeholder = this.filter;
     this.comboboxNode.setSelectionRange(this.filter.length, this.filter.length);
     this.filterOptions();
   }
